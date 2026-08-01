@@ -400,8 +400,8 @@ function Footer() {
             printed on paper.
           </p>
           <p className="mt-6 text-sm text-paper/70">
-            <a href="mailto:info@gakcreations.com" className="hover:text-paper">
-              info@gakcreations.com
+            <a href="mailto:gakcreationsx.gmail.com" className="hover:text-paper">
+              gakcreationsx.gmail.com
             </a>
           </p>
         </div>
