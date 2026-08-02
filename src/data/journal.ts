@@ -1,0 +1,309 @@
+export interface JournalPost {
+  slug: string;
+  title: string;
+  seoTitle: string;
+  seoDescription: string;
+  excerpt: string;
+  published: string;
+  readingTime: string;
+  keywords: string[];
+  image: string;
+  imageAlt: string;
+  /** Body blocks: h2 headings and paragraphs. */
+  body: Array<{ heading: string; paragraphs: string[] }>;
+  intro: string[];
+  relatedCollection: string;
+}
+
+const ABBAYE = "/images/Abbaye Aux Dames Saintes France.jpg";
+const GUGGENHEIM = "/images/Guggenheim Museum Bilba, Spain.jpg";
+const SAN_JUAN = "/images/Chruch of San Juan Bautista de Banos, Spain.jpg";
+const FUERTEVENTURA = "/images/Fuerteventura Chapel.jpg";
+const BOAT = "/images/The Boat That Dreams Of Sea.jpg";
+
+export const journal: JournalPost[] = [
+  {
+    slug: "architectural-sketching-on-location",
+    title: "Architectural Sketching on Location: How a Building Becomes a Drawing",
+    seoTitle: "Architectural Sketching on Location — Method & Materials | GAK Creations",
+    seoDescription:
+      "How architect and artist Gerald Allen Knowles draws buildings on location: construction lines, ink, wash and the discipline behind every architectural art print.",
+    excerpt:
+      "Construction lines, one sitting, no erasing. The working method behind the architectural drawings in the GAK Creations archive.",
+    published: "2026-02-10",
+    readingTime: "6 min read",
+    keywords: [
+      "architectural sketching",
+      "urban sketching techniques",
+      "how to draw buildings",
+      "ink and wash architecture",
+      "architectural drawing prints",
+    ],
+    image: ABBAYE,
+    imageAlt:
+      "Architectural sketch of Abbaye aux Dames in Saintes, France, showing pencil construction lines beneath ink and watercolour wash",
+    intro: [
+      "There is a moment, standing in front of a building with an empty sheet, when the whole thing looks impossible. Every window is a decision. The honest way through is not to draw the building at all — not yet. It is to measure it by eye, and let the drawing arrive afterwards.",
+    ],
+    body: [
+      {
+        heading: "Start with the horizon, not the building",
+        paragraphs: [
+          "The first mark on the page is never architecture. It is a horizon line set at the height of your own eye, and one or two vanishing points placed by judgement rather than instrument. Everything that follows hangs from that line. Get it wrong and no amount of careful window drawing will rescue the sheet.",
+          "The second set of marks is proportional: total height against total width, then the position of the largest openings. At this stage the sheet looks like a diagram, and it should. A drawing that begins as a diagram can become atmospheric later; a drawing that begins as atmosphere can never become accurate.",
+        ],
+      },
+      {
+        heading: "Leave the construction lines visible",
+        paragraphs: [
+          "Architectural training teaches you to hide your workings. Drawing on location teaches the opposite. Those faint pencil lines running past the edges of a tower are the record of how the building was understood, and erasing them removes the most human part of the sheet.",
+          "In the finished prints from the archive — the Abbaye aux Dames study in particular — the construction lines are deliberately left in. They tell the viewer that someone stood there, looked, and worked it out.",
+        ],
+      },
+      {
+        heading: "Ink for structure, wash for weather",
+        paragraphs: [
+          "Ink handles the things that will not change: the structural edges, the depth of a reveal, the shadow line under a cornice. Two pens are usually enough — a fine technical nib for edges and a brush pen for weight.",
+          "Wash handles everything that will change by lunchtime. Sky goes down wet-into-wet and fast. Stone is dry-brushed so the paper's tooth carries the texture. The whole wash stage should take a fraction of the time the line work took; hesitation is what turns watercolour muddy.",
+        ],
+      },
+      {
+        heading: "One sitting, one drawing",
+        paragraphs: [
+          "The rule across the archive is that a location drawing is finished on location. Studio corrections tidy a sheet but drain it. If the light has moved too far, the drawing is done — the next one can be better.",
+          "Practically, this means working small enough to finish: a sketchbook page rather than a board. Scale can be recovered later in printing, and the fine art prints are produced at sizes where the original pencil work becomes visible again.",
+        ],
+      },
+      {
+        heading: "What to draw first if you are starting out",
+        paragraphs: [
+          "Choose a building with strong repetition — an arcade, a bell tower, a row of identical windows. Repetition is forgiving: once you have established the rhythm, the eye accepts small inaccuracies within it.",
+          "Then draw the same building three times over three days. The third drawing is always the one worth keeping, and it is the reason the archive contains more sheets of a handful of places than single sheets of many.",
+        ],
+      },
+    ],
+    relatedCollection: "architecture",
+  },
+  {
+    slug: "coastal-artwork-atlantic-light",
+    title: "Coastal Artwork and the Problem of Atlantic Light",
+    seoTitle: "Coastal Artwork & Atlantic Light — Painting Harbours | GAK Creations",
+    seoDescription:
+      "Why Atlantic light changes how coastal artwork is painted: palette, timing and structure behind the boat and harbour prints of Gerald Allen Knowles.",
+    excerpt:
+      "Why the coastal work is grey before it is blue, and how an architect draws a hull like a building.",
+    published: "2026-03-04",
+    readingTime: "5 min read",
+    keywords: [
+      "coastal artwork",
+      "painting harbours",
+      "atlantic light painting",
+      "boat art prints",
+      "watercolour seascape technique",
+    ],
+    image: BOAT,
+    imageAlt:
+      "Coastal artwork of a blue boat resting beside tall plants in front of a windowed wall, in ink and watercolour",
+    intro: [
+      "Coastal painting has a reputation for being easy and pretty. It is neither, mostly because of the light. On the Atlantic edge the sun rarely commits, and a palette built for Mediterranean contrast will produce something that looks like a postcard of somewhere else.",
+    ],
+    body: [
+      {
+        heading: "Grey is a colour, not an absence",
+        paragraphs: [
+          "The working palette for the coastal collection is narrow: Payne's grey, indigo, raw sienna, a single boat blue, and the white of the paper. Almost every tone in a finished piece is mixed from the first three.",
+          "Restricting the palette does two things. It keeps the sheet coherent under changing light, and it forces the drawing to carry the interest — which suits an artist who came to painting through architecture.",
+        ],
+      },
+      {
+        heading: "Draw the boat as a structure",
+        paragraphs: [
+          "A hull has a spine, a datum and a set of ribs. Drawn that way it sits convincingly on the ground; drawn as a silhouette it floats, wrongly, off the sheet. The keel line goes down first, the gunwale second, and only then the shape most people would call the boat.",
+          "The same applies to a harbour wall, a slipway, a mooring bollard. They are small pieces of civil engineering and they respond to being drawn as such.",
+        ],
+      },
+      {
+        heading: "Work early, and accept the tide",
+        paragraphs: [
+          "The best hours are before the harbour becomes busy, when boats are out of the water and the composition is still legible. It is also when the light is flattest, which is a gift: flat light shows form without theatre.",
+          "Weather interferes constantly. Grit lands in the wash, rain lifts pigment, wind takes the sheet. Very little of this is worth correcting. The marks the coast leaves on a drawing are part of what the drawing is for.",
+        ],
+      },
+      {
+        heading: "Choosing coastal art for a room",
+        paragraphs: [
+          "Because the palette is quiet, coastal prints do the opposite of competing with a room. They pair well with linen, oak and pale plaster, and they are the pieces most often chosen for bedrooms and bathrooms.",
+          "A single large print above a bed works; a vertical stack of two suits a narrow wall by a window. Matte glazing preserves the watercolour reading — gloss turns it into a photograph.",
+        ],
+      },
+    ],
+    relatedCollection: "coastal",
+  },
+  {
+    slug: "travel-inspired-art-sketchbook-to-collage",
+    title: "Travel-Inspired Art: From Sketchbook Page to Finished Collage",
+    seoTitle: "Travel-Inspired Art — Sketchbook to Mixed-Media Collage | GAK Creations",
+    seoDescription:
+      "How travel sketchbook pages become mixed-media collages: collecting, layering and composing travel-inspired art prints with Gerald Allen Knowles.",
+    excerpt:
+      "Ticket stubs, torn paper, and drawings made on the day — how a journey becomes a sheet you can hang.",
+    published: "2026-04-01",
+    readingTime: "6 min read",
+    keywords: [
+      "travel inspired art",
+      "travel sketchbook",
+      "mixed media collage technique",
+      "travel art prints",
+      "sketchbook journaling art",
+    ],
+    image: SAN_JUAN,
+    imageAlt:
+      "Travel-inspired mixed-media collage of the church of San Juan Bautista de Baños, Spain, built from sketch line and torn ochre paper",
+    intro: [
+      "A travel drawing made on the day is rarely the finished work. It is evidence. The finished work happens weeks later, at a table, when the trip has settled into something with a shape — and when the pocketful of paper you carried home turns out to be as useful as the sketch.",
+    ],
+    body: [
+      {
+        heading: "Collect while you draw",
+        paragraphs: [
+          "The habit is simple: everything flat goes in the back of the sketchbook. Tickets, wrappers, a torn corner of a map, the printed band from a bundle of postcards. None of it is chosen for beauty. It is chosen because it was there.",
+          "Months later that material carries a specificity no art-shop paper can imitate. The ochre of a Castilian wall is more convincing when it is literally a fragment of something bought in Castile.",
+        ],
+      },
+      {
+        heading: "The drawing stays in charge",
+        paragraphs: [
+          "The risk with collage is that texture takes over and the sheet becomes decoration. The safeguard used across the travel collection is that the architectural under-drawing is never fully buried. In the San Juan Bautista de Baños piece, the horseshoe arch is left as clean line while everything around it is built from paper.",
+          "Practically: draw first, in ink, at full strength. Collage on top only where the line has already done its job.",
+        ],
+      },
+      {
+        heading: "Tear, don't cut",
+        paragraphs: [
+          "A cut edge reads as graphic design. A torn edge reads as geology — it has a fibrous transition that catches light and sits closer to how a wall or a shoreline actually ends.",
+          "Adhesive is used sparingly and off-centre so the paper can still move a little. Over-gluing flattens a collage into a print of itself.",
+        ],
+      },
+      {
+        heading: "Composing at a distance",
+        paragraphs: [
+          "The final arrangement is judged from across the room, not at the table. If the composition survives at three metres it will hold on a wall; if it only works close up it is a sketchbook page and should stay one.",
+          "That test is why the travel collages are the most graphic works in the archive, and why they tend to be the single statement piece people choose for a living room or entrance hall.",
+        ],
+      },
+    ],
+    relatedCollection: "travel",
+  },
+  {
+    slug: "fuerteventura-landscapes-drawing-volcanic-ground",
+    title: "Fuerteventura Landscapes: Drawing Volcanic Ground",
+    seoTitle: "Fuerteventura Landscapes — Drawing Volcanic Ground | GAK Creations",
+    seoDescription:
+      "Drawing the volcanic landscapes of Fuerteventura: granulating pigments, lime-white chapels and Atlantic wind, from the Canary Islands sketchbooks of Gerald Allen Knowles.",
+    excerpt:
+      "The oldest Canary Island, drawn in lava black and lime white — and why the wind is part of the technique.",
+    published: "2026-05-06",
+    readingTime: "6 min read",
+    keywords: [
+      "fuerteventura landscape",
+      "canary islands art",
+      "volcanic landscape painting",
+      "granulating watercolour",
+      "canarian chapel architecture",
+    ],
+    image: FUERTEVENTURA,
+    imageAlt:
+      "Fuerteventura landscape painting of a white chapel set into a volcanic hillside in the Canary Islands",
+    intro: [
+      "Fuerteventura is the oldest island in the Canaries and the most worn down. Its volcanoes have lost their edges. For weeks at a time the only vertical thing in view is a whitewashed chapel or a dry-stone wall, and that scarcity is precisely what makes it worth drawing.",
+    ],
+    body: [
+      {
+        heading: "Distance without atmosphere",
+        paragraphs: [
+          "In dry island air there is almost no atmospheric perspective. Distant hills stay nearly as dark as near ones, which removes the landscape painter's usual method of pushing space back with pale blue.",
+          "The alternative is value and texture. Near ground is drawn with granulating pigment that separates on the paper into visible grain; far ground is laid in flat. The eye reads texture as proximity, and the space opens up without a single cool wash.",
+        ],
+      },
+      {
+        heading: "A palette taken from the ground",
+        paragraphs: [
+          "Lava black, burnt umber, raw sienna, iron oxide red and the white of the sheet. Green appears rarely and never brightly. The palette was chosen by walking, not by theory — these are the colours you have on your boots at the end of the day.",
+          "Because the pigments granulate, they do most of the descriptive work by themselves. Painting volcanic scree stroke by stroke is a losing battle; letting the paint behave like the ground is not.",
+        ],
+      },
+      {
+        heading: "The chapels",
+        paragraphs: [
+          "Canarian ermitas are vernacular building at its most reduced: thick rubble walls, lime render, a bell arch, and a door turned away from the prevailing wind. Nothing is ornamental because nothing could be spared.",
+          "Drawn beside a volcanic slope, a chapel becomes a unit of measurement. Reduce it to a small white mark and the hillside behind it suddenly has a real size — that single relationship is the subject of most sheets in the collection.",
+        ],
+      },
+      {
+        heading: "Working in the wind",
+        paragraphs: [
+          "Fuerteventura is one of the windiest places in the Atlantic. Grit lands in wet washes, paper flexes, and any attempt at a controlled gradient fails.",
+          "So the technique adapts. Washes go down in short, decisive passes; the sheet is worked flat and low; and the grit that arrives is left where it lands. Some of the texture in these prints is genuinely the island, which is a better outcome than a clean sheet would have been.",
+        ],
+      },
+    ],
+    relatedCollection: "fuerteventura",
+  },
+  {
+    slug: "gaudi-architecture-drawing-the-curve",
+    title: "Gaudí and the Curve: Drawing Architecture That Refuses the Right Angle",
+    seoTitle: "Gaudí Architecture Drawing — Catenary Curves & Collage | GAK Creations",
+    seoDescription:
+      "Drawing Gaudí's Barcelona and Gehry's Bilbao: catenary curves, ruled surfaces and metallic collage in the modern landmark studies of Gerald Allen Knowles.",
+    excerpt:
+      "Gaudí's curves obey rules. Find the rule and the building draws itself — a note on Barcelona, Bilbao and structural logic.",
+    published: "2026-06-03",
+    readingTime: "6 min read",
+    keywords: [
+      "gaudi architecture",
+      "catenary arch",
+      "barcelona architecture drawing",
+      "guggenheim bilbao",
+      "modern architecture art prints",
+    ],
+    image: GUGGENHEIM,
+    imageAlt:
+      "Mixed-media collage of the Guggenheim Museum Bilbao showing titanium curves rendered in metallic paper and ink",
+    intro: [
+      "There are buildings that punish a draughtsman for using the tools he was trained with. Gaudí's Barcelona is the classic case: no straight lines, no repeated bay, no cornice to run a parallel against. Bilbao, a century later, sets the same trap with different materials.",
+    ],
+    body: [
+      {
+        heading: "Find the rule before the outline",
+        paragraphs: [
+          "Gaudí's forms are structural arguments, not decoration. The catenary arch is the shape a hanging chain makes, inverted — the most efficient way to carry load in pure compression. The columns are ruled surfaces: curved forms generated entirely by straight lines in motion.",
+          "Once you can see the governing rule, the curve stops being arbitrary. Draw the rule lightly in pencil first — the chain, the axis, the sweep — and the visible surface follows almost on its own.",
+        ],
+      },
+      {
+        heading: "Ornament that is doing a job",
+        paragraphs: [
+          "Trencadís, the broken-ceramic surfacing, looks like pure decoration and is partly a solution to cladding a double-curved surface with flat material. Drawing it as pattern misses the point; the studies here handle it with collage, so the fragments are literally fragments.",
+          "The same logic applies to the ironwork and the bone-like balconies. Draw the function, and the strangeness reads as inevitability rather than whimsy.",
+        ],
+      },
+      {
+        heading: "Bilbao: drawing a surface, not a shape",
+        paragraphs: [
+          "Gehry's Guggenheim is not really a shape. It is a set of surfaces doing different things to the same daylight — matte under cloud, mirror-bright in low sun off the Nervión. An outline drawing of it is almost meaningless.",
+          "Torn metallic paper solves what pigment cannot: the finished sheet shifts as you move in front of it, the way the building does. That behaviour survives into the fine art print, which is why this piece is best hung where it will catch changing light.",
+        ],
+      },
+      {
+        heading: "Hanging a century of curves together",
+        paragraphs: [
+          "A Gaudí study and a Bilbao collage on the same wall make a clear argument: a hundred years apart, both buildings solve the problem of mass and light by refusing the right angle.",
+          "Add a Romanesque sheet — the Abbaye aux Dames, all repetition and compression — and the conversation gets better still. The archive is built for these pairings.",
+        ],
+      },
+    ],
+    relatedCollection: "gaudi-and-modern-landmarks",
+  },
+];
+
+export const getPost = (slug: string) => journal.find((p) => p.slug === slug);
