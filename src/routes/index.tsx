@@ -84,6 +84,7 @@ function Index() {
       <Hero />
       <Marquee />
       <Editorial />
+      <Narrative />
       <Collection />
       <StudioNote />
       <Shop />
@@ -233,6 +234,59 @@ function Editorial() {
               compositions that feel both analytical and poetic.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Narrative() {
+  return (
+    <section className="border-b border-ink/15">
+      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-20 md:grid-cols-12 md:px-12">
+        <div className="md:col-span-4">
+          <h2 className="font-display text-4xl leading-tight md:text-5xl">
+            Architectural, coastal and travel <em className="font-light">art prints</em>
+          </h2>
+          <div className="rule-line mt-6 w-16" />
+        </div>
+        <div className="space-y-5 text-base leading-relaxed text-ink-soft md:col-span-8 md:text-[1.05rem]">
+          <p>
+            GAK Creations is the working archive of Gerald Allen Knowles — architect, artist and
+            traveller. Every piece here began as a drawing made on location: an abbey in south-west
+            France measured by eye in a single morning, a whitewashed chapel holding a volcanic slope
+            in Fuerteventura, a blue boat left among the plants for a season on the Atlantic edge.
+            The construction lines are usually still visible, because they are the honest record of
+            how a place was understood.
+          </p>
+          <p>
+            The work divides into six collections. <a className="underline underline-offset-4" href="/collections/architecture">Architecture</a>{" "}
+            gathers the ink-and-wash building studies. <a className="underline underline-offset-4" href="/collections/coastal">Coastal</a>{" "}
+            holds the harbours, hulls and grey Atlantic light. <a className="underline underline-offset-4" href="/collections/travel">Travel collages</a>{" "}
+            layer sketchbook pages with the paper carried home from a journey.{" "}
+            <a className="underline underline-offset-4" href="/collections/fuerteventura">Fuerteventura</a> is the
+            volcanic island work, drawn in lava black and lime white.{" "}
+            <a className="underline underline-offset-4" href="/collections/gaudi-and-modern-landmarks">Gaudí and modern landmarks</a>{" "}
+            follows the buildings that refuse the right angle, from Barcelona to Bilbao. And{" "}
+            <a className="underline underline-offset-4" href="/collections/nature">Nature and landscape</a> gives the
+            ground, the growth and the weather the attention the buildings usually get.
+          </p>
+          <p>
+            The method is consistent across all of it. Pencil first, to set a horizon and find the
+            proportions. Ink second, for the structural edges and the shadow that gives a façade its
+            weight. Wash last and fast, because atmosphere is the one thing that will have changed by
+            lunchtime. Where a surface needs texture the brush cannot give — Castilian ochre, Basque
+            titanium, volcanic grit — torn paper and collage do the work instead.
+          </p>
+          <p>
+            Every drawing in the archive is published as a museum-quality fine art print: pigment
+            inks on heavyweight matte fine art paper, made to order and posted worldwide through our
+            Printify storefront. Nothing is mass-produced and nothing sits in a warehouse. If you are
+            new to the archive, start with the{" "}
+            <a className="underline underline-offset-4" href="/collections">collections</a> or read the{" "}
+            <a className="underline underline-offset-4" href="/journal">studio journal</a>, where the drawing
+            methods behind each body of work are set out in detail.
+          </p>
         </div>
       </div>
     </section>
