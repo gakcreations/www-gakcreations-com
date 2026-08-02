@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
+import type { Collection } from "@/data/collections";
 import { collections, getCollection } from "@/data/collections";
 import { journal } from "@/data/journal";
 import {
@@ -68,10 +69,10 @@ export const Route = createFileRoute("/collections/$slug")({
 });
 
 function CollectionPage() {
-  const { collection: c } = Route.useLoaderData();
+  const { collection: c } = Route.useLoaderData() as { collection: Collection };
   const related = c.related
-    .map((slug) => collections.find((x) => x.slug === slug))
-    .filter(Boolean) as typeof collections;
+    .map((slug: string) => collections.find((x) => x.slug === slug))
+    .filter(Boolean) as Collection[];
   const posts = journal.filter((p) => p.relatedCollection === c.slug);
 
   return (

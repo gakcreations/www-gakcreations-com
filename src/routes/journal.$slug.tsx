@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
+import type { JournalPost } from "@/data/journal";
 import { getPost, journal } from "@/data/journal";
 import { getCollection } from "@/data/collections";
 import {
@@ -69,7 +70,7 @@ export const Route = createFileRoute("/journal/$slug")({
 });
 
 function JournalPostPage() {
-  const { post: p } = Route.useLoaderData();
+  const { post: p } = Route.useLoaderData() as { post: JournalPost };
   const collection = getCollection(p.relatedCollection);
   const more = journal.filter((x) => x.slug !== p.slug).slice(0, 3);
 
