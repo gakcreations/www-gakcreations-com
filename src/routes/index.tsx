@@ -59,7 +59,7 @@ export const Route = createFileRoute("/")({
               "@id": `${SITE_URL}/#organization`,
               name: "GAK Creations",
               url: `${SITE_URL}/`,
-              email: "info@gakcreations.com",
+              sameAs: [SHOP_URL],
               logo: {
                 "@type": "ImageObject",
                 url: `${SITE_URL}${logoUrl}`,
