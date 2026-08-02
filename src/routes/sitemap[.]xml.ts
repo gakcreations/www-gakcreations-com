@@ -1,5 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
+import { collections } from "@/data/collections";
+import { journal } from "@/data/journal";
 
 const BASE_URL = "https://www.gakcreations.com";
 
@@ -15,6 +17,18 @@ export const Route = createFileRoute("/sitemap.xml")({
       GET: async () => {
         const entries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
+          { path: "/collections", changefreq: "weekly", priority: "0.9" },
+          ...collections.map((c) => ({
+            path: `/collections/${c.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+          })),
+          { path: "/journal", changefreq: "weekly", priority: "0.7" },
+          ...journal.map((j) => ({
+            path: `/journal/${j.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.6",
+          })),
           { path: "/shipping-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/refund-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/terms", changefreq: "yearly", priority: "0.3" },
