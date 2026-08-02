@@ -1,21 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
-import studio from "@/assets/studio.jpg";
-import heroAsset from "@/assets/abbaye-aux-dames-saintes.jpg.asset.json";
-import casaBatlloAsset from "@/assets/casa-batllo-gaudi-barcelona.jpg.asset.json";
-import print2Asset from "@/assets/church-of-san-juan-bautista-de-banos-spain.jpg.asset.json";
-import print3Asset from "@/assets/volcanic-landscape-fuerteventura-canary-islands.jpg.asset.json";
-import print4Asset from "@/assets/the-blue-boat-that-dreams-of-sea.jpg.asset.json";
-import logoAsset from "@/assets/gak-logo.png.asset.json";
+import type { SyntheticEvent } from "react";
 
-const heroArtworkUrl = heroAsset.url;
-const casaBatlloUrl = casaBatlloAsset.url;
-const print2Url = print2Asset.url;
-const print3Url = print3Asset.url;
-const print4Url = print4Asset.url;
-const logoUrl = logoAsset.url;
+const IMAGE_FALLBACK_SRC =
+  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1200'%3E%3Crect width='1600' height='1200' fill='%23f2ede6'/%3E%3C/svg%3E";
+const heroArtworkUrl = "/images/Abbaye Aux Dames Saintes France.jpg";
+const studioUrl = "/images/studio.jpg";
+const logoUrl = "/images/Logo GAK Creations copy.png";
 
 const SITE_URL = "https://www.gakcreations.com";
 const SHOP_URL = "https://gak-creations.printify.me";
+
+function handleImageError(event: SyntheticEvent<HTMLImageElement>) {
+  const image = event.currentTarget;
+  if (image.dataset.fallbackApplied === "true") {
+    return;
+  }
+  image.dataset.fallbackApplied = "true";
+  image.src = IMAGE_FALLBACK_SRC;
+}
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -98,7 +100,7 @@ function Header() {
           Est. Studio
         </a>
         <a href="/" className="flex items-center gap-3">
-          <img src={logoUrl} alt="GAK Creations" className="h-9 w-auto md:h-10" />
+          <img src={logoUrl} alt="GAK Creations" className="h-9 w-auto md:h-10" onError={handleImageError} />
           <span className="font-display text-xl tracking-wide md:text-2xl">
             GAK <span className="italic font-light">Creations</span>
           </span>
@@ -165,6 +167,7 @@ function Hero() {
               height={1600}
               fetchPriority="high"
               className="w-full object-cover"
+              onError={handleImageError}
             />
             <figcaption className="mt-4 flex items-start justify-between gap-6 text-xs uppercase tracking-[0.2em] text-ink-soft">
               <span>Fig. 001 — Abbaye Aux Dames, Saintes · ink and wash on paper</span>
@@ -239,25 +242,25 @@ function Editorial() {
 function Collection() {
   const works = [
     {
-      img: casaBatlloUrl,
+      img: "/images/Guggenheim Museum Bilba, Spain.jpg",
       no: "N° 02",
       title: "Guggenheim Museum Bilbao, Spain",
       medium: "Collage · Bilbao",
     },
     {
-      img: print2Url,
+      img: "/images/Chruch of San Juan Bautista de Banos, Spain.jpg",
       no: "N° 03",
       title: "Church of San Juan Bautista de Baños Spain",
       medium: "Collage · Spain",
     },
     {
-      img: print3Url,
+      img: "/images/Fuerteventura Chapel.jpg",
       no: "N° 04",
       title: "Volcanic Landscape of Fuerteventura",
       medium: "Ink & wash · Canary Islands",
     },
     {
-      img: print4Url,
+      img: "/images/The Boat That Dreams Of Sea.jpg",
       no: "N° 05",
       title: "The Blue Boat That Dreams of Sea",
       medium: "Ink & wash · Mediterranean",
@@ -301,6 +304,7 @@ function Collection() {
                   height={1100}
                   loading="lazy"
                   className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                  onError={handleImageError}
                 />
               </div>
               <div className="mt-5 flex items-baseline justify-between border-b border-ink/20 pb-4">
@@ -324,12 +328,13 @@ function StudioNote() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:px-12 md:py-28">
         <figure className="md:col-span-6">
           <img
-            src={studio}
+            src={studioUrl}
             alt="Inside the GAK Creations studio"
             width={1200}
             height={900}
             loading="lazy"
             className="w-full object-cover"
+            onError={handleImageError}
           />
           <figcaption className="mt-4 text-xs uppercase tracking-[0.2em] text-ink-soft">
             The studio — morning light
@@ -390,7 +395,7 @@ function Footer() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-16 md:grid-cols-12 md:px-12">
         <div className="md:col-span-5">
           <div className="flex items-center gap-4">
-            <img src={logoUrl} alt="GAK Creations" className="h-12 w-auto invert" />
+            <img src={logoUrl} alt="GAK Creations" className="h-12 w-auto invert" onError={handleImageError} />
             <p className="font-display text-4xl md:text-5xl">
               GAK <em className="font-light">Creations</em>
             </p>
