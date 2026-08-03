@@ -1,26 +1,52 @@
-# Gak Creations Home New Homepage
+# GAK Creations — Artistic Homepage & Print Store
 
-I want to redesign my homepage for www.gakcreations.com, into an artistic contempory home page. The home page is a front door into my art prints pop up store on printify, gak-creations.printify.me. Also my site is hosted on Github. I am not computer savvy and don't know codes. Just want and incredible design for my homepage.
+**GAK Creations** is the official website of **Gerald Allen Knowles**, an architect, artist, and global creative director.  
+The site showcases modern art prints, architectural sketches, coastal artwork, and travel-inspired collages — all available as high‑quality art prints through Printify.
 
-This project was built with [Lovable](https://lovable.dev).
+This repository contains the source code for **www.gakcreations.com**, built and maintained using **Lovable** and hosted on **GitHub + Vercel**.
 
-**Live app**: https://www-gakcreations-com.lovable.app
+---
 
-## Build with Lovable
+## 🌊 About the Website
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/73ae6212-5ee4-42ff-9a3d-142777bb6b64).
+The website serves as:
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- A contemporary artistic homepage  
+- A gateway into the GAK Creations art print store  
+- A curated portfolio of architectural and travel‑inspired artwork  
+- A storytelling space for global creative exploration  
 
-## Development
+All prints are fulfilled through Printify at:  
+**https://gak-creations.printify.me**
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+---
 
+## 🛠️ Built With
+
+This project is created and maintained using:
+
+- **Lovable** — AI‑assisted development  
+- **Next.js** — modern React framework  
+- **Vercel** — hosting & analytics  
+- **GitHub** — version control and collaboration  
+
+Continue developing this project in the Lovable editor:  
+https://lovable.dev/projects/73ae6212-5ee4-42ff-9a3d-142777bb6b64
+
+---
+
+## 🚀 Development
+
+If you prefer working locally:
+
+### Requirements
+- Node.js  
+- npm  
+(You can install both using [nvm](https://github.com/nvm-sh/nvm))
+
+### Setup
 ```sh
 git clone <this-repository-url>
 cd <repository-name>
 npm i
 npm run dev
-```
