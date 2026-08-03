@@ -124,6 +124,11 @@ export function SiteFooter() {
           </p>
           <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
             <li>
+              <Link to="/contact" className="hover:text-paper/70">
+                Contact Us
+              </Link>
+            </li>
+            <li>
               <Link to="/shipping-policy" className="hover:text-paper/70">
                 Shipping Policy
               </Link>
