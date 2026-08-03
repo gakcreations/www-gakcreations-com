@@ -4,6 +4,8 @@ import type { Collection } from "@/data/collections";
 import { collections, getCollection } from "@/data/collections";
 import { journal } from "@/data/journal";
 import {
+  artworkAltText,
+  artworkKeywords,
   seoMeta,
   canonical,
   ldJson,
@@ -58,11 +60,16 @@ export const Route = createFileRoute("/collections/$slug")({
             itemListElement: c.works.map((w, i) => ({
               "@type": "ListItem",
               position: i + 1,
-              item: productNode(w),
+              item: productNode(w, {
+                collectionName: c.name,
+                keywords: artworkKeywords(w, c.keywords),
+                pageUrl: abs(`/collections/${c.slug}#${w.sku.toLowerCase()}`),
+                offerUrl: SHOP_URL,
+              }),
             })),
           },
         },
-        ...c.works.map((w) => imageObjectNode(w.image, w.title, w.alt)),
+        ...c.works.map((w) => imageObjectNode(w.image, w.title, artworkAltText(w, c.name))),
       ]),
     };
   },
@@ -165,12 +172,12 @@ function CollectionPage() {
             </h2>
             <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8">
               {c.works.map((w) => (
-                <article key={w.sku}>
+                <article key={w.sku} id={w.sku.toLowerCase()}>
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="group">
                     <div className="overflow-hidden bg-paper-warm">
                       <img
                         src={w.image}
-                        alt={w.alt}
+                        alt={artworkAltText(w, c.name)}
                         width={900}
                         height={1100}
                         loading="lazy"

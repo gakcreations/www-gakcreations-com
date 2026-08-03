@@ -1,27 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PolicyPage, PolicyH2 } from "@/components/PolicyPage";
+import {
+  artistNode,
+  breadcrumbNode,
+  canonical,
+  ldJson,
+  organizationNode,
+  seoMeta,
+  webPageNode,
+  websiteNode,
+} from "@/lib/seo";
 
-const URL = "https://www.gakcreations.com/privacy-policy";
+const PATH = "/privacy-policy";
+const TITLE = "Privacy Policy — GAK Creations";
+const DESCRIPTION =
+  "How GAK Creations collects, uses, and protects personal information when you visit the site or place an order.";
 
 export const Route = createFileRoute("/privacy-policy")({
   component: PrivacyPolicy,
   head: () => ({
-    meta: [
-      { title: "Privacy Policy — GAK Creations" },
-      {
-        name: "description",
-        content:
-          "How GAK Creations collects, uses, and protects personal information when you visit the site or place an order.",
-      },
-      { property: "og:title", content: "Privacy Policy — GAK Creations" },
-      {
-        property: "og:description",
-        content: "How GAK Creations handles personal data, cookies, and your privacy rights.",
-      },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: URL }],
+    meta: seoMeta({
+      title: TITLE,
+      description: DESCRIPTION,
+      path: PATH,
+    }),
+    links: canonical(PATH),
+    scripts: ldJson([
+      websiteNode,
+      organizationNode,
+      artistNode,
+      webPageNode(PATH, TITLE, DESCRIPTION),
+      breadcrumbNode([
+        { name: "Home", path: "/" },
+        { name: "Privacy Policy", path: PATH },
+      ]),
+    ]),
   }),
 });
 

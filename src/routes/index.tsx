@@ -1,124 +1,144 @@
-import { createFileRoute } from "@tanstack/react-router";
-import type { SyntheticEvent } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
+import { collections } from "@/data/collections";
+import { journal } from "@/data/journal";
+import {
+  SHOP_URL,
+  abs,
+  artistNode,
+  artworkAltText,
+  artworkKeywords,
+  breadcrumbNode,
+  canonical,
+  getImageDimensions,
+  imageObjectNode,
+  ldJson,
+  organizationNode,
+  productNode,
+  seoMeta,
+  webPageNode,
+  websiteNode,
+} from "@/lib/seo";
 
-const IMAGE_FALLBACK_SRC =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1200'%3E%3Crect width='1600' height='1200' fill='%23f2ede6'/%3E%3C/svg%3E";
 const heroArtworkUrl = "/images/Abbaye Aux Dames Saintes France.jpg";
 const studioUrl = "/images/studio.jpg";
-const logoUrl = "/images/Logo GAK Creations copy.png";
+const HOME_TITLE = "GAK Creations | Architectural Art Prints, Coastal Artwork & Travel Collages";
+const HOME_DESCRIPTION =
+  "Discover GAK Creations, the studio of Gerald Allen Knowles: architectural art prints, coastal artwork, Fuerteventura landscapes and travel-inspired collages available as museum-quality fine art prints.";
 
-const SITE_URL = "https://www.gakcreations.com";
-const SHOP_URL = "https://gak-creations.printify.me";
+const featuredCollections = collections.filter((collection) =>
+  ["architecture", "coastal", "travel", "fuerteventura", "gaudi-and-modern-landmarks", "nature"].includes(
+    collection.slug,
+  ),
+);
 
-function handleImageError(event: SyntheticEvent<HTMLImageElement>) {
-  const image = event.currentTarget;
-  if (image.dataset.fallbackApplied === "true") {
-    return;
-  }
-  image.dataset.fallbackApplied = "true";
-  image.src = IMAGE_FALLBACK_SRC;
-}
+const heroImageSize = getImageDimensions(heroArtworkUrl) ?? { width: 1181, height: 1191 };
+const studioImageSize = getImageDimensions(studioUrl) ?? { width: 1200, height: 900 };
+
+type FeaturedWork = {
+  collection: (typeof collections)[number];
+  work: (typeof collections)[number]["works"][number];
+  fragmentId: string;
+};
+
+const featuredWorks = [
+  { collectionSlug: "architecture", sku: "GAK-ARCH-001" },
+  { collectionSlug: "gaudi-and-modern-landmarks", sku: "GAK-MOD-001" },
+  { collectionSlug: "fuerteventura", sku: "GAK-FUER-001" },
+  { collectionSlug: "coastal", sku: "GAK-COAST-001" },
+]
+  .map(({ collectionSlug, sku }) => {
+    const collection = collections.find((entry) => entry.slug === collectionSlug);
+    const work = collection?.works.find((entry) => entry.sku === sku);
+
+    if (!collection || !work) return null;
+
+    return {
+      collection,
+      work,
+      fragmentId: work.sku.toLowerCase(),
+    };
+  })
+  .filter((entry): entry is FeaturedWork => Boolean(entry));
+
+const featuredPosts = journal.slice(0, 3);
 
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
-    meta: [
-      { title: "GAK Creations — Architectural Art & Travel Collages" },
-      {
-        name: "description",
-        content:
-          "The archive of Gerald Allen Knowles — architectural drawings and travel collages from Europe and the Atlantic islands, available as fine art prints.",
+    meta: seoMeta({
+      title: HOME_TITLE,
+      description: HOME_DESCRIPTION,
+      path: "/",
+      image: {
+        path: heroArtworkUrl,
+        alt: "Architectural drawing of Abbaye aux Dames in Saintes by Gerald Allen Knowles",
       },
-      { property: "og:title", content: "GAK Creations — Architectural Art & Travel Collages" },
+      keywords: [
+        "architectural art prints",
+        "coastal artwork",
+        "travel inspired art",
+        "fuerteventura art prints",
+        "gaudi architecture art",
+        "fine art prints online",
+      ],
+    }),
+    links: canonical("/"),
+    scripts: ldJson([
+      websiteNode,
+      organizationNode,
+      artistNode,
+      webPageNode("/", HOME_TITLE, HOME_DESCRIPTION),
+      breadcrumbNode([{ name: "Home", path: "/" }]),
+      imageObjectNode(
+        heroArtworkUrl,
+        "Abbaye aux Dames, Saintes",
+        "Architectural art print of Abbaye aux Dames in Saintes by Gerald Allen Knowles",
+      ),
       {
-        property: "og:description",
-        content:
-          "Architectural drawings and travel collages by Gerald Allen Knowles. Shop the fine art print collection.",
+        "@type": "CollectionPage",
+        "@id": `${abs("/")}#homepage-collections`,
+        name: "GAK Creations homepage collections",
+        url: abs("/"),
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: featuredCollections.map((collection, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: collection.name,
+            url: abs(`/collections/${collection.slug}`),
+            description: collection.seoDescription,
+          })),
+        },
       },
-      { property: "og:url", content: `${SITE_URL}/` },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "WebSite",
-              "@id": `${SITE_URL}/#website`,
-              url: `${SITE_URL}/`,
-              name: "GAK Creations",
-              description:
-                "Archive of architectural drawings and travel collages by Gerald Allen Knowles, available as fine art prints.",
-              publisher: { "@id": `${SITE_URL}/#organization` },
-            },
-            {
-              "@type": "Organization",
-              "@id": `${SITE_URL}/#organization`,
-              name: "GAK Creations",
-              url: `${SITE_URL}/`,
-              sameAs: [SHOP_URL],
-              logo: {
-                "@type": "ImageObject",
-                url: `${SITE_URL}${logoUrl}`,
-              },
-              founder: {
-                "@type": "Person",
-                name: "Gerald Allen Knowles",
-                jobTitle: "Architect, Artist, and Traveler",
-              },
-            },
-          ],
+      ...featuredWorks.map(({ collection, work, fragmentId }) =>
+        productNode(work, {
+          collectionName: collection.name,
+          keywords: artworkKeywords(work, collection.keywords),
+          pageUrl: abs(`/collections/${collection.slug}#${fragmentId}`),
+          offerUrl: SHOP_URL,
         }),
-      },
-    ],
+      ),
+    ]),
   }),
 });
 
 function Index() {
   return (
     <div className="min-h-screen bg-paper text-ink font-body">
-      <Header />
-      <Hero />
-      <Marquee />
-      <Editorial />
-      <Narrative />
-      <Collection />
-      <StudioNote />
-      <Shop />
-      <Footer />
+      <SiteHeader />
+      <main>
+        <Hero />
+        <Marquee />
+        <Narrative />
+        <CollectionsPreview />
+        <FeaturedWorks />
+        <JournalHighlights />
+        <StudioNote />
+        <Shop />
+      </main>
+      <SiteFooter />
     </div>
-  );
-}
-
-function Header() {
-  return (
-    <header className="border-b border-ink/15">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 md:px-12">
-        <a href="/" className="eyebrow">
-          Est. Studio
-        </a>
-        <a href="/" className="flex items-center gap-3">
-          <img src={logoUrl} alt="GAK Creations" className="h-9 w-auto md:h-10" onError={handleImageError} />
-          <span className="font-display text-xl tracking-wide md:text-2xl">
-            GAK <span className="italic font-light">Creations</span>
-          </span>
-        </a>
-        <a
-          href={SHOP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="eyebrow hidden md:inline-block hover:text-ink"
-        >
-          Shop →
-        </a>
-        <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="eyebrow md:hidden">
-          Shop
-        </a>
-      </div>
-    </header>
   );
 }
 
@@ -136,24 +156,25 @@ function Hero() {
             <span className="italic font-light">of</span> places.
           </h1>
           <p className="mt-8 max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
-            Architectural drawings and travel collages from a lifetime of wandering — Europe, the
-            Atlantic islands, and the small structures in between. Now available as fine art prints.
+            Architectural drawings, coastal studies, and travel-inspired collages from a lifetime of
+            wandering through Europe and the Atlantic islands — now available as museum-quality fine
+            art prints.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-6">
+            <Link
+              to="/collections"
+              className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
+            >
+              Explore the collections
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
             <a
               href={SHOP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
-            >
-              Shop the Collection
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </a>
-            <a
-              href="#collection"
               className="text-sm uppercase tracking-[0.2em] text-ink underline underline-offset-8 decoration-ink/40 hover:decoration-ink"
             >
-              View works
+              Shop the prints
             </a>
           </div>
         </div>
@@ -164,8 +185,8 @@ function Hero() {
             <img
               src={heroArtworkUrl}
               alt="Architectural study of Abbaye Aux Dames, Saintes, France, by Gerald Allen Knowles"
-              width={1400}
-              height={1600}
+              width={heroImageSize.width}
+              height={heroImageSize.height}
               fetchPriority="high"
               className="w-full object-cover"
               onError={handleImageError}
@@ -185,58 +206,22 @@ function Marquee() {
   const items = [
     "Architectural Drawings",
     "Travel Collages",
-    "Sketchbook Editions",
-    "Europe & the Atlantic",
+    "Coastal Artwork",
+    "Fuerteventura Landscapes",
     "Fine Art Prints",
   ];
+
   return (
     <div className="overflow-hidden border-b border-ink/15 bg-paper-warm">
       <div className="flex whitespace-nowrap py-5 [animation:marquee_40s_linear_infinite]">
-        {[...items, ...items, ...items].map((t, i) => (
-          <span key={i} className="mx-10 font-display text-2xl italic text-ink md:text-3xl">
-            {t} <span className="mx-8 text-ink/40">✦</span>
+        {[...items, ...items, ...items].map((item, index) => (
+          <span key={index} className="mx-10 font-display text-2xl italic text-ink md:text-3xl">
+            {item} <span className="mx-8 text-ink/40">✦</span>
           </span>
         ))}
       </div>
       <style>{`@keyframes marquee { from { transform: translateX(0);} to { transform: translateX(-33.333%);} }`}</style>
     </div>
-  );
-}
-
-function Editorial() {
-  return (
-    <section className="border-b border-ink/15">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:px-12 md:py-28">
-        <div className="md:col-span-4">
-          <p className="eyebrow">About the Artist</p>
-          <div className="rule-line mt-6 w-16" />
-          <p className="mt-6 text-sm uppercase tracking-[0.2em] text-ink-soft">
-            Gerald Allen Knowles
-            <br />
-            Architect · Artist · Traveler
-          </p>
-        </div>
-        <div className="md:col-span-8">
-          <h2 className="font-display text-4xl leading-[1.05] md:text-6xl">
-            The discipline of an architect. The eye of a <em className="font-light">traveler.</em>
-          </h2>
-          <div className="mt-10 grid gap-8 text-base leading-relaxed text-ink-soft md:grid-cols-2 md:text-[1.05rem]">
-            <p>
-              Gerald Allen Knowles is an architect, artist, and traveler whose work traces the quiet
-              geometry of places across Europe and the islands of the Atlantic. His drawings carry
-              the discipline of architectural observation — clean lines, measured shadows, and a
-              sensitivity to structure.
-            </p>
-            <p>
-              From staircases in Saintes to volcanic landscapes in the Canary Islands, his
-              sketchbooks read like field journals: immediate, intimate, shaped by decades of
-              wandering with pen and paper in hand. His collages expand these impressions into
-              compositions that feel both analytical and poetic.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 
@@ -246,89 +231,146 @@ function Narrative() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-20 md:grid-cols-12 md:px-12">
         <div className="md:col-span-4">
           <h2 className="font-display text-4xl leading-tight md:text-5xl">
-            Architectural, coastal and travel <em className="font-light">art prints</em>
+            A professional <em className="font-light">art print archive</em> rooted in place
           </h2>
           <div className="rule-line mt-6 w-16" />
+          <p className="mt-6 max-w-sm text-sm leading-relaxed text-ink-soft">
+            Discover the artist story, studio process, inspirations, and collector value behind the
+            GAK Creations catalogue.
+          </p>
         </div>
-        <div className="space-y-5 text-base leading-relaxed text-ink-soft md:col-span-8 md:text-[1.05rem]">
-          <p>
-            GAK Creations is the working archive of Gerald Allen Knowles — architect, artist and
-            traveller. Every piece here began as a drawing made on location: an abbey in south-west
-            France measured by eye in a single morning, a whitewashed chapel holding a volcanic slope
-            in Fuerteventura, a blue boat left among the plants for a season on the Atlantic edge.
-            The construction lines are usually still visible, because they are the honest record of
-            how a place was understood.
-          </p>
-          <p>
-            The work divides into six collections. <a className="underline underline-offset-4" href="/collections/architecture">Architecture</a>{" "}
-            gathers the ink-and-wash building studies. <a className="underline underline-offset-4" href="/collections/coastal">Coastal</a>{" "}
-            holds the harbours, hulls and grey Atlantic light. <a className="underline underline-offset-4" href="/collections/travel">Travel collages</a>{" "}
-            layer sketchbook pages with the paper carried home from a journey.{" "}
-            <a className="underline underline-offset-4" href="/collections/fuerteventura">Fuerteventura</a> is the
-            volcanic island work, drawn in lava black and lime white.{" "}
-            <a className="underline underline-offset-4" href="/collections/gaudi-and-modern-landmarks">Gaudí and modern landmarks</a>{" "}
-            follows the buildings that refuse the right angle, from Barcelona to Bilbao. And{" "}
-            <a className="underline underline-offset-4" href="/collections/nature">Nature and landscape</a> gives the
-            ground, the growth and the weather the attention the buildings usually get.
-          </p>
-          <p>
-            The method is consistent across all of it. Pencil first, to set a horizon and find the
-            proportions. Ink second, for the structural edges and the shadow that gives a façade its
-            weight. Wash last and fast, because atmosphere is the one thing that will have changed by
-            lunchtime. Where a surface needs texture the brush cannot give — Castilian ochre, Basque
-            titanium, volcanic grit — torn paper and collage do the work instead.
-          </p>
-          <p>
-            Every drawing in the archive is published as a museum-quality fine art print: pigment
-            inks on heavyweight matte fine art paper, made to order and posted worldwide through our
-            Printify storefront. Nothing is mass-produced and nothing sits in a warehouse. If you are
-            new to the archive, start with the{" "}
-            <a className="underline underline-offset-4" href="/collections">collections</a> or read the{" "}
-            <a className="underline underline-offset-4" href="/journal">studio journal</a>, where the drawing
-            methods behind each body of work are set out in detail.
-          </p>
+        <div className="grid gap-10 md:col-span-8 md:grid-cols-2">
+          <article>
+            <h3 className="font-display text-2xl text-ink md:text-3xl">The artist story</h3>
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-ink-soft md:text-[1.05rem]">
+              <p>
+                GAK Creations is the studio archive of Gerald Allen Knowles, an architect and artist
+                whose drawing practice was shaped long before it was framed. Years spent reading
+                buildings, surveying streets, and sketching while travelling produced a way of seeing
+                that treats every place as a structure first and an atmosphere second. The result is a
+                body of work that feels intimate without becoming nostalgic: abbeys studied by eye,
+                harbour walls reduced to line and wash, and volcanic landscapes held together by the
+                same discipline that once set out plans on a drafting table.
+              </p>
+              <p>
+                That background matters because it gives the work its character. Gerald Allen Knowles
+                does not draw landmarks as souvenirs. He draws how stone meets light, how a chapel
+                holds a hillside, and how a familiar boat shape can anchor an entire composition.
+              </p>
+            </div>
+          </article>
+          <article>
+            <h3 className="font-display text-2xl text-ink md:text-3xl">Techniques and materials</h3>
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-ink-soft md:text-[1.05rem]">
+              <p>
+                Every artwork begins with observation on location. Pencil establishes the horizon,
+                proportions, and structural rhythm. Ink clarifies the edges that matter. Wash is laid
+                in quickly so the page keeps the weather of the moment instead of a studio version of
+                it. When a surface asks for something more tactile than paint can give, collage enters:
+                torn papers for Castilian ochres, metallic fragments for Bilbao titanium, and broken
+                textures that behave more like real material than a flat pigment field ever could.
+              </p>
+              <p>
+                That process carries directly into the final print. Museum-grade matte paper and
+                pigment inks preserve the visible construction lines, granulating washes, and layered
+                textures that collectors respond to in the original studies.
+              </p>
+            </div>
+          </article>
+          <article>
+            <h3 className="font-display text-2xl text-ink md:text-3xl">Inspirations and places</h3>
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-ink-soft md:text-[1.05rem]">
+              <p>
+                The archive is organised around six recurring territories: <Link to="/collections/$slug" params={{ slug: "architecture" }} className="underline underline-offset-4">architecture</Link>,{" "}
+                <Link to="/collections/$slug" params={{ slug: "coastal" }} className="underline underline-offset-4">coastal artwork</Link>,{" "}
+                <Link to="/collections/$slug" params={{ slug: "travel" }} className="underline underline-offset-4">travel collages</Link>,{" "}
+                <Link to="/collections/$slug" params={{ slug: "fuerteventura" }} className="underline underline-offset-4">Fuerteventura landscapes</Link>,{" "}
+                <Link to="/collections/$slug" params={{ slug: "gaudi-and-modern-landmarks" }} className="underline underline-offset-4">Gaudí and modern landmarks</Link>, and{" "}
+                <Link to="/collections/$slug" params={{ slug: "nature" }} className="underline underline-offset-4">nature studies</Link>. Together they trace a consistent interest in places where form and weather meet — Romanesque façades in France, Atlantic harbours, Barcelona curves, and the older volcanic ground of the Canary Islands.
+              </p>
+              <p>
+                These inspirations keep the work varied without losing coherence. Whether the subject is
+                a church front or a shoreline, the page is still asking the same question: what is the
+                quiet geometry that makes this place itself?
+              </p>
+            </div>
+          </article>
+          <article>
+            <h3 className="font-display text-2xl text-ink md:text-3xl">Why collectors choose GAK Creations</h3>
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-ink-soft md:text-[1.05rem]">
+              <p>
+                Collectors come here for contemporary wall art with substance behind it. The prints are
+                not generic decor; they are edited from a real sketchbook practice and offered as
+                museum-quality reproductions through the GAK Creations shop. That makes them suitable
+                for design-led homes, studios, hospitality spaces, and offices where artwork needs to
+                reward a closer look.
+              </p>
+              <p>
+                If you are new to the archive, start with the <Link to="/collections" className="underline underline-offset-4">collections overview</Link> for the full catalogue, then visit the{" "}
+                <Link to="/journal" className="underline underline-offset-4">studio journal</Link> for essays on drawing buildings, painting Atlantic light, and turning travel notes into finished pieces. When you are ready to buy, the prints are made to order and shipped worldwide through Printify.
+              </p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   );
 }
 
-function Collection() {
-  const works = [
-    {
-      img: "/images/Guggenheim Museum Bilba, Spain.jpg",
-      no: "N° 02",
-      title: "Guggenheim Museum Bilbao, Spain",
-      medium: "Collage · Bilbao",
-    },
-    {
-      img: "/images/Chruch of San Juan Bautista de Banos, Spain.jpg",
-      no: "N° 03",
-      title: "Church of San Juan Bautista de Baños Spain",
-      medium: "Collage · Spain",
-    },
-    {
-      img: "/images/Fuerteventura Chapel.jpg",
-      no: "N° 04",
-      title: "Volcanic Landscape of Fuerteventura",
-      medium: "Ink & wash · Canary Islands",
-    },
-    {
-      img: "/images/The Boat That Dreams Of Sea.jpg",
-      no: "N° 05",
-      title: "The Blue Boat That Dreams of Sea",
-      medium: "Ink & wash · Mediterranean",
-    },
-  ];
-
+function CollectionsPreview() {
   return (
-    <section id="collection" className="border-b border-ink/15">
+    <section className="border-b border-ink/15" id="collections-overview">
       <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-28">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <p className="eyebrow">Selected Works</p>
+            <p className="eyebrow">Explore the archive</p>
             <h2 className="mt-6 font-display text-4xl md:text-6xl">
-              The <em className="font-light">Collection</em>
+              Six core <em className="font-light">collections</em>
+            </h2>
+          </div>
+          <Link to="/collections" className="eyebrow hover:text-ink">
+            Browse every collection →
+          </Link>
+        </div>
+
+        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8 xl:grid-cols-3">
+          {featuredCollections.map((collection) => (
+            <article key={collection.slug}>
+              <Link to="/collections/$slug" params={{ slug: collection.slug }} className="group block">
+                <div className="overflow-hidden bg-paper-warm">
+                  <img
+                    src={collection.hero}
+                    alt={collection.heroAlt}
+                    width={getImageDimensions(collection.hero)?.width ?? 1181}
+                    height={getImageDimensions(collection.hero)?.height ?? 1191}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                    onError={handleImageError}
+                  />
+                </div>
+                <div className="mt-5 border-b border-ink/20 pb-5">
+                  <p className="eyebrow">{collection.eyebrow}</p>
+                  <h3 className="mt-2 font-display text-2xl md:text-3xl">{collection.name}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{collection.seoDescription}</p>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeaturedWorks() {
+  return (
+    <section className="border-b border-ink/15" id="featured-prints">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-28">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Selected prints</p>
+            <h2 className="mt-6 font-display text-4xl md:text-6xl">
+              Featured <em className="font-light">artwork prints</em>
             </h2>
           </div>
           <a
@@ -342,33 +384,91 @@ function Collection() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8">
-          {works.map((w) => (
-            <a
-              key={w.no}
-              href={SHOP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group"
-            >
+          {featuredWorks.map(({ collection, work, fragmentId }) => (
+            <article key={work.sku} id={fragmentId}>
               <div className="overflow-hidden bg-paper-warm">
                 <img
-                  src={w.img}
-                  alt={w.title}
-                  width={900}
-                  height={1100}
+                  src={work.image}
+                  alt={artworkAltText(work, collection.name)}
+                  width={getImageDimensions(work.image)?.width ?? 900}
+                  height={getImageDimensions(work.image)?.height ?? 1100}
                   loading="lazy"
-                  className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                  className="aspect-[4/5] w-full object-cover"
                   onError={handleImageError}
                 />
               </div>
-              <div className="mt-5 flex items-baseline justify-between border-b border-ink/20 pb-4">
-                <div>
-                  <p className="eyebrow">{w.no}</p>
-                  <h3 className="mt-2 font-display text-2xl md:text-3xl">{w.title}</h3>
+              <div className="mt-5 border-b border-ink/20 pb-5">
+                <p className="eyebrow">{collection.name}</p>
+                <h3 className="font-display text-2xl md:text-3xl">{work.title}</h3>
+                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-ink-soft">
+                  {work.medium} · {work.place}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-ink-soft">{work.description}</p>
+                <div className="mt-6 flex flex-wrap gap-4">
+                  <Link
+                    to="/collections/$slug"
+                    params={{ slug: collection.slug }}
+                    className="bg-ink px-6 py-3 text-sm uppercase tracking-[0.2em] text-paper hover:bg-ink-soft"
+                  >
+                    View collection
+                  </Link>
+                  <a
+                    href={SHOP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="border border-ink/25 px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-ink hover:text-paper"
+                  >
+                    Shop print
+                  </a>
                 </div>
-                <span className="text-xs uppercase tracking-[0.2em] text-ink-soft">{w.medium}</span>
+                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-ink-soft">
+                  Keywords: {artworkKeywords(work, collection.keywords).join(" · ")}
+                </p>
               </div>
-            </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function JournalHighlights() {
+  return (
+    <section className="border-b border-ink/15 bg-paper-warm">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-24">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">From the studio journal</p>
+            <h2 className="mt-6 font-display text-4xl md:text-5xl">
+              Process notes for collectors, architects, and art lovers
+            </h2>
+          </div>
+          <Link to="/journal" className="eyebrow hover:text-ink">
+            Read every journal entry →
+          </Link>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+          {featuredPosts.map((post) => (
+            <article key={post.slug}>
+              <Link to="/journal/$slug" params={{ slug: post.slug }} className="group block">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  width={800}
+                  height={600}
+                  loading="lazy"
+                  className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                  onError={handleImageError}
+                />
+                <div className="mt-5 border-b border-ink/20 pb-5">
+                  <p className="eyebrow">{post.readingTime}</p>
+                  <h3 className="mt-2 font-display text-2xl leading-tight md:text-3xl">{post.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-soft">{post.excerpt}</p>
+                </div>
+              </Link>
+            </article>
           ))}
         </div>
       </div>
@@ -378,14 +478,14 @@ function Collection() {
 
 function StudioNote() {
   return (
-    <section className="border-b border-ink/15 bg-paper-warm">
+    <section className="border-b border-ink/15 bg-paper">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:px-12 md:py-28">
         <figure className="md:col-span-6">
           <img
             src={studioUrl}
             alt="Inside the GAK Creations studio"
-            width={1200}
-            height={900}
+            width={studioImageSize.width}
+            height={studioImageSize.height}
             loading="lazy"
             className="w-full object-cover"
             onError={handleImageError}
@@ -395,7 +495,7 @@ function StudioNote() {
           </figcaption>
         </figure>
         <div className="md:col-span-6 md:pl-8">
-          <p className="eyebrow">In His Own Words</p>
+          <p className="eyebrow">In his own words</p>
           <blockquote className="mt-8 font-display text-3xl leading-tight md:text-5xl">
             <span className="text-ink/30">“</span>
             Every place has a geometry. I've spent a lifetime walking slowly enough to see it — then
@@ -416,7 +516,7 @@ function Shop() {
   return (
     <section className="border-b border-ink/15">
       <div className="mx-auto max-w-[1400px] px-6 py-24 text-center md:px-12 md:py-32">
-        <p className="eyebrow">The Storefront</p>
+        <p className="eyebrow">The storefront</p>
         <h2 className="mx-auto mt-8 max-w-4xl font-display text-5xl leading-[1] md:text-8xl">
           Bring a <em className="font-light">place</em>
           <br />
@@ -432,97 +532,11 @@ function Shop() {
           rel="noopener noreferrer"
           className="mt-12 inline-flex items-center gap-4 bg-ink px-10 py-5 text-sm font-medium uppercase tracking-[0.25em] text-paper transition hover:bg-ink-soft"
         >
-          Enter the Shop
+          Enter the shop
           <span>→</span>
         </a>
-        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-soft">
-          gak-creations.printify.me
-        </p>
+        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-soft">gak-creations.printify.me</p>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-ink text-paper">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-16 md:grid-cols-12 md:px-12">
-        <div className="md:col-span-5">
-          <div className="flex items-center gap-4">
-            <img src={logoUrl} alt="GAK Creations" className="h-12 w-auto invert" onError={handleImageError} />
-            <p className="font-display text-4xl md:text-5xl">
-              GAK <em className="font-light">Creations</em>
-            </p>
-          </div>
-          <p className="mt-6 max-w-sm text-sm leading-relaxed text-paper/60">
-            The ongoing archive of Gerald Allen Knowles — architecture, art, and lived experience,
-            printed on paper.
-          </p>
-          <p className="mt-6 text-sm text-paper/70">
-            <a href="mailto:gakcreationsx.gmail.com" className="hover:text-paper">
-              gakcreationsx.gmail.com
-            </a>
-          </p>
-        </div>
-
-        <div className="md:col-span-3">
-          <p className="text-[0.65rem] uppercase tracking-[0.28em] text-paper/50">Elsewhere</p>
-          <ul className="mt-5 space-y-3 text-sm">
-            <li>
-              <a
-                href={SHOP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-paper/70"
-              >
-                Printify Storefront
-              </a>
-            </li>
-            <li>
-              <a href="https://www.gakcreations.com" className="hover:text-paper/70">
-                gakcreations.com
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="md:col-span-4">
-          <p className="text-[0.65rem] uppercase tracking-[0.28em] text-paper/50">
-            Customer Care & Legal
-          </p>
-          <ul className="mt-5 grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
-            <li>
-              <a href="/shipping-policy" className="hover:text-paper/70">
-                Shipping Policy
-              </a>
-            </li>
-            <li>
-              <a href="/refund-policy" className="hover:text-paper/70">
-                Refund & Returns
-              </a>
-            </li>
-            <li>
-              <a href="/terms" className="hover:text-paper/70">
-                Terms of Service
-              </a>
-            </li>
-            <li>
-              <a href="/privacy-policy" className="hover:text-paper/70">
-                Privacy Policy
-              </a>
-            </li>
-          </ul>
-          <p className="mt-6 text-xs leading-relaxed text-paper/50">
-            Made to order. Fulfilled worldwide through Printify.
-          </p>
-        </div>
-      </div>
-      <div className="border-t border-paper/15">
-        <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-6 py-6 text-[0.7rem] uppercase tracking-[0.25em] text-paper/50 md:px-12">
-          <span>© {new Date().getFullYear()} GAK Creations</span>
-          <span>Made with care — in the studio</span>
-        </div>
-      </div>
-    </footer>
   );
 }

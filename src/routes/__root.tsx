@@ -11,6 +11,13 @@ import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import {
+  DEFAULT_SEO_DESCRIPTION,
+  DEFAULT_SEO_TITLE,
+  DEFAULT_SOCIAL_IMAGE,
+  DEFAULT_SOCIAL_IMAGE_ALT,
+  seoMeta,
+} from "@/lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -77,15 +84,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GAK Creations — Architectural Art & Travel Collages" },
-      {
-        name: "description",
-        content:
-          "The archive of Gerald Allen Knowles — architectural drawings and travel collages from Europe and the Atlantic islands, available as fine art prints.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "GAK Creations" },
-      { name: "twitter:card", content: "summary_large_image" },
+      ...seoMeta({
+        path: "/",
+        title: DEFAULT_SEO_TITLE,
+        description: DEFAULT_SEO_DESCRIPTION,
+        image: {
+          path: DEFAULT_SOCIAL_IMAGE,
+          alt: DEFAULT_SOCIAL_IMAGE_ALT,
+        },
+      }),
     ],
     links: [
       { rel: "stylesheet", href: appCss },
