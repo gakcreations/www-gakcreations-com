@@ -9,6 +9,7 @@ interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
+  lastmod?: string;
 }
 
 export const Route = createFileRoute("/sitemap.xml")({
@@ -28,6 +29,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/journal/${j.slug}`,
             changefreq: "monthly" as const,
             priority: "0.6",
+            lastmod: j.published,
           })),
           { path: "/shipping-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/refund-policy", changefreq: "yearly", priority: "0.4" },
@@ -41,6 +43,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             `    <loc>${BASE_URL}${e.path}</loc>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
+            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             `  </url>`,
           ]
             .filter(Boolean)

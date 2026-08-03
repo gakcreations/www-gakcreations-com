@@ -1,28 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PolicyPage, PolicyH2 } from "@/components/PolicyPage";
+import {
+  artistNode,
+  breadcrumbNode,
+  canonical,
+  ldJson,
+  organizationNode,
+  seoMeta,
+  webPageNode,
+  websiteNode,
+} from "@/lib/seo";
 
-const URL = "https://www.gakcreations.com/refund-policy";
+const PATH = "/refund-policy";
+const TITLE = "Refund & Returns Policy — GAK Creations";
+const DESCRIPTION =
+  "Returns, refunds, and replacements for GAK Creations fine art prints made to order through Printify.";
 
 export const Route = createFileRoute("/refund-policy")({
   component: RefundPolicy,
   head: () => ({
-    meta: [
-      { title: "Refund & Returns Policy — GAK Creations" },
-      {
-        name: "description",
-        content:
-          "Returns, refunds, and replacements for GAK Creations fine art prints made to order through Printify.",
-      },
-      { property: "og:title", content: "Refund & Returns Policy — GAK Creations" },
-      {
-        property: "og:description",
-        content:
-          "How refunds, returns, and replacements work for made-to-order GAK Creations prints.",
-      },
-      { property: "og:url", content: URL },
-      { property: "og:type", content: "website" },
-    ],
-    links: [{ rel: "canonical", href: URL }],
+    meta: seoMeta({
+      title: TITLE,
+      description: DESCRIPTION,
+      path: PATH,
+    }),
+    links: canonical(PATH),
+    scripts: ldJson([
+      websiteNode,
+      organizationNode,
+      artistNode,
+      webPageNode(PATH, TITLE, DESCRIPTION),
+      breadcrumbNode([
+        { name: "Home", path: "/" },
+        { name: "Refund Policy", path: PATH },
+      ]),
+    ]),
   }),
 });
 

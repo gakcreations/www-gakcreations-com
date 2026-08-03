@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Host: www.gakcreations.com
 Sitemap: https://www.gakcreations.com/sitemap.xml
