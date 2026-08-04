@@ -189,6 +189,13 @@ export const organizationNode = {
     caption: "GAK Creations",
   },
   founder: { "@id": `${SITE_URL}/#artist` },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    email: CONTACT_EMAIL,
+    availableLanguage: "en",
+    contactOption: "TollFree",
+  },
 };
 
 export const artistNode = {
