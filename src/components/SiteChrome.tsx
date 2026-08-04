@@ -1,18 +1,9 @@
-import type { SyntheticEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { SHOP_URL, LOGO_PATH, CONTACT_EMAIL } from "@/lib/seo";
 import { collections } from "@/data/collections";
-import { ResponsiveImage } from "@/components/ResponsiveImage";
+import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
 
-const IMAGE_FALLBACK_SRC =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1200'%3E%3Crect width='1600' height='1200' fill='%23f2ede6'/%3E%3C/svg%3E";
-
-export function handleImageError(event: SyntheticEvent<HTMLImageElement>) {
-  const image = event.currentTarget;
-  if (image.dataset.fallbackApplied === "true") return;
-  image.dataset.fallbackApplied = "true";
-  image.src = IMAGE_FALLBACK_SRC;
-}
+export { handleImageError };
 
 export function SiteHeader() {
   return (
@@ -22,6 +13,7 @@ export function SiteHeader() {
           <ResponsiveImage
             src={LOGO_PATH}
             alt="GAK Creations logo"
+            sizes="120px"
             width={120}
             height={40}
             className="h-9 w-auto md:h-10"
@@ -61,6 +53,7 @@ export function SiteFooter() {
             <ResponsiveImage
               src={LOGO_PATH}
               alt="GAK Creations logo"
+            sizes="120px"
               width={120}
               height={48}
               className="h-12 w-auto invert"

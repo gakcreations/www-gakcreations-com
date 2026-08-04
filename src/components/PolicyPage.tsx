@@ -24,6 +24,7 @@ export function PolicyPage({ eyebrow, title, updated, children }: PolicyPageProp
             <ResponsiveImage
               src="/images/Logo GAK Creations copy.png"
               alt="GAK Creations"
+              sizes="120px"
               className="h-8 w-auto"
               onError={(event) => {
                 const image = event.currentTarget;
