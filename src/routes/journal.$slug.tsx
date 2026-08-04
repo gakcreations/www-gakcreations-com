@@ -4,6 +4,7 @@ import type { JournalPost } from "@/data/journal";
 import { getPost, journal } from "@/data/journal";
 import { getCollection } from "@/data/collections";
 import {
+import { ResponsiveImage } from "@/components/ResponsiveImage";
   seoMeta,
   canonical,
   ldJson,
@@ -111,7 +112,7 @@ function JournalPostPage() {
           </header>
 
           <figure className="mx-auto max-w-[1400px] px-6 pt-12 md:px-12">
-            <img
+            <ResponsiveImage
               src={p.image}
               alt={p.imageAlt}
               width={1400}

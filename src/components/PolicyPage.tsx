@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 const IMAGE_FALLBACK_SRC =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1200'%3E%3Crect width='1600' height='1200' fill='%23f2ede6'/%3E%3C/svg%3E";
@@ -20,7 +21,7 @@ export function PolicyPage({ eyebrow, title, updated, children }: PolicyPageProp
             ← Back to Studio
           </Link>
           <Link to="/" className="flex items-center gap-3">
-            <img
+            <ResponsiveImage
               src="/images/Logo GAK Creations copy.png"
               alt="GAK Creations"
               className="h-8 w-auto"

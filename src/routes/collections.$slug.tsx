@@ -4,6 +4,7 @@ import type { Collection } from "@/data/collections";
 import { collections, getCollection } from "@/data/collections";
 import { journal } from "@/data/journal";
 import {
+import { ResponsiveImage } from "@/components/ResponsiveImage";
   artworkAltText,
   artworkKeywords,
   seoMeta,
@@ -126,7 +127,7 @@ function CollectionPage() {
               </a>
             </div>
             <figure className="md:col-span-7">
-              <img
+              <ResponsiveImage
                 src={c.hero}
                 alt={c.heroAlt}
                 width={1400}
@@ -175,7 +176,7 @@ function CollectionPage() {
                 <article key={w.sku} id={w.sku.toLowerCase()}>
                   <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="group">
                     <div className="overflow-hidden bg-paper-warm">
-                      <img
+                      <ResponsiveImage
                         src={w.image}
                         alt={artworkAltText(w, c.name)}
                         width={900}

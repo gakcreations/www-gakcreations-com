@@ -2,6 +2,7 @@ import type { SyntheticEvent } from "react";
 import { Link } from "@tanstack/react-router";
 import { SHOP_URL, LOGO_PATH, CONTACT_EMAIL } from "@/lib/seo";
 import { collections } from "@/data/collections";
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 
 const IMAGE_FALLBACK_SRC =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1200'%3E%3Crect width='1600' height='1200' fill='%23f2ede6'/%3E%3C/svg%3E";
@@ -18,7 +19,7 @@ export function SiteHeader() {
     <header className="border-b border-ink/15">
       <div className="mx-auto flex max-w-[1400px] flex-wrap items-center justify-between gap-4 px-6 py-5 md:px-12">
         <Link to="/" className="flex items-center gap-3" aria-label="GAK Creations — home">
-          <img
+          <ResponsiveImage
             src={LOGO_PATH}
             alt="GAK Creations logo"
             width={120}
@@ -57,7 +58,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-16 md:grid-cols-12 md:px-12">
         <div className="md:col-span-4">
           <div className="flex items-center gap-4">
-            <img
+            <ResponsiveImage
               src={LOGO_PATH}
               alt="GAK Creations logo"
               width={120}
