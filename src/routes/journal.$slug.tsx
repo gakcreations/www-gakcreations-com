@@ -1,10 +1,10 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import type { JournalPost } from "@/data/journal";
 import { getPost, journal } from "@/data/journal";
 import { getCollection } from "@/data/collections";
 import {
-import { ResponsiveImage } from "@/components/ResponsiveImage";
   seoMeta,
   canonical,
   ldJson,

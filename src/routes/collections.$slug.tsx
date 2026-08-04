@@ -1,10 +1,10 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import type { Collection } from "@/data/collections";
 import { collections, getCollection } from "@/data/collections";
 import { journal } from "@/data/journal";
 import {
-import { ResponsiveImage } from "@/components/ResponsiveImage";
   artworkAltText,
   artworkKeywords,
   seoMeta,

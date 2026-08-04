@@ -1,8 +1,8 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import { collections } from "@/data/collections";
 import {
-import { ResponsiveImage } from "@/components/ResponsiveImage";
   seoMeta,
   canonical,
   ldJson,

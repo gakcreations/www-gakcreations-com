@@ -1,9 +1,9 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
 import {
-import { ResponsiveImage } from "@/components/ResponsiveImage";
   SHOP_URL,
   abs,
   artistNode,
