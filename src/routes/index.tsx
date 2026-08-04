@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import { collections } from "@/data/collections";
@@ -182,7 +183,7 @@ function Hero() {
         <div className="relative md:col-span-7">
           <div className="absolute -left-4 top-0 hidden h-full w-px bg-ink/20 md:block" />
           <figure className="relative">
-            <img
+            <ResponsiveImage
               src={heroArtworkUrl}
               alt="Architectural study of Abbaye Aux Dames, Saintes, France, by Gerald Allen Knowles"
               width={heroImageSize.width}
@@ -338,7 +339,7 @@ function CollectionsPreview() {
             <article key={collection.slug}>
               <Link to="/collections/$slug" params={{ slug: collection.slug }} className="group block">
                 <div className="overflow-hidden bg-paper-warm">
-                  <img
+                  <ResponsiveImage
                     src={collection.hero}
                     alt={collection.heroAlt}
                     width={getImageDimensions(collection.hero)?.width ?? 1181}
@@ -387,7 +388,7 @@ function FeaturedWorks() {
           {featuredWorks.map(({ collection, work, fragmentId }) => (
             <article key={work.sku} id={fragmentId}>
               <div className="overflow-hidden bg-paper-warm">
-                <img
+                <ResponsiveImage
                   src={work.image}
                   alt={artworkAltText(work, collection.name)}
                   width={getImageDimensions(work.image)?.width ?? 900}
@@ -453,7 +454,7 @@ function JournalHighlights() {
           {featuredPosts.map((post) => (
             <article key={post.slug}>
               <Link to="/journal/$slug" params={{ slug: post.slug }} className="group block">
-                <img
+                <ResponsiveImage
                   src={post.image}
                   alt={post.imageAlt}
                   width={800}
@@ -481,7 +482,7 @@ function StudioNote() {
     <section className="border-b border-ink/15 bg-paper">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-20 md:grid-cols-12 md:px-12 md:py-28">
         <figure className="md:col-span-6">
-          <img
+          <ResponsiveImage
             src={studioUrl}
             alt="Inside the GAK Creations studio"
             width={studioImageSize.width}

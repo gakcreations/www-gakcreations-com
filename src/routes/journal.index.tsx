@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import { journal } from "@/data/journal";
@@ -90,7 +91,7 @@ function JournalIndex() {
                   className="group md:col-span-4"
                   aria-label={p.title}
                 >
-                  <img
+                  <ResponsiveImage
                     src={p.image}
                     alt={p.imageAlt}
                     width={800}

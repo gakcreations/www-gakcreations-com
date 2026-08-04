@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import { collections } from "@/data/collections";
@@ -89,7 +90,7 @@ function CollectionsIndex() {
               <article key={c.slug}>
                 <Link to="/collections/$slug" params={{ slug: c.slug }} className="group block">
                   <div className="overflow-hidden bg-paper-warm">
-                    <img
+                    <ResponsiveImage
                       src={c.hero}
                       alt={c.heroAlt}
                       width={900}

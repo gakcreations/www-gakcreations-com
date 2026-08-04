@@ -1,3 +1,4 @@
+import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
 import type { JournalPost } from "@/data/journal";
@@ -111,7 +112,7 @@ function JournalPostPage() {
           </header>
 
           <figure className="mx-auto max-w-[1400px] px-6 pt-12 md:px-12">
-            <img
+            <ResponsiveImage
               src={p.image}
               alt={p.imageAlt}
               width={1400}
