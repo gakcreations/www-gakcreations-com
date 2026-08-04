@@ -86,7 +86,7 @@ function CollectionsIndex() {
 
         <section className="border-b border-ink/15">
           <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 py-16 md:grid-cols-2 md:gap-10 md:px-12 md:py-24">
-            {collections.map((c) => (
+            {collections.map((c, index) => (
               <article key={c.slug}>
                 <Link to="/collections/$slug" params={{ slug: c.slug }} className="group block">
                   <div className="overflow-hidden bg-paper-warm">
@@ -95,7 +95,8 @@ function CollectionsIndex() {
                       alt={c.heroAlt}
                       width={900}
                       height={1100}
-                      loading="lazy"
+                      loading={index === 0 ? undefined : "lazy"}
+                      fetchPriority={index === 0 ? "high" : undefined}
                       className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
                       onError={handleImageError}
                     />
