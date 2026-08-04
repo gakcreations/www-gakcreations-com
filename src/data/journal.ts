@@ -304,6 +304,77 @@ export const journal: JournalPost[] = [
     ],
     relatedCollection: "gaudi-and-modern-landmarks",
   },
+  {
+    slug: "when-architecture-becomes-art",
+    title: "When Architecture Becomes Art",
+    seoTitle: "When Architecture Becomes Art — Architecture Art Explained | GAK Creations",
+    seoDescription:
+      "What turns a building into architecture art? An architect and artist on geometry, light and restraint — and how to choose architectural art prints for your walls.",
+    excerpt:
+      "Where the discipline of building drawing ends and artwork begins — and what to look for when buying architecture art for a room.",
+    published: "2026-08-04",
+    readingTime: "7 min read",
+    keywords: [
+      "architecture art",
+      "architectural art prints",
+      "architecture wall art",
+      "buildings as art",
+      "art for architects",
+    ],
+    image: ABBAYE,
+    imageAlt:
+      "Architectural art print of Abbaye aux Dames, Saintes, France, with visible construction lines and watercolour wash",
+    intro: [
+      "Every architect draws. Very few of those drawings become art. The line between the two is not talent and it is not subject matter — it is intention. A construction drawing is made so a building can be built. An artwork is made so a place can be felt. The same hand, the same pencil, and the same façade can produce either.",
+      "This note sets out where that line falls in the GAK Creations archive, and what it means practically if you are looking for architecture art to live with rather than a technical print to file away.",
+    ],
+    body: [
+      {
+        heading: "Architecture teaches you what to leave out",
+        paragraphs: [
+          "Years of professional drawing train the eye to find the governing geometry of a building before anything else: the module that repeats, the line that carries the load, the proportion that everything else answers to. That training is the reason an architectural artist can suggest an entire abbey with six confident strokes while a careful copyist is still counting windows.",
+          "Architecture art works because of subtraction. The drawing keeps the structure that makes the place recognisable and discards the rest — the parked cars, the signage, the accidental clutter of a Tuesday afternoon. What remains is the quiet geometry of the place, which is what the viewer actually remembers.",
+        ],
+      },
+      {
+        heading: "The moment a building drawing becomes artwork",
+        paragraphs: [
+          "There is usually a single decision that tips a sheet over. Sometimes it is leaving the pencil construction lines visible so the viewer sees the thinking. Sometimes it is letting a wash granulate and run rather than correcting it. Sometimes it is choosing an eye-level that no survey drawing would ever use, because that is where a person actually stands.",
+          "None of these decisions improve the drawing's accuracy. All of them improve its truth. That is the difference: a technical drawing answers what the building measures, an artwork answers what the building is like to stand in front of.",
+        ],
+      },
+      {
+        heading: "Light is the second subject",
+        paragraphs: [
+          "Buildings are static; light is not. Romanesque stone in Saintes reads heavy and shadowed at midday and almost weightless at dusk. Atlantic light on a Fuerteventura chapel bleaches colour out of the walls and pushes everything into silhouette. A metallic collage of the Guggenheim in Bilbao changes as you move past it, exactly as the titanium does.",
+          "Good architecture art treats light as a co-subject rather than a finishing touch. It is also the most practical thing to consider when buying: hang a high-contrast architectural study where daylight rakes across it, and hang a soft-wash piece where the light is even.",
+        ],
+      },
+      {
+        heading: "Why architects and non-architects buy the same prints",
+        paragraphs: [
+          "Architects tend to read these sheets structurally — they follow the construction lines, notice where a proportion has been judged rather than measured, and enjoy seeing the working exposed. Everyone else reads them as places: a street remembered, a holiday, a church seen once on a walk.",
+          "Both readings are correct, and a drawing that supports both is doing its job. It is also why architecture wall art suits studios, offices and hospitality interiors as comfortably as it suits a hallway at home — it rewards a glance and it rewards a long look.",
+        ],
+      },
+      {
+        heading: "Choosing architecture art for a room",
+        paragraphs: [
+          "Scale first: a single large architectural study anchors a wall better than three small ones competing for attention. Pair second: a Romanesque façade and a modern curve hung together make an argument about a century of building, and that argument gives a room a subject.",
+          "Paper last, but it matters. Museum-grade matte stock holds granulating wash and fine construction lines without gloss glare, which is why every print in the archive is produced that way and made to order.",
+        ],
+      },
+      {
+        heading: "Where to start in the archive",
+        paragraphs: [
+          "The architecture collection holds the strictest studies — abbeys, arches and Romanesque fronts drawn on location. The Gaudí and modern landmarks collection carries the same discipline into curved and metallic surfaces, and the Fuerteventura collection shows what happens when the architecture is small and the landscape does most of the talking.",
+          "If you want the reasoning behind the marks before you choose, the note on architectural sketching on location covers the working method sheet by sheet.",
+        ],
+      },
+    ],
+    relatedCollection: "architecture",
+  },
 ];
+
 
 export const getPost = (slug: string) => journal.find((p) => p.slug === slug);
