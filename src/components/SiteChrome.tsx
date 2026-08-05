@@ -104,6 +104,12 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/architectural-art-prints" className="hover:text-paper/70">
+                Print Buying Guide
+              </Link>
+            </li>
+
+            <li>
               <a
                 href={SHOP_URL}
                 target="_blank"
