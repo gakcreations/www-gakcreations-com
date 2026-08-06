@@ -3,9 +3,9 @@ export const SHOP_URL = "https://gak-creations.printify.me";
 export const SITE_NAME = "GAK Creations";
 export const ARTIST_NAME = "Gerald Allen Knowles";
 export const CONTACT_EMAIL = "info@gakcreations.com";
-export const DEFAULT_SEO_TITLE = "GAK Creations — Architectural Art & Travel Collages";
+export const DEFAULT_SEO_TITLE = "GAK Creations — Fine Art Prints, Architectural Drawings & Coastal Wall Art";
 export const DEFAULT_SEO_DESCRIPTION =
-  "Architectural art prints, coastal artwork, and travel-inspired collages by Gerald Allen Knowles, available as museum-quality fine art prints from GAK Creations.";
+  "Discover GAK Creations — a global art brand where imagination, craftsmanship, and culture converge in fine art prints, architectural drawings, coastal wall art, and travel collages. Worldwide shipping. Museum-quality prints by Gerald Allen Knowles.";
 export const DEFAULT_SOCIAL_IMAGE = "/images/Abbaye Aux Dames Saintes France.jpg";
 export const DEFAULT_SOCIAL_IMAGE_ALT =
   "Architectural art print of Abbaye aux Dames in Saintes by Gerald Allen Knowles";
@@ -292,7 +292,7 @@ export const websiteNode = {
   name: SITE_NAME,
   inLanguage: "en",
   description:
-    "The archive of architect and artist Gerald Allen Knowles — architectural drawings, coastal artwork and travel collages, available as fine art prints.",
+    "The official website of GAK Creations — a global art brand specialising in fine art prints, architectural drawings, coastal wall art, travel collages, and modern home décor. Worldwide shipping.",
   publisher: { "@id": `${SITE_URL}/#organization` },
 };
 
