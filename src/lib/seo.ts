@@ -35,6 +35,48 @@ export const SHIPPING_COUNTRIES = [
   "NZ",
 ];
 
+const SHIPPING_RATE = {
+  "@type": "MonetaryAmount",
+  value: "5.90",
+  currency: "EUR",
+} as const;
+
+const SHIPPING_DELIVERY_TIME = {
+  "@type": "ShippingDeliveryTime",
+  handlingTime: {
+    "@type": "QuantitativeValue",
+    minValue: 2,
+    maxValue: 7,
+    unitCode: "DAY",
+  },
+  transitTime: {
+    "@type": "QuantitativeValue",
+    minValue: 4,
+    maxValue: 20,
+    unitCode: "DAY",
+  },
+} as const;
+
+const SHIPPING_DETAILS = SHIPPING_COUNTRIES.map((addressCountry) => ({
+  "@type": "OfferShippingDetails",
+  shippingDestination: {
+    "@type": "DefinedRegion",
+    addressCountry,
+  },
+  shippingRate: SHIPPING_RATE,
+  deliveryTime: SHIPPING_DELIVERY_TIME,
+}));
+
+const MERCHANT_RETURN_POLICIES = SHIPPING_COUNTRIES.map((applicableCountry) => ({
+  "@type": "MerchantReturnPolicy",
+  applicableCountry,
+  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+  merchantReturnDays: 30,
+  returnMethod: "https://schema.org/ReturnByMail",
+  returnFees: "https://schema.org/FreeReturn",
+  merchantReturnLink: `${SITE_URL}/refund-policy`,
+}));
+
 const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
   "/images/Abbaye Aux Dames Saintes France.jpg": { width: 1181, height: 1191 },
   "/images/Chruch of San Juan Bautista de Banos, Spain.jpg": { width: 2669, height: 3109 },
@@ -330,42 +372,8 @@ export function productNode(work: {
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: { "@id": `${SITE_URL}/#organization` },
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingDestination: SHIPPING_COUNTRIES.map((addressCountry) => ({
-          "@type": "DefinedRegion",
-          addressCountry,
-        })),
-        shippingRate: {
-          "@type": "MonetaryAmount",
-          value: "5.90",
-          currency: "EUR",
-        },
-        deliveryTime: {
-          "@type": "ShippingDeliveryTime",
-          handlingTime: {
-            "@type": "QuantitativeValue",
-            minValue: 2,
-            maxValue: 7,
-            unitCode: "DAY",
-          },
-          transitTime: {
-            "@type": "QuantitativeValue",
-            minValue: 4,
-            maxValue: 20,
-            unitCode: "DAY",
-          },
-        },
-      },
-      hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: SHIPPING_COUNTRIES,
-        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: 30,
-        returnMethod: "https://schema.org/ReturnByMail",
-        returnFees: "https://schema.org/FreeReturn",
-        merchantReturnLink: `${SITE_URL}/refund-policy`,
-      },
+      shippingDetails: SHIPPING_DETAILS,
+      hasMerchantReturnPolicy: MERCHANT_RETURN_POLICIES,
     },
   };
 }
