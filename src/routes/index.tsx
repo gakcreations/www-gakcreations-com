@@ -23,9 +23,9 @@ import {
 
 const heroArtworkUrl = "/images/Abbaye Aux Dames Saintes France.jpg";
 const studioUrl = "/images/studio.jpg";
-const HOME_TITLE = "GAK Creations | Architectural Art Prints, Coastal Artwork & Travel Collages";
+const HOME_TITLE = "GAK Creations | Fine Art Prints, Architectural Drawings, Coastal & Travel Wall Art";
 const HOME_DESCRIPTION =
-  "Discover GAK Creations, the studio of Gerald Allen Knowles: architectural art prints, coastal artwork, Fuerteventura landscapes and travel-inspired collages available as museum-quality fine art prints.";
+  "Discover GAK Creations — a global art brand where imagination, craftsmanship, and culture converge. Shop museum-quality fine art prints: architectural drawings, coastal wall art, travel-inspired collages, and modern home décor by Gerald Allen Knowles. Shipped worldwide.";
 
 const featuredCollections = collections.filter((collection) =>
   ["architecture", "coastal", "travel", "fuerteventura", "gaudi-and-modern-landmarks", "nature"].includes(
@@ -64,6 +64,33 @@ const featuredWorks = [
 
 const featuredPosts = journal.slice(0, 3);
 
+const HOME_FAQS: Array<{ q: string; a: string }> = [
+  {
+    q: "What kind of art does GAK Creations sell?",
+    a: "GAK Creations offers museum-quality fine art prints in four main categories: architectural drawings (abbeys, churches, modern landmarks), coastal wall art (harbour studies, Atlantic seascapes), travel-inspired collages (layered mixed-media works from Europe and the Canary Islands), and nature studies. All works are by architect and artist Gerald Allen Knowles and are printed on museum-grade matte paper with pigment inks.",
+  },
+  {
+    q: "Are the prints made to order?",
+    a: "Yes. Every fine art print at GAK Creations is made to order via our Printify partner network, dispatched from the production facility nearest you. Production typically takes two to seven business days, with delivery in four to twenty business days depending on your location.",
+  },
+  {
+    q: "Do you ship internationally?",
+    a: "Yes — GAK Creations ships worldwide. Prints are produced and dispatched from facilities in Europe, North America, and Australia to keep transit times short and reduce carbon footprint.",
+  },
+  {
+    q: "What paper and print quality do you use?",
+    a: "All prints are produced on museum-grade matte fine art paper using archival pigment inks. The result preserves the visible construction lines, granulating washes, and layered textures of the original drawings.",
+  },
+  {
+    q: "How do I choose the right size art print for my wall?",
+    a: "A good rule of thumb is to select a print that fills roughly two thirds of the width of the furniture below it. For architectural drawings with fine line work, larger sizes are recommended so the detail remains legible. Our architectural buying guide covers sizing, framing, and placement in detail — find it under Architectural Art Prints in the navigation.",
+  },
+  {
+    q: "What is your returns policy?",
+    a: "We replace or refund any item that arrives damaged or does not match the product description. Contact us within 30 days of delivery with a photo and we will resolve it promptly. Full details are on our refund policy page.",
+  },
+];
+
 export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
@@ -76,12 +103,20 @@ export const Route = createFileRoute("/")({
         alt: "Architectural drawing of Abbaye aux Dames in Saintes by Gerald Allen Knowles",
       },
       keywords: [
+        "fine art prints",
         "architectural art prints",
-        "coastal artwork",
-        "travel inspired art",
+        "architectural drawings",
+        "coastal wall art",
+        "travel collages",
+        "modern home décor",
+        "creative studio collections",
         "fuerteventura art prints",
         "gaudi architecture art",
-        "fine art prints online",
+        "museum quality art prints",
+        "art prints for the home",
+        "travel inspired wall art",
+        "GAK Creations",
+        "Gerald Allen Knowles",
       ],
     }),
     links: canonical("/"),
@@ -120,6 +155,18 @@ export const Route = createFileRoute("/")({
           offerUrl: SHOP_URL,
         }),
       ),
+      {
+        "@type": "FAQPage",
+        "@id": `${abs("/")}#faq`,
+        mainEntity: HOME_FAQS.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: a,
+          },
+        })),
+      },
     ]),
   }),
 });
@@ -136,6 +183,7 @@ function Index() {
         <FeaturedWorks />
         <JournalHighlights />
         <StudioNote />
+        <FAQ />
         <Shop />
       </main>
       <SiteFooter />
@@ -508,6 +556,29 @@ function StudioNote() {
           </p>
           <div className="rule-line mt-10 w-24" />
         </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQ() {
+  return (
+    <section className="border-b border-ink/15" id="faq">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-28">
+        <div className="mb-12">
+          <p className="eyebrow">Common questions</p>
+          <h2 className="mt-6 font-display text-4xl md:text-5xl">
+            Frequently asked <em className="font-light">questions</em>
+          </h2>
+        </div>
+        <dl className="divide-y divide-ink/15">
+          {HOME_FAQS.map(({ q, a }) => (
+            <div key={q} className="py-6 md:grid md:grid-cols-12 md:gap-8">
+              <dt className="font-display text-xl leading-snug text-ink md:col-span-5 md:text-2xl">{q}</dt>
+              <dd className="mt-4 text-sm leading-relaxed text-ink-soft md:col-span-7 md:mt-0">{a}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

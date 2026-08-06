@@ -1,15 +1,108 @@
 # GAK Creations
 
-> The archive of Gerald Allen Knowles — architect, artist, and traveler. Architectural drawings and travel collages from Europe and the Atlantic islands, available as fine art prints.
+> GAK Creations is a global art brand and creative studio founded by Gerald Allen Knowles — architect, artist, and traveler. The brand specialises in fine art prints, architectural drawings, coastal wall art, travel-inspired collages, and modern home décor. Museum-quality prints are made to order and shipped worldwide via Printify.
+>
+> Primary website: https://www.gakcreations.com  
+> Shop: https://gak-creations.printify.me  
+> Contact: info@gakcreations.com
 
-## Pages
+## About GAK Creations
 
-- [Home](/): About the artist and selected works from the collection.
-- [Shop](https://gak-creations.printify.me): Fine art prints, made to order and shipped worldwide via Printify.
+GAK Creations is where imagination, craftsmanship, and cultural diversity converge in a curated portfolio of original artworks. Every piece begins on location — sketchbook in hand — and is edited from a real practice built over a lifetime of travel through Europe, the Atlantic islands, and beyond. The result is a body of work that combines architectural precision with poetic atmosphere: abbeys and modern landmarks rendered in ink and wash; Atlantic harbours reduced to their essential geometry; volcanic Canary Island landscapes held together by the same discipline that once set out plans on a drafting table.
 
-## Optional
+### Artist
 
+**Gerald Allen Knowles** (known as GAK) is an architect and artist whose drawing practice was shaped by years spent reading buildings, surveying streets, and sketching while travelling. He trained as an architect before he thought of himself as an artist; that training never left the hand. His work treats every place as a structure first and an atmosphere second — intimate without becoming nostalgic.
+
+- **Specialisms:** architectural drawing, urban sketching, mixed-media collage, coastal landscape painting, travel illustration, fine art printmaking
+- **Territories:** France (Saintes, Bordeaux), Spain (Bilbao, Barcelona, Castile), Fuerteventura (Canary Islands), coastal Atlantic Europe
+- **Materials:** ink, watercolour wash, pencil, collage, pigment inks on museum-grade matte paper
+
+## Collections
+
+### Architecture Collection
+Hand-drawn abbeys, churches, and modern landmarks in ink, wash, and collage. Romanesque buildings in south-west France, brick-and-stone churches on the Castilian plain, and titanium curves in Bilbao that answer the river rather than the street.
+
+- **Page:** /collections/architecture
+- **Keywords:** architectural art prints, architectural drawing prints, building sketch wall art, abbey drawing print, architecture line art poster, architect gift
+
+### Coastal Artwork Collection
+Atlantic harbours, fishing boats, sea walls, and coastal light studies. Each piece captures the specific quality of light on water — the way a hull shape anchors a composition, how a harbour wall holds the tide.
+
+- **Page:** /collections/coastal
+- **Keywords:** coastal wall art, coastal art prints, harbour wall art, fishing boat art print, Atlantic seascape print, seaside home décor
+
+### Travel Collages Collection
+Layered mixed-media collages combining ink drawings, torn paper, printed fragments, and painted passages — records of specific journeys assembled into singular images. Inspired by travel through Europe and the Atlantic islands.
+
+- **Page:** /collections/travel
+- **Keywords:** travel collage print, travel inspired wall art, mixed media travel art, europe travel art print, wanderlust wall art
+
+### Fuerteventura Landscapes Collection
+Volcanic landscapes, desert light, and Atlantic wind — the raw, elemental terrain of Fuerteventura in the Canary Islands. Ochre earth, weathered chapels, and the long light of the Atlantic captured in ink, wash, and collage.
+
+- **Page:** /collections/fuerteventura
+- **Keywords:** Fuerteventura art print, Canary Islands wall art, volcanic landscape print, desert landscape art, Atlantic island art
+
+### Gaudí and Modern Landmarks Collection
+Works inspired by Gaudí's Barcelona and the great buildings of the modern movement: Sagrada Família, Casa Batlló, the Guggenheim Bilbao. Contemporary architectural art prints for design-led spaces.
+
+- **Page:** /collections/gaudi-and-modern-landmarks
+- **Keywords:** Gaudi architecture print, Sagrada Familia art print, Casa Batllo print, Guggenheim Bilbao art, modern architecture wall art
+
+### Nature Studies Collection
+Organic forms, botanical studies, and the quiet geometry of the natural world — trees, plants, and landscapes where form and weather meet.
+
+- **Page:** /collections/nature
+- **Keywords:** nature art print, botanical wall art, landscape art print, organic form print, nature study artwork
+
+## Products and Shop
+
+All prints are made to order on museum-grade matte fine art paper with archival pigment inks. Available in multiple sizes. Shipped worldwide via Printify partner network.
+
+- **Shop URL:** https://gak-creations.printify.me
+- **Currency:** EUR (prices from €29)
+- **Shipping destinations:** US, CA, GB, IE, FR, ES, DE, NL, BE, IT, PT, SE, DK, AU, NZ and more
+- **Production time:** 2–7 business days
+- **Delivery time:** 4–20 business days depending on destination
+- **Returns:** 30-day return window for damaged or misprinted items
+
+## Key Pages
+
+- [Home](/): Brand overview, featured collections, featured prints, studio note, and FAQ.
+- [Collections](/collections): Full catalogue overview — six collections of fine art prints.
+- [Architecture Collection](/collections/architecture): Architectural art prints — abbeys, churches, modern landmarks.
+- [Coastal Artwork](/collections/coastal): Coastal wall art — harbour studies and Atlantic seascapes.
+- [Travel Collages](/collections/travel): Travel-inspired mixed-media collages.
+- [Fuerteventura Landscapes](/collections/fuerteventura): Canary Islands volcanic landscape prints.
+- [Gaudí and Modern Landmarks](/collections/gaudi-and-modern-landmarks): Contemporary architectural art prints.
+- [Nature Studies](/collections/nature): Nature art prints and botanical studies.
+- [Studio Journal](/journal): Notes on architectural sketching, coastal artwork, travel collage, and the studio process.
+- [Architectural Art Prints Buyer's Guide](/architectural-art-prints): How to choose, frame, and hang architectural art prints — sizing guide, framing advice, care tips.
+- [Shop](https://gak-creations.printify.me): Fine art prints, made to order and shipped worldwide.
+- [Contact](/contact): Customer care — orders, shipping, returns.
 - [Shipping Policy](/shipping-policy): Production times, delivery estimates, and carriers.
-- [Refund & Returns Policy](/refund-policy): Returns, refunds, and replacements.
+- [Refund & Returns Policy](/refund-policy): Returns, refunds, and replacements within 30 days.
 - [Terms of Service](/terms): Website and purchase terms.
 - [Privacy Policy](/privacy-policy): How personal information is collected and used.
+
+## Frequently Asked Questions
+
+**What kind of art does GAK Creations sell?**  
+GAK Creations offers museum-quality fine art prints in four main categories: architectural drawings (abbeys, churches, modern landmarks), coastal wall art (harbour studies, Atlantic seascapes), travel-inspired collages (layered mixed-media works from Europe and the Canary Islands), and nature studies. All works are by architect and artist Gerald Allen Knowles.
+
+**Are the prints made to order?**  
+Yes. Every fine art print is made to order via the Printify partner network, dispatched from the production facility nearest you. Production typically takes 2–7 business days, with delivery in 4–20 business days.
+
+**Do you ship internationally?**  
+Yes — GAK Creations ships worldwide to the US, Canada, UK, Ireland, France, Spain, Germany, Netherlands, Belgium, Italy, Portugal, Sweden, Denmark, Australia, New Zealand, and more.
+
+**What paper and print quality do you use?**  
+All prints are produced on museum-grade matte fine art paper using archival pigment inks. The result preserves the visible construction lines, granulating washes, and layered textures of the original drawings.
+
+**What is your returns policy?**  
+Damaged or misprinted items are replaced or refunded. Contact us within 30 days of delivery with a photo and the issue will be resolved promptly.
+
+**How do I choose the right size art print?**  
+A good rule of thumb: the print should fill roughly two thirds of the width of the furniture below it. For architectural drawings with fine line work, larger sizes are recommended. See our full buyer's guide at /architectural-art-prints.
+
