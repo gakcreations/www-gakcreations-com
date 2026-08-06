@@ -16,6 +16,25 @@ export const abs = (path: string) => `${SITE_URL}${path.startsWith("/") ? path :
 
 export const LOGO_PATH = "/images/Logo GAK Creations copy.png";
 
+/** ISO 3166-1 alpha-2 codes — Google requires 2-letter codes, not "Worldwide". */
+export const SHIPPING_COUNTRIES = [
+  "US",
+  "CA",
+  "GB",
+  "IE",
+  "FR",
+  "ES",
+  "DE",
+  "NL",
+  "BE",
+  "IT",
+  "PT",
+  "SE",
+  "DK",
+  "AU",
+  "NZ",
+];
+
 const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
   "/images/Abbaye Aux Dames Saintes France.jpg": { width: 1181, height: 1191 },
   "/images/Chruch of San Juan Bautista de Banos, Spain.jpg": { width: 2669, height: 3109 },
@@ -313,11 +332,34 @@ export function productNode(work: {
       seller: { "@id": `${SITE_URL}/#organization` },
       shippingDetails: {
         "@type": "OfferShippingDetails",
-        shippingDestination: { "@type": "DefinedRegion", addressCountry: "Worldwide" },
+        shippingDestination: SHIPPING_COUNTRIES.map((addressCountry) => ({
+          "@type": "DefinedRegion",
+          addressCountry,
+        })),
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "5.90",
+          currency: "EUR",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            minValue: 2,
+            maxValue: 7,
+            unitCode: "DAY",
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            minValue: 4,
+            maxValue: 20,
+            unitCode: "DAY",
+          },
+        },
       },
       hasMerchantReturnPolicy: {
         "@type": "MerchantReturnPolicy",
-        applicableCountry: "Worldwide",
+        applicableCountry: SHIPPING_COUNTRIES,
         returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
         merchantReturnDays: 30,
         returnMethod: "https://schema.org/ReturnByMail",
