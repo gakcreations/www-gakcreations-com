@@ -1,5 +1,5 @@
 export const SITE_URL = "https://www.gakcreations.com";
-export const SHOP_URL = "https://gak-creations.printify.me";
+export const SHOP_URL = "https://artprints.gakcreations.com";
 export const SITE_NAME = "GAK Creations";
 export const ARTIST_NAME = "Gerald Allen Knowles";
 export const CONTACT_EMAIL = "info@gakcreations.com";
