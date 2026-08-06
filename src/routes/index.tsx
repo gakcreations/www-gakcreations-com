@@ -205,26 +205,24 @@ function Hero() {
             <span className="italic font-light">of</span> places.
           </h1>
           <p className="mt-8 max-w-md text-base leading-relaxed text-ink-soft md:text-lg">
-            Architectural drawings, coastal studies, and travel-inspired collages from a lifetime of
-            wandering through Europe and the Atlantic islands — now available as museum-quality fine
-            art prints.
+            Architectural sketches, coastal artwork, and travel collages — created across Europe and the Atlantic islands.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-6">
-            <Link
-              to="/collections"
-              className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
-            >
-              Explore the collections
-              <span className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
             <a
               href={SHOP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
+            >
+              Shop Prints
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+            <Link
+              to="/collections"
               className="text-sm uppercase tracking-[0.2em] text-ink underline underline-offset-8 decoration-ink/40 hover:decoration-ink"
             >
-              Shop the prints
-            </a>
+              Explore Collections
+            </Link>
           </div>
         </div>
 
