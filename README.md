@@ -26,7 +26,7 @@ All prints are fulfilled through Printify at:
 This project is created and maintained using:
 
 - **Lovable** — AI‑assisted development  
-- **Next.js** — modern React framework  
+- **TanStack Start (React + Vite)** — modern React framework/runtime  
 - **Vercel** — hosting & analytics  
 - **GitHub** — version control and collaboration  
 
@@ -50,3 +50,19 @@ git clone <this-repository-url>
 cd <repository-name>
 npm i
 npm run dev
+
+## 📈 Analytics setup (GA4)
+
+Google Analytics 4 is installed globally from `src/routes/__root.tsx`.
+
+- Default production Measurement ID (when no env override is set): `G-FNF4XTQ40M`
+- Optional override via environment variable: `VITE_GA_MEASUREMENT_ID`
+- The fallback ID is intentionally public (GA4 Measurement IDs are non-secret identifiers).
+- `VITE_GA_MEASUREMENT_ID` is read at build time (Vite public env behavior), so set it before deploying.
+
+Example `.env`:
+```sh
+VITE_GA_MEASUREMENT_ID=G-FNF4XTQ40M
+```
+
+Route-change page views are wired in `src/routes/__root.tsx` and use the helper in `src/lib/analytics.ts`.
