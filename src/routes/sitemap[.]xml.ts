@@ -12,20 +12,31 @@ interface SitemapEntry {
   lastmod?: string;
 }
 
+// This sitemap only publishes routes that exist in this application.
+// Search engines should crawl the home page, collection pages, journal content,
+// and policy/contact pages listed below. Product and category URLs are
+// intentionally excluded because this site does not define those routes.
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
       GET: async () => {
-        const entries: SitemapEntry[] = [
+        const homeEntries: SitemapEntry[] = [
           { path: "/", changefreq: "weekly", priority: "1.0" },
+        ];
+
+        const collectionEntries: SitemapEntry[] = [
+          // Collection landing pages that organize the site's artwork.
           { path: "/collections", changefreq: "weekly", priority: "0.9" },
           { path: "/architectural-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-08-05" },
-
           ...collections.map((c) => ({
             path: `/collections/${c.slug}`,
             changefreq: "monthly" as const,
             priority: "0.8",
           })),
+        ];
+
+        const journalEntries: SitemapEntry[] = [
+          // Journal index and individual posts.
           { path: "/journal", changefreq: "weekly", priority: "0.7" },
           ...journal.map((j) => ({
             path: `/journal/${j.slug}`,
@@ -33,11 +44,22 @@ export const Route = createFileRoute("/sitemap.xml")({
             priority: "0.6",
             lastmod: j.published,
           })),
+        ];
+
+        const policyEntries: SitemapEntry[] = [
+          // Static contact and legal pages that should remain indexable.
           { path: "/contact", changefreq: "yearly", priority: "0.5" },
           { path: "/shipping-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/refund-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/terms", changefreq: "yearly", priority: "0.3" },
           { path: "/privacy-policy", changefreq: "yearly", priority: "0.3" },
+        ];
+
+        const entries: SitemapEntry[] = [
+          ...homeEntries,
+          ...collectionEntries,
+          ...journalEntries,
+          ...policyEntries,
         ];
 
         const urls = entries.map((e) =>
