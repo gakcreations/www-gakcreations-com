@@ -35,6 +35,14 @@ const gaScripts = GA_IS_ENABLED && GA_SCRIPT_SRC
     ]
   : [];
 
+const CLARITY_PROJECT_ID = "xy2c2koura";
+
+const clarityScripts = [
+  {
+    children: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","${CLARITY_PROJECT_ID}");`,
+  },
+];
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -125,7 +133,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500;600&display=swap",
       },
     ],
-    scripts: gaScripts,
+    scripts: [...clarityScripts, ...gaScripts],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
