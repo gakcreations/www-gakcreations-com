@@ -31,6 +31,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/architectural-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-08-05" },
           { path: "/coastal-wall-art", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
           { path: "/travel-collage-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+          { path: "/fuerteventura-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+
           ...collections.map((c) => ({
             path: `/collections/${c.slug}`,
             changefreq: "monthly" as const,
