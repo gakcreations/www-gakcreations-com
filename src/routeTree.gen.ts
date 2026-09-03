@@ -9,12 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TravelCollagePrintsRouteImport } from './routes/travel-collage-prints'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
 import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
@@ -24,6 +26,11 @@ import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
 import { Route as ArtworkSlugRouteImport } from './routes/artwork.$slug'
 
+const TravelCollagePrintsRoute = TravelCollagePrintsRouteImport.update({
+  id: '/travel-collage-prints',
+  path: '/travel-collage-prints',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -52,6 +59,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoastalWallArtRoute = CoastalWallArtRouteImport.update({
+  id: '/coastal-wall-art',
+  path: '/coastal-wall-art',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArchitecturalArtPrintsRoute = ArchitecturalArtPrintsRouteImport.update({
@@ -98,12 +110,14 @@ const ArtworkSlugRoute = ArtworkSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
+  '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/travel-collage-prints': typeof TravelCollagePrintsRoute
   '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -114,12 +128,14 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
+  '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/travel-collage-prints': typeof TravelCollagePrintsRoute
   '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -131,12 +147,14 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
+  '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/travel-collage-prints': typeof TravelCollagePrintsRoute
   '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -149,12 +167,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/architectural-art-prints'
+    | '/coastal-wall-art'
     | '/contact'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/travel-collage-prints'
     | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
@@ -165,12 +185,14 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/architectural-art-prints'
+    | '/coastal-wall-art'
     | '/contact'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/travel-collage-prints'
     | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
@@ -181,12 +203,14 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/architectural-art-prints'
+    | '/coastal-wall-art'
     | '/contact'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/travel-collage-prints'
     | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
@@ -198,12 +222,14 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArchitecturalArtPrintsRoute: typeof ArchitecturalArtPrintsRoute
+  CoastalWallArtRoute: typeof CoastalWallArtRoute
   ContactRoute: typeof ContactRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ShippingPolicyRoute: typeof ShippingPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  TravelCollagePrintsRoute: typeof TravelCollagePrintsRoute
   ArtworkSlugRoute: typeof ArtworkSlugRoute
   CollectionsSlugRoute: typeof CollectionsSlugRoute
   JournalSlugRoute: typeof JournalSlugRoute
@@ -214,6 +240,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/travel-collage-prints': {
+      id: '/travel-collage-prints'
+      path: '/travel-collage-prints'
+      fullPath: '/travel-collage-prints'
+      preLoaderRoute: typeof TravelCollagePrintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -254,6 +287,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coastal-wall-art': {
+      id: '/coastal-wall-art'
+      path: '/coastal-wall-art'
+      fullPath: '/coastal-wall-art'
+      preLoaderRoute: typeof CoastalWallArtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/architectural-art-prints': {
@@ -318,12 +358,14 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArchitecturalArtPrintsRoute: ArchitecturalArtPrintsRoute,
+  CoastalWallArtRoute: CoastalWallArtRoute,
   ContactRoute: ContactRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ShippingPolicyRoute: ShippingPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  TravelCollagePrintsRoute: TravelCollagePrintsRoute,
   ArtworkSlugRoute: ArtworkSlugRoute,
   CollectionsSlugRoute: CollectionsSlugRoute,
   JournalSlugRoute: JournalSlugRoute,
