@@ -374,7 +374,86 @@ export const journal: JournalPost[] = [
     ],
     relatedCollection: "architecture",
   },
+  {
+    slug: "what-size-art-print-should-i-buy",
+    title: "What Size Art Print Should You Buy? A Room-by-Room Guide",
+    seoTitle: "What Size Art Print Should I Buy? Room-by-Room Guide | GAK Creations",
+    seoDescription:
+      "How to choose art print sizes for a sofa, bed, hallway or gallery wall — hanging heights, spacing, framing allowances and the two-thirds rule, from an architect.",
+    excerpt:
+      "The two-thirds rule, the 145 cm centre line and how much wall a frame really eats — practical sizing advice before you order a print.",
+    published: "2026-09-03",
+    readingTime: "7 min read",
+    keywords: [
+      "what size art print to buy",
+      "art print size guide",
+      "how high to hang art",
+      "gallery wall spacing",
+      "wall art sizes",
+      "framing art prints",
+    ],
+    image: ABBAYE,
+    imageAlt:
+      "Framed architectural art print hung above furniture, illustrating art print sizing and hanging height",
+    intro: [
+      "Almost every art print that disappoints on arrival is the right drawing at the wrong size. The picture was chosen on a screen, where everything is the same size, and hung on a wall, where nothing is. A few numbers fix this permanently.",
+      "This is the sizing advice an architect would give you before you order — measured, unfussy, and applicable to any print, not only the ones in this archive.",
+    ],
+    body: [
+      {
+        heading: "The two-thirds rule",
+        paragraphs: [
+          "Artwork hung above furniture should span roughly two thirds of the width of that furniture. A 180 cm sofa wants about 120 cm of framed artwork; a 120 cm console wants about 80 cm. Below two thirds the picture floats and looks accidental; above about 90 per cent it crowds the piece underneath.",
+          "That figure is the framed width, not the paper width. A 70 cm print with a 6 cm mount and a 3 cm moulding measures about 88 cm on the wall — so work backwards from the wall measurement to the print size, never the other way round.",
+        ],
+      },
+      {
+        heading: "Hanging height: the 145 cm centre line",
+        paragraphs: [
+          "Galleries hang the centre of a work between 145 and 150 cm from the floor, which is average standing eye level. Use the same line at home and rooms instantly look considered, even with mismatched frames.",
+          "Two exceptions. Above furniture, leave 15–25 cm between the top of the sofa or headboard and the bottom of the frame — the picture should read as belonging to the furniture. And in a room you mostly sit in, such as a dining room, drop the centre line by 5–10 cm.",
+        ],
+      },
+      {
+        heading: "Room by room",
+        paragraphs: [
+          "Above a sofa: one print of 70–100 cm wide, or a pair of 40–50 cm sheets. Above a double bed: 70–100 cm centred on the bed, not on the wall. Hallway: a run of three 30–40 cm prints at a shared centre line, spaced 5–8 cm apart. Home office or studio: 50–70 cm, hung so it is readable from the desk rather than from the door.",
+          "Bathrooms and kitchens take smaller work, 20–30 cm, well away from steam and splash. Stairwells are the one place to go large — a single 100 cm-plus piece hung to the centre line of the middle step.",
+        ],
+      },
+      {
+        heading: "Portrait, landscape or square",
+        paragraphs: [
+          "Match the format to the wall, not to the subject. Tall narrow walls, chimney breasts and the space between two windows want portrait sheets. Wide low walls above sideboards and beds want landscape. Square works best in groups and in awkward areas where neither dimension dominates.",
+          "It is worth knowing that architectural studies are frequently portrait — buildings rise — while coastal and volcanic landscape works are usually horizontal. Choosing the wall first narrows the archive for you.",
+        ],
+      },
+      {
+        heading: "Spacing a gallery wall",
+        paragraphs: [
+          "Keep 5–8 cm between frames and treat the whole group as one rectangle, then apply the two-thirds rule to that rectangle. Uneven gaps read as a mistake even when the individual frames are beautiful.",
+          "Mix sizes but not too many: three sizes maximum, one clearly dominant. And keep the frame family consistent — the same pale oak throughout will hold together a group of very different drawings.",
+        ],
+      },
+      {
+        heading: "Mounts, frames and paper",
+        paragraphs: [
+          "A mount of 5–7 cm gives a fine art print breathing room and stops the drawing fighting the wall colour. Narrow mouldings suit line work; heavy black frames tend to overpower wash. Use UV glazing in bright rooms.",
+          "Order the print with the framing in mind: if a framer wants a standard size, choose the print size that fits it. Museum-grade matte paper is worth insisting on — gloss throws glare across exactly the soft gradients you paid for.",
+        ],
+      },
+      {
+        heading: "Before you order",
+        paragraphs: [
+          "Cut the framed dimensions out of newspaper or masking tape and stick the shape to the wall for a day. It costs nothing and it settles the question faster than any amount of measuring.",
+          "Then choose the drawing. The archive is browsable by collection and by individual artwork, and every sheet is available made to order in a range of sizes, so the wall can decide and the picture can follow.",
+        ],
+      },
+    ],
+    relatedCollection: "architecture",
+  },
 ];
+
 
 
 export const getPost = (slug: string) => journal.find((p) => p.slug === slug);
