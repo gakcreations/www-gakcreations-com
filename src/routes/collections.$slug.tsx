@@ -172,9 +172,25 @@ function CollectionPage() {
               Works in this <em className="font-light">collection</em>
             </h2>
             <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8">
-              {c.works.map((w) => (
+              {c.works.map((w) => {
+                const art = artworkByImage(w.image);
+                const CardLink = ({ children }: { children: React.ReactNode }) =>
+                  art ? (
+                    <Link
+                      to="/artwork/$slug"
+                      params={{ slug: art.slug }}
+                      className="group block"
+                    >
+                      {children}
+                    </Link>
+                  ) : (
+                    <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="group block">
+                      {children}
+                    </a>
+                  );
+                return (
                 <article key={w.sku} id={w.sku.toLowerCase()}>
-                  <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className="group">
+                  <CardLink>
                     <div className="overflow-hidden bg-paper-warm">
                       <ResponsiveImage
                         src={w.image}
