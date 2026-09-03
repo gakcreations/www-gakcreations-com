@@ -130,6 +130,17 @@ export function SiteFooter() {
                 Travel Collage Prints
               </Link>
             </li>
+            <li>
+              <Link to="/fuerteventura-art-prints" className="hover:text-paper/70">
+                Fuerteventura Art Prints
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-paper/70">
+                About the Artist
+              </Link>
+            </li>
+
 
 
             <li>
