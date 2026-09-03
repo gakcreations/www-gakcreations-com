@@ -36,12 +36,25 @@ const gaScripts = GA_IS_ENABLED && GA_SCRIPT_SRC
   : [];
 
 const CLARITY_PROJECT_ID = "xy2c2koura";
+const GTM_CONTAINER_ID = "GTM-TT4MZQKT";
 
+// Clarity is loaded directly (not as a GTM tag) so heatmaps and session
+// recordings start capturing before GTM finishes loading, and so recording
+// never depends on the container being published. Do NOT also add a Clarity
+// tag inside GTM-TT4MZQKT — that would load the tracker twice and duplicate
+// sessions.
 const clarityScripts = [
   {
     children: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "${CLARITY_PROJECT_ID}");`,
   },
 ];
+
+const gtmScripts = [
+  {
+    children: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${GTM_CONTAINER_ID}');`,
+  },
+];
+
 
 const klaviyoScripts = [
   {
