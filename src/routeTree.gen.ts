@@ -19,8 +19,10 @@ import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectur
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as CollectionsIndexRouteImport } from './routes/collections.index'
+import { Route as ArtworkIndexRouteImport } from './routes/artwork.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
+import { Route as ArtworkSlugRouteImport } from './routes/artwork.$slug'
 
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
@@ -72,6 +74,11 @@ const CollectionsIndexRoute = CollectionsIndexRouteImport.update({
   path: '/collections/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ArtworkIndexRoute = ArtworkIndexRouteImport.update({
+  id: '/artwork/',
+  path: '/artwork/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JournalSlugRoute = JournalSlugRouteImport.update({
   id: '/journal/$slug',
   path: '/journal/$slug',
@@ -80,6 +87,11 @@ const JournalSlugRoute = JournalSlugRouteImport.update({
 const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
   id: '/collections/$slug',
   path: '/collections/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtworkSlugRoute = ArtworkSlugRouteImport.update({
+  id: '/artwork/$slug',
+  path: '/artwork/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -92,8 +104,10 @@ export interface FileRoutesByFullPath {
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
+  '/artwork/': typeof ArtworkIndexRoute
   '/collections/': typeof CollectionsIndexRoute
   '/journal/': typeof JournalIndexRoute
 }
@@ -106,8 +120,10 @@ export interface FileRoutesByTo {
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
+  '/artwork': typeof ArtworkIndexRoute
   '/collections': typeof CollectionsIndexRoute
   '/journal': typeof JournalIndexRoute
 }
@@ -121,8 +137,10 @@ export interface FileRoutesById {
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
+  '/artwork/': typeof ArtworkIndexRoute
   '/collections/': typeof CollectionsIndexRoute
   '/journal/': typeof JournalIndexRoute
 }
@@ -137,8 +155,10 @@ export interface FileRouteTypes {
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
+    | '/artwork/'
     | '/collections/'
     | '/journal/'
   fileRoutesByTo: FileRoutesByTo
@@ -151,8 +171,10 @@ export interface FileRouteTypes {
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
+    | '/artwork'
     | '/collections'
     | '/journal'
   id:
@@ -165,8 +187,10 @@ export interface FileRouteTypes {
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
+    | '/artwork/'
     | '/collections/'
     | '/journal/'
   fileRoutesById: FileRoutesById
@@ -180,8 +204,10 @@ export interface RootRouteChildren {
   ShippingPolicyRoute: typeof ShippingPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  ArtworkSlugRoute: typeof ArtworkSlugRoute
   CollectionsSlugRoute: typeof CollectionsSlugRoute
   JournalSlugRoute: typeof JournalSlugRoute
+  ArtworkIndexRoute: typeof ArtworkIndexRoute
   CollectionsIndexRoute: typeof CollectionsIndexRoute
   JournalIndexRoute: typeof JournalIndexRoute
 }
@@ -258,6 +284,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CollectionsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artwork/': {
+      id: '/artwork/'
+      path: '/artwork'
+      fullPath: '/artwork/'
+      preLoaderRoute: typeof ArtworkIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/journal/$slug': {
       id: '/journal/$slug'
       path: '/journal/$slug'
@@ -272,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CollectionsSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/artwork/$slug': {
+      id: '/artwork/$slug'
+      path: '/artwork/$slug'
+      fullPath: '/artwork/$slug'
+      preLoaderRoute: typeof ArtworkSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -284,8 +324,10 @@ const rootRouteChildren: RootRouteChildren = {
   ShippingPolicyRoute: ShippingPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  ArtworkSlugRoute: ArtworkSlugRoute,
   CollectionsSlugRoute: CollectionsSlugRoute,
   JournalSlugRoute: JournalSlugRoute,
+  ArtworkIndexRoute: ArtworkIndexRoute,
   CollectionsIndexRoute: CollectionsIndexRoute,
   JournalIndexRoute: JournalIndexRoute,
 }
