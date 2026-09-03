@@ -15,6 +15,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as FuerteventuraArtPrintsRouteImport } from './routes/fuerteventura-art-prints'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
 import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
@@ -54,6 +55,11 @@ const RefundPolicyRoute = RefundPolicyRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FuerteventuraArtPrintsRoute = FuerteventuraArtPrintsRouteImport.update({
+  id: '/fuerteventura-art-prints',
+  path: '/fuerteventura-art-prints',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -112,6 +118,7 @@ export interface FileRoutesByFullPath {
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -130,6 +137,7 @@ export interface FileRoutesByTo {
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -149,6 +157,7 @@ export interface FileRoutesById {
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/architectural-art-prints'
     | '/coastal-wall-art'
     | '/contact'
+    | '/fuerteventura-art-prints'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -187,6 +197,7 @@ export interface FileRouteTypes {
     | '/architectural-art-prints'
     | '/coastal-wall-art'
     | '/contact'
+    | '/fuerteventura-art-prints'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -205,6 +216,7 @@ export interface FileRouteTypes {
     | '/architectural-art-prints'
     | '/coastal-wall-art'
     | '/contact'
+    | '/fuerteventura-art-prints'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -224,6 +236,7 @@ export interface RootRouteChildren {
   ArchitecturalArtPrintsRoute: typeof ArchitecturalArtPrintsRoute
   CoastalWallArtRoute: typeof CoastalWallArtRoute
   ContactRoute: typeof ContactRoute
+  FuerteventuraArtPrintsRoute: typeof FuerteventuraArtPrintsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ShippingPolicyRoute: typeof ShippingPolicyRoute
@@ -280,6 +293,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fuerteventura-art-prints': {
+      id: '/fuerteventura-art-prints'
+      path: '/fuerteventura-art-prints'
+      fullPath: '/fuerteventura-art-prints'
+      preLoaderRoute: typeof FuerteventuraArtPrintsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -360,6 +380,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArchitecturalArtPrintsRoute: ArchitecturalArtPrintsRoute,
   CoastalWallArtRoute: CoastalWallArtRoute,
   ContactRoute: ContactRoute,
+  FuerteventuraArtPrintsRoute: FuerteventuraArtPrintsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ShippingPolicyRoute: ShippingPolicyRoute,
