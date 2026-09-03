@@ -31,6 +31,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/architectural-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-08-05" },
           { path: "/coastal-wall-art", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
           { path: "/travel-collage-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+          { path: "/fuerteventura-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+
           ...collections.map((c) => ({
             path: `/collections/${c.slug}`,
             changefreq: "monthly" as const,
@@ -61,7 +63,9 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const policyEntries: SitemapEntry[] = [
           // Static contact and legal pages that should remain indexable.
+          { path: "/about", changefreq: "yearly", priority: "0.7" },
           { path: "/contact", changefreq: "yearly", priority: "0.5" },
+
           { path: "/shipping-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/refund-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/terms", changefreq: "yearly", priority: "0.3" },

@@ -15,9 +15,11 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as FuerteventuraArtPrintsRouteImport } from './routes/fuerteventura-art-prints'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
 import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as CollectionsIndexRouteImport } from './routes/collections.index'
@@ -56,6 +58,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FuerteventuraArtPrintsRoute = FuerteventuraArtPrintsRouteImport.update({
+  id: '/fuerteventura-art-prints',
+  path: '/fuerteventura-art-prints',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -69,6 +76,11 @@ const CoastalWallArtRoute = CoastalWallArtRouteImport.update({
 const ArchitecturalArtPrintsRoute = ArchitecturalArtPrintsRouteImport.update({
   id: '/architectural-art-prints',
   path: '/architectural-art-prints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -109,9 +121,11 @@ const ArtworkSlugRoute = ArtworkSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -127,9 +141,11 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -146,9 +162,11 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -166,9 +184,11 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/architectural-art-prints'
     | '/coastal-wall-art'
     | '/contact'
+    | '/fuerteventura-art-prints'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -184,9 +204,11 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/architectural-art-prints'
     | '/coastal-wall-art'
     | '/contact'
+    | '/fuerteventura-art-prints'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -202,9 +224,11 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/architectural-art-prints'
     | '/coastal-wall-art'
     | '/contact'
+    | '/fuerteventura-art-prints'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -221,9 +245,11 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   ArchitecturalArtPrintsRoute: typeof ArchitecturalArtPrintsRoute
   CoastalWallArtRoute: typeof CoastalWallArtRoute
   ContactRoute: typeof ContactRoute
+  FuerteventuraArtPrintsRoute: typeof FuerteventuraArtPrintsRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ShippingPolicyRoute: typeof ShippingPolicyRoute
@@ -282,6 +308,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/fuerteventura-art-prints': {
+      id: '/fuerteventura-art-prints'
+      path: '/fuerteventura-art-prints'
+      fullPath: '/fuerteventura-art-prints'
+      preLoaderRoute: typeof FuerteventuraArtPrintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -301,6 +334,13 @@ declare module '@tanstack/react-router' {
       path: '/architectural-art-prints'
       fullPath: '/architectural-art-prints'
       preLoaderRoute: typeof ArchitecturalArtPrintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -357,9 +397,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   ArchitecturalArtPrintsRoute: ArchitecturalArtPrintsRoute,
   CoastalWallArtRoute: CoastalWallArtRoute,
   ContactRoute: ContactRoute,
+  FuerteventuraArtPrintsRoute: FuerteventuraArtPrintsRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ShippingPolicyRoute: ShippingPolicyRoute,
