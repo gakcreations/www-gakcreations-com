@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
+import { artworks } from "@/data/artworks";
 
 const BASE_URL = "https://www.gakcreations.com";
 
@@ -70,6 +71,7 @@ export const Route = createFileRoute("/sitemap.xml")({
         const entries: SitemapEntry[] = [
           ...homeEntries,
           ...collectionEntries,
+          ...artworkEntries,
           ...journalEntries,
           ...policyEntries,
         ];
