@@ -102,6 +102,11 @@ export function SiteFooter() {
           <p className="text-[0.65rem] uppercase tracking-[0.28em] text-paper/50">Elsewhere</p>
           <ul className="mt-5 space-y-3 text-sm">
             <li>
+              <Link to="/artwork" className="hover:text-paper/70">
+                Artwork Archive
+              </Link>
+            </li>
+            <li>
               <Link to="/journal" className="hover:text-paper/70">
                 Studio Journal
               </Link>
@@ -111,6 +116,17 @@ export function SiteFooter() {
                 Print Buying Guide
               </Link>
             </li>
+            <li>
+              <Link to="/coastal-wall-art" className="hover:text-paper/70">
+                Coastal Wall Art
+              </Link>
+            </li>
+            <li>
+              <Link to="/travel-collage-prints" className="hover:text-paper/70">
+                Travel Collage Prints
+              </Link>
+            </li>
+
 
             <li>
               <a
