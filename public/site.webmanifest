@@ -1,0 +1,23 @@
+{
+  "name": "GAK Creations — Fine Art Prints by Gerald Allen Knowles",
+  "short_name": "GAK Creations",
+  "description": "Architectural drawings, coastal wall art and travel collages by Gerald Allen Knowles, available as museum-quality fine art prints.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f1ea",
+  "theme_color": "#1a1a18",
+  "icons": [
+    {
+      "src": "/images/Logo GAK Creations copy.png",
+      "sizes": "1181x1181",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}
