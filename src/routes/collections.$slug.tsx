@@ -4,6 +4,7 @@ import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrom
 import type { Collection } from "@/data/collections";
 import { collections, getCollection } from "@/data/collections";
 import { journal } from "@/data/journal";
+import { artworkByImage } from "@/data/artworks";
 import {
   artworkAltText,
   artworkKeywords,
