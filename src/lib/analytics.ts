@@ -4,15 +4,21 @@ const GA_ID = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY as
   | string
   | undefined;
 
+export const GA_IS_ENABLED = Boolean(GA_ID);
+export const GA_SCRIPT_SRC = GA_ID
+  ? `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`
+  : null;
+
 declare global {
   interface Window {
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
+    __gaConfigured?: boolean;
   }
 }
 
-function initGa() {
-  if (typeof window === "undefined") return;
+export function initializeAnalytics() {
+  if (typeof window === "undefined" || !GA_ID) return;
 
   window.dataLayer = window.dataLayer || [];
 
@@ -23,13 +29,18 @@ function initGa() {
     window.gtag("js", new Date());
   }
 
-  if (GA_ID && !document.querySelector(`script[src*="gtag/js?id=${GA_ID}"]`)) {
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-    document.head.appendChild(script);
+  if (!window.__gaConfigured) {
     window.gtag("config", GA_ID, { send_page_view: false });
+    window.__gaConfigured = true;
   }
+}
+
+export function trackPageView(page: string) {
+  initializeAnalytics();
+  window.gtag?.("event", "page_view", {
+    page_path: page,
+    page_title: document.title,
+  });
 }
 
 export function getShopUrl(artworkSlug?: string) {
@@ -46,7 +57,7 @@ export function getShopUrl(artworkSlug?: string) {
 }
 
 export function trackPrintifyClick(artwork: { slug: string; title: string }) {
-  initGa();
+  initializeAnalytics();
 
   const payload = {
     event_category: "ecommerce",
