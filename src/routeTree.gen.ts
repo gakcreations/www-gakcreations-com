@@ -15,6 +15,7 @@ import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
 import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
@@ -52,6 +53,11 @@ const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoastalWallArtRoute = CoastalWallArtRouteImport.update({
+  id: '/coastal-wall-art',
+  path: '/coastal-wall-art',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArchitecturalArtPrintsRoute = ArchitecturalArtPrintsRouteImport.update({
@@ -98,6 +104,7 @@ const ArtworkSlugRoute = ArtworkSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
+  '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
+  '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
+  '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -149,6 +158,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/architectural-art-prints'
+    | '/coastal-wall-art'
     | '/contact'
     | '/privacy-policy'
     | '/refund-policy'
@@ -165,6 +175,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/architectural-art-prints'
+    | '/coastal-wall-art'
     | '/contact'
     | '/privacy-policy'
     | '/refund-policy'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/architectural-art-prints'
+    | '/coastal-wall-art'
     | '/contact'
     | '/privacy-policy'
     | '/refund-policy'
@@ -198,6 +210,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArchitecturalArtPrintsRoute: typeof ArchitecturalArtPrintsRoute
+  CoastalWallArtRoute: typeof CoastalWallArtRoute
   ContactRoute: typeof ContactRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
@@ -254,6 +267,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coastal-wall-art': {
+      id: '/coastal-wall-art'
+      path: '/coastal-wall-art'
+      fullPath: '/coastal-wall-art'
+      preLoaderRoute: typeof CoastalWallArtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/architectural-art-prints': {
@@ -318,6 +338,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArchitecturalArtPrintsRoute: ArchitecturalArtPrintsRoute,
+  CoastalWallArtRoute: CoastalWallArtRoute,
   ContactRoute: ContactRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
