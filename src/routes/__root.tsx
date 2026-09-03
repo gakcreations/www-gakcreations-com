@@ -178,8 +178,21 @@ function RootComponent() {
 
   useEffect(() => {
     initializeAnalytics();
-    trackPageView(`${location.pathname}${location.searchStr ?? ""}${location.hash ?? ""}`);
+    const page = `${location.pathname}${location.searchStr ?? ""}${location.hash ?? ""}`;
+    trackPageView(page);
+
+    // Client-side route changes are not full page loads, so tell GTM and
+    // Clarity about them explicitly. Without this, heatmaps and recordings
+    // for the artwork and buyer-intent pages get attributed to the entry URL.
+    const w = window as typeof window & {
+      dataLayer?: Record<string, unknown>[];
+      clarity?: (...args: unknown[]) => void;
+    };
+    w.dataLayer = w.dataLayer ?? [];
+    w.dataLayer.push({ event: "spa_page_view", page_path: page, page_title: document.title });
+    w.clarity?.("set", "page_path", location.pathname);
   }, [location.pathname, location.searchStr, location.hash]);
+
 
   return (
     <>
