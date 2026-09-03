@@ -36,6 +36,10 @@ export function SiteHeader() {
           <Link to="/journal" className="eyebrow hover:text-ink">
             Journal
           </Link>
+          <Link to="/about" className="eyebrow hover:text-ink">
+            About
+          </Link>
+
 
           <a
             href={SHOP_URL}
