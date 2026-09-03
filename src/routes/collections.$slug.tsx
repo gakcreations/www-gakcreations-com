@@ -209,9 +209,10 @@ function CollectionPage() {
                       </p>
                       <p className="mt-4 text-sm leading-relaxed text-ink-soft">{w.description}</p>
                     </div>
-                  </a>
+                  </CardLink>
                 </article>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
