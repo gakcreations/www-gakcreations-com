@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TravelCollagePrintsRouteImport } from './routes/travel-collage-prints'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
@@ -25,6 +26,11 @@ import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
 import { Route as ArtworkSlugRouteImport } from './routes/artwork.$slug'
 
+const TravelCollagePrintsRoute = TravelCollagePrintsRouteImport.update({
+  id: '/travel-collage-prints',
+  path: '/travel-collage-prints',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TermsRoute = TermsRouteImport.update({
   id: '/terms',
   path: '/terms',
@@ -111,6 +117,7 @@ export interface FileRoutesByFullPath {
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/travel-collage-prints': typeof TravelCollagePrintsRoute
   '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -128,6 +135,7 @@ export interface FileRoutesByTo {
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/travel-collage-prints': typeof TravelCollagePrintsRoute
   '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -146,6 +154,7 @@ export interface FileRoutesById {
   '/shipping-policy': typeof ShippingPolicyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/terms': typeof TermsRoute
+  '/travel-collage-prints': typeof TravelCollagePrintsRoute
   '/artwork/$slug': typeof ArtworkSlugRoute
   '/collections/$slug': typeof CollectionsSlugRoute
   '/journal/$slug': typeof JournalSlugRoute
@@ -165,6 +174,7 @@ export interface FileRouteTypes {
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/travel-collage-prints'
     | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
@@ -182,6 +192,7 @@ export interface FileRouteTypes {
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/travel-collage-prints'
     | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
@@ -199,6 +210,7 @@ export interface FileRouteTypes {
     | '/shipping-policy'
     | '/sitemap.xml'
     | '/terms'
+    | '/travel-collage-prints'
     | '/artwork/$slug'
     | '/collections/$slug'
     | '/journal/$slug'
@@ -217,6 +229,7 @@ export interface RootRouteChildren {
   ShippingPolicyRoute: typeof ShippingPolicyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TermsRoute: typeof TermsRoute
+  TravelCollagePrintsRoute: typeof TravelCollagePrintsRoute
   ArtworkSlugRoute: typeof ArtworkSlugRoute
   CollectionsSlugRoute: typeof CollectionsSlugRoute
   JournalSlugRoute: typeof JournalSlugRoute
@@ -227,6 +240,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/travel-collage-prints': {
+      id: '/travel-collage-prints'
+      path: '/travel-collage-prints'
+      fullPath: '/travel-collage-prints'
+      preLoaderRoute: typeof TravelCollagePrintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/terms': {
       id: '/terms'
       path: '/terms'
@@ -345,6 +365,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShippingPolicyRoute: ShippingPolicyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TermsRoute: TermsRoute,
+  TravelCollagePrintsRoute: TravelCollagePrintsRoute,
   ArtworkSlugRoute: ArtworkSlugRoute,
   CollectionsSlugRoute: CollectionsSlugRoute,
   JournalSlugRoute: JournalSlugRoute,

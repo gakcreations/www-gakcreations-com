@@ -27,6 +27,9 @@ export function SiteHeader() {
           <Link to="/collections" className="eyebrow hover:text-ink">
             Collections
           </Link>
+          <Link to="/artwork" className="eyebrow hover:text-ink">
+            Artwork
+          </Link>
           <Link to="/architectural-art-prints" className="eyebrow hover:text-ink">
             Buying Guide
           </Link>
