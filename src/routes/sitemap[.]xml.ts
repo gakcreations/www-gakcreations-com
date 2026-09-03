@@ -28,10 +28,22 @@ export const Route = createFileRoute("/sitemap.xml")({
           // Collection landing pages that organize the site's artwork.
           { path: "/collections", changefreq: "weekly", priority: "0.9" },
           { path: "/architectural-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-08-05" },
+          { path: "/coastal-wall-art", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+          { path: "/travel-collage-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
           ...collections.map((c) => ({
             path: `/collections/${c.slug}`,
             changefreq: "monthly" as const,
             priority: "0.8",
+          })),
+        ];
+
+        const artworkEntries: SitemapEntry[] = [
+          // Individual, indexable artwork pages.
+          { path: "/artwork", changefreq: "weekly", priority: "0.8" },
+          ...artworks.map((a) => ({
+            path: `/artwork/${a.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
           })),
         ];
 
