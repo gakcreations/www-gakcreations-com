@@ -16,9 +16,9 @@ import {
   productNode,
   imageObjectNode,
   abs,
-  SHOP_URL,
   ARTIST_NAME,
 } from "@/lib/seo";
+import { getShopUrl, trackPrintifyClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/artwork/$slug")({
   loader: ({ params }) => {
@@ -148,9 +148,10 @@ function ArtworkPage() {
                 </dl>
 
                 <a
-                  href={SHOP_URL}
+                  href={getShopUrl(a.slug)}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackPrintifyClick({ slug: a.slug, title: a.title })}
                   className="mt-10 inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
                 >
                   Buy this print <span>→</span>
