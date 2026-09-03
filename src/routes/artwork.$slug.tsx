@@ -16,9 +16,9 @@ import {
   productNode,
   imageObjectNode,
   abs,
-  SHOP_URL,
   ARTIST_NAME,
 } from "@/lib/seo";
+import { getShopUrl, trackPrintifyClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/artwork/$slug")({
   loader: ({ params }) => {
