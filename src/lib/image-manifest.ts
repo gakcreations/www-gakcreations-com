@@ -139,5 +139,173 @@ export const imageManifest: Record<string, ImageEntry> = {
         "jpg": "/images/optimized/studio-1200.jpg"
       }
     ]
-  }
+  },
+  "/images/printify/saintes-cathedral.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-saintes-cathedral-480.webp",
+      "jpg": "/images/optimized/printify-saintes-cathedral-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-saintes-cathedral-800.webp",
+      "jpg": "/images/optimized/printify-saintes-cathedral-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-saintes-cathedral-1200.webp",
+      "jpg": "/images/optimized/printify-saintes-cathedral-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/palm-trees-symphony.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-palm-trees-symphony-480.webp",
+      "jpg": "/images/optimized/printify-palm-trees-symphony-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-palm-trees-symphony-800.webp",
+      "jpg": "/images/optimized/printify-palm-trees-symphony-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-palm-trees-symphony-1200.webp",
+      "jpg": "/images/optimized/printify-palm-trees-symphony-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/mystical-chapel.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-mystical-chapel-480.webp",
+      "jpg": "/images/optimized/printify-mystical-chapel-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-mystical-chapel-800.webp",
+      "jpg": "/images/optimized/printify-mystical-chapel-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-mystical-chapel-1200.webp",
+      "jpg": "/images/optimized/printify-mystical-chapel-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/magical-landscape.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-magical-landscape-480.webp",
+      "jpg": "/images/optimized/printify-magical-landscape-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-magical-landscape-800.webp",
+      "jpg": "/images/optimized/printify-magical-landscape-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-magical-landscape-1200.webp",
+      "jpg": "/images/optimized/printify-magical-landscape-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/dream-nights.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-dream-nights-480.webp",
+      "jpg": "/images/optimized/printify-dream-nights-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-dream-nights-800.webp",
+      "jpg": "/images/optimized/printify-dream-nights-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-dream-nights-1200.webp",
+      "jpg": "/images/optimized/printify-dream-nights-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/arch-of-wind-and-time.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-arch-of-wind-and-time-480.webp",
+      "jpg": "/images/optimized/printify-arch-of-wind-and-time-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-arch-of-wind-and-time-800.webp",
+      "jpg": "/images/optimized/printify-arch-of-wind-and-time-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-arch-of-wind-and-time-1200.webp",
+      "jpg": "/images/optimized/printify-arch-of-wind-and-time-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/erosion-gate.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-erosion-gate-480.webp",
+      "jpg": "/images/optimized/printify-erosion-gate-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-erosion-gate-800.webp",
+      "jpg": "/images/optimized/printify-erosion-gate-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-erosion-gate-1200.webp",
+      "jpg": "/images/optimized/printify-erosion-gate-1200.jpg"
+    }
+  ]
+},
+  "/images/printify/symphony-of-waves.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    {
+      "w": 480,
+      "webp": "/images/optimized/printify-symphony-of-waves-480.webp",
+      "jpg": "/images/optimized/printify-symphony-of-waves-480.jpg"
+    },
+    {
+      "w": 800,
+      "webp": "/images/optimized/printify-symphony-of-waves-800.webp",
+      "jpg": "/images/optimized/printify-symphony-of-waves-800.jpg"
+    },
+    {
+      "w": 1200,
+      "webp": "/images/optimized/printify-symphony-of-waves-1200.webp",
+      "jpg": "/images/optimized/printify-symphony-of-waves-1200.jpg"
+    }
+  ]
+},
 };
