@@ -250,8 +250,10 @@ function ArtworkPage() {
             </section>
           )}
         </article>
+        <StudioListSection source={`artwork/${a.slug}`} />
       </main>
       <SiteFooter />
     </div>
   );
 }
+
