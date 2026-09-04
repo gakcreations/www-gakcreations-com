@@ -4,6 +4,7 @@ import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrom
 import { StudioListSection } from "@/components/StudioListForm";
 
 import { collections } from "@/data/collections";
+import { artworks } from "@/data/artworks";
 import { journal } from "@/data/journal";
 import {
   SHOP_URL,
