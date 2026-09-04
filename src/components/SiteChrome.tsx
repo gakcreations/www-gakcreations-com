@@ -136,6 +136,36 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link to="/living-room-wall-art" className="hover:text-paper/70">
+                Living Room Wall Art
+              </Link>
+            </li>
+            <li>
+              <Link to="/bedroom-wall-art" className="hover:text-paper/70">
+                Bedroom Wall Art
+              </Link>
+            </li>
+            <li>
+              <Link to="/home-office-wall-art" className="hover:text-paper/70">
+                Home Office Wall Art
+              </Link>
+            </li>
+            <li>
+              <Link to="/hallway-wall-art" className="hover:text-paper/70">
+                Hallway Wall Art
+              </Link>
+            </li>
+            <li>
+              <Link to="/art-gifts-for-architects" className="hover:text-paper/70">
+                Art Gifts for Architects
+              </Link>
+            </li>
+            <li>
+              <Link to="/housewarming-art-gifts" className="hover:text-paper/70">
+                Housewarming Art Gifts
+              </Link>
+            </li>
+            <li>
               <Link to="/about" className="hover:text-paper/70">
                 About the Artist
               </Link>
