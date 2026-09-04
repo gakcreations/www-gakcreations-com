@@ -85,6 +85,14 @@ const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
   "/images/Logo GAK Creations copy.png": { width: 1181, height: 1181 },
   "/images/The Boat That Dreams Of Sea.jpg": { width: 787, height: 1025 },
   "/images/studio.jpg": { width: 1200, height: 900 },
+  "/images/printify/saintes-cathedral.jpg": { width: 1200, height: 1200 },
+  "/images/printify/palm-trees-symphony.jpg": { width: 1200, height: 1200 },
+  "/images/printify/mystical-chapel.jpg": { width: 1200, height: 1200 },
+  "/images/printify/magical-landscape.jpg": { width: 1200, height: 1200 },
+  "/images/printify/dream-nights.jpg": { width: 1200, height: 1200 },
+  "/images/printify/arch-of-wind-and-time.jpg": { width: 1200, height: 1200 },
+  "/images/printify/erosion-gate.jpg": { width: 1200, height: 1200 },
+  "/images/printify/symphony-of-waves.jpg": { width: 1200, height: 1200 },
 };
 
 export interface ArtworkSeoWork {

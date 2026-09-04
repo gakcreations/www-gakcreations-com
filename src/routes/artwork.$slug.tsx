@@ -58,7 +58,7 @@ export const Route = createFileRoute("/artwork/$slug")({
         productNode(a, {
           keywords: a.keywords,
           pageUrl: abs(path),
-          offerUrl: getShopUrl(a.slug),
+          offerUrl: getShopUrl(a.slug, a.productPath),
         }),
         imageObjectNode(a.image, a.title, a.alt),
         {
@@ -150,7 +150,7 @@ function ArtworkPage() {
                 </dl>
 
                 <a
-                  href={getShopUrl(a.slug)}
+                  href={getShopUrl(a.slug, a.productPath)}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => trackPrintifyClick({ slug: a.slug, title: a.title })}

@@ -43,7 +43,7 @@ export function trackPageView(page: string) {
   });
 }
 
-export function getShopUrl(artworkSlug?: string) {
+export function getShopUrl(artworkSlug?: string, productPath?: string) {
   const params = new URLSearchParams({
     utm_source: "gakcreations-site",
     utm_medium: "referral",
@@ -51,10 +51,11 @@ export function getShopUrl(artworkSlug?: string) {
   });
   if (artworkSlug) params.set("utm_content", artworkSlug);
 
-  const base = SHOP_URL;
+  const base = productPath ? `${SHOP_URL}${productPath}` : SHOP_URL;
   const separator = base.includes("?") ? "&" : "?";
   return `${base}${separator}${params.toString()}`;
 }
+
 
 export function trackPrintifyClick(artwork: { slug: string; title: string }) {
   initializeAnalytics();

@@ -23,8 +23,11 @@ export interface Artwork {
   hanging: string[];
   /** Collection slugs this artwork belongs to. */
   collections: string[];
+  /** Path of the matching listing in the Printify shop, if it has one. */
+  productPath?: string;
   /** Other artwork slugs shown as companion pieces. */
   related: string[];
+
 }
 
 const ABBAYE = "/images/Abbaye Aux Dames Saintes France.jpg";
@@ -209,7 +212,296 @@ export const artworks: Artwork[] = [
     collections: ["coastal", "fuerteventura", "nature"],
     related: ["volcanic-landscape-fuerteventura", "abbaye-aux-dames-saintes"],
   },
+  {
+    slug: "cathedrale-saint-pierre-saintes",
+    sku: "GAK-ARCH-002",
+    title: "Cathédrale Saint-Pierre, Saintes",
+    image: "/images/printify/saintes-cathedral.jpg",
+    alt: "Watercolour and ink art print of the tower of Cathédrale Saint-Pierre in Saintes, France, seen from a narrow street",
+    medium: "Ink and watercolour on paper",
+    place: "Saintes, France",
+    year: "Charente-Maritime, France",
+    description:
+      "The great flamboyant tower of Saint-Pierre seen from the street below, drawn in warm ochre wash with two figures left in to give the stonework its true scale.",
+    seoTitle: "Cathédrale Saint-Pierre, Saintes — Architectural Art Print | GAK Creations",
+    seoDescription:
+      "Watercolour and ink art print of the Cathédrale Saint-Pierre bell tower in Saintes, France, by Gerald Allen Knowles. Museum-quality print, shipped worldwide.",
+    keywords: [
+      "Saintes cathedral art print",
+      "French cathedral wall art",
+      "architectural watercolour print",
+      "Charente-Maritime artwork",
+      "gothic architecture art print",
+      "France travel wall art",
+    ],
+    story: [
+      "Saint-Pierre dominates Saintes the way a cathedral is supposed to: you cannot get far enough away from it to see it comfortably. This drawing accepts that and works from a narrow street, looking up, with the façades on either side squeezing the tower into the middle of the sheet.",
+      "The tower is late gothic and unfinished at the top, capped instead of spired. Drawn from below, its buttresses lean into the picture, so the pencil setting-out was done as a series of converging verticals rather than a flat elevation.",
+      "Colour is kept to warm ochres, a green-grey for the shadowed stone, and small marks of dark for the openings. Two figures at the base of the street are the only human note, and they are there for one reason: without them nothing tells you how tall the building is.",
+      "The handwritten note and signature at the foot of the sheet are part of the original drawing and are reproduced with it.",
+    ],
+    hanging: [
+      "A tall, upright composition that suits a narrow wall, a stair landing, or a pair of alcoves either side of a chimney breast.",
+      "Warm oak or natural ash frames pick up the ochres. Hang it near the Abbaye aux Dames print for a two-piece Saintes grouping — nine centuries of the same town.",
+    ],
+    collections: ["architecture", "travel"],
+    productPath: "/product/28619938/watercolor-cathedrale-saint-pierre-saintes-france-poster-textured-matte-art-print",
+    related: ["abbaye-aux-dames-saintes", "guggenheim-museum-bilbao"],
+  },
+  {
+    slug: "arch-of-wind-and-time",
+    sku: "GAK-FUER-002",
+    title: "Arch of Wind & Time",
+    image: "/images/printify/arch-of-wind-and-time.jpg",
+    alt: "Black and white pen drawing art print of a wind-eroded rock arch on the coast of Fuerteventura, Canary Islands",
+    medium: "Pen and ink on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "A wind-cut arch on the Fuerteventura coast, drawn entirely in pen. Thousands of short strokes build the eroded basalt, with the sea left as bare paper through the opening.",
+    seoTitle: "Arch of Wind & Time — Fuerteventura Ink Art Print | GAK Creations",
+    seoDescription:
+      "Black and white pen drawing of a wind-eroded coastal arch in Fuerteventura, Canary Islands, by Gerald Allen Knowles. Monochrome fine art print, shipped worldwide.",
+    keywords: [
+      "Fuerteventura rock arch print",
+      "black and white ink art print",
+      "Canary Islands wall art",
+      "pen drawing landscape print",
+      "monochrome coastal art",
+      "geology inspired wall art",
+    ],
+    story: [
+      "The arch is what is left after the wind has taken everything softer away. Standing under it, the surprise is not the shape but the texture: the basalt is pitted and stringy, closer to something poured than something carved.",
+      "That texture is the whole drawing. There is no wash and no colour — only pen, worked in short directional strokes that follow the grain of the rock. Where the stone turns away from the light the strokes cross; where it faces the sun the paper is simply left alone.",
+      "The opening was drawn last and deliberately kept empty. A blank sheet behind all that dense mark-making reads as distance, light and sea at once, and any attempt to describe it would have closed the arch up.",
+      "It is the most graphic piece in the Fuerteventura work and the one that holds its own in a room with no colour in it at all.",
+    ],
+    hanging: [
+      "Pure black and white makes this an easy print to place: it works in a monochrome interior, a gallery wall of mixed frames, or a small dark room that needs contrast rather than colour.",
+      "Slim black frame, generous white mount. It pairs naturally with Erosion Gate — the same coast, ten minutes further along.",
+    ],
+    collections: ["fuerteventura", "nature", "coastal"],
+    productPath: "/product/29077506/fine-art-print-arch-of-wind-and-amp-time-fuerteventura",
+    related: ["erosion-gate-fuerteventura", "volcanic-landscape-fuerteventura"],
+  },
+  {
+    slug: "erosion-gate-fuerteventura",
+    sku: "GAK-FUER-003",
+    title: "Erosion Gate",
+    image: "/images/printify/erosion-gate.jpg",
+    alt: "Monochrome ink art print of an eroded volcanic rock gateway on the Fuerteventura coastline, Canary Islands",
+    medium: "Pen and ink on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "A hollowed volcanic gateway on the north coast, drawn looking through it rather than at it — the rock as doorway, with the shoreline running out beyond.",
+    seoTitle: "Erosion Gate, Fuerteventura — Canary Islands Ink Print | GAK Creations",
+    seoDescription:
+      "Monochrome ink art print of an eroded volcanic gateway on the Fuerteventura coast, drawn on location by Gerald Allen Knowles. Fine art print, shipped worldwide.",
+    keywords: [
+      "Erosion Gate Fuerteventura print",
+      "volcanic rock art print",
+      "Canary Islands ink drawing",
+      "black and white landscape art",
+      "coastal rock formation print",
+      "travel art print Spain",
+    ],
+    story: [
+      "An architect draws openings all day: doors, windows, thresholds. This one was made by the sea over some very long period, and it behaves exactly like a doorway — you stand in it, the light changes, and the landscape on the other side is framed for you.",
+      "So it is drawn as an opening. The rock mass is dense, dark and worked over; the aperture is clean; and the composition is arranged so your eye is pulled through it rather than held on the surface.",
+      "The technique is the same as in Arch of Wind & Time: no colour, no wash, all pen. Value is built by how close the strokes sit to each other, which is slower than shading and much more honest about the direction of a surface.",
+      "It reads as almost abstract from across a room, then resolves into stone as you approach it.",
+    ],
+    hanging: [
+      "A strong, quiet print for an entrance hall, study or bedroom. It needs a plain wall behind it — patterned wallpaper fights the pen work.",
+      "Frame it with a wide off-white mount so the dense drawing has space around it. It hangs well as a pair with Arch of Wind & Time.",
+    ],
+    collections: ["fuerteventura", "nature", "coastal"],
+    productPath: "/product/29079266/fuerteventura-erosion-gate-framed-paper-poster-canary-islands-travel-art",
+    related: ["arch-of-wind-and-time", "volcanic-landscape-fuerteventura"],
+  },
+  {
+    slug: "mystical-fuerteventura-dream-nights",
+    sku: "GAK-FUER-004",
+    title: "Mystical Fuerteventura — Dream Nights",
+    image: "/images/printify/dream-nights.jpg",
+    alt: "Black and white art print of Canary palms against a dark night sky in Fuerteventura, drawn in ink",
+    medium: "Pen and ink on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "Canary palms against a worked black sky. The night is drawn rather than printed — layer on layer of ink until the fronds come forward as pale silhouettes.",
+    seoTitle: "Mystical Fuerteventura, Dream Nights — Palm Tree Art Print | GAK Creations",
+    seoDescription:
+      "Black and white ink art print of Canary palm trees under a night sky in Fuerteventura, by Gerald Allen Knowles. Dramatic monochrome wall art, shipped worldwide.",
+    keywords: [
+      "palm tree art print black and white",
+      "Fuerteventura night art print",
+      "Canary palm wall art",
+      "monochrome tropical print",
+      "dramatic ink drawing print",
+      "Canary Islands artwork",
+    ],
+    story: [
+      "Away from the resorts, Fuerteventura at night is genuinely dark, and the palms stop being holiday decoration. They become structure — trunks like columns, crowns like vaulting.",
+      "Getting a night sky right on white paper is the whole problem of this drawing. Ink was laid down in successive passes, allowed to dry, then worked again, so the black has depth in it instead of sitting flat. Some of the sky was scratched back to give the impression of stars behind cloud.",
+      "The palms themselves are barely outlined. They exist because the sky stops where they are. That reversal — drawing the space and letting the subject appear in the gap — is the reason the piece feels lit from behind.",
+      "The ground is handled quickly and low in the sheet, so nearly the whole composition is sky.",
+    ],
+    hanging: [
+      "The most dramatic print in the archive. It carries a dark feature wall, a bedroom, or a dining room lit by lamplight rather than daylight.",
+      "Black frame, white mount, matte glazing — reflections are the enemy of a print with this much black in it.",
+    ],
+    collections: ["fuerteventura", "nature"],
+    productPath: "/product/29077201/mystical-fuerteventura-dream-nights-fine-art-print",
+    related: ["fuerteventura-palm-trees-symphony", "arch-of-wind-and-time"],
+  },
+  {
+    slug: "fuerteventura-palm-trees-symphony",
+    sku: "GAK-FUER-005",
+    title: "Palm Trees Symphony",
+    image: "/images/printify/palm-trees-symphony.jpg",
+    alt: "Watercolour and ink art print of a group of palm trees above a beach in Fuerteventura, Canary Islands",
+    medium: "Ink and watercolour on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "A stand of palms above the sand, drawn in soft rose and blue-grey. The same trees as the night drawing, seen in flat midday light.",
+    seoTitle: "Palm Trees Symphony, Fuerteventura — Coastal Art Print | GAK Creations",
+    seoDescription:
+      "Ink and watercolour art print of palm trees above a Fuerteventura beach in the Canary Islands, by Gerald Allen Knowles. Calm coastal wall art, shipped worldwide.",
+    keywords: [
+      "palm tree watercolour print",
+      "Fuerteventura beach art print",
+      "Canary Islands coastal art",
+      "soft colour wall art",
+      "tropical watercolour print",
+      "calm living room art",
+    ],
+    story: [
+      "This is the daylight version of the same subject as Dream Nights, and it could hardly be more different. In flat island light the palms lose their drama and become a group — leaning, uneven, each one shaped by the same prevailing wind.",
+      "The drawing sets them out as a rhythm rather than as individual trees: five trunks at uneven intervals, crowns overlapping, so the eye travels across the sheet the way it does along a colonnade.",
+      "Colour is thin and warm — dusty rose in the sand, blue-grey in the sea, a muted green that never becomes tropical. Anything brighter would have turned an ordinary afternoon into a postcard.",
+      "The ink line stays visible underneath throughout. It is a drawing that has been coloured, not a painting.",
+    ],
+    hanging: [
+      "Soft, low-contrast colour makes this a gentle print for a bedroom, nursery or a bright living room where a strong monochrome piece would feel heavy.",
+      "Pale oak or white frames suit it. Hung beside Dream Nights it makes the day-and-night pairing explicit.",
+    ],
+    collections: ["fuerteventura", "coastal", "nature"],
+    productPath: "/product/29076799/fine-art-print-fuerteventura-palm-trees-symphony",
+    related: ["mystical-fuerteventura-dream-nights", "fuerteventura-magical-landscape"],
+  },
+  {
+    slug: "fuerteventura-magical-landscape",
+    sku: "GAK-FUER-006",
+    title: "Magical Landscape",
+    image: "/images/printify/magical-landscape.jpg",
+    alt: "Art print of three palm trees standing against a dry stone terrace wall on a Fuerteventura hillside",
+    medium: "Ink and watercolour on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "Three palms against a terraced hillside wall, high above the sea. A drawing about dry stone, patience, and the few things that grow on a volcanic island.",
+    seoTitle: "Magical Landscape, Fuerteventura — Hillside Art Print | GAK Creations",
+    seoDescription:
+      "Fuerteventura art print of palm trees and dry stone terracing on a volcanic hillside, drawn in ink and watercolour by Gerald Allen Knowles. Shipped worldwide.",
+    keywords: [
+      "Fuerteventura hillside art print",
+      "dry stone wall artwork",
+      "Canary Islands landscape print",
+      "palm tree wall art",
+      "muted green wall art",
+      "island landscape print",
+    ],
+    story: [
+      "The terraces on this hillside were built by hand, stone on stone, to hold soil that the wind keeps trying to remove. Nobody signed them and nobody knows exactly when they were made, which is a fair definition of vernacular architecture.",
+      "So the wall is treated as the building in this drawing. It gets the careful line work — course by course, each stone placed — while the hill behind it is handled loosely in a pale green-grey wash.",
+      "The three palms give the sheet its verticals and its scale. They are drawn with the fronds cut short by the wind, which is how they actually grow here.",
+      "There is almost no sky. The composition stops just above the top terrace, so the eye stays on the ground and the effort that went into it.",
+    ],
+    hanging: [
+      "Muted greens and stone greys make this an easy print for a kitchen, garden room or study, and a good neighbour to plants and natural materials.",
+      "Black frame with a wide white mount sharpens it up; natural oak softens it. Both work.",
+    ],
+    collections: ["fuerteventura", "nature", "travel"],
+    productPath: "/product/29077058/fuerteventura-magical-landscape-framed-poster",
+    related: ["fuerteventura-palm-trees-symphony", "mystical-chapel-fuerteventura"],
+  },
+  {
+    slug: "mystical-chapel-fuerteventura",
+    sku: "GAK-FUER-007",
+    title: "Mystical Chapel in a Mountainous Landscape",
+    image: "/images/printify/mystical-chapel.jpg",
+    alt: "Watercolour art print of a tiny white chapel among ochre and green hills in Fuerteventura, Canary Islands",
+    medium: "Ink and watercolour on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "A small white ermita almost lost among folded hills, drawn in soft ochre, green and rose. The building is the smallest thing in the picture and the reason for it.",
+    seoTitle: "Mystical Chapel, Fuerteventura — Landscape Art Print | GAK Creations",
+    seoDescription:
+      "Fuerteventura art print of a white chapel set among volcanic hills, in ink and watercolour by Gerald Allen Knowles. Warm, calm landscape wall art, shipped worldwide.",
+    keywords: [
+      "Fuerteventura chapel art print",
+      "ermita watercolour print",
+      "Canary Islands landscape wall art",
+      "warm ochre wall art",
+      "mountain landscape print",
+      "Spanish island artwork",
+    ],
+    story: [
+      "There is a particular kind of building on this island: whitewashed, single-roomed, sited where two valleys meet, and visible from a very long way off precisely because it is white and everything else is not.",
+      "This drawing puts it where it belongs — small, low in the composition, surrounded by ground. The hills are given the space, drawn in overlapping washes of ochre, olive and a rose that appears in the rock here at certain hours.",
+      "The chapel is the only place where the ink line is allowed to be crisp. Everything else is soft-edged, wet-into-wet, so the eye lands on the one hard-drawn object in the sheet without being told to.",
+      "It is a companion to the Volcanic Landscape print and uses the same argument: on Fuerteventura the landscape is the architecture, and buildings are guests in it.",
+    ],
+    hanging: [
+      "Warm and low in contrast — good above a bed, a sideboard, or in a sitting room with clay, cream or olive walls.",
+      "Use a wide off-white mount and a slim frame. It pairs beautifully with Volcanic Landscape of Fuerteventura.",
+    ],
+    collections: ["fuerteventura", "nature", "architecture"],
+    productPath: "/product/29076921/framed-paper-poster-fuerteventura-mystical-chapel-in-mountainous-landscape",
+    related: ["volcanic-landscape-fuerteventura", "fuerteventura-magical-landscape"],
+  },
+  {
+    slug: "symphony-of-waves",
+    sku: "GAK-COAST-002",
+    title: "Symphony of Waves",
+    image: "/images/printify/symphony-of-waves.jpg",
+    alt: "Coastal art print of turquoise waves breaking around dark rocks on the Fuerteventura shoreline",
+    medium: "Ink and watercolour on paper",
+    place: "Fuerteventura, Canary Islands",
+    year: "Canary Islands, Spain",
+    description:
+      "Turquoise water running in around black volcanic rock, with the wet sand holding the reflection. The most colour-led piece in the coastal work.",
+    seoTitle: "Symphony of Waves — Turquoise Coastal Art Print | GAK Creations",
+    seoDescription:
+      "Coastal art print of turquoise Atlantic waves breaking around volcanic rock in Fuerteventura, by Gerald Allen Knowles. Calm blue-green wall art, shipped worldwide.",
+    keywords: [
+      "turquoise coastal art print",
+      "ocean wave wall art",
+      "Fuerteventura beach print",
+      "Atlantic seascape print",
+      "blue green wall art",
+      "bathroom wall art print",
+    ],
+    story: [
+      "Volcanic coastlines produce a colour that is difficult to believe until you stand in front of it: black rock, pale sand under shallow water, and a green-turquoise where the two meet that no photograph quite carries.",
+      "The drawing chases that colour and gives it most of the sheet. The rocks are placed first in dark, dry-brushed ink to anchor the composition, then the water is laid in wet and left to find its own edges.",
+      "The wet sand in the foreground does the quiet work. It reflects everything above it at half strength, which is why the eye reads the beach as level and the rocks as standing up out of it.",
+      "It is the calmest print in the archive and the one people most often choose for a room they want to feel cool in.",
+    ],
+    hanging: [
+      "A horizontal composition — the right shape for above a bed, a sofa, or a long low sideboard where upright prints look cramped.",
+      "Cool blues and greens sit well with white, pale grey and natural timber. Matte glazing keeps the washes reading as watercolour.",
+    ],
+    collections: ["coastal", "fuerteventura", "nature"],
+    productPath: "/product/29106370/fuerteventura-waves-fine-art-print-syphonmy-of-waves-passepartout-frame",
+    related: ["the-blue-boat-that-dreams-of-sea", "erosion-gate-fuerteventura"],
+  },
 ];
+
 
 export const getArtwork = (slug: string) => artworks.find((a) => a.slug === slug);
 
