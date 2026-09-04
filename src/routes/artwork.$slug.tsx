@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
+import { StudioListSection } from "@/components/StudioListForm";
+
 import { getArtwork, getArtwork as findArtwork, artworks } from "@/data/artworks";
 import type { Artwork } from "@/data/artworks";
 import { collections } from "@/data/collections";
@@ -248,8 +250,10 @@ function ArtworkPage() {
             </section>
           )}
         </article>
+        <StudioListSection source={`artwork/${a.slug}`} />
       </main>
       <SiteFooter />
     </div>
   );
 }
+
