@@ -23,8 +23,11 @@ export interface Artwork {
   hanging: string[];
   /** Collection slugs this artwork belongs to. */
   collections: string[];
+  /** Path of the matching listing in the Printify shop, if it has one. */
+  productPath?: string;
   /** Other artwork slugs shown as companion pieces. */
   related: string[];
+
 }
 
 const ABBAYE = "/images/Abbaye Aux Dames Saintes France.jpg";
