@@ -14,9 +14,9 @@ import {
   abs,
 } from "@/lib/seo";
 
-const TITLE = "Studio Journal — Architectural Sketching, Coastal & Travel Art | GAK Creations";
+const TITLE = "Art Buying Guides, Architectural Sketching & Studio Journal | GAK Creations";
 const DESCRIPTION =
-  "Notes from the studio of Gerald Allen Knowles on architectural sketching, coastal artwork, travel collage, Fuerteventura landscapes and Gaudí's architecture.";
+  "Read art buying guides, architectural sketching notes and stories behind the coastal, travel and Fuerteventura prints of Gerald Allen Knowles.";
 
 export const Route = createFileRoute("/journal/")({
   component: JournalIndex,

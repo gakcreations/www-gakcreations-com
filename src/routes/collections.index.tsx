@@ -15,9 +15,9 @@ import {
   SHOP_URL,
 } from "@/lib/seo";
 
-const TITLE = "Art Print Collections — Architecture, Coastal & Travel | GAK Creations";
+const TITLE = "Shop Art Print Collections | Architecture, Coastal & Travel Wall Art | GAK Creations";
 const DESCRIPTION =
-  "Browse the GAK Creations art print collections by Gerald Allen Knowles: architecture, coastal, travel collages, Fuerteventura, Gaudí and nature. Shipped worldwide.";
+  "Browse art print collections by Gerald Allen Knowles, from architectural drawings and coastal wall art to travel collages, Fuerteventura scenes and nature prints.";
 
 export const Route = createFileRoute("/collections/")({
   component: CollectionsIndex,

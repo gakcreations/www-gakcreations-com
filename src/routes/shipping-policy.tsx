@@ -12,9 +12,9 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/shipping-policy";
-const TITLE = "Shipping Policy — GAK Creations";
+const TITLE = "Shipping Policy | Fine Art Print Delivery & Production Times | GAK Creations";
 const DESCRIPTION =
-  "Production times, shipping regions, delivery estimates, and carriers for GAK Creations fine art prints fulfilled by Printify.";
+  "Read production times, delivery estimates, shipping regions and carrier details for GAK Creations fine art prints.";
 
 export const Route = createFileRoute("/shipping-policy")({
   component: ShippingPolicy,

@@ -12,9 +12,9 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/terms";
-const TITLE = "Terms of Service — GAK Creations";
+const TITLE = "Terms of Service | GAK Creations Fine Art Prints";
 const DESCRIPTION =
-  "The terms and conditions that govern your use of the GAK Creations website and the purchase of fine art prints.";
+  "Read the terms that apply when you use the GAK Creations website or buy fine art prints from the shop.";
 
 export const Route = createFileRoute("/terms")({
   component: Terms,
