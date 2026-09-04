@@ -65,14 +65,47 @@ export const Route = createFileRoute("/artwork/$slug")({
           "@type": "VisualArtwork",
           "@id": `${abs(path)}#artwork`,
           name: a.title,
+          alternateName: `${a.title} — ${a.place}`,
           url: abs(path),
-          image: abs(a.image),
+          mainEntityOfPage: { "@id": `${abs(path)}#webpage` },
+          image: { "@id": `${abs(a.image)}#image` },
           artMedium: a.medium,
           artform: "Drawing",
+          artworkSurface: "Museum-grade matte fine art paper",
+          artEdition: "Open edition giclée print",
+          spatialCoverage: { "@type": "Place", name: a.year },
+          copyrightHolder: { "@id": `${abs("/")}#artist` },
+          inLanguage: "en",
+          genre: ["Architectural art", "Travel art"],
+          keywords: a.keywords.join(", "),
           contentLocation: { "@type": "Place", name: a.place },
+          locationCreated: { "@type": "Place", name: a.place },
+          about: { "@type": "Thing", name: a.place },
           creator: { "@id": `${abs("/")}#artist` },
+          author: { "@id": `${abs("/")}#artist` },
+          provider: { "@id": `${abs("/")}#organization` },
+          isPartOf: a.collections
+            .map((slug) => collections.find((c) => c.slug === slug))
+            .filter(Boolean)
+            .map((c) => ({
+              "@type": "CollectionPage",
+              name: c!.name,
+              url: abs(`/collections/${c!.slug}`),
+            })),
+          isRelatedTo: a.related
+            .map((slug) => findArtwork(slug))
+            .filter(Boolean)
+            .map((r) => ({
+              "@type": "VisualArtwork",
+              name: r!.title,
+              url: abs(`/artwork/${r!.slug}`),
+            })),
+          subjectOf: {
+            "@id": `${abs(path)}#${a.sku}`,
+          },
           description: a.description,
         },
+
       ]),
     };
   },

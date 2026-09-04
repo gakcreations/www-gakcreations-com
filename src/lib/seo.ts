@@ -333,8 +333,10 @@ export function imageObjectNode(image: string, name: string, caption: string) {
   const dimensions = getImageDimensions(image);
   return {
     "@type": "ImageObject",
+    "@id": `${abs(image)}#image`,
     contentUrl: abs(image),
     url: abs(image),
+
     name,
     caption,
     width: dimensions?.width,
