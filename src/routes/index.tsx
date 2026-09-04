@@ -1,6 +1,8 @@
 import { ResponsiveImage } from "@/components/ResponsiveImage";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrome";
+import { StudioListSection } from "@/components/StudioListForm";
+
 import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
 import {
@@ -184,7 +186,9 @@ function Index() {
         <JournalHighlights />
         <StudioNote />
         <FAQ />
+        <StudioListSection source="homepage" />
         <Shop />
+
       </main>
       <SiteFooter />
     </div>
