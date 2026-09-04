@@ -4,6 +4,7 @@ import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrom
 import { StudioListSection } from "@/components/StudioListForm";
 
 import { collections } from "@/data/collections";
+import { artworks } from "@/data/artworks";
 import { journal } from "@/data/journal";
 import {
   SHOP_URL,
@@ -65,6 +66,8 @@ const featuredWorks = [
   .filter((entry): entry is FeaturedWork => Boolean(entry));
 
 const featuredPosts = journal.slice(0, 3);
+
+const newArtworks = artworks.slice(-8);
 
 const HOME_FAQS: Array<{ q: string; a: string }> = [
   {
@@ -183,6 +186,7 @@ function Index() {
         <Narrative />
         <CollectionsPreview />
         <FeaturedWorks />
+        <NewArtworks />
         <JournalHighlights />
         <StudioNote />
         <FAQ />
@@ -479,6 +483,51 @@ function FeaturedWorks() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function NewArtworks() {
+  return (
+    <section className="border-b border-ink/15 bg-paper-warm" id="new-artwork">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-24">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Just added</p>
+            <h2 className="mt-6 font-display text-4xl md:text-6xl">
+              New in the <em className="font-light">archive</em>
+            </h2>
+          </div>
+          <Link to="/artwork" className="eyebrow hover:text-ink">
+            All artwork →
+          </Link>
+        </div>
+
+        <ul className="mt-14 grid grid-cols-2 gap-8 md:grid-cols-4">
+          {newArtworks.map((a) => (
+            <li key={a.slug}>
+              <Link to="/artwork/$slug" params={{ slug: a.slug }} className="group block">
+                <div className="overflow-hidden bg-paper">
+                  <ResponsiveImage
+                    src={a.image}
+                    alt={a.alt}
+                    width={900}
+                    height={1100}
+                    loading="lazy"
+                    sizes="(min-width: 768px) 22vw, 45vw"
+                    className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-[1.02]"
+                    onError={handleImageError}
+                  />
+                </div>
+                <h3 className="mt-4 font-display text-xl md:text-2xl">{a.title}</h3>
+                <p className="mt-2 text-[0.65rem] uppercase tracking-[0.2em] text-ink-soft">
+                  {a.medium} · {a.place}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
