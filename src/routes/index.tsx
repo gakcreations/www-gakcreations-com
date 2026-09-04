@@ -67,6 +67,8 @@ const featuredWorks = [
 
 const featuredPosts = journal.slice(0, 3);
 
+const newArtworks = artworks.slice(-8);
+
 const HOME_FAQS: Array<{ q: string; a: string }> = [
   {
     q: "What kind of art does GAK Creations sell?",
