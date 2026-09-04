@@ -452,6 +452,138 @@ export const journal: JournalPost[] = [
     ],
     relatedCollection: "architecture",
   },
+  {
+    slug: "how-to-choose-art-for-every-room",
+    title: "How to Choose Art for Every Room in the House",
+    seoTitle: "How to Choose Art for Every Room — Room-by-Room Guide | GAK Creations",
+    seoDescription:
+      "A room-by-room guide to choosing wall art: sizes, heights, palettes and framing for living rooms, bedrooms, home offices and hallways, from architect and artist Gerald Allen Knowles.",
+    excerpt:
+      "Living room, bedroom, office, hallway — each room asks a different question of a picture. Here are the answers, with sizes and heights.",
+    published: "2026-09-04",
+    readingTime: "7 min read",
+    keywords: [
+      "how to choose wall art",
+      "art for every room",
+      "wall art size guide",
+      "hanging height for art",
+      "room by room art guide",
+    ],
+    image: BOAT,
+    imageAlt:
+      "Coastal art print of a blue boat, used to illustrate how to choose artwork for different rooms",
+    intro: [
+      "People usually choose a picture and then look for a wall. It is far easier the other way round. Once you know what a room is for — sitting, sleeping, working, passing through — the size, height, palette and even the subject narrow down almost by themselves.",
+      "This is the practical version of advice normally given in vague terms, drawn from hanging work in the houses of people who bought it.",
+    ],
+    body: [
+      {
+        heading: "Living rooms: one anchor, generously sized",
+        paragraphs: [
+          "The living room is the wall people look at longest, so it wants a single strong piece rather than a scattering. Size it to the furniture below: about two thirds of the sofa's width, centred at 145–150 cm from the floor, with 15–25 cm of clear wall between the sofa back and the frame.",
+          "Because this room is usually the brightest in a house, matte paper matters and so does UV glazing on a sun-facing wall. Architectural studies and large landscapes both work; what does not work is a small print floating in the middle of a big wall.",
+        ],
+      },
+      {
+        heading: "Bedrooms: lower contrast, softer subject",
+        paragraphs: [
+          "A bedroom picture is seen last at night and first in the morning, so its job is to be restful. Dusk and night scenes, still water and quiet architecture all have low internal contrast, which lets the eye stop rather than scan.",
+          "Above a double or king bed, use a single print of 70–110 cm or a matched pair of 40–50 cm sheets, centred on the bed rather than the wall, with 20–30 cm above the headboard.",
+        ],
+      },
+      {
+        heading: "Home offices: detail you can live with",
+        paragraphs: [
+          "In a working room the artwork has two jobs — the wall you face while thinking, and the wall behind you on camera. In front of you, choose detail: a drawing with visible construction lines gives the eye somewhere useful to go between two sentences. Behind you, choose one clear shape, because a camera flattens depth and turns clusters into noise.",
+          "Hang the facing piece at seated eye level, roughly 120–130 cm to the centre, and keep the mount narrower — 4–5 cm — so more picture fits the same wall.",
+        ],
+      },
+      {
+        heading: "Hallways and stairs: sequences, not statements",
+        paragraphs: [
+          "Corridors are read in motion, which makes them the one place a group genuinely belongs. Three prints of the same size, 8–12 cm apart, all on a centre line at 150 cm, will look considered in almost any hallway.",
+          "On a staircase, run an imaginary line parallel to the handrail and centre every frame on it. Keep the sizes identical; mixed sizes on a diagonal look accidental rather than relaxed.",
+        ],
+      },
+      {
+        heading: "Kitchens, bathrooms and awkward corners",
+        paragraphs: [
+          "Small rooms take small work: 20–30 cm, hung away from steam, splash and direct heat. A bathroom will happily carry a single coastal study; a kitchen suits something with a bit of humour or movement.",
+          "Awkward corners — the space beside a door, the wall under a slope — are best treated with one square print rather than an attempt at symmetry.",
+        ],
+      },
+      {
+        heading: "The test that saves a bad decision",
+        paragraphs: [
+          "Before ordering, cut the framed dimensions out of newspaper and tape the shape to the wall for a day. Walk past it. Sit under it. Almost every sizing mistake announces itself within a few hours, and it costs nothing to find out.",
+          "Then choose the drawing. The archive is browsable by collection and by individual work, and each sheet is made to order in a range of sizes, so the wall can decide and the picture can follow.",
+        ],
+      },
+    ],
+    relatedCollection: "coastal",
+  },
+  {
+    slug: "why-buy-original-art-prints",
+    title: "Why Buy an Original Artist's Print Rather Than a Poster",
+    seoTitle: "Why Buy an Artist's Art Print Instead of a Poster | GAK Creations",
+    seoDescription:
+      "What separates a museum-quality artist's print from a mass-market poster: paper, pigment inks, provenance and how the drawing was made. A buyer's guide from GAK Creations.",
+    excerpt:
+      "Paper, pigment, provenance and the hand that made the drawing — what you are actually paying for, and why it shows on the wall.",
+    published: "2026-09-04",
+    readingTime: "6 min read",
+    keywords: [
+      "artist art prints",
+      "giclee print vs poster",
+      "buying art prints online",
+      "museum quality art print",
+      "archival pigment print",
+    ],
+    image: ABBAYE,
+    imageAlt:
+      "Detail of an architectural art print on museum-grade matte paper, showing pencil construction lines and ink work",
+    intro: [
+      "A poster and a fine art print can show the same image at the same size for very different prices. The difference is not branding. It is in three things you can see at arm's length — the paper, the ink and the origin of the image — and one you can only see over years.",
+    ],
+    body: [
+      {
+        heading: "The paper does most of the work",
+        paragraphs: [
+          "Mass-market posters are printed on thin coated stock with a slight sheen. It photographs well and it dies under a frame: the surface throws glare across exactly the soft gradients that make a wash drawing worth looking at.",
+          "Museum-grade matte fine art paper is heavy, slightly toothed and completely non-reflective. Under glazing it holds tonal steps that a coated sheet flattens, and it gives the printed line the same slight bite the original pencil had on the page.",
+        ],
+      },
+      {
+        heading: "Pigment inks versus dye",
+        paragraphs: [
+          "Cheap printing uses dye inks, which sit in the coating and shift within a few years in daylight — blues go first, then the warm greys turn muddy. Archival pigment inks suspend solid particles in the paper fibre, and independent testing puts their lightfastness in decades rather than seasons.",
+          "This is why the phrase 'giclée' persists despite being over-used: it describes pigment inkjet printing at high resolution on rag or alpha-cellulose paper. It is the standard every print in this archive is made to.",
+        ],
+      },
+      {
+        heading: "Where the image came from",
+        paragraphs: [
+          "The largest difference is upstream of the printer. A poster is usually a licensed photograph or a generated composition. Every drawing here was made in front of its subject — a Romanesque abbey in Saintes, a titanium curve in Bilbao, a volcanic ridge on Fuerteventura — measured by eye, drawn in one sitting, without erasing.",
+          "That process leaves traces: pencil construction lines running past a tower, a wash that stopped where the light moved. Those marks are the record of someone standing there, and they are the part of the sheet that keeps rewarding attention years later.",
+        ],
+      },
+      {
+        heading: "Made to order, not warehoused",
+        paragraphs: [
+          "Each print is produced when it is ordered, at the production facility nearest the delivery address. Nothing sits in stock fading under warehouse lighting, and the shipping leg is short — typically 2–7 business days to produce and 4–20 business days to arrive.",
+          "It also means sizes are genuinely open: the same drawing can be a 30 cm sheet beside a desk or a 100 cm anchor above a sofa, printed at a resolution where the original pencil work stays visible.",
+        ],
+      },
+      {
+        heading: "What it costs and what it holds",
+        paragraphs: [
+          "An artist's print costs more than a poster and far less than an original. What it buys is a piece that survives framing, sunlight and a decade of moving house, and an image with an author you can read about rather than a stock reference number.",
+          "If something arrives damaged or misprinted, the returns policy covers a replacement within 30 days — a practical difference from most poster shops, and one worth checking before buying art anywhere online.",
+        ],
+      },
+    ],
+    relatedCollection: "architecture",
+  },
 ];
 
 

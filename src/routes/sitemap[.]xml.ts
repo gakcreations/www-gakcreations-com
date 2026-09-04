@@ -3,6 +3,7 @@ import type {} from "@tanstack/react-start";
 import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
 import { artworks } from "@/data/artworks";
+import { guides } from "@/data/guides";
 
 const BASE_URL = "https://www.gakcreations.com";
 
@@ -32,6 +33,14 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/coastal-wall-art", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
           { path: "/travel-collage-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
           { path: "/fuerteventura-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+
+          // Room-by-room and gift buying guides.
+          ...guides.map((g) => ({
+            path: `/${g.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.8",
+            lastmod: g.published,
+          })),
 
           ...collections.map((c) => ({
             path: `/collections/${c.slug}`,

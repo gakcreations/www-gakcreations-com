@@ -182,17 +182,52 @@ function ArtworkPage() {
                   <dd>Museum-grade matte, pigment inks</dd>
                 </dl>
 
-                <a
-                  href={getShopUrl(a.slug, a.productPath)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => trackPrintifyClick({ slug: a.slug, title: a.title })}
-                  className="mt-10 inline-flex items-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
-                >
-                  Buy this print <span>→</span>
-                </a>
-                <p className="mt-4 text-xs leading-relaxed text-ink-soft">
-                  Made to order and shipped worldwide. Sizes and framing options are shown at checkout.
+                <div className="mt-10 border border-ink/20 bg-paper-warm p-6">
+                  <p className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">
+                    Made-to-order fine art print
+                  </p>
+                  <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
+                    <li>· Sizes from small desk prints to 100 cm+ statement pieces</li>
+                    <li>· Museum-grade matte paper, archival pigment inks</li>
+                    <li>· Unframed or framed — chosen at checkout</li>
+                    <li>· Printed 2–7 days, delivered 4–20 days worldwide</li>
+                    <li>· 30-day returns, replacements for damage or misprints</li>
+                  </ul>
+                  <a
+                    href={getShopUrl(a.slug, a.productPath)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackPrintifyClick({ slug: a.slug, title: a.title })}
+                    className="mt-6 inline-flex w-full items-center justify-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
+                  >
+                    Buy this print <span>→</span>
+                  </a>
+                  <p className="mt-4 text-xs leading-relaxed text-ink-soft">
+                    Prices and sizes are shown in the shop. See{" "}
+                    <Link to="/shipping-policy" className="underline hover:text-ink">
+                      shipping
+                    </Link>{" "}
+                    and{" "}
+                    <Link to="/refund-policy" className="underline hover:text-ink">
+                      returns
+                    </Link>
+                    .
+                  </p>
+                </div>
+                <p className="mt-6 text-xs leading-relaxed text-ink-soft">
+                  Not sure which size? Read the guides for the{" "}
+                  <Link to="/living-room-wall-art" className="underline hover:text-ink">
+                    living room
+                  </Link>
+                  ,{" "}
+                  <Link to="/bedroom-wall-art" className="underline hover:text-ink">
+                    bedroom
+                  </Link>{" "}
+                  or{" "}
+                  <Link to="/home-office-wall-art" className="underline hover:text-ink">
+                    home office
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
