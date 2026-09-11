@@ -85,8 +85,8 @@ function ShippingPolicy() {
       <p>
         Once your order ships, you will receive a confirmation email with a tracking number. If you
         have not received tracking within 10 business days, please contact us at{" "}
-        <a href="mailto:info@gakcreations.com" className="text-ink underline">
-          info@gakcreations.com
+        <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+          hello@gakartprints.com
         </a>
         .
       </p>

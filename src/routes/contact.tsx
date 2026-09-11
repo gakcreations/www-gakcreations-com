@@ -49,8 +49,8 @@ function Contact() {
       <PolicyH2>Email</PolicyH2>
       <p>
         The best way to reach us is by email:{" "}
-        <a href="mailto:info@gakcreations.com" className="text-ink underline">
-          info@gakcreations.com
+        <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+          hello@gakartprints.com
         </a>
         . We aim to respond to all enquiries within <strong>1 – 2 business days</strong> (Monday to
         Friday, excluding public holidays).
@@ -96,8 +96,8 @@ function Contact() {
         </li>
         <li>
           <strong>Contact email:</strong>{" "}
-          <a href="mailto:info@gakcreations.com" className="text-ink underline">
-            info@gakcreations.com
+          <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+            hello@gakartprints.com
           </a>
         </li>
         <li>
