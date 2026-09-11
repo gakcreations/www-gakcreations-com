@@ -36,45 +36,10 @@ export const SHIPPING_COUNTRIES = [
   "NZ",
 ];
 
-const SHIPPING_RATE = {
-  "@type": "MonetaryAmount",
-  value: "5.90",
-  currency: "EUR",
-} as const;
-
-const SHIPPING_DELIVERY_TIME = {
-  "@type": "ShippingDeliveryTime",
-  handlingTime: {
-    "@type": "QuantitativeValue",
-    minValue: 2,
-    maxValue: 7,
-    unitCode: "DAY",
-  },
-  transitTime: {
-    "@type": "QuantitativeValue",
-    minValue: 4,
-    maxValue: 20,
-    unitCode: "DAY",
-  },
-} as const;
-
-const SHIPPING_DETAILS = SHIPPING_COUNTRIES.map((addressCountry) => ({
-  "@type": "OfferShippingDetails",
-  shippingDestination: {
-    "@type": "DefinedRegion",
-    addressCountry,
-  },
-  shippingRate: SHIPPING_RATE,
-  deliveryTime: SHIPPING_DELIVERY_TIME,
-}));
-
 const MERCHANT_RETURN_POLICIES = SHIPPING_COUNTRIES.map((applicableCountry) => ({
   "@type": "MerchantReturnPolicy",
   applicableCountry,
-  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-  merchantReturnDays: 30,
-  returnMethod: "https://schema.org/ReturnByMail",
-  returnFees: "https://schema.org/FreeReturn",
+  returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
   merchantReturnLink: `${SITE_URL}/refund-policy`,
 }));
 
@@ -264,7 +229,6 @@ export const organizationNode = {
     contactType: "customer service",
     email: CONTACT_EMAIL,
     availableLanguage: "en",
-    contactOption: "TollFree",
   },
 };
 
@@ -358,20 +322,36 @@ export function productNode(work: {
   place: string;
   description: string;
   sku: string;
+  productPath?: string;
+  price?: string;
+  priceCurrency?: "USD";
 }, options?: { collectionName?: string; keywords?: string[]; pageUrl?: string; offerUrl?: string }) {
   const image = resolveSeoImage({ path: work.image, alt: artworkAltText(work, options?.collectionName) });
-  return {
-    "@type": "Product",
-    "@id": `${options?.pageUrl ?? options?.offerUrl ?? SHOP_URL}#${work.sku}`,
+  const common = {
+    "@id": `${options?.pageUrl ?? abs(image.path)}#${work.sku}`,
     name: productSeoTitle(work, options?.collectionName),
-    sku: work.sku,
     image: abs(image.path),
     description: productSeoDescription(work, options?.collectionName),
     keywords: artworkKeywords(work, options?.keywords),
+    creator: { "@id": `${SITE_URL}/#artist` },
+  };
+
+  if (!work.productPath || !work.price || !work.priceCurrency) {
+    return {
+      "@type": "VisualArtwork",
+      ...common,
+      artMedium: work.medium,
+      contentLocation: { "@type": "Place", name: work.place },
+    };
+  }
+
+  return {
+    "@type": "Product",
+    ...common,
+    sku: work.sku,
     brand: { "@type": "Brand", name: SITE_NAME },
     category: "Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork",
     material: "Museum-grade matte fine art paper",
-    creator: { "@id": `${SITE_URL}/#artist` },
     additionalProperty: [
       { "@type": "PropertyValue", name: "Medium", value: work.medium },
       { "@type": "PropertyValue", name: "Location", value: work.place },
@@ -379,12 +359,11 @@ export function productNode(work: {
     offers: {
       "@type": "Offer",
       url: options?.offerUrl ?? SHOP_URL,
-      priceCurrency: "EUR",
-      price: "29.00",
+      priceCurrency: work.priceCurrency,
+      price: work.price,
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: { "@id": `${SITE_URL}/#organization` },
-      shippingDetails: SHIPPING_DETAILS,
       hasMerchantReturnPolicy: MERCHANT_RETURN_POLICIES,
     },
   };

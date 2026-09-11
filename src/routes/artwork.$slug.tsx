@@ -191,8 +191,19 @@ function ArtworkPage() {
                     <li>· Museum-grade matte paper, archival pigment inks</li>
                     <li>· Unframed or framed — chosen at checkout</li>
                     <li>· Printed 2–7 days, delivered 4–20 days worldwide</li>
-                    <li>· 30-day returns, replacements for damage or misprints</li>
+                    <li>· Defects reported within 30 days are replaced or refunded</li>
                   </ul>
+                  {a.price && a.priceCurrency && (
+                    <p className="mt-5 font-display text-2xl text-ink">
+                      From {new Intl.NumberFormat("en", {
+                        style: "currency",
+                        currency: a.priceCurrency,
+                      }).format(Number(a.price))}{" "}
+                      <span className="font-body text-xs uppercase tracking-[0.2em] text-ink-soft">
+                        · In stock
+                      </span>
+                    </p>
+                  )}
                   <a
                     href={getShopUrl(a.slug, a.productPath)}
                     target="_blank"
@@ -203,7 +214,8 @@ function ArtworkPage() {
                     Buy this print <span>→</span>
                   </a>
                   <p className="mt-4 text-xs leading-relaxed text-ink-soft">
-                    Prices and sizes are shown in the shop. See{" "}
+                    {a.price ? "Final price depends on the selected size and frame. " : "Prices and sizes are shown in the shop. "}
+                    See{" "}
                     <Link to="/shipping-policy" className="underline hover:text-ink">
                       shipping
                     </Link>{" "}
