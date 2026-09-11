@@ -325,7 +325,12 @@ export function productNode(work: {
   productPath?: string;
   price?: string;
   priceCurrency?: "USD";
-}, options?: { collectionName?: string; keywords?: string[]; pageUrl?: string; offerUrl?: string }) {
+}, options?: {
+  collectionName?: string;
+  keywords?: string[];
+  pageUrl?: string;
+  includeOffer?: boolean;
+}) {
   const image = resolveSeoImage({ path: work.image, alt: artworkAltText(work, options?.collectionName) });
   const common = {
     "@id": `${options?.pageUrl ?? abs(image.path)}#${work.sku}`,
@@ -336,7 +341,7 @@ export function productNode(work: {
     creator: { "@id": `${SITE_URL}/#artist` },
   };
 
-  if (!work.productPath || !work.price || !work.priceCurrency) {
+  if (!options?.includeOffer || !work.productPath || !work.price || !work.priceCurrency) {
     return {
       "@type": "VisualArtwork",
       ...common,
@@ -358,7 +363,7 @@ export function productNode(work: {
     ],
     offers: {
       "@type": "Offer",
-      url: options?.offerUrl ?? SHOP_URL,
+      url: `${SHOP_URL}${work.productPath}`,
       priceCurrency: work.priceCurrency,
       price: work.price,
       availability: "https://schema.org/InStock",

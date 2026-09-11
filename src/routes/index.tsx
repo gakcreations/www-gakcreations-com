@@ -157,7 +157,6 @@ export const Route = createFileRoute("/")({
           collectionName: collection.name,
           keywords: artworkKeywords(work, collection.keywords),
           pageUrl: abs(`/collections/${collection.slug}#${fragmentId}`),
-          offerUrl: SHOP_URL,
         }),
       ),
       {

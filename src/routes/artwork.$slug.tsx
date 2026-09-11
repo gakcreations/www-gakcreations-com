@@ -58,7 +58,7 @@ export const Route = createFileRoute("/artwork/$slug")({
         productNode(a, {
           keywords: a.keywords,
           pageUrl: abs(path),
-          offerUrl: getShopUrl(a.slug, a.productPath),
+          includeOffer: true,
         }),
         imageObjectNode(a.image, a.title, a.alt),
         {

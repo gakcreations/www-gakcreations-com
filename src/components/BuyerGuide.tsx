@@ -80,7 +80,6 @@ export function guideHead(guide: BuyerGuideData) {
           item: productNode(a!, {
             keywords: guide.keywords,
             pageUrl: abs(`/artwork/${a!.slug}`),
-            offerUrl: getShopUrl(a!.slug, a!.productPath),
           }),
         })),
       },
