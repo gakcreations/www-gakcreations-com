@@ -658,7 +658,7 @@ function Shop() {
           Enter the shop
           <span>→</span>
         </a>
-        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-soft">gak-creations.printify.me</p>
+        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-soft">artprints.gakcreations.com</p>
       </div>
     </section>
   );
