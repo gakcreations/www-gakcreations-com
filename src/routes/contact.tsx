@@ -87,12 +87,19 @@ function Contact() {
 
       <PolicyH2>Business Information</PolicyH2>
       <p>
-        GAK Creations is the trading name of the personal studio of Gerald Allen Knowles. Orders are
-        fulfilled worldwide through our print-on-demand partner Printify.
+        GAK Creations is the trading name of the personal studio of Gerald Knowles, owner and
+        artist. Orders are fulfilled worldwide through our print-on-demand partner Printify.
       </p>
       <ul className="list-disc space-y-2 pl-6">
         <li>
           <strong>Business name:</strong> GAK Creations
+        </li>
+        <li>
+          <strong>Owner &amp; Artist:</strong> Gerald Knowles
+        </li>
+        <li>
+          <strong>Address:</strong> Avda Jhan Reisen 15, Costa Calma, 35627 Fuerteventura, Las
+          Palmas, Spain
         </li>
         <li>
           <strong>Contact email:</strong>{" "}

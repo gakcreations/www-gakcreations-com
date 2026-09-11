@@ -251,6 +251,10 @@ export const artistNode = {
   name: ARTIST_NAME,
   alternateName: "GAK",
   jobTitle: "Architect, Artist and Traveler",
+  address: {
+    "@type": "PostalAddress",
+    ...BUSINESS_ADDRESS,
+  },
   description:
     "Gerald Allen Knowles is an architect, artist and traveler whose drawings and collages trace the quiet geometry of places across Europe and the islands of the Atlantic.",
   url: `${SITE_URL}/`,
