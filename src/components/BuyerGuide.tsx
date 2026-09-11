@@ -20,7 +20,6 @@ import {
   SITE_NAME,
   ARTIST_NAME,
 } from "@/lib/seo";
-import { getShopUrl } from "@/lib/analytics";
 
 export function guideHead(guide: BuyerGuideData) {
   const path = `/${guide.slug}`;
@@ -80,7 +79,6 @@ export function guideHead(guide: BuyerGuideData) {
           item: productNode(a!, {
             keywords: guide.keywords,
             pageUrl: abs(`/artwork/${a!.slug}`),
-            offerUrl: getShopUrl(a!.slug, a!.productPath),
           }),
         })),
       },

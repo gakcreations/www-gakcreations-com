@@ -25,6 +25,10 @@ export interface Artwork {
   collections: string[];
   /** Path of the matching listing in the Printify shop, if it has one. */
   productPath?: string;
+  /** Verified starting price shown by the linked Printify listing. */
+  price?: string;
+  /** ISO 4217 currency used by the linked Printify listing. */
+  priceCurrency?: "USD";
   /** Other artwork slugs shown as companion pieces. */
   related: string[];
 
@@ -246,6 +250,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["architecture", "travel"],
     productPath: "/product/28619938/watercolor-cathedrale-saint-pierre-saintes-france-poster-textured-matte-art-print",
+    price: "90.94",
+    priceCurrency: "USD",
     related: ["abbaye-aux-dames-saintes", "guggenheim-museum-bilbao"],
   },
   {
@@ -282,6 +288,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["fuerteventura", "nature", "coastal"],
     productPath: "/product/29077506/fine-art-print-arch-of-wind-and-amp-time-fuerteventura",
+    price: "29.99",
+    priceCurrency: "USD",
     related: ["erosion-gate-fuerteventura", "volcanic-landscape-fuerteventura"],
   },
   {
@@ -318,6 +326,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["fuerteventura", "nature", "coastal"],
     productPath: "/product/29079266/fuerteventura-erosion-gate-framed-paper-poster-canary-islands-travel-art",
+    price: "321.85",
+    priceCurrency: "USD",
     related: ["arch-of-wind-and-time", "volcanic-landscape-fuerteventura"],
   },
   {
@@ -354,6 +364,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["fuerteventura", "nature"],
     productPath: "/product/29077201/mystical-fuerteventura-dream-nights-fine-art-print",
+    price: "29.99",
+    priceCurrency: "USD",
     related: ["fuerteventura-palm-trees-symphony", "arch-of-wind-and-time"],
   },
   {
@@ -390,6 +402,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["fuerteventura", "coastal", "nature"],
     productPath: "/product/29076799/fine-art-print-fuerteventura-palm-trees-symphony",
+    price: "29.99",
+    priceCurrency: "USD",
     related: ["mystical-fuerteventura-dream-nights", "fuerteventura-magical-landscape"],
   },
   {
@@ -426,6 +440,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["fuerteventura", "nature", "travel"],
     productPath: "/product/29077058/fuerteventura-magical-landscape-framed-poster",
+    price: "321.85",
+    priceCurrency: "USD",
     related: ["fuerteventura-palm-trees-symphony", "mystical-chapel-fuerteventura"],
   },
   {
@@ -462,6 +478,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["fuerteventura", "nature", "architecture"],
     productPath: "/product/29076921/framed-paper-poster-fuerteventura-mystical-chapel-in-mountainous-landscape",
+    price: "321.85",
+    priceCurrency: "USD",
     related: ["volcanic-landscape-fuerteventura", "fuerteventura-magical-landscape"],
   },
   {
@@ -498,6 +516,8 @@ export const artworks: Artwork[] = [
     ],
     collections: ["coastal", "fuerteventura", "nature"],
     productPath: "/product/29106370/fuerteventura-waves-fine-art-print-syphonmy-of-waves-passepartout-frame",
+    price: "29.99",
+    priceCurrency: "USD",
     related: ["the-blue-boat-that-dreams-of-sea", "erosion-gate-fuerteventura"],
   },
 ];
