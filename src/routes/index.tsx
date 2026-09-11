@@ -187,6 +187,7 @@ function Index() {
         <CollectionsPreview />
         <FeaturedWorks />
         <NewArtworks />
+        <BuyingGuides />
         <JournalHighlights />
         <StudioNote />
         <FAQ />
