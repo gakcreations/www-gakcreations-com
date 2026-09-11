@@ -13,7 +13,6 @@ import {
   breadcrumbNode,
   productNode,
   abs,
-  SHOP_URL,
   ARTIST_NAME,
 } from "@/lib/seo";
 

@@ -20,7 +20,6 @@ import {
   SITE_NAME,
   ARTIST_NAME,
 } from "@/lib/seo";
-import { getShopUrl } from "@/lib/analytics";
 
 export function guideHead(guide: BuyerGuideData) {
   const path = `/${guide.slug}`;

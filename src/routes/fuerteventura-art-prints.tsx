@@ -123,7 +123,6 @@ export const Route = createFileRoute("/fuerteventura-art-prints")({
             collectionName: "Fuerteventura",
             keywords: KEYWORDS,
             pageUrl: abs(PATH),
-            offerUrl: SHOP_URL,
           }),
         })),
       },

@@ -122,7 +122,6 @@ export const Route = createFileRoute("/architectural-art-prints")({
             collectionName: "Architecture",
             keywords: KEYWORDS,
             pageUrl: abs(PATH),
-            offerUrl: SHOP_URL,
           }),
         })),
       },
