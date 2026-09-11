@@ -1,5 +1,6 @@
 export const SITE_URL = "https://www.gakcreations.com";
 export const SHOP_URL = "https://artprints.gakcreations.com";
+export const PINTEREST_URL = "https://www.pinterest.com/gakcreations/";
 export const SITE_NAME = "GAK Creations";
 export const ARTIST_NAME = "Gerald Allen Knowles";
 export const CONTACT_EMAIL = "info@gakcreations.com";
@@ -250,7 +251,7 @@ export const organizationNode = {
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   email: CONTACT_EMAIL,
-  sameAs: [SHOP_URL],
+  sameAs: [SHOP_URL, PINTEREST_URL],
   logo: {
     "@type": "ImageObject",
     "@id": `${SITE_URL}/#logo`,
@@ -276,6 +277,7 @@ export const artistNode = {
   description:
     "Gerald Allen Knowles is an architect, artist and traveler whose drawings and collages trace the quiet geometry of places across Europe and the islands of the Atlantic.",
   url: `${SITE_URL}/`,
+  sameAs: [PINTEREST_URL],
   image: abs("/images/Abbaye Aux Dames Saintes France.jpg"),
   knowsAbout: [
     "Architectural drawing",

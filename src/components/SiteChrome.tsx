@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { SHOP_URL, LOGO_PATH, CONTACT_EMAIL } from "@/lib/seo";
+import { SHOP_URL, LOGO_PATH, CONTACT_EMAIL, PINTEREST_URL } from "@/lib/seo";
 import { collections } from "@/data/collections";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
 
@@ -81,6 +81,16 @@ export function SiteFooter() {
           <p className="mt-6 text-sm text-paper/70">
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-paper">
               {CONTACT_EMAIL}
+            </a>
+          </p>
+          <p className="mt-3 text-sm text-paper/70">
+            <a
+              href={PINTEREST_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-paper"
+            >
+              Pinterest — @gakcreations
             </a>
           </p>
         </div>
