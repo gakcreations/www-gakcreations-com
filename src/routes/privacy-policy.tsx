@@ -101,8 +101,8 @@ function PrivacyPolicy() {
         Depending on where you live, you may have the right to access, correct, or delete the
         personal information we hold about you, and to object to certain processing. To exercise
         these rights, email us at{" "}
-        <a href="mailto:info@gakcreations.com" className="text-ink underline">
-          info@gakcreations.com
+        <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+          hello@gakartprints.com
         </a>
         .
       </p>
@@ -116,8 +116,8 @@ function PrivacyPolicy() {
       <PolicyH2>Contact</PolicyH2>
       <p>
         For any privacy question or request, contact GAK Creations at{" "}
-        <a href="mailto:info@gakcreations.com" className="text-ink underline">
-          info@gakcreations.com
+        <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+          hello@gakartprints.com
         </a>
         .
       </p>

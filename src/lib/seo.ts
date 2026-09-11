@@ -3,7 +3,16 @@ export const SHOP_URL = "https://artprints.gakcreations.com";
 export const PINTEREST_URL = "https://www.pinterest.com/gakcreations/";
 export const SITE_NAME = "GAK Creations";
 export const ARTIST_NAME = "Gerald Allen Knowles";
-export const CONTACT_EMAIL = "info@gakcreations.com";
+export const CONTACT_EMAIL = "hello@gakartprints.com";
+export const BUSINESS_ADDRESS = {
+  streetAddress: "Avda Jhan Reisen 15",
+  addressLocality: "Costa Calma",
+  postalCode: "35627",
+  addressRegion: "Fuerteventura, Las Palmas",
+  addressCountry: "ES",
+};
+export const BUSINESS_ADDRESS_TEXT =
+  "Avda Jhan Reisen 15, Costa Calma, 35627 Fuerteventura, Las Palmas, Spain";
 export const DEFAULT_SEO_TITLE = "GAK Creations — Fine Art Prints, Architectural Drawings & Coastal Wall Art";
 export const DEFAULT_SEO_DESCRIPTION =
   "Discover GAK Creations — a global art brand where imagination, craftsmanship, and culture converge in fine art prints, architectural drawings, coastal wall art, and travel collages. Worldwide shipping. Museum-quality prints by Gerald Allen Knowles.";
@@ -216,6 +225,10 @@ export const organizationNode = {
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   email: CONTACT_EMAIL,
+  address: {
+    "@type": "PostalAddress",
+    ...BUSINESS_ADDRESS,
+  },
   sameAs: [SHOP_URL, PINTEREST_URL],
   logo: {
     "@type": "ImageObject",
@@ -238,6 +251,10 @@ export const artistNode = {
   name: ARTIST_NAME,
   alternateName: "GAK",
   jobTitle: "Architect, Artist and Traveler",
+  address: {
+    "@type": "PostalAddress",
+    ...BUSINESS_ADDRESS,
+  },
   description:
     "Gerald Allen Knowles is an architect, artist and traveler whose drawings and collages trace the quiet geometry of places across Europe and the islands of the Atlantic.",
   url: `${SITE_URL}/`,
