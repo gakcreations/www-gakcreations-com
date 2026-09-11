@@ -270,7 +270,23 @@ export const artistNode = {
   ],
   makesOffer: {
     "@type": "Offer",
-    itemOffered: { "@type": "Product", name: "Fine art prints by Gerald Allen Knowles" },
+    itemOffered: {
+      "@type": "Product",
+      name: "Fine art prints by Gerald Allen Knowles",
+      image: abs("/images/Abbaye Aux Dames Saintes France.jpg"),
+      description:
+        "Fine art prints of architectural drawings, coastal artwork and travel collages by architect and artist Gerald Allen Knowles.",
+      brand: { "@id": `${SITE_URL}/#organization` },
+      offers: {
+        "@type": "AggregateOffer",
+        url: SHOP_URL,
+        priceCurrency: "USD",
+        lowPrice: "29.99",
+        highPrice: "321.85",
+        offerCount: "8",
+        availability: "https://schema.org/InStock",
+      },
+    },
     url: SHOP_URL,
   },
   worksFor: { "@id": `${SITE_URL}/#organization` },
