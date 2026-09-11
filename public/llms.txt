@@ -3,7 +3,7 @@
 > GAK Creations is a global art brand and creative studio founded by Gerald Allen Knowles — architect, artist, and traveler. The brand specialises in fine art prints, architectural drawings, coastal wall art, travel-inspired collages, and modern home décor. Museum-quality prints are made to order and shipped worldwide via Printify.
 >
 > Primary website: https://www.gakcreations.com  
-> Shop: https://gak-creations.printify.me  
+> Shop: https://artprints.gakcreations.com  
 > Contact: info@gakcreations.com
 
 ## About GAK Creations
@@ -60,7 +60,7 @@ Organic forms, botanical studies, and the quiet geometry of the natural world �
 
 All prints are made to order on museum-grade matte fine art paper with archival pigment inks. Available in multiple sizes. Shipped worldwide via Printify partner network.
 
-- **Shop URL:** https://gak-creations.printify.me
+- **Shop URL:** https://artprints.gakcreations.com
 - **Currency:** EUR (prices from €29)
 - **Shipping destinations:** US, CA, GB, IE, FR, ES, DE, NL, BE, IT, PT, SE, DK, AU, NZ and more
 - **Production time:** 2–7 business days
@@ -79,7 +79,18 @@ All prints are made to order on museum-grade matte fine art paper with archival 
 - [Nature Studies](/collections/nature): Nature art prints and botanical studies.
 - [Studio Journal](/journal): Notes on architectural sketching, coastal artwork, travel collage, and the studio process.
 - [Architectural Art Prints Buyer's Guide](/architectural-art-prints): How to choose, frame, and hang architectural art prints — sizing guide, framing advice, care tips.
-- [Shop](https://gak-creations.printify.me): Fine art prints, made to order and shipped worldwide.
+- [All Artwork](/artwork): Every individual artwork with full details, sizes, and shop links.
+- [About Gerald Allen Knowles](/about): The artist's background, training, and studio practice.
+- [Coastal Wall Art Guide](/coastal-wall-art): Choosing harbour and Atlantic seascape prints.
+- [Travel Collage Prints Guide](/travel-collage-prints): Mixed-media travel collage prints explained.
+- [Fuerteventura Art Prints](/fuerteventura-art-prints): Canary Islands volcanic landscape prints.
+- [Living Room Wall Art](/living-room-wall-art): Choosing and sizing art for living rooms.
+- [Bedroom Wall Art](/bedroom-wall-art): Calm art choices for bedrooms.
+- [Home Office Wall Art](/home-office-wall-art): Art for desks, studies, and workspaces.
+- [Hallway Wall Art](/hallway-wall-art): Narrow-wall and entrance art advice.
+- [Art Gifts for Architects](/art-gifts-for-architects): Gift guide for architects and design lovers.
+- [Housewarming Art Gifts](/housewarming-art-gifts): Art gift ideas for new homes.
+- [Shop](https://artprints.gakcreations.com): Fine art prints, made to order and shipped worldwide.
 - [Contact](/contact): Customer care — orders, shipping, returns.
 - [Shipping Policy](/shipping-policy): Production times, delivery estimates, and carriers.
 - [Refund & Returns Policy](/refund-policy): Returns, refunds, and replacements within 30 days.

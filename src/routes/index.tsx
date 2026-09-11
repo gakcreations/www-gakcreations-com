@@ -187,6 +187,7 @@ function Index() {
         <CollectionsPreview />
         <FeaturedWorks />
         <NewArtworks />
+        <BuyingGuides />
         <JournalHighlights />
         <StudioNote />
         <FAQ />
@@ -533,6 +534,43 @@ function NewArtworks() {
   );
 }
 
+const buyingGuides = [
+  { to: "/living-room-wall-art", label: "Living room wall art", note: "Sizing and placement above a sofa" },
+  { to: "/bedroom-wall-art", label: "Bedroom wall art", note: "Calm, quiet pieces for restful rooms" },
+  { to: "/home-office-wall-art", label: "Home office wall art", note: "Art that holds up on video calls" },
+  { to: "/hallway-wall-art", label: "Hallway wall art", note: "Narrow walls and first impressions" },
+  { to: "/art-gifts-for-architects", label: "Art gifts for architects", note: "Drawings for people who read buildings" },
+  { to: "/housewarming-art-gifts", label: "Housewarming art gifts", note: "A first piece for a new home" },
+] as const;
+
+function BuyingGuides() {
+  return (
+    <section className="border-b border-ink/15" id="buying-guides">
+      <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-24">
+        <p className="eyebrow">Where will it hang?</p>
+        <h2 className="mt-6 max-w-3xl font-display text-4xl md:text-6xl">
+          Buying <em className="font-light">guides</em>
+        </h2>
+        <p className="mt-6 max-w-2xl text-ink-soft">
+          Room-by-room advice on choosing, sizing, framing and hanging fine art prints — with a
+          handful of recommended pieces for each space.
+        </p>
+
+        <ul className="mt-14 grid gap-px border border-ink/15 bg-ink/15 md:grid-cols-3">
+          {buyingGuides.map((g) => (
+            <li key={g.to} className="bg-paper">
+              <Link to={g.to} className="group block h-full px-8 py-10 transition hover:bg-paper-warm">
+                <h3 className="font-display text-2xl group-hover:italic">{g.label}</h3>
+                <p className="mt-3 text-sm text-ink-soft">{g.note}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
+
 function JournalHighlights() {
   return (
     <section className="border-b border-ink/15 bg-paper-warm">
@@ -658,7 +696,7 @@ function Shop() {
           Enter the shop
           <span>→</span>
         </a>
-        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-soft">gak-creations.printify.me</p>
+        <p className="mt-6 text-xs uppercase tracking-[0.2em] text-ink-soft">artprints.gakcreations.com</p>
       </div>
     </section>
   );
