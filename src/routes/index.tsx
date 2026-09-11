@@ -152,13 +152,17 @@ export const Route = createFileRoute("/")({
           })),
         },
       },
-      ...featuredWorks.map(({ collection, work, fragmentId }) =>
-        productNode(work, {
-          collectionName: collection.name,
-          keywords: artworkKeywords(work, collection.keywords),
-          pageUrl: abs(`/collections/${collection.slug}#${fragmentId}`),
-        }),
-      ),
+      // Product schema only for the eight verified, priced Printify listings —
+      // every Product on the homepage carries a visible matching price.
+      ...artworks
+        .filter((a) => a.productPath && a.price)
+        .map((a) =>
+          productNode(a, {
+            keywords: a.keywords,
+            pageUrl: abs(`/artwork/${a.slug}`),
+            includeOffer: true,
+          }),
+        ),
       {
         "@type": "FAQPage",
         "@id": `${abs("/")}#faq`,
