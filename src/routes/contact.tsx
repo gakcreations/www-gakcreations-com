@@ -98,7 +98,7 @@ function Contact() {
           <strong>Owner &amp; Artist:</strong> Gerald Knowles
         </li>
         <li>
-          <strong>Address:</strong> Avda Jhan Reisen 15, Costa Calma, 35627 Fuerteventura, Las
+          <strong>Address:</strong> Avda Jahn Reisen 15, Costa Calma, 35627 Fuerteventura, Las
           Palmas, Spain
         </li>
         <li>
