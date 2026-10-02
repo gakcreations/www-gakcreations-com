@@ -409,6 +409,9 @@ export function productNode(work: {
 
 export const ldJson = (graph: unknown[]) => [
   {
+    // `async` satisfies React 19's float hoisting for hydrated head scripts;
+    // on a JSON-LD script the attribute is a no-op for crawlers.
+    async: true,
     type: "application/ld+json",
     children: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }),
   },
