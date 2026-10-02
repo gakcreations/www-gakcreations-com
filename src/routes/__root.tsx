@@ -5,6 +5,7 @@ import {
   createRootRouteWithContext,
   useRouter,
   HeadContent,
+  Scripts,
   useLocation,
 } from "@tanstack/react-router";
 import { useEffect } from "react";
@@ -207,6 +208,9 @@ function RootComponent() {
       <QueryClientProvider client={queryClient}>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
+        {/* Required: renders the client entry bundle. Without this boundary the
+            app never boots in the browser (no hydration, no analytics events). */}
+        <Scripts />
         <Analytics />
         <SpeedInsights />
       </QueryClientProvider>
