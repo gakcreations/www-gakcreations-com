@@ -1,8 +1,9 @@
 import { SHOP_URL } from "@/lib/seo";
 
-const GA_ID = import.meta.env.VITE_LOVABLE_CONNECTOR_GOOGLE_ANALYTICS_API_KEY as
-  | string
-  | undefined;
+// The GA4 measurement ID is public (it appears in the page source of every
+// site using GA), so it is safe to inline here. It is sourced from the
+// GOOGLE_ANALYTICS_MEASUREMENT_ID project secret.
+const GA_ID = "__GA_MEASUREMENT_ID__" as string | undefined;
 
 export const GA_IS_ENABLED = Boolean(GA_ID);
 export const GA_SCRIPT_SRC = GA_ID
