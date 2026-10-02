@@ -9,115 +9,35 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
-import { Route as ArtGiftsForArchitectsRouteImport } from './routes/art-gifts-for-architects'
-import { Route as BedroomWallArtRouteImport } from './routes/bedroom-wall-art'
-import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as FuerteventuraArtPrintsRouteImport } from './routes/fuerteventura-art-prints'
-import { Route as HallwayWallArtRouteImport } from './routes/hallway-wall-art'
-import { Route as HomeOfficeWallArtRouteImport } from './routes/home-office-wall-art'
-import { Route as HousewarmingArtGiftsRouteImport } from './routes/housewarming-art-gifts'
-import { Route as LivingRoomWallArtRouteImport } from './routes/living-room-wall-art'
-import { Route as MerchantFeedDotxmlRouteImport } from './routes/merchant-feed[.]xml'
-import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
-import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
-import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TravelCollagePrintsRouteImport } from './routes/travel-collage-prints'
-import { Route as ArtworkIndexRouteImport } from './routes/artwork.index'
-import { Route as ArtworkSlugRouteImport } from './routes/artwork.$slug'
-import { Route as CollectionsIndexRouteImport } from './routes/collections.index'
-import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
+import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as MerchantFeedDotxmlRouteImport } from './routes/merchant-feed[.]xml'
+import { Route as LivingRoomWallArtRouteImport } from './routes/living-room-wall-art'
+import { Route as HousewarmingArtGiftsRouteImport } from './routes/housewarming-art-gifts'
+import { Route as HomeOfficeWallArtRouteImport } from './routes/home-office-wall-art'
+import { Route as HallwayWallArtRouteImport } from './routes/hallway-wall-art'
+import { Route as FuerteventuraArtPrintsRouteImport } from './routes/fuerteventura-art-prints'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
+import { Route as BedroomWallArtRouteImport } from './routes/bedroom-wall-art'
+import { Route as ArtGiftsForArchitectsRouteImport } from './routes/art-gifts-for-architects'
+import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
+import { Route as CollectionsIndexRouteImport } from './routes/collections.index'
+import { Route as ArtworkIndexRouteImport } from './routes/artwork.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
+import { Route as CollectionsSlugRouteImport } from './routes/collections.$slug'
+import { Route as ArtworkSlugRouteImport } from './routes/artwork.$slug'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArchitecturalArtPrintsRoute = ArchitecturalArtPrintsRouteImport.update({
-  id: '/architectural-art-prints',
-  path: '/architectural-art-prints',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ArtGiftsForArchitectsRoute = ArtGiftsForArchitectsRouteImport.update({
-  id: '/art-gifts-for-architects',
-  path: '/art-gifts-for-architects',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BedroomWallArtRoute = BedroomWallArtRouteImport.update({
-  id: '/bedroom-wall-art',
-  path: '/bedroom-wall-art',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CoastalWallArtRoute = CoastalWallArtRouteImport.update({
-  id: '/coastal-wall-art',
-  path: '/coastal-wall-art',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FuerteventuraArtPrintsRoute = FuerteventuraArtPrintsRouteImport.update({
-  id: '/fuerteventura-art-prints',
-  path: '/fuerteventura-art-prints',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HallwayWallArtRoute = HallwayWallArtRouteImport.update({
-  id: '/hallway-wall-art',
-  path: '/hallway-wall-art',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HomeOfficeWallArtRoute = HomeOfficeWallArtRouteImport.update({
-  id: '/home-office-wall-art',
-  path: '/home-office-wall-art',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HousewarmingArtGiftsRoute = HousewarmingArtGiftsRouteImport.update({
-  id: '/housewarming-art-gifts',
-  path: '/housewarming-art-gifts',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LivingRoomWallArtRoute = LivingRoomWallArtRouteImport.update({
-  id: '/living-room-wall-art',
-  path: '/living-room-wall-art',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MerchantFeedDotxmlRoute = MerchantFeedDotxmlRouteImport.update({
-  id: '/merchant-feed.xml',
-  path: '/merchant-feed.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
-  id: '/privacy-policy',
-  path: '/privacy-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RefundPolicyRoute = RefundPolicyRouteImport.update({
-  id: '/refund-policy',
-  path: '/refund-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ShippingPolicyRoute = ShippingPolicyRouteImport.update({
-  id: '/shipping-policy',
-  path: '/shipping-policy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
+const TravelCollagePrintsRoute = TravelCollagePrintsRouteImport.update({
+  id: '/travel-collage-prints',
+  path: '/travel-collage-prints',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -125,29 +45,89 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TravelCollagePrintsRoute = TravelCollagePrintsRouteImport.update({
-  id: '/travel-collage-prints',
-  path: '/travel-collage-prints',
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArtworkIndexRoute = ArtworkIndexRouteImport.update({
-  id: '/artwork/',
-  path: '/artwork/',
+const ShippingPolicyRoute = ShippingPolicyRouteImport.update({
+  id: '/shipping-policy',
+  path: '/shipping-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ArtworkSlugRoute = ArtworkSlugRouteImport.update({
-  id: '/artwork/$slug',
-  path: '/artwork/$slug',
+const RefundPolicyRoute = RefundPolicyRouteImport.update({
+  id: '/refund-policy',
+  path: '/refund-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CollectionsIndexRoute = CollectionsIndexRouteImport.update({
-  id: '/collections/',
-  path: '/collections/',
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
-  id: '/collections/$slug',
-  path: '/collections/$slug',
+const MerchantFeedDotxmlRoute = MerchantFeedDotxmlRouteImport.update({
+  id: '/merchant-feed.xml',
+  path: '/merchant-feed.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LivingRoomWallArtRoute = LivingRoomWallArtRouteImport.update({
+  id: '/living-room-wall-art',
+  path: '/living-room-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HousewarmingArtGiftsRoute = HousewarmingArtGiftsRouteImport.update({
+  id: '/housewarming-art-gifts',
+  path: '/housewarming-art-gifts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HomeOfficeWallArtRoute = HomeOfficeWallArtRouteImport.update({
+  id: '/home-office-wall-art',
+  path: '/home-office-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HallwayWallArtRoute = HallwayWallArtRouteImport.update({
+  id: '/hallway-wall-art',
+  path: '/hallway-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FuerteventuraArtPrintsRoute = FuerteventuraArtPrintsRouteImport.update({
+  id: '/fuerteventura-art-prints',
+  path: '/fuerteventura-art-prints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoastalWallArtRoute = CoastalWallArtRouteImport.update({
+  id: '/coastal-wall-art',
+  path: '/coastal-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BedroomWallArtRoute = BedroomWallArtRouteImport.update({
+  id: '/bedroom-wall-art',
+  path: '/bedroom-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtGiftsForArchitectsRoute = ArtGiftsForArchitectsRouteImport.update({
+  id: '/art-gifts-for-architects',
+  path: '/art-gifts-for-architects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchitecturalArtPrintsRoute = ArchitecturalArtPrintsRouteImport.update({
+  id: '/architectural-art-prints',
+  path: '/architectural-art-prints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JournalIndexRoute = JournalIndexRouteImport.update({
@@ -155,9 +135,29 @@ const JournalIndexRoute = JournalIndexRouteImport.update({
   path: '/journal/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CollectionsIndexRoute = CollectionsIndexRouteImport.update({
+  id: '/collections/',
+  path: '/collections/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtworkIndexRoute = ArtworkIndexRouteImport.update({
+  id: '/artwork/',
+  path: '/artwork/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const JournalSlugRoute = JournalSlugRouteImport.update({
   id: '/journal/$slug',
   path: '/journal/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CollectionsSlugRoute = CollectionsSlugRouteImport.update({
+  id: '/collections/$slug',
+  path: '/collections/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArtworkSlugRoute = ArtworkSlugRouteImport.update({
+  id: '/artwork/$slug',
+  path: '/artwork/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -357,123 +357,11 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/architectural-art-prints': {
-      id: '/architectural-art-prints'
-      path: '/architectural-art-prints'
-      fullPath: '/architectural-art-prints'
-      preLoaderRoute: typeof ArchitecturalArtPrintsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/art-gifts-for-architects': {
-      id: '/art-gifts-for-architects'
-      path: '/art-gifts-for-architects'
-      fullPath: '/art-gifts-for-architects'
-      preLoaderRoute: typeof ArtGiftsForArchitectsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bedroom-wall-art': {
-      id: '/bedroom-wall-art'
-      path: '/bedroom-wall-art'
-      fullPath: '/bedroom-wall-art'
-      preLoaderRoute: typeof BedroomWallArtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/coastal-wall-art': {
-      id: '/coastal-wall-art'
-      path: '/coastal-wall-art'
-      fullPath: '/coastal-wall-art'
-      preLoaderRoute: typeof CoastalWallArtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/fuerteventura-art-prints': {
-      id: '/fuerteventura-art-prints'
-      path: '/fuerteventura-art-prints'
-      fullPath: '/fuerteventura-art-prints'
-      preLoaderRoute: typeof FuerteventuraArtPrintsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/hallway-wall-art': {
-      id: '/hallway-wall-art'
-      path: '/hallway-wall-art'
-      fullPath: '/hallway-wall-art'
-      preLoaderRoute: typeof HallwayWallArtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/home-office-wall-art': {
-      id: '/home-office-wall-art'
-      path: '/home-office-wall-art'
-      fullPath: '/home-office-wall-art'
-      preLoaderRoute: typeof HomeOfficeWallArtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/housewarming-art-gifts': {
-      id: '/housewarming-art-gifts'
-      path: '/housewarming-art-gifts'
-      fullPath: '/housewarming-art-gifts'
-      preLoaderRoute: typeof HousewarmingArtGiftsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/living-room-wall-art': {
-      id: '/living-room-wall-art'
-      path: '/living-room-wall-art'
-      fullPath: '/living-room-wall-art'
-      preLoaderRoute: typeof LivingRoomWallArtRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/merchant-feed.xml': {
-      id: '/merchant-feed.xml'
-      path: '/merchant-feed.xml'
-      fullPath: '/merchant-feed.xml'
-      preLoaderRoute: typeof MerchantFeedDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy-policy': {
-      id: '/privacy-policy'
-      path: '/privacy-policy'
-      fullPath: '/privacy-policy'
-      preLoaderRoute: typeof PrivacyPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/refund-policy': {
-      id: '/refund-policy'
-      path: '/refund-policy'
-      fullPath: '/refund-policy'
-      preLoaderRoute: typeof RefundPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/shipping-policy': {
-      id: '/shipping-policy'
-      path: '/shipping-policy'
-      fullPath: '/shipping-policy'
-      preLoaderRoute: typeof ShippingPolicyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
+    '/travel-collage-prints': {
+      id: '/travel-collage-prints'
+      path: '/travel-collage-prints'
+      fullPath: '/travel-collage-prints'
+      preLoaderRoute: typeof TravelCollagePrintsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -483,39 +371,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/travel-collage-prints': {
-      id: '/travel-collage-prints'
-      path: '/travel-collage-prints'
-      fullPath: '/travel-collage-prints'
-      preLoaderRoute: typeof TravelCollagePrintsRouteImport
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/artwork/': {
-      id: '/artwork/'
-      path: '/artwork'
-      fullPath: '/artwork/'
-      preLoaderRoute: typeof ArtworkIndexRouteImport
+    '/shipping-policy': {
+      id: '/shipping-policy'
+      path: '/shipping-policy'
+      fullPath: '/shipping-policy'
+      preLoaderRoute: typeof ShippingPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/artwork/$slug': {
-      id: '/artwork/$slug'
-      path: '/artwork/$slug'
-      fullPath: '/artwork/$slug'
-      preLoaderRoute: typeof ArtworkSlugRouteImport
+    '/refund-policy': {
+      id: '/refund-policy'
+      path: '/refund-policy'
+      fullPath: '/refund-policy'
+      preLoaderRoute: typeof RefundPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/collections/': {
-      id: '/collections/'
-      path: '/collections'
-      fullPath: '/collections/'
-      preLoaderRoute: typeof CollectionsIndexRouteImport
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/collections/$slug': {
-      id: '/collections/$slug'
-      path: '/collections/$slug'
-      fullPath: '/collections/$slug'
-      preLoaderRoute: typeof CollectionsSlugRouteImport
+    '/merchant-feed.xml': {
+      id: '/merchant-feed.xml'
+      path: '/merchant-feed.xml'
+      fullPath: '/merchant-feed.xml'
+      preLoaderRoute: typeof MerchantFeedDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/living-room-wall-art': {
+      id: '/living-room-wall-art'
+      path: '/living-room-wall-art'
+      fullPath: '/living-room-wall-art'
+      preLoaderRoute: typeof LivingRoomWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/housewarming-art-gifts': {
+      id: '/housewarming-art-gifts'
+      path: '/housewarming-art-gifts'
+      fullPath: '/housewarming-art-gifts'
+      preLoaderRoute: typeof HousewarmingArtGiftsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/home-office-wall-art': {
+      id: '/home-office-wall-art'
+      path: '/home-office-wall-art'
+      fullPath: '/home-office-wall-art'
+      preLoaderRoute: typeof HomeOfficeWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hallway-wall-art': {
+      id: '/hallway-wall-art'
+      path: '/hallway-wall-art'
+      fullPath: '/hallway-wall-art'
+      preLoaderRoute: typeof HallwayWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fuerteventura-art-prints': {
+      id: '/fuerteventura-art-prints'
+      path: '/fuerteventura-art-prints'
+      fullPath: '/fuerteventura-art-prints'
+      preLoaderRoute: typeof FuerteventuraArtPrintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coastal-wall-art': {
+      id: '/coastal-wall-art'
+      path: '/coastal-wall-art'
+      fullPath: '/coastal-wall-art'
+      preLoaderRoute: typeof CoastalWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bedroom-wall-art': {
+      id: '/bedroom-wall-art'
+      path: '/bedroom-wall-art'
+      fullPath: '/bedroom-wall-art'
+      preLoaderRoute: typeof BedroomWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/art-gifts-for-architects': {
+      id: '/art-gifts-for-architects'
+      path: '/art-gifts-for-architects'
+      fullPath: '/art-gifts-for-architects'
+      preLoaderRoute: typeof ArtGiftsForArchitectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/architectural-art-prints': {
+      id: '/architectural-art-prints'
+      path: '/architectural-art-prints'
+      fullPath: '/architectural-art-prints'
+      preLoaderRoute: typeof ArchitecturalArtPrintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal/': {
@@ -525,11 +497,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof JournalIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/collections/': {
+      id: '/collections/'
+      path: '/collections'
+      fullPath: '/collections/'
+      preLoaderRoute: typeof CollectionsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/artwork/': {
+      id: '/artwork/'
+      path: '/artwork'
+      fullPath: '/artwork/'
+      preLoaderRoute: typeof ArtworkIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/journal/$slug': {
       id: '/journal/$slug'
       path: '/journal/$slug'
       fullPath: '/journal/$slug'
       preLoaderRoute: typeof JournalSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/collections/$slug': {
+      id: '/collections/$slug'
+      path: '/collections/$slug'
+      fullPath: '/collections/$slug'
+      preLoaderRoute: typeof CollectionsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/artwork/$slug': {
+      id: '/artwork/$slug'
+      path: '/artwork/$slug'
+      fullPath: '/artwork/$slug'
+      preLoaderRoute: typeof ArtworkSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
