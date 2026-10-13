@@ -14,7 +14,7 @@ import {
   abs,
 } from "@/lib/seo";
 
-const TITLE = "Studio Journal — Architectural Sketching, Coastal & Travel Art | GAK Creations";
+const TITLE = "Studio Journal: Sketching & Travel Art | GAK";
 const DESCRIPTION =
   "Notes from the studio of Gerald Allen Knowles on architectural sketching, coastal artwork, travel collage, Fuerteventura landscapes and Gaudí's architecture.";
 

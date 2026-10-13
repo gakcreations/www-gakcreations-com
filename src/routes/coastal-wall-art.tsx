@@ -25,9 +25,9 @@ const PATH = "/coastal-wall-art";
 const HERO = "/images/The Boat That Dreams Of Sea.jpg";
 const PUBLISHED = "2026-09-03";
 
-const TITLE = "Coastal Wall Art & Harbour Prints — Atlantic Light | GAK Creations";
+const TITLE = "Coastal Wall Art & Harbour Prints | GAK Creations";
 const DESCRIPTION =
-  "Coastal wall art by Gerald Allen Knowles: harbour studies, fishing boats and Atlantic light, hand-drawn in ink and wash. Museum-quality coastal art prints, shipped worldwide.";
+  "Coastal wall art by Gerald Allen Knowles: harbours, fishing boats and Atlantic light in ink and wash. Museum-quality prints, shipped worldwide.";
 
 const KEYWORDS = [
   "coastal wall art",

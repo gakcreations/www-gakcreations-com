@@ -15,7 +15,7 @@ import {
   SHOP_URL,
 } from "@/lib/seo";
 
-const TITLE = "Art Print Collections — Architecture, Coastal & Travel | GAK Creations";
+const TITLE = "Art Print Collections | GAK Creations";
 const DESCRIPTION =
   "Browse the GAK Creations art print collections by Gerald Allen Knowles: architecture, coastal, travel collages, Fuerteventura, Gaudí and nature. Shipped worldwide.";
 
