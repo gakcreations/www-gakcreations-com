@@ -25,9 +25,9 @@ const PATH = "/fuerteventura-art-prints";
 const HERO = "/images/Fuerteventura Chapel.jpg";
 const PUBLISHED = "2026-09-03";
 
-const TITLE = "Fuerteventura Art Prints — Canary Island Wall Art | GAK Creations";
+const TITLE = "Fuerteventura Art Prints & Island Wall Art | GAK";
 const DESCRIPTION =
-  "Fuerteventura art prints by Gerald Allen Knowles: volcanic landscapes, whitewashed chapels and Atlantic shorelines drawn on the island. Museum-quality Canary Island wall art, shipped worldwide.";
+  "Fuerteventura art prints by Gerald Allen Knowles: volcanic landscapes, white chapels and Atlantic shores. Museum-quality Canary Island wall art.";
 
 const KEYWORDS = [
   "Fuerteventura art print",
