@@ -12,9 +12,9 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/privacy-policy";
-const TITLE = "Privacy Policy — GAK Creations";
+const TITLE = "Privacy Policy | GAK Creations Fine Art Print Shop";
 const DESCRIPTION =
-  "How GAK Creations collects, uses, and protects personal information when you visit the site or place an order.";
+  "Learn how GAK Creations collects, uses and protects your information when you browse the website or order fine art prints.";
 
 export const Route = createFileRoute("/privacy-policy")({
   component: PrivacyPolicy,

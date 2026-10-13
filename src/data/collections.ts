@@ -36,9 +36,9 @@ export const collections: Collection[] = [
   {
     slug: "architecture",
     name: "Architecture",
-    seoTitle: "Architectural Art Prints — Hand-Drawn Building Sketches | GAK Creations",
+    seoTitle: "Architectural Art Prints | Hand-Drawn Building Wall Art | GAK Creations",
     seoDescription:
-      "Architectural art prints by Gerald Allen Knowles: hand-drawn abbeys, churches and modern landmarks in ink, wash and collage. Museum-quality prints shipped worldwide.",
+      "Shop architectural art prints by Gerald Allen Knowles, from abbeys and churches to modern landmarks. Museum-quality wall art for living rooms, offices and hallways.",
     eyebrow: "Collection N° 01",
     heading: "Architecture",
     lede: "Measured line, weathered stone, and the light that moves across a façade over the course of a morning.",
@@ -113,9 +113,9 @@ export const collections: Collection[] = [
   {
     slug: "coastal",
     name: "Coastal",
-    seoTitle: "Coastal Art Prints — Boats, Harbours & Atlantic Light | GAK Creations",
+    seoTitle: "Coastal Art Prints | Harbour, Boat & Seaside Wall Art | GAK Creations",
     seoDescription:
-      "Coastal art prints by Gerald Allen Knowles: boats, harbours and Atlantic light in ink and watercolour wash. Calm, contemporary seaside wall art shipped worldwide.",
+      "Shop coastal art prints by Gerald Allen Knowles, including boats, harbours and Atlantic light. Calm museum-quality seaside wall art shipped worldwide.",
     eyebrow: "Collection N° 02",
     heading: "Coastal",
     lede: "Harbour walls, hulls at rest, and the particular blue that only exists an hour before the wind changes.",
@@ -180,9 +180,9 @@ export const collections: Collection[] = [
   {
     slug: "travel",
     name: "Travel Collages",
-    seoTitle: "Travel Art Prints & Mixed-Media Collages of Europe | GAK Creations",
+    seoTitle: "Travel Art Prints | Mixed-Media Collage Wall Art | GAK Creations",
     seoDescription:
-      "Travel-inspired art prints and mixed-media collages from Europe and the Atlantic islands by Gerald Allen Knowles. Sketchbook-led wall art, shipped worldwide.",
+      "Shop travel art prints and mixed-media collage wall art by Gerald Allen Knowles, inspired by Europe and the Atlantic islands. Museum-quality prints shipped worldwide.",
     eyebrow: "Collection N° 03",
     heading: "Travel Collages",
     lede: "Field notes from a life of wandering — torn paper, sketch line, and the residue of the places themselves.",
@@ -256,9 +256,9 @@ export const collections: Collection[] = [
   {
     slug: "fuerteventura",
     name: "Fuerteventura",
-    seoTitle: "Fuerteventura Art Prints — Volcanic Landscapes, Canary Islands | GAK Creations",
+    seoTitle: "Fuerteventura Art Prints | Volcanic Canary Islands Wall Art | GAK Creations",
     seoDescription:
-      "Fuerteventura art prints of volcanic landscapes, whitewashed chapels and Atlantic light in the Canary Islands, drawn on location by Gerald Allen Knowles.",
+      "Shop Fuerteventura art prints by Gerald Allen Knowles, from volcanic landscapes and whitewashed chapels to Atlantic shorelines. Museum-quality Canary Islands wall art.",
     eyebrow: "Collection N° 04",
     heading: "Fuerteventura",
     lede: "Black rock, white lime, and a wind that has been shaping the island since before anyone drew it.",
@@ -322,9 +322,9 @@ export const collections: Collection[] = [
   {
     slug: "gaudi-and-modern-landmarks",
     name: "Gaudí & Modern Landmarks",
-    seoTitle: "Gaudí & Modern Architecture Art Prints — Barcelona to Bilbao | GAK Creations",
+    seoTitle: "Gaudí & Modern Architecture Art Prints | Barcelona to Bilbao | GAK Creations",
     seoDescription:
-      "Art prints of Gaudí's Barcelona and modern landmarks including the Guggenheim Bilbao, drawn as ink studies and mixed-media collage by Gerald Allen Knowles.",
+      "Shop Gaudí and modern architecture art prints by Gerald Allen Knowles, including Barcelona studies and the Guggenheim Bilbao. Graphic museum-quality wall art.",
     eyebrow: "Collection N° 05",
     heading: "Gaudí & Modern Landmarks",
     lede: "Curved stone, catenary arches and titanium — buildings that refuse the right angle and get away with it.",
@@ -388,9 +388,9 @@ export const collections: Collection[] = [
   {
     slug: "nature",
     name: "Nature & Landscape",
-    seoTitle: "Nature & Landscape Art Prints — Atlantic Terrain in Ink & Wash | GAK Creations",
+    seoTitle: "Nature & Landscape Art Prints | Atlantic Terrain Wall Art | GAK Creations",
     seoDescription:
-      "Nature and landscape art prints by Gerald Allen Knowles — volcanic terrain, coastal plant life and Atlantic skies in ink and watercolour. Shipped worldwide.",
+      "Shop nature and landscape art prints by Gerald Allen Knowles, featuring volcanic terrain, coastal plant life and Atlantic skies. Museum-quality wall art shipped worldwide.",
     eyebrow: "Collection N° 06",
     heading: "Nature & Landscape",
     lede: "Ground, growth and weather — the parts of a place that were there before the building arrived.",

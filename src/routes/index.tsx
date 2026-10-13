@@ -26,9 +26,9 @@ import {
 
 const heroArtworkUrl = "/images/Abbaye Aux Dames Saintes France.jpg";
 const studioUrl = "/images/studio.jpg";
-const HOME_TITLE = "Fine Art Prints by Gerald Allen Knowles | GAK Creations";
+const HOME_TITLE = "Shop Fine Art Prints, Architectural Drawings & Coastal Wall Art | GAK Creations";
 const HOME_DESCRIPTION =
-  "Shop museum-quality fine art prints — architectural drawings, coastal wall art, and travel collages by Gerald Allen Knowles. Prints from $29.99.";
+  "Shop museum-quality fine art prints by Gerald Allen Knowles, from architectural drawings and coastal wall art to travel collages and Fuerteventura landscapes. Worldwide delivery for homes and thoughtful gifts.";
 
 const featuredCollections = collections.filter((collection) =>
   ["architecture", "coastal", "travel", "fuerteventura", "gaudi-and-modern-landmarks", "nature"].includes(

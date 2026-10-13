@@ -12,9 +12,9 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/refund-policy";
-const TITLE = "Refund & Returns Policy — GAK Creations";
+const TITLE = "Returns Policy | Fine Art Print Refunds & Replacements | GAK Creations";
 const DESCRIPTION =
-  "Returns, refunds, and replacements for GAK Creations fine art prints made to order through Printify.";
+  "Read the refund, replacement and return policy for made-to-order GAK Creations fine art prints.";
 
 export const Route = createFileRoute("/refund-policy")({
   component: RefundPolicy,

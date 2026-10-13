@@ -39,9 +39,9 @@ export const guides: BuyerGuide[] = [
     h1: "Living Room Wall Art That Anchors the Room",
     lede:
       "How to choose, size and hang a single strong print above a sofa — with architectural drawings and Atlantic landscapes made to hold a wall from across the room.",
-    seoTitle: "Living Room Wall Art — Large Prints Above the Sofa | GAK Creations",
+    seoTitle: "Living Room Wall Art | Shop Large Prints Above the Sofa | GAK Creations",
     seoDescription:
-      "Living room wall art by Gerald Allen Knowles: architectural drawings and coastal landscapes sized for above the sofa. Sizing, framing and hanging advice, museum-quality prints shipped worldwide.",
+      "Shop living room wall art by Gerald Allen Knowles, with large architectural and coastal prints plus sizing, framing and hanging advice for above the sofa.",
     keywords: [
       "living room wall art",
       "art prints for living room",
@@ -126,9 +126,9 @@ export const guides: BuyerGuide[] = [
     h1: "Bedroom Wall Art for a Quieter Room",
     lede:
       "Soft Atlantic light, night skies and resting boats — prints chosen for the one room where artwork should lower the volume rather than raise it.",
-    seoTitle: "Bedroom Wall Art — Calm Prints Above the Bed | GAK Creations",
+    seoTitle: "Bedroom Wall Art | Shop Calm Prints Above the Bed | GAK Creations",
     seoDescription:
-      "Bedroom wall art by Gerald Allen Knowles: calm coastal, night and landscape prints sized for above the bed, with framing and hanging advice. Museum-quality prints shipped worldwide.",
+      "Shop bedroom wall art by Gerald Allen Knowles, with calm coastal and landscape prints plus sizing, framing and hanging advice for above the bed.",
     keywords: [
       "bedroom wall art",
       "art prints for bedroom",
@@ -212,9 +212,9 @@ export const guides: BuyerGuide[] = [
     h1: "Home Office Wall Art with Structure",
     lede:
       "Architectural drawings for the wall behind the desk and the wall behind you on camera — precise, quiet and legible at close range.",
-    seoTitle: "Home Office Wall Art — Architectural Prints for the Desk | GAK Creations",
+    seoTitle: "Home Office Wall Art | Architectural Prints for Desk & Studio | GAK Creations",
     seoDescription:
-      "Home office wall art by Gerald Allen Knowles: architectural drawings and studies that read well behind a desk and on video calls. Sizing and framing advice, museum-quality prints worldwide.",
+      "Shop home office wall art by Gerald Allen Knowles, with architectural prints that read well behind a desk and on video calls, plus sizing and framing advice.",
     keywords: [
       "home office wall art",
       "office art prints",
@@ -298,9 +298,9 @@ export const guides: BuyerGuide[] = [
     h1: "Hallway and Stairway Wall Art",
     lede:
       "Corridors are for sequences. Three or four prints at a shared centre line turn a passage into an approach — here is how to plan the run.",
-    seoTitle: "Hallway Wall Art — Print Runs for Corridors & Stairs | GAK Creations",
+    seoTitle: "Hallway Wall Art | Shop Matching Prints for Corridors & Stairs | GAK Creations",
     seoDescription:
-      "Hallway and stairway wall art by Gerald Allen Knowles. How to plan a run of prints, spacing, heights and sets of three. Museum-quality architectural and coastal prints, shipped worldwide.",
+      "Shop hallway wall art by Gerald Allen Knowles, with matching print sets, spacing advice and stair-hanging tips for corridors and landings.",
     keywords: [
       "hallway wall art",
       "corridor art prints",
@@ -384,9 +384,9 @@ export const guides: BuyerGuide[] = [
     h1: "Art Gifts for Architects and Designers",
     lede:
       "Drawings made by a practising architect — measured by eye, built from construction lines, and finished on location. A gift that another architect will read properly.",
-    seoTitle: "Art Gifts for Architects — Drawing Prints by an Architect | GAK Creations",
+    seoTitle: "Art Gifts for Architects | Shop Drawings by an Architect | GAK Creations",
     seoDescription:
-      "Art gifts for architects and designers: hand-drawn architectural prints by architect and artist Gerald Allen Knowles, with visible construction lines. Museum-quality prints shipped worldwide.",
+      "Shop art gifts for architects and designers, with hand-drawn architectural prints by Gerald Allen Knowles and delivery guidance for thoughtful gifting.",
     keywords: [
       "art gifts for architects",
       "gifts for architects",
@@ -471,9 +471,9 @@ export const guides: BuyerGuide[] = [
     h1: "Housewarming Art Gifts for a New Home",
     lede:
       "A new house has empty walls and no agreed taste yet. These are the prints that fit almost any room — restrained palette, real craft, nothing to argue with.",
-    seoTitle: "Housewarming Art Gifts — Prints for a New Home | GAK Creations",
+    seoTitle: "Housewarming Art Gifts | Shop Prints for a New Home | GAK Creations",
     seoDescription:
-      "Housewarming art gifts: calm, museum-quality prints by Gerald Allen Knowles that suit any room in a new home. Sizing, gifting and delivery advice, shipped worldwide.",
+      "Shop housewarming art gifts by Gerald Allen Knowles, with calm museum-quality prints, gifting advice and delivery details for a new home.",
     keywords: [
       "housewarming art gifts",
       "housewarming gift art print",

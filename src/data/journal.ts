@@ -25,9 +25,9 @@ export const journal: JournalPost[] = [
   {
     slug: "architectural-sketching-on-location",
     title: "Architectural Sketching on Location: How a Building Becomes a Drawing",
-    seoTitle: "Architectural Sketching on Location — Method & Materials | GAK Creations",
+    seoTitle: "Architectural Sketching on Location | How Buildings Become Art Prints | GAK Creations",
     seoDescription:
-      "How architect and artist Gerald Allen Knowles draws buildings on location: construction lines, ink, wash and the discipline behind every architectural art print.",
+      "Learn how Gerald Allen Knowles turns on-location building sketches into architectural art prints using construction lines, ink and wash.",
     excerpt:
       "Construction lines, one sitting, no erasing. The working method behind the architectural drawings in the GAK Creations archive.",
     published: "2026-02-10",
@@ -87,9 +87,9 @@ export const journal: JournalPost[] = [
   {
     slug: "coastal-artwork-atlantic-light",
     title: "Coastal Artwork and the Problem of Atlantic Light",
-    seoTitle: "Coastal Artwork & Atlantic Light — Painting Harbours | GAK Creations",
+    seoTitle: "Coastal Artwork & Atlantic Light | How Harbour Paintings Are Built | GAK Creations",
     seoDescription:
-      "Why Atlantic light changes how coastal artwork is painted: palette, timing and structure behind the boat and harbour prints of Gerald Allen Knowles.",
+      "Learn how Atlantic light, structure and palette shape the coastal artwork and harbour prints of Gerald Allen Knowles.",
     excerpt:
       "Why the coastal work is grey before it is blue, and how an architect draws a hull like a building.",
     published: "2026-03-04",
@@ -142,9 +142,9 @@ export const journal: JournalPost[] = [
   {
     slug: "travel-inspired-art-sketchbook-to-collage",
     title: "Travel-Inspired Art: From Sketchbook Page to Finished Collage",
-    seoTitle: "Travel-Inspired Art — Sketchbook to Mixed-Media Collage | GAK Creations",
+    seoTitle: "Travel-Inspired Art | From Sketchbook to Mixed-Media Collage | GAK Creations",
     seoDescription:
-      "How travel sketchbook pages become mixed-media collages: collecting, layering and composing travel-inspired art prints with Gerald Allen Knowles.",
+      "See how Gerald Allen Knowles turns travel sketches, found paper and studio collage into museum-quality travel art prints.",
     excerpt:
       "Ticket stubs, torn paper, and drawings made on the day — how a journey becomes a sheet you can hang.",
     published: "2026-04-01",
@@ -197,9 +197,9 @@ export const journal: JournalPost[] = [
   {
     slug: "fuerteventura-landscapes-drawing-volcanic-ground",
     title: "Fuerteventura Landscapes: Drawing Volcanic Ground",
-    seoTitle: "Fuerteventura Landscapes — Drawing Volcanic Ground | GAK Creations",
+    seoTitle: "Fuerteventura Landscapes | Drawing Volcanic Canary Island Light | GAK Creations",
     seoDescription:
-      "Drawing the volcanic landscapes of Fuerteventura: granulating pigments, lime-white chapels and Atlantic wind, from the Canary Islands sketchbooks of Gerald Allen Knowles.",
+      "Learn how Gerald Allen Knowles draws Fuerteventura landscapes with granulating pigments, whitewashed chapels and Atlantic light from the Canary Islands sketchbooks.",
     excerpt:
       "The oldest Canary Island, drawn in lava black and lime white — and why the wind is part of the technique.",
     published: "2026-05-06",
@@ -252,9 +252,9 @@ export const journal: JournalPost[] = [
   {
     slug: "gaudi-architecture-drawing-the-curve",
     title: "Gaudí and the Curve: Drawing Architecture That Refuses the Right Angle",
-    seoTitle: "Gaudí Architecture Drawing — Catenary Curves & Collage | GAK Creations",
+    seoTitle: "Gaudí Architecture Drawing | How to Draw Curves & Landmarks | GAK Creations",
     seoDescription:
-      "Drawing Gaudí's Barcelona and Gehry's Bilbao: catenary curves, ruled surfaces and metallic collage in the modern landmark studies of Gerald Allen Knowles.",
+      "Explore how Gerald Allen Knowles draws Gaudí and Guggenheim landmarks through catenary curves, ruled surfaces and metallic collage.",
     excerpt:
       "Gaudí's curves obey rules. Find the rule and the building draws itself — a note on Barcelona, Bilbao and structural logic.",
     published: "2026-06-03",
@@ -307,9 +307,9 @@ export const journal: JournalPost[] = [
   {
     slug: "when-architecture-becomes-art",
     title: "When Architecture Becomes Art",
-    seoTitle: "When Architecture Becomes Art — Architecture Art Explained | GAK Creations",
+    seoTitle: "Architecture Art Explained | How Buildings Become Wall Art | GAK Creations",
     seoDescription:
-      "What turns a building into architecture art? An architect and artist on geometry, light and restraint — and how to choose architectural art prints for your walls.",
+      "Learn what turns a building into architecture art, and how to choose architectural wall art that feels thoughtful, structured and collectible.",
     excerpt:
       "Where the discipline of building drawing ends and artwork begins — and what to look for when buying architecture art for a room.",
     published: "2026-08-04",
@@ -377,9 +377,9 @@ export const journal: JournalPost[] = [
   {
     slug: "what-size-art-print-should-i-buy",
     title: "What Size Art Print Should You Buy? A Room-by-Room Guide",
-    seoTitle: "What Size Art Print Should I Buy? Room-by-Room Guide | GAK Creations",
+    seoTitle: "What Size Art Print Should You Buy? Room-by-Room Sizing Guide | GAK Creations",
     seoDescription:
-      "How to choose art print sizes for a sofa, bed, hallway or gallery wall — hanging heights, spacing, framing allowances and the two-thirds rule, from an architect.",
+      "Use this room-by-room art print sizing guide to choose wall art widths, hanging heights and framing allowances before you order.",
     excerpt:
       "The two-thirds rule, the 145 cm centre line and how much wall a frame really eats — practical sizing advice before you order a print.",
     published: "2026-09-03",
@@ -455,9 +455,9 @@ export const journal: JournalPost[] = [
   {
     slug: "how-to-choose-art-for-every-room",
     title: "How to Choose Art for Every Room in the House",
-    seoTitle: "How to Choose Art for Every Room — Room-by-Room Guide | GAK Creations",
+    seoTitle: "How to Choose Art for Every Room | Wall Art Buying Guide | GAK Creations",
     seoDescription:
-      "A room-by-room guide to choosing wall art: sizes, heights, palettes and framing for living rooms, bedrooms, home offices and hallways, from architect and artist Gerald Allen Knowles.",
+      "Follow this wall art buying guide for living rooms, bedrooms, home offices and hallways, with sizing, palette and framing advice from Gerald Allen Knowles.",
     excerpt:
       "Living room, bedroom, office, hallway — each room asks a different question of a picture. Here are the answers, with sizes and heights.",
     published: "2026-09-04",
@@ -525,9 +525,9 @@ export const journal: JournalPost[] = [
   {
     slug: "why-buy-original-art-prints",
     title: "Why Buy an Original Artist's Print Rather Than a Poster",
-    seoTitle: "Why Buy an Artist's Art Print Instead of a Poster | GAK Creations",
+    seoTitle: "Artist's Print vs Poster | Why Museum-Quality Art Prints Cost More | GAK Creations",
     seoDescription:
-      "What separates a museum-quality artist's print from a mass-market poster: paper, pigment inks, provenance and how the drawing was made. A buyer's guide from GAK Creations.",
+      "Learn the difference between a museum-quality artist's print and a poster, from paper and pigment inks to provenance, longevity and value.",
     excerpt:
       "Paper, pigment, provenance and the hand that made the drawing — what you are actually paying for, and why it shows on the wall.",
     published: "2026-09-04",
