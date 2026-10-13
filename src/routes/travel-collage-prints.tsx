@@ -119,7 +119,6 @@ export const Route = createFileRoute("/travel-collage-prints")({
             collectionName: "Travel",
             keywords: KEYWORDS,
             pageUrl: abs(PATH),
-            offerUrl: SHOP_URL,
           }),
         })),
       },

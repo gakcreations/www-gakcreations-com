@@ -66,7 +66,6 @@ export const Route = createFileRoute("/collections/$slug")({
                 collectionName: c.name,
                 keywords: artworkKeywords(w, c.keywords),
                 pageUrl: abs(`/collections/${c.slug}#${w.sku.toLowerCase()}`),
-                offerUrl: SHOP_URL,
               }),
             })),
           },

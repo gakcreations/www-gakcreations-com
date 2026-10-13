@@ -98,8 +98,8 @@ function Terms() {
       <PolicyH2>Contact</PolicyH2>
       <p>
         Questions about these terms can be sent to{" "}
-        <a href="mailto:info@gakcreations.com" className="text-ink underline">
-          info@gakcreations.com
+        <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+          hello@gakartprints.com
         </a>
         .
       </p>

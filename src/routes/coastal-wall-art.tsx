@@ -119,7 +119,6 @@ export const Route = createFileRoute("/coastal-wall-art")({
             collectionName: "Coastal",
             keywords: KEYWORDS,
             pageUrl: abs(PATH),
-            offerUrl: SHOP_URL,
           }),
         })),
       },

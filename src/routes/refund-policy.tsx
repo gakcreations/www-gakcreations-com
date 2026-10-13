@@ -52,8 +52,8 @@ function RefundPolicy() {
         If your order arrives damaged, defective, or misprinted, we will replace it or issue a full
         refund at no additional cost. Please contact us within <strong>30 days of delivery</strong>{" "}
         at{" "}
-        <a href="mailto:info@gakcreations.com" className="text-ink underline">
-          info@gakcreations.com
+        <a href="mailto:hello@gakartprints.com" className="text-ink underline">
+          hello@gakartprints.com
         </a>{" "}
         with:
       </p>

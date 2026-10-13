@@ -308,4 +308,76 @@ export const imageManifest: Record<string, ImageEntry> = {
     }
   ]
 },
+  "/images/printify/cathedral-saintes-framed.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-cathedral-saintes-framed-480.webp", "jpg": "/images/optimized/printify-cathedral-saintes-framed-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-cathedral-saintes-framed-800.webp", "jpg": "/images/optimized/printify-cathedral-saintes-framed-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-cathedral-saintes-framed-1200.webp", "jpg": "/images/optimized/printify-cathedral-saintes-framed-1200.jpg" }
+  ]
+},
+  "/images/printify/palm-trees-coastal-beach.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-palm-trees-coastal-beach-480.webp", "jpg": "/images/optimized/printify-palm-trees-coastal-beach-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-palm-trees-coastal-beach-800.webp", "jpg": "/images/optimized/printify-palm-trees-coastal-beach-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-palm-trees-coastal-beach-1200.webp", "jpg": "/images/optimized/printify-palm-trees-coastal-beach-1200.jpg" }
+  ]
+},
+  "/images/printify/coastal-cliff-passepartout.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-coastal-cliff-passepartout-480.webp", "jpg": "/images/optimized/printify-coastal-cliff-passepartout-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-coastal-cliff-passepartout-800.webp", "jpg": "/images/optimized/printify-coastal-cliff-passepartout-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-coastal-cliff-passepartout-1200.webp", "jpg": "/images/optimized/printify-coastal-cliff-passepartout-1200.jpg" }
+  ]
+},
+  "/images/printify/black-white-palm-trees.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-black-white-palm-trees-480.webp", "jpg": "/images/optimized/printify-black-white-palm-trees-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-black-white-palm-trees-800.webp", "jpg": "/images/optimized/printify-black-white-palm-trees-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-black-white-palm-trees-1200.webp", "jpg": "/images/optimized/printify-black-white-palm-trees-1200.jpg" }
+  ]
+},
+  "/images/printify/arch-of-wind-framed.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-arch-of-wind-framed-480.webp", "jpg": "/images/optimized/printify-arch-of-wind-framed-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-arch-of-wind-framed-800.webp", "jpg": "/images/optimized/printify-arch-of-wind-framed-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-arch-of-wind-framed-1200.webp", "jpg": "/images/optimized/printify-arch-of-wind-framed-1200.jpg" }
+  ]
+},
+  "/images/printify/erosion-gate-passepartout.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-erosion-gate-passepartout-480.webp", "jpg": "/images/optimized/printify-erosion-gate-passepartout-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-erosion-gate-passepartout-800.webp", "jpg": "/images/optimized/printify-erosion-gate-passepartout-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-erosion-gate-passepartout-1200.webp", "jpg": "/images/optimized/printify-erosion-gate-passepartout-1200.jpg" }
+  ]
+},
+  "/images/printify/symphony-of-waves-framed.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-symphony-of-waves-framed-480.webp", "jpg": "/images/optimized/printify-symphony-of-waves-framed-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-symphony-of-waves-framed-800.webp", "jpg": "/images/optimized/printify-symphony-of-waves-framed-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-symphony-of-waves-framed-1200.webp", "jpg": "/images/optimized/printify-symphony-of-waves-framed-1200.jpg" }
+  ]
+},
+  "/images/printify/waves-matte-canvas.jpg": {
+  "width": 1200,
+  "height": 1200,
+  "variants": [
+    { "w": 480, "webp": "/images/optimized/printify-waves-matte-canvas-480.webp", "jpg": "/images/optimized/printify-waves-matte-canvas-480.jpg" },
+    { "w": 800, "webp": "/images/optimized/printify-waves-matte-canvas-800.webp", "jpg": "/images/optimized/printify-waves-matte-canvas-800.jpg" },
+    { "w": 1200, "webp": "/images/optimized/printify-waves-matte-canvas-1200.webp", "jpg": "/images/optimized/printify-waves-matte-canvas-1200.jpg" }
+  ]
+},
 };

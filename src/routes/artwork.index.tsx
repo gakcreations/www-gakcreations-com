@@ -13,7 +13,6 @@ import {
   breadcrumbNode,
   productNode,
   abs,
-  SHOP_URL,
   ARTIST_NAME,
 } from "@/lib/seo";
 
@@ -63,7 +62,6 @@ export const Route = createFileRoute("/artwork/")({
             item: productNode(a, {
               keywords: a.keywords,
               pageUrl: abs(`/artwork/${a.slug}`),
-              offerUrl: SHOP_URL,
             }),
           })),
         },

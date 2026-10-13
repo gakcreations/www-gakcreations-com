@@ -1,8 +1,18 @@
 export const SITE_URL = "https://www.gakcreations.com";
 export const SHOP_URL = "https://artprints.gakcreations.com";
+export const PINTEREST_URL = "https://www.pinterest.com/gakcreations/";
 export const SITE_NAME = "GAK Creations";
 export const ARTIST_NAME = "Gerald Allen Knowles";
-export const CONTACT_EMAIL = "info@gakcreations.com";
+export const CONTACT_EMAIL = "hello@gakartprints.com";
+export const BUSINESS_ADDRESS = {
+  streetAddress: "Avda Jahn Reisen 15",
+  addressLocality: "Costa Calma",
+  postalCode: "35627",
+  addressRegion: "Fuerteventura, Las Palmas",
+  addressCountry: "ES",
+};
+export const BUSINESS_ADDRESS_TEXT =
+  "Avda Jahn Reisen 15, Costa Calma, 35627 Fuerteventura, Las Palmas, Spain";
 export const DEFAULT_SEO_TITLE = "Shop Fine Art Prints, Architectural Drawings & Coastal Wall Art | GAK Creations";
 export const DEFAULT_SEO_DESCRIPTION =
   "Shop museum-quality fine art prints by Gerald Allen Knowles, from architectural drawings and coastal wall art to travel collages and Fuerteventura landscapes. Worldwide delivery.";
@@ -35,45 +45,10 @@ export const SHIPPING_COUNTRIES = [
   "NZ",
 ];
 
-const SHIPPING_RATE = {
-  "@type": "MonetaryAmount",
-  value: "5.90",
-  currency: "EUR",
-} as const;
-
-const SHIPPING_DELIVERY_TIME = {
-  "@type": "ShippingDeliveryTime",
-  handlingTime: {
-    "@type": "QuantitativeValue",
-    minValue: 2,
-    maxValue: 7,
-    unitCode: "DAY",
-  },
-  transitTime: {
-    "@type": "QuantitativeValue",
-    minValue: 4,
-    maxValue: 20,
-    unitCode: "DAY",
-  },
-} as const;
-
-const SHIPPING_DETAILS = SHIPPING_COUNTRIES.map((addressCountry) => ({
-  "@type": "OfferShippingDetails",
-  shippingDestination: {
-    "@type": "DefinedRegion",
-    addressCountry,
-  },
-  shippingRate: SHIPPING_RATE,
-  deliveryTime: SHIPPING_DELIVERY_TIME,
-}));
-
 const MERCHANT_RETURN_POLICIES = SHIPPING_COUNTRIES.map((applicableCountry) => ({
   "@type": "MerchantReturnPolicy",
   applicableCountry,
-  returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-  merchantReturnDays: 30,
-  returnMethod: "https://schema.org/ReturnByMail",
-  returnFees: "https://schema.org/FreeReturn",
+  returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
   merchantReturnLink: `${SITE_URL}/refund-policy`,
 }));
 
@@ -250,7 +225,11 @@ export const organizationNode = {
   name: SITE_NAME,
   url: `${SITE_URL}/`,
   email: CONTACT_EMAIL,
-  sameAs: [SHOP_URL],
+  address: {
+    "@type": "PostalAddress",
+    ...BUSINESS_ADDRESS,
+  },
+  sameAs: [SHOP_URL, PINTEREST_URL],
   logo: {
     "@type": "ImageObject",
     "@id": `${SITE_URL}/#logo`,
@@ -263,7 +242,6 @@ export const organizationNode = {
     contactType: "customer service",
     email: CONTACT_EMAIL,
     availableLanguage: "en",
-    contactOption: "TollFree",
   },
 };
 
@@ -273,9 +251,14 @@ export const artistNode = {
   name: ARTIST_NAME,
   alternateName: "GAK",
   jobTitle: "Architect, Artist and Traveler",
+  address: {
+    "@type": "PostalAddress",
+    ...BUSINESS_ADDRESS,
+  },
   description:
     "Gerald Allen Knowles is an architect, artist and traveler whose drawings and collages trace the quiet geometry of places across Europe and the islands of the Atlantic.",
   url: `${SITE_URL}/`,
+  sameAs: [PINTEREST_URL],
   image: abs("/images/Abbaye Aux Dames Saintes France.jpg"),
   knowsAbout: [
     "Architectural drawing",
@@ -287,7 +270,23 @@ export const artistNode = {
   ],
   makesOffer: {
     "@type": "Offer",
-    itemOffered: { "@type": "Product", name: "Fine art prints by Gerald Allen Knowles" },
+    itemOffered: {
+      "@type": "Product",
+      name: "Fine art prints by Gerald Allen Knowles",
+      image: abs("/images/Abbaye Aux Dames Saintes France.jpg"),
+      description:
+        "Fine art prints of architectural drawings, coastal artwork and travel collages by architect and artist Gerald Allen Knowles.",
+      brand: { "@id": `${SITE_URL}/#organization` },
+      offers: {
+        "@type": "AggregateOffer",
+        url: SHOP_URL,
+        priceCurrency: "USD",
+        lowPrice: "29.99",
+        highPrice: "321.85",
+        offerCount: "8",
+        availability: "https://schema.org/InStock",
+      },
+    },
     url: SHOP_URL,
   },
   worksFor: { "@id": `${SITE_URL}/#organization` },
@@ -356,33 +355,53 @@ export function productNode(work: {
   place: string;
   description: string;
   sku: string;
-}, options?: { collectionName?: string; keywords?: string[]; pageUrl?: string; offerUrl?: string }) {
+  productPath?: string;
+  price?: string;
+  priceCurrency?: "USD";
+}, options?: {
+  collectionName?: string;
+  keywords?: string[];
+  pageUrl?: string;
+  includeOffer?: boolean;
+}) {
   const image = resolveSeoImage({ path: work.image, alt: artworkAltText(work, options?.collectionName) });
-  return {
-    "@type": "Product",
-    "@id": `${options?.pageUrl ?? options?.offerUrl ?? SHOP_URL}#${work.sku}`,
+  const common = {
+    "@id": `${options?.pageUrl ?? abs(image.path)}#${work.sku}`,
     name: productSeoTitle(work, options?.collectionName),
-    sku: work.sku,
     image: abs(image.path),
     description: productSeoDescription(work, options?.collectionName),
     keywords: artworkKeywords(work, options?.keywords),
+    creator: { "@id": `${SITE_URL}/#artist` },
+  };
+
+  if (!options?.includeOffer || !work.productPath || !work.price || !work.priceCurrency) {
+    return {
+      "@type": "VisualArtwork",
+      ...common,
+      artMedium: work.medium,
+      contentLocation: { "@type": "Place", name: work.place },
+    };
+  }
+
+  return {
+    "@type": "Product",
+    ...common,
+    sku: work.sku,
     brand: { "@type": "Brand", name: SITE_NAME },
     category: "Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork",
     material: "Museum-grade matte fine art paper",
-    creator: { "@id": `${SITE_URL}/#artist` },
     additionalProperty: [
       { "@type": "PropertyValue", name: "Medium", value: work.medium },
       { "@type": "PropertyValue", name: "Location", value: work.place },
     ],
     offers: {
       "@type": "Offer",
-      url: options?.offerUrl ?? SHOP_URL,
-      priceCurrency: "EUR",
-      price: "29.00",
+      url: `${SHOP_URL}${work.productPath}`,
+      priceCurrency: work.priceCurrency,
+      price: work.price,
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",
       seller: { "@id": `${SITE_URL}/#organization` },
-      shippingDetails: SHIPPING_DETAILS,
       hasMerchantReturnPolicy: MERCHANT_RETURN_POLICIES,
     },
   };

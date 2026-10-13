@@ -21,6 +21,7 @@ import { Route as HallwayWallArtRouteImport } from './routes/hallway-wall-art'
 import { Route as HomeOfficeWallArtRouteImport } from './routes/home-office-wall-art'
 import { Route as HousewarmingArtGiftsRouteImport } from './routes/housewarming-art-gifts'
 import { Route as LivingRoomWallArtRouteImport } from './routes/living-room-wall-art'
+import { Route as MerchantFeedDotxmlRouteImport } from './routes/merchant-feed[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as ShippingPolicyRouteImport } from './routes/shipping-policy'
@@ -92,6 +93,11 @@ const HousewarmingArtGiftsRoute = HousewarmingArtGiftsRouteImport.update({
 const LivingRoomWallArtRoute = LivingRoomWallArtRouteImport.update({
   id: '/living-room-wall-art',
   path: '/living-room-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MerchantFeedDotxmlRoute = MerchantFeedDotxmlRouteImport.update({
+  id: '/merchant-feed.xml',
+  path: '/merchant-feed.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
@@ -168,6 +174,7 @@ export interface FileRoutesByFullPath {
   '/home-office-wall-art': typeof HomeOfficeWallArtRoute
   '/housewarming-art-gifts': typeof HousewarmingArtGiftsRoute
   '/living-room-wall-art': typeof LivingRoomWallArtRoute
+  '/merchant-feed.xml': typeof MerchantFeedDotxmlRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -194,6 +201,7 @@ export interface FileRoutesByTo {
   '/home-office-wall-art': typeof HomeOfficeWallArtRoute
   '/housewarming-art-gifts': typeof HousewarmingArtGiftsRoute
   '/living-room-wall-art': typeof LivingRoomWallArtRoute
+  '/merchant-feed.xml': typeof MerchantFeedDotxmlRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -221,6 +229,7 @@ export interface FileRoutesById {
   '/home-office-wall-art': typeof HomeOfficeWallArtRoute
   '/housewarming-art-gifts': typeof HousewarmingArtGiftsRoute
   '/living-room-wall-art': typeof LivingRoomWallArtRoute
+  '/merchant-feed.xml': typeof MerchantFeedDotxmlRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
   '/shipping-policy': typeof ShippingPolicyRoute
@@ -249,6 +258,7 @@ export interface FileRouteTypes {
     | '/home-office-wall-art'
     | '/housewarming-art-gifts'
     | '/living-room-wall-art'
+    | '/merchant-feed.xml'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -275,6 +285,7 @@ export interface FileRouteTypes {
     | '/home-office-wall-art'
     | '/housewarming-art-gifts'
     | '/living-room-wall-art'
+    | '/merchant-feed.xml'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -301,6 +312,7 @@ export interface FileRouteTypes {
     | '/home-office-wall-art'
     | '/housewarming-art-gifts'
     | '/living-room-wall-art'
+    | '/merchant-feed.xml'
     | '/privacy-policy'
     | '/refund-policy'
     | '/shipping-policy'
@@ -328,6 +340,7 @@ export interface RootRouteChildren {
   HomeOfficeWallArtRoute: typeof HomeOfficeWallArtRoute
   HousewarmingArtGiftsRoute: typeof HousewarmingArtGiftsRoute
   LivingRoomWallArtRoute: typeof LivingRoomWallArtRoute
+  MerchantFeedDotxmlRoute: typeof MerchantFeedDotxmlRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
   ShippingPolicyRoute: typeof ShippingPolicyRoute
@@ -426,6 +439,13 @@ declare module '@tanstack/react-router' {
       path: '/living-room-wall-art'
       fullPath: '/living-room-wall-art'
       preLoaderRoute: typeof LivingRoomWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/merchant-feed.xml': {
+      id: '/merchant-feed.xml'
+      path: '/merchant-feed.xml'
+      fullPath: '/merchant-feed.xml'
+      preLoaderRoute: typeof MerchantFeedDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy-policy': {
@@ -528,6 +548,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeOfficeWallArtRoute: HomeOfficeWallArtRoute,
   HousewarmingArtGiftsRoute: HousewarmingArtGiftsRoute,
   LivingRoomWallArtRoute: LivingRoomWallArtRoute,
+  MerchantFeedDotxmlRoute: MerchantFeedDotxmlRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,
   ShippingPolicyRoute: ShippingPolicyRoute,
