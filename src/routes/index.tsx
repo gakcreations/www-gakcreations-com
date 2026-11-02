@@ -4,7 +4,8 @@ import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrom
 import { StudioListSection } from "@/components/StudioListForm";
 
 import { collections } from "@/data/collections";
-import { artworks } from "@/data/artworks";
+import { artworks, artworkByImage } from "@/data/artworks";
+import { getShopUrl, trackPrintifyClick } from "@/lib/analytics";
 import { journal } from "@/data/journal";
 import {
   SHOP_URL,
@@ -471,14 +472,36 @@ function FeaturedWorks() {
                   >
                     View collection
                   </Link>
-                  <a
-                    href={SHOP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-ink/25 px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-ink hover:text-paper"
-                  >
-                    Shop print
-                  </a>
+                  {(() => {
+                    const art = artworkByImage(work.image);
+                    const cls =
+                      "border border-ink/25 px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-ink hover:text-paper";
+                    if (art?.productPath) {
+                      return (
+                        <a
+                          href={getShopUrl(art.slug, art.productPath)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => trackPrintifyClick({ slug: art.slug, title: art.title, productPath: art.productPath })}
+                          className={cls}
+                        >
+                          Shop print
+                        </a>
+                      );
+                    }
+                    if (art) {
+                      return (
+                        <Link to="/artwork/$slug" params={{ slug: art.slug }} className={cls}>
+                          View print
+                        </Link>
+                      );
+                    }
+                    return (
+                      <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className={cls}>
+                        Shop print
+                      </a>
+                    );
+                  })()}
                 </div>
                 <p className="mt-4 text-xs uppercase tracking-[0.2em] text-ink-soft">
                   Keywords: {artworkKeywords(work, collection.keywords).join(" · ")}

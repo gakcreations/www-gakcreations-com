@@ -208,7 +208,7 @@ function ArtworkPage() {
                     href={getShopUrl(a.slug, a.productPath)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackPrintifyClick({ slug: a.slug, title: a.title })}
+                    onClick={() => trackPrintifyClick({ slug: a.slug, title: a.title, productPath: a.productPath })}
                     className="mt-6 inline-flex w-full items-center justify-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
                   >
                     Buy this print <span>→</span>
