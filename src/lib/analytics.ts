@@ -58,14 +58,14 @@ export function getShopUrl(artworkSlug?: string, productPath?: string) {
 }
 
 
-export function trackPrintifyClick(artwork: { slug: string; title: string }) {
+export function trackPrintifyClick(artwork: { slug: string; title: string; productPath?: string }) {
   initializeAnalytics();
 
   const payload = {
     event_category: "ecommerce",
     event_label: artwork.title,
     artwork_slug: artwork.slug,
-    link_url: getShopUrl(artwork.slug),
+    link_url: getShopUrl(artwork.slug, artwork.productPath),
     transport_type: "beacon",
   };
 
