@@ -70,9 +70,6 @@ export const Route = createFileRoute("/artwork/$slug")({
           mainEntityOfPage: { "@id": `${abs(path)}#webpage` },
           image: { "@id": `${abs(a.image)}#image` },
           artMedium: a.medium,
-          artform: "Drawing",
-          artworkSurface: a.printMaterial ?? "Paper",
-          spatialCoverage: { "@type": "Place", name: a.year },
           copyrightHolder: { "@id": `${abs("/")}#artist` },
           inLanguage: "en",
           genre: a.collections.flatMap((slug) => {
@@ -349,4 +346,3 @@ function ArtworkPage() {
     </div>
   );
 }
-

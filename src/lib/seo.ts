@@ -22,7 +22,8 @@ export const DEFAULT_SOCIAL_IMAGE_ALT =
 export const DEFAULT_ROBOTS =
   "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
-export const abs = (path: string) => `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+export const abs = (path: string) =>
+  new URL(path.startsWith("/") ? path : `/${path}`, SITE_URL).href;
 
 export const LOGO_PATH = "/images/Logo GAK Creations copy.png";
 
@@ -276,27 +277,6 @@ export const artistNode = {
     "Travel illustration",
     "Fine art printmaking",
   ],
-  makesOffer: {
-    "@type": "Offer",
-    itemOffered: {
-      "@type": "Product",
-      name: "Fine art prints by Gerald Allen Knowles",
-      image: abs("/images/Abbaye Aux Dames Saintes France.jpg"),
-      description:
-        "Fine art prints of architectural drawings, coastal artwork and travel collages by architect and artist Gerald Allen Knowles.",
-      brand: { "@id": `${SITE_URL}/#organization` },
-      offers: {
-        "@type": "AggregateOffer",
-        url: SHOP_URL,
-        priceCurrency: "USD",
-        lowPrice: "29.99",
-        highPrice: "321.85",
-        offerCount: "8",
-        availability: "https://schema.org/InStock",
-      },
-    },
-    url: SHOP_URL,
-  },
   worksFor: { "@id": `${SITE_URL}/#organization` },
 };
 
@@ -424,6 +404,6 @@ export function productNode(work: {
 export const ldJson = (graph: unknown[]) => [
   {
     type: "application/ld+json",
-    children: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }),
+    children: JSON.stringify({ "@context": "https://schema.org", "@graph": graph }).replace(/</g, "\\u003c"),
   },
 ];

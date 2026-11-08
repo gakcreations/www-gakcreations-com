@@ -4,20 +4,15 @@ import { collections } from "@/data/collections";
 import { journal } from "@/data/journal";
 import { artworks } from "@/data/artworks";
 import { guides } from "@/data/guides";
-
-const BASE_URL = "https://www.gakcreations.com";
+import { SITE_URL } from "@/lib/site";
 
 interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
-  lastmod?: string;
 }
 
-// This sitemap only publishes routes that exist in this application.
-// Search engines should crawl the home page, collection pages, journal content,
-// and policy/contact pages listed below. Product and category URLs are
-// intentionally excluded because this site does not define those routes.
+// Only include real, indexable routes. Publication dates are not modification dates.
 export const Route = createFileRoute("/sitemap.xml")({
   server: {
     handlers: {
@@ -29,17 +24,16 @@ export const Route = createFileRoute("/sitemap.xml")({
         const collectionEntries: SitemapEntry[] = [
           // Collection landing pages that organize the site's artwork.
           { path: "/collections", changefreq: "weekly", priority: "0.9" },
-          { path: "/architectural-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-08-05" },
-          { path: "/coastal-wall-art", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
-          { path: "/travel-collage-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
-          { path: "/fuerteventura-art-prints", changefreq: "monthly", priority: "0.9", lastmod: "2026-09-03" },
+          { path: "/architectural-art-prints", changefreq: "monthly", priority: "0.9" },
+          { path: "/coastal-wall-art", changefreq: "monthly", priority: "0.9" },
+          { path: "/travel-collage-prints", changefreq: "monthly", priority: "0.9" },
+          { path: "/fuerteventura-art-prints", changefreq: "monthly", priority: "0.9" },
 
           // Room-by-room and gift buying guides.
           ...guides.map((g) => ({
             path: `/${g.slug}`,
             changefreq: "monthly" as const,
             priority: "0.8",
-            lastmod: g.published,
           })),
 
           ...collections.map((c) => ({
@@ -66,7 +60,6 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/journal/${j.slug}`,
             changefreq: "monthly" as const,
             priority: "0.6",
-            lastmod: j.published,
           })),
         ];
 
@@ -92,10 +85,9 @@ export const Route = createFileRoute("/sitemap.xml")({
         const urls = entries.map((e) =>
           [
             `  <url>`,
-            `    <loc>${BASE_URL}${e.path}</loc>`,
+            `    <loc>${`${SITE_URL}${e.path}`.replace(/&/g, "&amp;")}</loc>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
-            e.lastmod ? `    <lastmod>${e.lastmod}</lastmod>` : null,
             `  </url>`,
           ]
             .filter(Boolean)
@@ -111,7 +103,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         return new Response(xml, {
           headers: {
-            "Content-Type": "application/xml",
+            "Content-Type": "application/xml; charset=utf-8",
             "Cache-Control": "public, max-age=3600",
           },
         });

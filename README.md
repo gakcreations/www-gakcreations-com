@@ -50,6 +50,21 @@ git clone <this-repository-url>
 cd <repository-name>
 npm i
 npm run dev
+```
+
+## Search and static output
+
+The GitHub Pages build prerenders `/sitemap.xml` and `/merchant-feed.xml` alongside
+the HTML pages. After changing routes, artwork or SEO metadata, run
+`NITRO_PRESET=github-pages npm run build` followed by
+`node --test tests/seo-output.test.mjs`. The deployment workflow runs the same
+output checks before uploading the site.
+
+The merchant feed contains only artwork records with a listing URL and price.
+Keep those prices, availability and listing details current, and verify Merchant
+Center's domain and destination requirements before submitting the feed.
+Submit the sitemap in Search Console after the site is deployed. Structured data
+can make pages eligible for enhanced results, but does not guarantee their display.
 
 ## 📈 Analytics setup (GA4)
 
