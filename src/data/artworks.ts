@@ -29,6 +29,9 @@ export interface Artwork {
   price?: string;
   /** ISO 4217 currency used by the linked Printify listing. */
   priceCurrency?: "USD";
+  /** Listing-specific presentation; the original medium is not the print material. */
+  printMaterial?: string;
+  productFormat?: string;
   /** Other artwork slugs shown as companion pieces. */
   related: string[];
 
@@ -531,9 +534,11 @@ export const artworks: Artwork[] = [
     year: "Charente-Maritime, France",
     description:
       "The Saintes cathedral drawing presented as a framed paper poster — the flamboyant tower in warm ochre wash, ready to hang.",
-    seoTitle: "Cathédrale Saint-Pierre Framed Print — Saintes, France | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Framed paper poster",
+    seoTitle: "Saintes Cathedral Framed Art Print | GAK Creations",
     seoDescription:
-      "Framed fine art print of Cathédrale Saint-Pierre in Saintes, France, drawn in ink and watercolour by Gerald Allen Knowles. Ready-to-hang framed poster, shipped worldwide.",
+      "Shop a framed Saintes cathedral art print by Gerald Allen Knowles. Ink and watercolour of Cathédrale Saint-Pierre, France, for a hallway or study.",
     keywords: [
       "framed cathedral art print",
       "Saintes France wall art",
@@ -544,6 +549,7 @@ export const artworks: Artwork[] = [
     story: [
       "The same drawing as the textured matte edition — the great unfinished tower of Saint-Pierre seen from the narrow street below — presented here in a finished frame so it arrives ready for the wall.",
       "Framing suits this piece: the converging verticals of the street and the dense ochre wash read like a window into the town, and the frame simply completes the view.",
+      "For someone who enjoys French architecture, this framed cathedral print offers a recognisable Saintes subject with the intimacy of an ink and watercolour drawing. The warm stone colours work with wood furniture, while the upright composition brings focus to a narrow wall. Compare it with the textured matte Saintes cathedral edition if you prefer to arrange your own framing.",
     ],
     hanging: [
       "Arrives framed and ready to hang — no trip to the framer needed. A strong single piece for a hallway or study.",
@@ -552,7 +558,7 @@ export const artworks: Artwork[] = [
     productPath: "/product/28619889/cathedral-saint-pierre-saintes-france-framed-paper-poster",
     price: "270.60",
     priceCurrency: "USD",
-    related: ["abbaye-aux-dames-saintes", "guggenheim-museum-bilbao"],
+    related: ["cathedrale-saint-pierre-saintes", "abbaye-aux-dames-saintes"],
   },
   {
     slug: "palm-trees-coastal-beach",
@@ -565,9 +571,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Palms leaning over a quiet Fuerteventura beach, presented as a framed paper poster ready to hang.",
-    seoTitle: "Palm Trees Coastal Beach Framed Print — Fuerteventura | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Framed paper poster",
+    seoTitle: "Fuerteventura Palm Trees Framed Beach Print | GAK Creations",
     seoDescription:
-      "Framed coastal art print of palm trees on a Fuerteventura beach by Gerald Allen Knowles. Ready-to-hang framed poster, shipped worldwide.",
+      "Bring the Canary Islands home with a framed Fuerteventura palm tree beach print by Gerald Allen Knowles. Coastal watercolour wall art for relaxed rooms.",
     keywords: [
       "palm tree framed print",
       "coastal beach wall art",
@@ -578,6 +586,7 @@ export const artworks: Artwork[] = [
     story: [
       "The palms on this stretch of coast grow at an angle, shaped by the same trade wind that bends everything on the island. The drawing keeps that lean — nothing here is upright.",
       "This edition comes framed, so the piece goes straight from the box to the wall.",
+      "This palm tree beach print brings a coastal subject into the room without relying on a photographic holiday view. Ink gives the palms their structure and watercolour softens the shoreline. Try it in a bedroom or living room with linen, pale wood and simple ceramics, or pair it with Symphony of Waves for a Fuerteventura coastal grouping.",
     ],
     hanging: [
       "A natural fit for a bright room, a beach house, or anywhere that needs a note of warm coast. Ready to hang on arrival.",
@@ -586,7 +595,7 @@ export const artworks: Artwork[] = [
     productPath: "/product/29076674/fuerteventura-palm-trees-coastal-beach-framed-paper-poster",
     price: "203.48",
     priceCurrency: "USD",
-    related: ["symphony-of-waves", "the-blue-boat-that-dreams-of-sea"],
+    related: ["symphony-of-waves-framed", "black-white-palm-trees"],
   },
   {
     slug: "coastal-cliff-passepartout",
@@ -599,9 +608,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A serene coastal cliff scene from Fuerteventura, presented as a fine art print with a passepartout mount.",
-    seoTitle: "Serene Coastal Cliff Print with Passepartout — Fuerteventura | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Fine art print with passepartout",
+    seoTitle: "Fuerteventura Coastal Cliff Mounted Print | GAK Creations",
     seoDescription:
-      "Fine art print of a serene Fuerteventura coastal cliff with passepartout mount, by Gerald Allen Knowles. Museum-quality print, shipped worldwide.",
+      "Discover a Fuerteventura coastal cliff art print by Gerald Allen Knowles, presented with a passepartout mount. Calm Canary Islands landscape wall art.",
     keywords: [
       "coastal cliff art print",
       "passepartout mounted print",
@@ -612,6 +623,7 @@ export const artworks: Artwork[] = [
     story: [
       "The cliffs on the island's west side drop straight into the Atlantic, and from the top the sea reads as a single flat plane of colour. This drawing is built on that contrast: dense, worked rock against empty water.",
       "The passepartout mount gives the sheet a wide, quiet border — the way a drawing looks when it comes out of a portfolio rather than off a wall.",
+      "A passepartout is the border around the image, separating the artwork from its surroundings. Here it gives the coastal cliff illustration room to breathe. This mounted landscape print is a gentle choice for a reading corner or bedroom, and a natural companion to the pen-and-ink rock formations in the Fuerteventura collection. Check the shop listing for the available size and presentation before ordering.",
     ],
     hanging: [
       "The mounted presentation suits a study, bedroom or anywhere you want a calmer, more gallery-like feel.",
@@ -620,7 +632,7 @@ export const artworks: Artwork[] = [
     productPath: "/product/29076935/fuerteventura-landscape-fine-art-print-passepartout-frame-serene-coastal-cliff-illustration",
     price: "29.99",
     priceCurrency: "USD",
-    related: ["erosion-gate-fuerteventura", "arch-of-wind-and-time"],
+    related: ["erosion-gate-passepartout", "arch-of-wind-framed"],
   },
   {
     slug: "black-white-palm-trees",
@@ -633,9 +645,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The island's palms stripped back to pure black and white, presented as a framed paper poster.",
-    seoTitle: "Black & White Palm Trees Framed Print — Fuerteventura | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Framed paper poster",
+    seoTitle: "Black & White Palm Trees Framed Print | GAK Creations",
     seoDescription:
-      "Framed black and white palm tree art print from Fuerteventura by Gerald Allen Knowles. Monochrome framed poster, shipped worldwide.",
+      "Shop a framed black and white palm tree print by Gerald Allen Knowles. Fuerteventura pen-and-ink wall art for a study, bedroom or monochrome gallery wall.",
     keywords: [
       "black and white palm tree print",
       "monochrome botanical wall art",
@@ -646,6 +660,7 @@ export const artworks: Artwork[] = [
     story: [
       "Without colour, the palms become pure structure — trunks as verticals, fronds as radiating line. This is the drawing at its most graphic.",
       "Presented framed, it is one of the easiest pieces in the archive to place: it asks nothing of the room around it.",
+      "The palm tree subject connects the print to the Canary Islands, while its restricted palette makes it easy to combine with other black and white artwork. Use the radiating fronds as a contrast to the straight edges of furniture or shelving. For a day-and-night island pairing, compare it with the coastal beach palm trees edition rather than matching every piece by colour.",
     ],
     hanging: [
       "Works anywhere a monochrome print works — gallery walls, minimal interiors, offices. Ready to hang.",
@@ -667,9 +682,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The wind-cut coastal arch in pure pen and ink, presented as a framed paper poster ready to hang.",
-    seoTitle: "Arch of Wind & Time Framed Print — Fuerteventura | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Framed paper poster",
+    seoTitle: "Arch of Wind & Time Framed Coastal Print | GAK Creations",
     seoDescription:
-      "Framed black and white pen drawing of a wind-eroded coastal arch in Fuerteventura, Canary Islands, by Gerald Allen Knowles. Ready-to-hang framed poster, shipped worldwide.",
+      "Shop Arch of Wind & Time, a framed Fuerteventura rock arch print by Gerald Allen Knowles. Black and white coastal pen art for a hallway or home office.",
     keywords: [
       "framed rock arch print",
       "black and white coastal art",
@@ -680,6 +697,7 @@ export const artworks: Artwork[] = [
     story: [
       "The same pen drawing as the unframed edition — thousands of short strokes building the eroded basalt, the sea left as bare paper through the opening — here presented in a finished frame.",
       "The frame gives the dense black mark-making a hard edge to stop at, which suits the most graphic piece in the Fuerteventura work.",
+      "Unlike a colour-led seascape, this coastal rock arch print depends on the contrast between worked stone and the open space beyond it. That makes it a useful focal point for a hallway or home office with a restrained palette. The framed and unframed Arch of Wind & Time editions share the subject but offer different presentations; compare their shop listings for your preferred format.",
     ],
     hanging: [
       "A strong single statement for a monochrome interior. Ready to hang on arrival.",
@@ -701,9 +719,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The eroded volcanic gateway of the Fuerteventura coast, presented as a fine art print with a passepartout mount.",
-    seoTitle: "Erosion Gate Print with Passepartout — Fuerteventura | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Fine art print with passepartout",
+    seoTitle: "Erosion Gate Fuerteventura Mounted Print | GAK Creations",
     seoDescription:
-      "Fine art print of the Erosion Gate rock formation in Fuerteventura with passepartout mount, by Gerald Allen Knowles. Museum-quality print, shipped worldwide.",
+      "Explore Erosion Gate, a Fuerteventura volcanic rock art print with passepartout mount by Gerald Allen Knowles. Monochrome coastal drawing for quiet rooms.",
     keywords: [
       "erosion gate art print",
       "passepartout mounted print",
@@ -714,6 +734,7 @@ export const artworks: Artwork[] = [
     story: [
       "Ten minutes along the coast from the arch, the same wind has cut a gateway through the rock rather than a span. The drawing treats it the same way: pen only, texture before shape.",
       "The passepartout mount sets the sheet off like a page from a field sketchbook — appropriate for a drawing that was made standing in the wind.",
+      "The mounted edition puts space around the detailed ink work, keeping the gateway readable against a plain wall. It suits a study or reading corner where the drawing can be viewed closely. Pair it with Arch of Wind & Time to follow the rock formations across the Fuerteventura collection, or compare it with the framed Erosion Gate listing for another presentation of the subject.",
     ],
     hanging: [
       "The mounted edition suits quieter rooms — bedrooms, studies, reading corners. Pairs naturally with the Arch of Wind & Time.",
@@ -735,9 +756,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Turquoise Atlantic water around black volcanic rock, presented as a framed poster ready to hang.",
-    seoTitle: "Symphony of Waves Framed Print — Fuerteventura Coastal Art | GAK Creations",
+    printMaterial: "Paper",
+    productFormat: "Framed paper poster",
+    seoTitle: "Symphony of Waves Framed Ocean Print | GAK Creations",
     seoDescription:
-      "Framed coastal art print of turquoise waves around volcanic rock in Fuerteventura, by Gerald Allen Knowles. Ready-to-hang framed poster, shipped worldwide.",
+      "Shop Symphony of Waves, a framed turquoise ocean print by Gerald Allen Knowles. Fuerteventura coastal watercolour wall art for a bedroom or living room.",
     keywords: [
       "framed ocean wave print",
       "turquoise coastal wall art",
@@ -748,6 +771,7 @@ export const artworks: Artwork[] = [
     story: [
       "The calmest piece in the archive — black rock, pale sand, and the green-turquoise where they meet — presented here in a finished frame.",
       "Framing holds the wide horizontal composition together and makes it a true hang-and-forget piece.",
+      "Turquoise water and dark volcanic rock give this framed ocean print its colour contrast. It introduces a coastal note without needing a room full of nautical decoration. Consider it above a sideboard or in a bedroom, checking the available dimensions against your wall first. A matte canvas edition of Symphony of Waves is also available for buyers who prefer a woven print surface.",
     ],
     hanging: [
       "Made for above a bed or sofa. The framed edition arrives ready to hang.",
@@ -756,7 +780,7 @@ export const artworks: Artwork[] = [
     productPath: "/product/29106277/fuerteventura-symphony-of-waves-framed-poster",
     price: "92.96",
     priceCurrency: "USD",
-    related: ["symphony-of-waves", "palm-trees-coastal-beach"],
+    related: ["waves-matte-canvas", "palm-trees-coastal-beach"],
   },
   {
     slug: "waves-matte-canvas",
@@ -769,9 +793,11 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The turquoise wave drawing printed on matte canvas and framed — the most substantial presentation in the coastal work.",
-    seoTitle: "Symphony of Waves Matte Canvas Print — Framed Wall Art | GAK Creations",
+    printMaterial: "Matte canvas",
+    productFormat: "Framed matte canvas print",
+    seoTitle: "Fuerteventura Waves Framed Canvas Print | GAK Creations",
     seoDescription:
-      "Framed matte canvas print of turquoise Atlantic waves around volcanic rock in Fuerteventura, by Gerald Allen Knowles. Gallery-style canvas wall art, shipped worldwide.",
+      "Shop a framed matte canvas print of Fuerteventura waves by Gerald Allen Knowles. Turquoise coastal wall art, with a woven surface, for your living room.",
     keywords: [
       "matte canvas wall art",
       "framed canvas ocean print",
@@ -781,7 +807,8 @@ export const artworks: Artwork[] = [
     ],
     story: [
       "On matte canvas the watercolour washes gain a woven texture that suits the subject — the surface itself starts to read as water.",
-      "This is the largest, most present edition of the piece: canvas, framed, made to anchor a room.",
+      "This edition presents the coastal artwork on framed matte canvas rather than paper. Check the available dimensions in the shop to choose a scale that fits your wall.",
+      "The original ink and watercolour artwork and the material of the reproduction are different things: this listing is a canvas print, not a paper poster or an original painting. Its turquoise waves make it a natural partner for pale wood and neutral upholstery. Compare it with the framed paper Symphony of Waves edition if you prefer a smoother print surface.",
     ],
     hanging: [
       "The statement version — give it a main wall: living room, above a sideboard, or the end of a hallway.",
