@@ -9,8 +9,6 @@ import {
   useLocation,
 } from "@tanstack/react-router";
 import { useEffect } from "react";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -216,8 +214,6 @@ function RootComponent() {
         {/* Required: renders the client entry bundle. Without this boundary the
             app never boots in the browser (no hydration, no analytics events). */}
         <Scripts />
-        <Analytics />
-        <SpeedInsights />
       </QueryClientProvider>
     </>
   );
