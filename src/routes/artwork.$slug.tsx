@@ -71,35 +71,38 @@ export const Route = createFileRoute("/artwork/$slug")({
           image: { "@id": `${abs(a.image)}#image` },
           artMedium: a.medium,
           artform: "Drawing",
-          artworkSurface: "Museum-grade matte fine art paper",
-          artEdition: "Open edition giclée print",
+          artworkSurface: a.printMaterial ?? "Paper",
           spatialCoverage: { "@type": "Place", name: a.year },
           copyrightHolder: { "@id": `${abs("/")}#artist` },
           inLanguage: "en",
-          genre: ["Architectural art", "Travel art"],
+          genre: a.collections.flatMap((slug) => {
+            const collection = collections.find((c) => c.slug === slug);
+            return collection ? [collection.name] : [];
+          }),
           keywords: a.keywords.join(", "),
           contentLocation: { "@type": "Place", name: a.place },
-          locationCreated: { "@type": "Place", name: a.place },
           about: { "@type": "Thing", name: a.place },
           creator: { "@id": `${abs("/")}#artist` },
           author: { "@id": `${abs("/")}#artist` },
           provider: { "@id": `${abs("/")}#organization` },
           isPartOf: a.collections
-            .map((slug) => collections.find((c) => c.slug === slug))
-            .filter(Boolean)
-            .map((c) => ({
+            .flatMap((slug) => {
+              const c = collections.find((collection) => collection.slug === slug);
+              return c ? [{
               "@type": "CollectionPage",
-              name: c!.name,
-              url: abs(`/collections/${c!.slug}`),
-            })),
+              name: c.name,
+              url: abs(`/collections/${c.slug}`),
+              }] : [];
+            }),
           isRelatedTo: a.related
-            .map((slug) => findArtwork(slug))
-            .filter(Boolean)
-            .map((r) => ({
+            .flatMap((slug) => {
+              const r = findArtwork(slug);
+              return r ? [{
               "@type": "VisualArtwork",
-              name: r!.title,
-              url: abs(`/artwork/${r!.slug}`),
-            })),
+              name: r.title,
+              url: abs(`/artwork/${r.slug}`),
+              }] : [];
+            }),
           subjectOf: {
             "@id": `${abs(path)}#${a.sku}`,
           },
@@ -178,8 +181,12 @@ function ArtworkPage() {
                   <dd>{a.place}</dd>
                   <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Artist</dt>
                   <dd>{ARTIST_NAME}</dd>
-                  <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Paper</dt>
-                  <dd>Museum-grade matte, pigment inks</dd>
+                  <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Print material</dt>
+                  <dd>{a.printMaterial ?? "Museum-grade matte, pigment inks"}</dd>
+                  {a.productFormat && <>
+                    <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Presentation</dt>
+                    <dd>{a.productFormat}</dd>
+                  </>}
                 </dl>
 
                 <div className="mt-10 border border-ink/20 bg-paper-warm p-6">
@@ -187,9 +194,15 @@ function ArtworkPage() {
                     Made-to-order fine art print
                   </p>
                   <ul className="mt-4 space-y-2 text-sm leading-relaxed text-ink-soft">
-                    <li>· Sizes from small desk prints to 100 cm+ statement pieces</li>
-                    <li>· Museum-grade matte paper, archival pigment inks</li>
-                    <li>· Unframed or framed — chosen at checkout</li>
+                    {a.productFormat ? <>
+                      <li>· {a.productFormat}</li>
+                      <li>· Printed on {a.printMaterial?.toLowerCase()}</li>
+                      <li>· Available sizes and finish details are shown in this print’s shop listing</li>
+                    </> : <>
+                      <li>· Sizes from small desk prints to 100 cm+ statement pieces</li>
+                      <li>· Museum-grade matte paper, archival pigment inks</li>
+                      <li>· Unframed or framed — chosen at checkout</li>
+                    </>}
                     <li>· Printed 2–7 days, delivered 4–20 days worldwide</li>
                     <li>· Defects reported within 30 days are replaced or refunded</li>
                   </ul>
