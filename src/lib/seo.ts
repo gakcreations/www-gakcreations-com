@@ -68,6 +68,14 @@ const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
   "/images/printify/arch-of-wind-and-time.jpg": { width: 1200, height: 1200 },
   "/images/printify/erosion-gate.jpg": { width: 1200, height: 1200 },
   "/images/printify/symphony-of-waves.jpg": { width: 1200, height: 1200 },
+  "/images/printify/cathedral-saintes-framed.jpg": { width: 1200, height: 1200 },
+  "/images/printify/palm-trees-coastal-beach.jpg": { width: 1200, height: 1200 },
+  "/images/printify/coastal-cliff-passepartout.jpg": { width: 1200, height: 1200 },
+  "/images/printify/black-white-palm-trees.jpg": { width: 1200, height: 1200 },
+  "/images/printify/arch-of-wind-framed.jpg": { width: 1200, height: 1200 },
+  "/images/printify/erosion-gate-passepartout.jpg": { width: 1200, height: 1200 },
+  "/images/printify/symphony-of-waves-framed.jpg": { width: 1200, height: 1200 },
+  "/images/printify/waves-matte-canvas.jpg": { width: 1200, height: 1200 },
 };
 
 export interface ArtworkSeoWork {
@@ -358,6 +366,8 @@ export function productNode(work: {
   productPath?: string;
   price?: string;
   priceCurrency?: "USD";
+  printMaterial?: string;
+  productFormat?: string;
 }, options?: {
   collectionName?: string;
   keywords?: string[];
@@ -367,7 +377,8 @@ export function productNode(work: {
   const image = resolveSeoImage({ path: work.image, alt: artworkAltText(work, options?.collectionName) });
   const common = {
     "@id": `${options?.pageUrl ?? abs(image.path)}#${work.sku}`,
-    name: productSeoTitle(work, options?.collectionName),
+    name: work.productFormat ? work.title : productSeoTitle(work, options?.collectionName),
+    url: options?.pageUrl,
     image: abs(image.path),
     description: productSeoDescription(work, options?.collectionName),
     keywords: artworkKeywords(work, options?.keywords),
@@ -389,10 +400,13 @@ export function productNode(work: {
     sku: work.sku,
     brand: { "@type": "Brand", name: SITE_NAME },
     category: "Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork",
-    material: "Museum-grade matte fine art paper",
+    material: work.printMaterial ?? "Museum-grade matte fine art paper",
     additionalProperty: [
       { "@type": "PropertyValue", name: "Medium", value: work.medium },
       { "@type": "PropertyValue", name: "Location", value: work.place },
+      ...(work.productFormat
+        ? [{ "@type": "PropertyValue", name: "Presentation", value: work.productFormat }]
+        : []),
     ],
     offers: {
       "@type": "Offer",
