@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, test } from "bun:test";
 import { getArtwork } from "../data/artworks";
 import { productNode } from "./seo";
