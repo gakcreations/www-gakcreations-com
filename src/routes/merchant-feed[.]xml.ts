@@ -37,10 +37,6 @@ export const Route = createFileRoute("/merchant-feed.xml")({
           .filter((a) => a.productPath && a.price && a.priceCurrency)
           .map((a) => {
             const description = `${a.description} ${a.medium} artwork of ${a.place} by ${ARTIST_NAME}, reproduced as a museum-quality fine art print.`;
-            const extraImages = (imageManifest[a.image]?.variants ?? [])
-              .slice(0, -1)
-              .map((v) => `      <g:additional_image_link>${xmlEscape(`${SITE_URL}${encodeURI(v.jpg)}`)}</g:additional_image_link>`);
-
             return [
               `    <item>`,
               `      <g:id>${xmlEscape(a.sku)}</g:id>`,
@@ -48,7 +44,6 @@ export const Route = createFileRoute("/merchant-feed.xml")({
               `      <g:description>${xmlEscape(description)}</g:description>`,
               `      <g:link>${xmlEscape(`${SHOP_URL}${a.productPath}`)}</g:link>`,
               `      <g:image_link>${xmlEscape(imageUrl(a.image))}</g:image_link>`,
-              ...extraImages,
               `      <g:availability>in_stock</g:availability>`,
               `      <g:condition>new</g:condition>`,
               `      <g:price>${a.price} ${a.priceCurrency}</g:price>`,

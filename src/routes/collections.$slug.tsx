@@ -38,7 +38,7 @@ export const Route = createFileRoute("/collections/$slug")({
         title: c.seoTitle,
         description: c.seoDescription,
         path,
-        image: c.hero,
+        image: { path: c.hero, alt: c.heroAlt },
         keywords: c.keywords,
       }),
       links: canonical(path),

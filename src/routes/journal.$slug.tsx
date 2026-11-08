@@ -11,10 +11,12 @@ import {
   websiteNode,
   organizationNode,
   artistNode,
+  webPageNode,
   breadcrumbNode,
   imageObjectNode,
   abs,
   SHOP_URL,
+  ARTIST_NAME,
 } from "@/lib/seo";
 
 export const Route = createFileRoute("/journal/$slug")({
@@ -33,7 +35,7 @@ export const Route = createFileRoute("/journal/$slug")({
         title: p.seoTitle,
         description: p.seoDescription,
         path,
-        image: p.image,
+        image: { path: p.image, alt: p.imageAlt },
         type: "article",
         publishedTime: p.published,
         keywords: p.keywords,
@@ -43,6 +45,7 @@ export const Route = createFileRoute("/journal/$slug")({
         websiteNode,
         organizationNode,
         artistNode,
+        webPageNode(path, p.seoTitle, p.seoDescription),
         breadcrumbNode([
           { name: "Home", path: "/" },
           { name: "Journal", path: "/journal" },
@@ -55,7 +58,6 @@ export const Route = createFileRoute("/journal/$slug")({
           description: p.seoDescription,
           url: abs(path),
           datePublished: p.published,
-          dateModified: p.published,
           image: abs(p.image),
           keywords: p.keywords.join(", "),
           articleSection: "Art & Architecture",
@@ -92,6 +94,8 @@ function JournalPostPage() {
                 Journal
               </Link>
             </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="text-ink">{p.title}</li>
           </ol>
         </nav>
 
@@ -99,6 +103,7 @@ function JournalPostPage() {
           <header className="border-b border-ink/15">
             <div className="mx-auto max-w-3xl px-6 py-14 md:px-12 md:py-20">
               <p className="eyebrow">
+                By {ARTIST_NAME} ·{" "}
                 {new Date(p.published).toLocaleDateString("en-GB", {
                   day: "numeric",
                   month: "long",

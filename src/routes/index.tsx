@@ -19,7 +19,6 @@ import {
   imageObjectNode,
   ldJson,
   organizationNode,
-  productNode,
   seoMeta,
   webPageNode,
   websiteNode,
@@ -73,7 +72,7 @@ const newArtworks = artworks.slice(-8);
 const HOME_FAQS: Array<{ q: string; a: string }> = [
   {
     q: "What kind of art does GAK Creations sell?",
-    a: "GAK Creations offers museum-quality fine art prints in four main categories: architectural drawings (abbeys, churches, modern landmarks), coastal wall art (harbour studies, Atlantic seascapes), travel-inspired collages (layered mixed-media works from Europe and the Canary Islands), and nature studies. All works are by architect and artist Gerald Allen Knowles and are printed on museum-grade matte paper with pigment inks.",
+    a: "GAK Creations offers fine art prints in four main categories: architectural drawings (abbeys, churches, modern landmarks), coastal wall art (harbour studies, Atlantic seascapes), travel-inspired collages (layered mixed-media works from Europe and the Canary Islands), and nature studies. All works are by architect and artist Gerald Allen Knowles. Materials and presentation vary by listing.",
   },
   {
     q: "Are the prints made to order?",
@@ -85,7 +84,7 @@ const HOME_FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "What paper and print quality do you use?",
-    a: "All prints are produced on museum-grade matte fine art paper using archival pigment inks. The result preserves the visible construction lines, granulating washes, and layered textures of the original drawings.",
+    a: "Print materials and finishes vary by listing, including fine art paper and canvas. See the individual artwork page and shop listing for the material, size and presentation of each print.",
   },
   {
     q: "How do I choose the right size art print for my wall?",
@@ -153,17 +152,6 @@ export const Route = createFileRoute("/")({
           })),
         },
       },
-      // Product schema only for the eight verified, priced Printify listings —
-      // every Product on the homepage carries a visible matching price.
-      ...artworks
-        .filter((a) => a.productPath && a.price)
-        .map((a) =>
-          productNode(a, {
-            keywords: a.keywords,
-            pageUrl: abs(`/artwork/${a.slug}`),
-            includeOffer: true,
-          }),
-        ),
       {
         "@type": "FAQPage",
         "@id": `${abs("/")}#faq`,

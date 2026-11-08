@@ -25,7 +25,7 @@ export const Route = createFileRoute("/journal/")({
       title: TITLE,
       description: DESCRIPTION,
       path: "/journal",
-      image: journal[0]!.image,
+      image: { path: journal[0]!.image, alt: journal[0]!.imageAlt },
       keywords: [
         "architectural sketching",
         "coastal artwork",

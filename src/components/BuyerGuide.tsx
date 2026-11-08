@@ -52,7 +52,6 @@ export function guideHead(guide: BuyerGuideData) {
         description: guide.seoDescription,
         url: abs(path),
         datePublished: guide.published,
-        dateModified: guide.published,
         image: abs(guide.hero),
         keywords: guide.keywords.join(", "),
         articleSection: "Buying Guides",

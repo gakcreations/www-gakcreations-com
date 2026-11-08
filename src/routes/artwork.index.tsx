@@ -36,7 +36,7 @@ export const Route = createFileRoute("/artwork/")({
       title: TITLE,
       description: DESCRIPTION,
       path: PATH,
-      image: artworks[0]!.image,
+      image: { path: artworks[0]!.image, alt: artworks[0]!.alt },
       keywords: KEYWORDS,
     }),
     links: canonical(PATH),

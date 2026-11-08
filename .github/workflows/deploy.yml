@@ -36,6 +36,9 @@ jobs:
         env:
           NITRO_PRESET: github-pages
 
+      - name: Check SEO output
+        run: node --test tests/seo-output.test.mjs
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

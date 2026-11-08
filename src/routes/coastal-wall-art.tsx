@@ -91,7 +91,6 @@ export const Route = createFileRoute("/coastal-wall-art")({
         description: DESCRIPTION,
         url: abs(PATH),
         datePublished: PUBLISHED,
-        dateModified: PUBLISHED,
         image: abs(HERO),
         keywords: KEYWORDS.join(", "),
         articleSection: "Buying Guides",
