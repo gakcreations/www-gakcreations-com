@@ -4,15 +4,13 @@ import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrom
 import { StudioListSection } from "@/components/StudioListForm";
 
 import { collections } from "@/data/collections";
-import { artworks, formatFromPrice } from "@/data/artworks";
+import { artworks, formatFromPrice, homepageFeaturedArtworks } from "@/data/artworks";
 import { getShopUrl, trackPrintifyClick } from "@/lib/analytics";
 import { journal } from "@/data/journal";
 import {
   SHOP_URL,
   abs,
   artistNode,
-  artworkAltText,
-  artworkKeywords,
   breadcrumbNode,
   canonical,
   getImageDimensions,
@@ -39,18 +37,7 @@ const featuredCollections = collections.filter((collection) =>
 const heroImageSize = getImageDimensions(heroArtworkUrl) ?? { width: 1181, height: 1191 };
 const studioImageSize = getImageDimensions(studioUrl) ?? { width: 1200, height: 900 };
 
-// Homepage featured prints must each have their own shop listing, so every
-// "Shop print" button lands on a page where the visitor can buy.
-const FEATURED_SLUGS = [
-  "cathedrale-saint-pierre-saintes",
-  "mystical-chapel-fuerteventura",
-  "arch-of-wind-and-time",
-  "symphony-of-waves",
-];
-
-export const featuredWorks = FEATURED_SLUGS.map((slug) => artworks.find((a) => a.slug === slug)).filter(
-  (a): a is (typeof artworks)[number] => Boolean(a?.productPath && a.price),
-);
+const featuredWorks = homepageFeaturedArtworks();
 
 const featuredPosts = journal.slice(0, 3);
 
@@ -104,7 +91,6 @@ export const Route = createFileRoute("/")({
         "creative studio collections",
         "fuerteventura art prints",
         "gaudi architecture art",
-        "museum quality art prints",
         "art prints for the home",
         "travel inspired wall art",
         "GAK Creations",

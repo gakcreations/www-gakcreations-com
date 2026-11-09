@@ -839,3 +839,19 @@ export const formatFromPrice = (a: Pick<Artwork, "price" | "priceCurrency">) =>
   a.price && a.priceCurrency
     ? `From ${new Intl.NumberFormat("en-US", { style: "currency", currency: a.priceCurrency }).format(Number(a.price))}`
     : null;
+
+/**
+ * Homepage "Featured artwork prints". Each must have its own shop listing so
+ * every homepage "Shop print" button lands where the visitor can buy.
+ */
+export const HOMEPAGE_FEATURED_SLUGS = [
+  "cathedrale-saint-pierre-saintes",
+  "mystical-chapel-fuerteventura",
+  "arch-of-wind-and-time",
+  "symphony-of-waves",
+];
+
+export const homepageFeaturedArtworks = () =>
+  HOMEPAGE_FEATURED_SLUGS.map((slug) => getArtwork(slug)).filter(
+    (a): a is Artwork => Boolean(a?.productPath && a.price),
+  );
