@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
 import { StudioListSection } from "@/components/StudioListForm";
 
-import { getArtwork, getArtwork as findArtwork, artworks } from "@/data/artworks";
+import { getArtwork, getArtwork as findArtwork, artworks, buyableArtworks, formatFromPrice } from "@/data/artworks";
 import type { Artwork } from "@/data/artworks";
 import { collections } from "@/data/collections";
 import {
@@ -19,8 +19,9 @@ import {
   imageObjectNode,
   abs,
   ARTIST_NAME,
+  CONTACT_EMAIL,
 } from "@/lib/seo";
-import { getShopUrl, trackPrintifyClick } from "@/lib/analytics";
+import { getShopUrl, trackPrintEnquiry, trackPrintifyClick } from "@/lib/analytics";
 
 export const Route = createFileRoute("/artwork/$slug")({
   loader: ({ params }) => {
@@ -119,6 +120,15 @@ function ArtworkPage() {
   const companions = a.related
     .map((slug) => findArtwork(slug))
     .filter(Boolean) as Artwork[];
+  const isListed = Boolean(a.productPath);
+  // For drawings without a shop listing, offer prints from the same
+  // collections that can be bought today.
+  const buyableAlternatives = isListed
+    ? []
+    : buyableArtworks()
+        .filter((b) => b.collections.some((c) => a.collections.includes(c)))
+        .slice(0, 3);
+  const enquiryHref = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(`Print enquiry: ${a.title}`)}`;
 
   return (
     <div className="min-h-screen bg-paper text-ink font-body">
@@ -179,13 +189,14 @@ function ArtworkPage() {
                   <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Artist</dt>
                   <dd>{ARTIST_NAME}</dd>
                   <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Print material</dt>
-                  <dd>{a.printMaterial ?? "Museum-grade matte, pigment inks"}</dd>
+                  <dd>{a.printMaterial ?? (isListed ? "As shown in the shop listing" : "Not yet listed in the shop")}</dd>
                   {a.productFormat && <>
                     <dt className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Presentation</dt>
                     <dd>{a.productFormat}</dd>
                   </>}
                 </dl>
 
+                {isListed ? (
                 <div className="mt-10 border border-ink/20 bg-paper-warm p-6">
                   <p className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">
                     Made-to-order fine art print
@@ -196,19 +207,14 @@ function ArtworkPage() {
                       <li>· Printed on {a.printMaterial?.toLowerCase()}</li>
                       <li>· Available sizes and finish details are shown in this print’s shop listing</li>
                     </> : <>
-                      <li>· Sizes from small desk prints to 100 cm+ statement pieces</li>
-                      <li>· Museum-grade matte paper, archival pigment inks</li>
-                      <li>· Unframed or framed — chosen at checkout</li>
+                      <li>· Size, paper and frame options are shown in this print’s shop listing</li>
                     </>}
                     <li>· Printed 2–7 days, delivered 4–20 days worldwide</li>
                     <li>· Defects reported within 30 days are replaced or refunded</li>
                   </ul>
-                  {a.price && a.priceCurrency && (
+                  {formatFromPrice(a) && (
                     <p className="mt-5 font-display text-2xl text-ink">
-                      From {new Intl.NumberFormat("en", {
-                        style: "currency",
-                        currency: a.priceCurrency,
-                      }).format(Number(a.price))}{" "}
+                      {formatFromPrice(a)}{" "}
                       <span className="font-body text-xs uppercase tracking-[0.2em] text-ink-soft">
                         · In stock
                       </span>
@@ -236,6 +242,57 @@ function ArtworkPage() {
                     .
                   </p>
                 </div>
+                ) : (
+                <div className="mt-10 border border-ink/20 bg-paper-warm p-6">
+                  <p className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">
+                    From the sketchbook archive
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-soft">
+                    This drawing is not listed in the shop yet. Email the studio to ask about a print of
+                    it, and you will hear back about sizes and availability.
+                  </p>
+                  <a
+                    href={enquiryHref}
+                    onClick={() => trackPrintEnquiry({ slug: a.slug, title: a.title })}
+                    className="mt-6 inline-flex w-full items-center justify-center gap-3 bg-ink px-7 py-4 text-sm font-medium uppercase tracking-[0.2em] text-paper transition hover:bg-ink-soft"
+                  >
+                    Ask about this print <span>→</span>
+                  </a>
+                  {buyableAlternatives.length > 0 && (
+                    <div className="mt-8 border-t border-ink/15 pt-6">
+                      <p className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">
+                        Available to buy now
+                      </p>
+                      <ul className="mt-4 space-y-4">
+                        {buyableAlternatives.map((b) => (
+                          <li key={b.slug}>
+                            <Link
+                              to="/artwork/$slug"
+                              params={{ slug: b.slug }}
+                              className="group flex items-center gap-4"
+                            >
+                              <ResponsiveImage
+                                src={b.image}
+                                alt={b.alt}
+                                width={120}
+                                height={120}
+                                loading="lazy"
+                                sizes="64px"
+                                className="h-16 w-16 flex-none object-cover"
+                                onError={handleImageError}
+                              />
+                              <span className="text-sm leading-snug">
+                                <span className="block font-display text-lg text-ink group-hover:underline">{b.title}</span>
+                                <span className="text-ink-soft">{formatFromPrice(b)}</span>
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                </div>
+                )}
                 <p className="mt-6 text-xs leading-relaxed text-ink-soft">
                   Not sure which size? Read the guides for the{" "}
                   <Link to="/living-room-wall-art" className="underline hover:text-ink">
