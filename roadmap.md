@@ -1,12 +1,16 @@
-# Visitors & sales fixes (2026-11-09)
+# Full store audit & fixes (2026-11-09)
 
-- [x] Homepage featured prints: show four prints that can be bought directly, with prices.
-- [x] Artwork pages without a shop listing: honest print details, "ask about this print", and buyable alternatives.
-- [x] Shorten search titles/descriptions that Google cuts off (home, collections, guides, journal, artworks).
-- [x] Show "from" prices on homepage and buying-guide picks.
-- [x] Verify in browser, run tests, update SEO findings and marketing plan.
+- [x] Use verified shop-listing details (paper, frame, sizes) on every buyable artwork page and in Product data.
+- [x] Remove blanket "museum-grade / archival pigment" claims the listings don't confirm (pages, guides, journal, llms.txt, manifest).
+- [x] Artwork pages: "other editions" cross-sell, prices on companion pieces.
+- [x] All-artwork page: honest intro, prices, theme/format filters and a search box with synonyms.
+- [x] Image entries in the sitemap for Google Images; AI-readable llms.txt generated from live data.
+- [x] New FAQ and Accessibility pages, linked in the footer.
+- [x] Shorten over-long titles/descriptions (guides, about, contact, policies, collections).
+- [x] Fix production hydration mismatch (page re-render, CLS 0.22) and header wrap shift.
+- [x] Tests, browser check, and the prioritised audit report in Files.
 
 Blocked on owner (outside the site):
-- Google Merchant Center submission (needs owner's Google account).
-- Create Printify listings for Abbaye aux Dames, Guggenheim Bilbao, San Juan de Baños, Volcanic Landscape, Blue Boat.
-- Google reviews, fixing Zazzle/ArtHelper addresses, Printify "Syphonmy" typo, local outreach.
+- Bahamas / Caribbean artwork: none on the site yet — needs the artworks before pages can be built.
+- Printify: "Syphonmy" typo, size-count contradictions, check "from" prices on framed listings, list the five unlisted drawings, shop tags.
+- Google Merchant Center submission, Google reviews, Klaviyo keep/remove decision, second GA tag in GTM.

@@ -144,7 +144,7 @@ export const journal: JournalPost[] = [
     title: "Travel-Inspired Art: From Sketchbook Page to Finished Collage",
     seoTitle: "Travel Art: From Sketchbook to Collage | GAK Creations",
     seoDescription:
-      "See how Gerald Allen Knowles turns travel sketches, found paper and studio collage into museum-quality travel art prints.",
+      "See how Gerald Allen Knowles turns travel sketches, found paper and studio collage into made-to-order travel art prints.",
     excerpt:
       "Ticket stubs, torn paper, and drawings made on the day — how a journey becomes a sheet you can hang.",
     published: "2026-04-01",
@@ -361,7 +361,7 @@ export const journal: JournalPost[] = [
         heading: "Choosing architecture art for a room",
         paragraphs: [
           "Scale first: a single large architectural study anchors a wall better than three small ones competing for attention. Pair second: a Romanesque façade and a modern curve hung together make an argument about a century of building, and that argument gives a room a subject.",
-          "Paper last, but it matters. Museum-grade matte stock holds granulating wash and fine construction lines without gloss glare, which is why every print in the archive is produced that way and made to order.",
+          "Paper last, but it matters. Matte fine art paper holds granulating wash and fine construction lines without gloss glare, so choose it where a listing offers the option. Every print is made to order.",
         ],
       },
       {
@@ -439,7 +439,7 @@ export const journal: JournalPost[] = [
         heading: "Mounts, frames and paper",
         paragraphs: [
           "A mount of 5–7 cm gives a fine art print breathing room and stops the drawing fighting the wall colour. Narrow mouldings suit line work; heavy black frames tend to overpower wash. Use UV glazing in bright rooms.",
-          "Order the print with the framing in mind: if a framer wants a standard size, choose the print size that fits it. Museum-grade matte paper is worth insisting on — gloss throws glare across exactly the soft gradients you paid for.",
+          "Order the print with the framing in mind: if a framer wants a standard size, choose the print size that fits it. Matte fine art paper is worth choosing where it is offered — gloss throws glare across exactly the soft gradients you paid for.",
         ],
       },
       {
@@ -527,7 +527,7 @@ export const journal: JournalPost[] = [
     title: "Why Buy an Original Artist's Print Rather Than a Poster",
     seoTitle: "Artist's Print vs Poster: The Difference | GAK Creations",
     seoDescription:
-      "Learn the difference between a museum-quality artist's print and a poster, from paper and pigment inks to provenance, longevity and value.",
+      "Learn the difference between a fine art print and a poster, from paper and pigment inks to provenance, longevity and value.",
     excerpt:
       "Paper, pigment, provenance and the hand that made the drawing — what you are actually paying for, and why it shows on the wall.",
     published: "2026-09-04",
@@ -541,7 +541,7 @@ export const journal: JournalPost[] = [
     ],
     image: ABBAYE,
     imageAlt:
-      "Detail of an architectural art print on museum-grade matte paper, showing pencil construction lines and ink work",
+      "Detail of an architectural art print on matte paper, showing pencil construction lines and ink work",
     intro: [
       "A poster and a fine art print can show the same image at the same size for very different prices. The difference is not branding. It is in three things you can see at arm's length — the paper, the ink and the origin of the image — and one you can only see over years.",
     ],
@@ -557,7 +557,7 @@ export const journal: JournalPost[] = [
         heading: "Pigment inks versus dye",
         paragraphs: [
           "Cheap printing uses dye inks, which sit in the coating and shift within a few years in daylight — blues go first, then the warm greys turn muddy. Archival pigment inks suspend solid particles in the paper fibre, and independent testing puts their lightfastness in decades rather than seasons.",
-          "This is why the phrase 'giclée' persists despite being over-used: it describes pigment inkjet printing at high resolution on rag or alpha-cellulose paper. It is the standard every print in this archive is made to.",
+          "This is why the phrase 'giclée' persists despite being over-used: it describes pigment inkjet printing at high resolution on rag or alpha-cellulose paper. Each GAK Creations listing states which paper it uses, so you can check before you buy.",
         ],
       },
       {
@@ -570,7 +570,7 @@ export const journal: JournalPost[] = [
       {
         heading: "Made to order, not warehoused",
         paragraphs: [
-          "Each print is produced when it is ordered, at the production facility nearest the delivery address. Nothing sits in stock fading under warehouse lighting, and the shipping leg is short — typically 2–7 business days to produce and 4–20 business days to arrive.",
+          "Each print is produced when it is ordered, at the production facility nearest the delivery address. Nothing sits in stock fading under warehouse lighting, and the shipping leg is short — typically 2–7 business days to produce and 4–30 business days to arrive.",
           "It also means sizes are genuinely open: the same drawing can be a 30 cm sheet beside a desk or a 100 cm anchor above a sofa, printed at a resolution where the original pencil work stays visible.",
         ],
       },

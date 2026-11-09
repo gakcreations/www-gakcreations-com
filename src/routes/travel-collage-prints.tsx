@@ -25,7 +25,7 @@ const PATH = "/travel-collage-prints";
 const HERO = "/images/Guggenheim Museum Bilba, Spain.jpg";
 const PUBLISHED = "2026-09-03";
 
-const TITLE = "Travel Collage Prints | Mixed-Media Travel Wall Art Guide | GAK Creations";
+const TITLE = "Travel Collage Prints & Travel Wall Art | GAK Creations";
 const DESCRIPTION =
   "Discover and shop travel collage prints by Gerald Allen Knowles, with mixed-media wall art inspired by Europe and the Atlantic islands plus display advice.";
 
@@ -46,7 +46,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Do the collage textures survive as a print?",
-    a: "Yes. The originals are captured at high resolution and printed on museum-grade matte fine art paper with pigment inks, which holds torn edges, paper grain and layered tone. Matte stock is essential — gloss flattens the very texture the work is made of.",
+    a: "Yes. The originals are captured at high resolution and printed to order. Each listing states its paper; where you can choose, pick the matte fine art option, because gloss flattens the torn edges and paper grain the work is made of.",
   },
   {
     q: "Where does travel wall art hang best?",
@@ -246,9 +246,7 @@ function TravelLandingPage() {
             <h2 className="font-display text-2xl md:text-3xl">Paper, ink and reproduction</h2>
             <div className="mt-5 space-y-5 text-base leading-relaxed text-ink-soft">
               <p>
-                Collage originals are printed on heavyweight matte fine art stock with archival pigment inks,
-                which is the only honest way to reproduce layered paper: matte holds the torn edge and the
-                grain, gloss erases them. Prints are made to order at the production facility nearest the
+                Each shop listing names its own paper: the passepartout editions use 175gsm fine art paper with giclée inks, the framed editions offer 310gsm fine art or 260gsm semi-gloss paper, and the Saintes cathedral print uses textured 285gsm watercolour paper. For layered collage, matte holds the torn edge and the grain where gloss erases them. Prints are made to order at the production facility nearest the
                 delivery address and shipped worldwide.
               </p>
             </div>

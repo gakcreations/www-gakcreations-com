@@ -12,7 +12,7 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/contact";
-const TITLE = "Contact GAK Creations | Orders, Shipping & Commission Enquiries";
+const TITLE = "Contact GAK Creations | Orders & Print Enquiries";
 const DESCRIPTION =
   "Contact GAK Creations for help with fine art print orders, shipping, returns, commissions and trade enquiries.";
 

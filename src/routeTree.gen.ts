@@ -11,16 +11,19 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as ArchitecturalArtPrintsRouteImport } from './routes/architectural-art-prints'
 import { Route as ArtGiftsForArchitectsRouteImport } from './routes/art-gifts-for-architects'
 import { Route as BedroomWallArtRouteImport } from './routes/bedroom-wall-art'
 import { Route as CoastalWallArtRouteImport } from './routes/coastal-wall-art'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FuerteventuraArtPrintsRouteImport } from './routes/fuerteventura-art-prints'
 import { Route as HallwayWallArtRouteImport } from './routes/hallway-wall-art'
 import { Route as HomeOfficeWallArtRouteImport } from './routes/home-office-wall-art'
 import { Route as HousewarmingArtGiftsRouteImport } from './routes/housewarming-art-gifts'
 import { Route as LivingRoomWallArtRouteImport } from './routes/living-room-wall-art'
+import { Route as LlmsDottxtRouteImport } from './routes/llms[.]txt'
 import { Route as MerchantFeedDotxmlRouteImport } from './routes/merchant-feed[.]xml'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
@@ -43,6 +46,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ArchitecturalArtPrintsRoute = ArchitecturalArtPrintsRouteImport.update({
@@ -70,6 +78,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FuerteventuraArtPrintsRoute = FuerteventuraArtPrintsRouteImport.update({
   id: '/fuerteventura-art-prints',
   path: '/fuerteventura-art-prints',
@@ -93,6 +106,11 @@ const HousewarmingArtGiftsRoute = HousewarmingArtGiftsRouteImport.update({
 const LivingRoomWallArtRoute = LivingRoomWallArtRouteImport.update({
   id: '/living-room-wall-art',
   path: '/living-room-wall-art',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LlmsDottxtRoute = LlmsDottxtRouteImport.update({
+  id: '/llms.txt',
+  path: '/llms.txt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MerchantFeedDotxmlRoute = MerchantFeedDotxmlRouteImport.update({
@@ -164,16 +182,19 @@ const JournalSlugRoute = JournalSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/art-gifts-for-architects': typeof ArtGiftsForArchitectsRoute
   '/bedroom-wall-art': typeof BedroomWallArtRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/hallway-wall-art': typeof HallwayWallArtRoute
   '/home-office-wall-art': typeof HomeOfficeWallArtRoute
   '/housewarming-art-gifts': typeof HousewarmingArtGiftsRoute
   '/living-room-wall-art': typeof LivingRoomWallArtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/merchant-feed.xml': typeof MerchantFeedDotxmlRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -191,16 +212,19 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/art-gifts-for-architects': typeof ArtGiftsForArchitectsRoute
   '/bedroom-wall-art': typeof BedroomWallArtRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/hallway-wall-art': typeof HallwayWallArtRoute
   '/home-office-wall-art': typeof HomeOfficeWallArtRoute
   '/housewarming-art-gifts': typeof HousewarmingArtGiftsRoute
   '/living-room-wall-art': typeof LivingRoomWallArtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/merchant-feed.xml': typeof MerchantFeedDotxmlRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -219,16 +243,19 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/architectural-art-prints': typeof ArchitecturalArtPrintsRoute
   '/art-gifts-for-architects': typeof ArtGiftsForArchitectsRoute
   '/bedroom-wall-art': typeof BedroomWallArtRoute
   '/coastal-wall-art': typeof CoastalWallArtRoute
   '/contact': typeof ContactRoute
+  '/faq': typeof FaqRoute
   '/fuerteventura-art-prints': typeof FuerteventuraArtPrintsRoute
   '/hallway-wall-art': typeof HallwayWallArtRoute
   '/home-office-wall-art': typeof HomeOfficeWallArtRoute
   '/housewarming-art-gifts': typeof HousewarmingArtGiftsRoute
   '/living-room-wall-art': typeof LivingRoomWallArtRoute
+  '/llms.txt': typeof LlmsDottxtRoute
   '/merchant-feed.xml': typeof MerchantFeedDotxmlRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/refund-policy': typeof RefundPolicyRoute
@@ -248,16 +275,19 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/architectural-art-prints'
     | '/art-gifts-for-architects'
     | '/bedroom-wall-art'
     | '/coastal-wall-art'
     | '/contact'
+    | '/faq'
     | '/fuerteventura-art-prints'
     | '/hallway-wall-art'
     | '/home-office-wall-art'
     | '/housewarming-art-gifts'
     | '/living-room-wall-art'
+    | '/llms.txt'
     | '/merchant-feed.xml'
     | '/privacy-policy'
     | '/refund-policy'
@@ -275,16 +305,19 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/architectural-art-prints'
     | '/art-gifts-for-architects'
     | '/bedroom-wall-art'
     | '/coastal-wall-art'
     | '/contact'
+    | '/faq'
     | '/fuerteventura-art-prints'
     | '/hallway-wall-art'
     | '/home-office-wall-art'
     | '/housewarming-art-gifts'
     | '/living-room-wall-art'
+    | '/llms.txt'
     | '/merchant-feed.xml'
     | '/privacy-policy'
     | '/refund-policy'
@@ -302,16 +335,19 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/accessibility'
     | '/architectural-art-prints'
     | '/art-gifts-for-architects'
     | '/bedroom-wall-art'
     | '/coastal-wall-art'
     | '/contact'
+    | '/faq'
     | '/fuerteventura-art-prints'
     | '/hallway-wall-art'
     | '/home-office-wall-art'
     | '/housewarming-art-gifts'
     | '/living-room-wall-art'
+    | '/llms.txt'
     | '/merchant-feed.xml'
     | '/privacy-policy'
     | '/refund-policy'
@@ -330,16 +366,19 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   ArchitecturalArtPrintsRoute: typeof ArchitecturalArtPrintsRoute
   ArtGiftsForArchitectsRoute: typeof ArtGiftsForArchitectsRoute
   BedroomWallArtRoute: typeof BedroomWallArtRoute
   CoastalWallArtRoute: typeof CoastalWallArtRoute
   ContactRoute: typeof ContactRoute
+  FaqRoute: typeof FaqRoute
   FuerteventuraArtPrintsRoute: typeof FuerteventuraArtPrintsRoute
   HallwayWallArtRoute: typeof HallwayWallArtRoute
   HomeOfficeWallArtRoute: typeof HomeOfficeWallArtRoute
   HousewarmingArtGiftsRoute: typeof HousewarmingArtGiftsRoute
   LivingRoomWallArtRoute: typeof LivingRoomWallArtRoute
+  LlmsDottxtRoute: typeof LlmsDottxtRoute
   MerchantFeedDotxmlRoute: typeof MerchantFeedDotxmlRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   RefundPolicyRoute: typeof RefundPolicyRoute
@@ -369,6 +408,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/architectural-art-prints': {
@@ -406,6 +452,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fuerteventura-art-prints': {
       id: '/fuerteventura-art-prints'
       path: '/fuerteventura-art-prints'
@@ -439,6 +492,13 @@ declare module '@tanstack/react-router' {
       path: '/living-room-wall-art'
       fullPath: '/living-room-wall-art'
       preLoaderRoute: typeof LivingRoomWallArtRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/llms.txt': {
+      id: '/llms.txt'
+      path: '/llms.txt'
+      fullPath: '/llms.txt'
+      preLoaderRoute: typeof LlmsDottxtRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/merchant-feed.xml': {
@@ -538,16 +598,19 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
   ArchitecturalArtPrintsRoute: ArchitecturalArtPrintsRoute,
   ArtGiftsForArchitectsRoute: ArtGiftsForArchitectsRoute,
   BedroomWallArtRoute: BedroomWallArtRoute,
   CoastalWallArtRoute: CoastalWallArtRoute,
   ContactRoute: ContactRoute,
+  FaqRoute: FaqRoute,
   FuerteventuraArtPrintsRoute: FuerteventuraArtPrintsRoute,
   HallwayWallArtRoute: HallwayWallArtRoute,
   HomeOfficeWallArtRoute: HomeOfficeWallArtRoute,
   HousewarmingArtGiftsRoute: HousewarmingArtGiftsRoute,
   LivingRoomWallArtRoute: LivingRoomWallArtRoute,
+  LlmsDottxtRoute: LlmsDottxtRoute,
   MerchantFeedDotxmlRoute: MerchantFeedDotxmlRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   RefundPolicyRoute: RefundPolicyRoute,

@@ -32,6 +32,12 @@ export interface Artwork {
   /** Listing-specific presentation; the original medium is not the print material. */
   printMaterial?: string;
   productFormat?: string;
+  /** Sizes copied from the linked shop listing's size table. */
+  listingSizes?: string[];
+  /** Product features copied verbatim from the linked shop listing. */
+  listingFeatures?: string[];
+  /** Shared key for different shop editions (framed, mounted, canvas) of one artwork. */
+  artworkGroup?: string;
   /** Other artwork slugs shown as companion pieces. */
   related: string[];
 
@@ -57,7 +63,7 @@ export const artworks: Artwork[] = [
       "A Romanesque abbey in south-west France, drawn from the square in a single morning. The tiered bell tower is set out with the construction lines still showing, while diluted ink carries the shadow down the west front.",
     seoTitle: "Abbaye aux Dames, Saintes Fine Art Print | GAK Creations",
     seoDescription:
-      "Shop a museum-quality architectural art print of the Romanesque Abbaye aux Dames in Saintes, hand-drawn in ink and watercolour by Gerald Allen Knowles.",
+      "The Romanesque Abbaye aux Dames in Saintes, hand-drawn in ink and watercolour by Gerald Allen Knowles. Ask the studio about a print of this drawing.",
     keywords: [
       "Abbaye aux Dames art print",
       "Saintes France wall art",
@@ -255,6 +261,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/28619938/watercolor-cathedrale-saint-pierre-saintes-france-poster-textured-matte-art-print",
     price: "90.94",
     priceCurrency: "USD",
+    printMaterial: "Textured 285gsm watercolour paper",
+    productFormat: "Textured matte art print",
+    listingSizes: ["8″ × 11″", "9″ × 12″", "10″ × 17″", "11″ × 14″", "11″ × 16″", "11″ × 17″", "12″ × 16″", "12″ × 18″", "13″ × 19″", "14″ × 23″", "16″ × 20″", "16″ × 24″", "18″ × 24″", "20″ × 28″", "20″ × 30″", "22″ × 30″", "24″ × 36″", "30″ × 40″", "36″ × 48″", "36″ × 54″"],
+    listingFeatures: [
+      "Printed on textured 285gsm watercolor paper for a tactile, wallpaper-like finish",
+      "Premium archival inks for smooth tones and rich, long-lasting color",
+      "Premium textured matte finish that reduces glare and enhances depth",
+      "Made in the USA from globally sourced parts; small size tolerance +/- 1/16\"",
+    ],
+    artworkGroup: "saintes-cathedral",
     related: ["abbaye-aux-dames-saintes", "guggenheim-museum-bilbao"],
   },
   {
@@ -293,6 +309,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/29077506/fine-art-print-arch-of-wind-and-amp-time-fuerteventura",
     price: "29.99",
     priceCurrency: "USD",
+    printMaterial: "175gsm fine art paper",
+    productFormat: "Fine art print with passepartout mount (frame not included)",
+    listingSizes: ["11″ × 14″", "16″ × 20″"],
+    listingFeatures: [
+      "Giclée inks retain bright, fade-resistant color under regular sunlight",
+      "Thick 2mm textured mountboard window for gallery-style presentation",
+      "Printed on 175gsm fine art paper with premium detail",
+      "Natural white passepartout; protective frame not included — simple assembly required",
+    ],
+    artworkGroup: "arch-of-wind-and-time",
     related: ["erosion-gate-fuerteventura", "volcanic-landscape-fuerteventura"],
   },
   {
@@ -331,6 +357,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/29079266/fuerteventura-erosion-gate-framed-paper-poster-canary-islands-travel-art",
     price: "321.85",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["6″ × 8″", "8″ × 10″", "11″ × 14″", "12″ × 18″", "16″ × 20″", "18″ × 24″", "20″ × 30″", "24″ × 32″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Choice of fine art (310 gsm) or semi-gloss (260 gsm) paper",
+      "Matte black 100% pinewood frame with brown paper backing",
+      "Shatter-proof plexiglass front for safety and clarity",
+      "Pre-installed hanging hardware with rubber bumpers",
+    ],
+    artworkGroup: "erosion-gate",
     related: ["arch-of-wind-and-time", "volcanic-landscape-fuerteventura"],
   },
   {
@@ -369,6 +405,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29077201/mystical-fuerteventura-dream-nights-fine-art-print",
     price: "29.99",
     priceCurrency: "USD",
+    printMaterial: "175gsm fine art paper",
+    productFormat: "Fine art print with passepartout mount (frame not included)",
+    listingSizes: ["11″ × 14″", "16″ × 20″"],
+    listingFeatures: [
+      "Giclée printing for bright, fade-resistant colors",
+      "Printed on textured 175gsm fine art paper",
+      "Includes 2mm thick natural-white mountboard window",
+      "Protective frame not included; minor assembly required",
+    ],
     related: ["fuerteventura-palm-trees-symphony", "arch-of-wind-and-time"],
   },
   {
@@ -407,6 +452,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29076799/fine-art-print-fuerteventura-palm-trees-symphony",
     price: "29.99",
     priceCurrency: "USD",
+    printMaterial: "175gsm fine art paper",
+    productFormat: "Fine art print with passepartout mount (frame not included)",
+    listingSizes: ["11″ × 14″", "16″ × 20″"],
+    listingFeatures: [
+      "Archival giclée print with vivid, fade-resistant color",
+      "Thick 2mm mountboard window frame in natural white",
+      "Printed on 175gsm fine art paper for textured depth",
+      "Protective outer frame not included; some assembly required",
+    ],
     related: ["mystical-fuerteventura-dream-nights", "fuerteventura-magical-landscape"],
   },
   {
@@ -445,6 +499,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29077058/fuerteventura-magical-landscape-framed-poster",
     price: "321.85",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["6″ × 8″", "8″ × 10″", "11″ × 14″", "12″ × 18″", "16″ × 20″", "18″ × 24″", "20″ × 30″", "24″ × 32″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Two paper choices: Fine art (310 gsm) or semi-gloss photo paper (260 gsm)",
+      "Black pinewood frame with matte finish, brown paper backing, and shatter‑proof plexiglass",
+      "Pre-installed hanging hardware and rubber bumpers for secure, straight display",
+      "Vibrant, crisp color reproduction using advanced printing techniques",
+    ],
     related: ["fuerteventura-palm-trees-symphony", "mystical-chapel-fuerteventura"],
   },
   {
@@ -483,6 +546,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29076921/framed-paper-poster-fuerteventura-mystical-chapel-in-mountainous-landscape",
     price: "321.85",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["6″ × 8″", "8″ × 10″", "11″ × 14″", "12″ × 18″", "16″ × 20″", "18″ × 24″", "20″ × 30″", "24″ × 32″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Choice of fine art (310 gsm) or semi-gloss (260 gsm) paper",
+      "100% matte black pinewood frame with shatter‑proof plexiglass",
+      "Pre-installed top hanging hardware and rubber bumpers for secure, straight display",
+      "Vibrant, high-fidelity color printing; assembled in the USA",
+    ],
     related: ["volcanic-landscape-fuerteventura", "fuerteventura-magical-landscape"],
   },
   {
@@ -521,6 +593,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/29106370/fuerteventura-waves-fine-art-print-syphonmy-of-waves-passepartout-frame",
     price: "29.99",
     priceCurrency: "USD",
+    printMaterial: "175gsm fine art paper",
+    productFormat: "Fine art print with passepartout mount (frame not included)",
+    listingSizes: ["14″ × 11″", "20″ × 16″"],
+    listingFeatures: [
+      "Archival giclée printing for long-lasting, fade-resistant color",
+      "Textured 175gsm fine art paper for tactile depth",
+      "2mm thick mountboard window to create a gallery-style display",
+      "Natural white mount color; protective outer frame not included (some assembly required)",
+    ],
+    artworkGroup: "symphony-of-waves",
     related: ["the-blue-boat-that-dreams-of-sea", "erosion-gate-fuerteventura"],
   },
   {
@@ -534,8 +616,6 @@ export const artworks: Artwork[] = [
     year: "Charente-Maritime, France",
     description:
       "The Saintes cathedral drawing presented as a framed paper poster — the flamboyant tower in warm ochre wash, ready to hang.",
-    printMaterial: "Paper",
-    productFormat: "Framed paper poster",
     seoTitle: "Saintes Cathedral Framed Art Print | GAK Creations",
     seoDescription:
       "Shop a framed Saintes cathedral art print by Gerald Allen Knowles. Ink and watercolour of Cathédrale Saint-Pierre, France, for a hallway or study.",
@@ -558,6 +638,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/28619889/cathedral-saint-pierre-saintes-france-framed-paper-poster",
     price: "270.60",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["12″ × 18″", "20″ × 30″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Two paper options: fine art (310 gsm) or semi-gloss (260 gsm) for textured or bright prints",
+      "Matte black 100% pinewood frame with brown paper backing and shatter-proof plexiglass",
+      "Pre-installed hanging hardware with rubber bumpers for straight, wall-safe mounting",
+      "Vibrant, high-fidelity color reproduction using modern printing techniques",
+    ],
+    artworkGroup: "saintes-cathedral",
     related: ["cathedrale-saint-pierre-saintes", "abbaye-aux-dames-saintes"],
   },
   {
@@ -571,8 +661,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Palms leaning over a quiet Fuerteventura beach, presented as a framed paper poster ready to hang.",
-    printMaterial: "Paper",
-    productFormat: "Framed paper poster",
     seoTitle: "Fuerteventura Palm Trees Framed Beach Print | GAK Creations",
     seoDescription:
       "Bring the Canary Islands home with a framed Fuerteventura palm tree beach print by Gerald Allen Knowles. Coastal watercolour wall art for relaxed rooms.",
@@ -595,6 +683,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29076674/fuerteventura-palm-trees-coastal-beach-framed-paper-poster",
     price: "203.48",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["6″ × 8″", "8″ × 10″", "11″ × 14″", "12″ × 18″", "16″ × 20″", "18″ × 24″", "20″ × 30″", "24″ × 32″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Choice of two papers: 310 gsm fine art or 260 gsm semi-gloss satin photo paper",
+      "Matte black 100% pinewood frame with brown paper backing and shatter-proof plexiglass",
+      "Pre-installed top-hanging hardware plus rubber bumpers to keep the print level and wall-safe",
+      "Vibrant, high-definition color reproduction using contemporary printing techniques",
+    ],
     related: ["symphony-of-waves-framed", "black-white-palm-trees"],
   },
   {
@@ -608,8 +705,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A serene coastal cliff scene from Fuerteventura, presented as a fine art print with a passepartout mount.",
-    printMaterial: "Paper",
-    productFormat: "Fine art print with passepartout",
     seoTitle: "Fuerteventura Coastal Cliff Mounted Print | GAK Creations",
     seoDescription:
       "Discover a Fuerteventura coastal cliff art print by Gerald Allen Knowles, presented with a passepartout mount. Calm Canary Islands landscape wall art.",
@@ -632,6 +727,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29076935/fuerteventura-landscape-fine-art-print-passepartout-frame-serene-coastal-cliff-illustration",
     price: "29.99",
     priceCurrency: "USD",
+    printMaterial: "175gsm fine art paper",
+    productFormat: "Fine art print with passepartout mount (frame not included)",
+    listingSizes: ["11″ × 14″", "16″ × 20″"],
+    listingFeatures: [
+      "Premium giclée printing for vivid, fade-resistant color",
+      "Textured 175gsm fine art paper for a tactile, archival feel",
+      "2mm thick mountboard window in natural white for gallery-style presentation",
+      "Sold as print + passepartout only; protective outer frame not included (some assembly required)",
+    ],
     related: ["erosion-gate-passepartout", "arch-of-wind-framed"],
   },
   {
@@ -645,8 +749,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The island's palms stripped back to pure black and white, presented as a framed paper poster.",
-    printMaterial: "Paper",
-    productFormat: "Framed paper poster",
     seoTitle: "Black & White Palm Trees Framed Print | GAK Creations",
     seoDescription:
       "Shop a framed black and white palm tree print by Gerald Allen Knowles. Fuerteventura pen-and-ink wall art for a study, bedroom or monochrome gallery wall.",
@@ -669,6 +771,15 @@ export const artworks: Artwork[] = [
     productPath: "/product/29077169/mystical-fuerteventura-black-and-amp-white-palm-trees-poster-framed-paper-art",
     price: "203.48",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["6″ × 8″", "8″ × 10″", "11″ × 14″", "12″ × 18″", "16″ × 20″", "18″ × 24″", "20″ × 30″", "24″ × 32″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Two paper options: fine art (310 gsm) or semi-gloss (260 gsm) to choose tactile depth or bright contrast",
+      "100% pinewood matte black frame with brown paper backing and shatter-proof plexiglass",
+      "Pre-installed top-hanging hardware plus rubber bumpers to keep the print level and wall-safe",
+      "Assembled in the USA from globally sourced parts; vibrant, high-precision printing",
+    ],
     related: ["palm-trees-coastal-beach", "arch-of-wind-and-time"],
   },
   {
@@ -682,8 +793,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The wind-cut coastal arch in pure pen and ink, presented as a framed paper poster ready to hang.",
-    printMaterial: "Paper",
-    productFormat: "Framed paper poster",
     seoTitle: "Arch of Wind & Time Framed Coastal Print | GAK Creations",
     seoDescription:
       "Shop Arch of Wind & Time, a framed Fuerteventura rock arch print by Gerald Allen Knowles. Black and white coastal pen art for a hallway or home office.",
@@ -706,6 +815,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/29077451/framed-paper-poster-arch-of-wind-and-amp-time-fuerteventura-canary-islands",
     price: "321.85",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["6″ × 8″", "8″ × 10″", "11″ × 14″", "12″ × 18″", "16″ × 20″", "18″ × 24″", "20″ × 30″", "24″ × 32″", "24″ × 36″", "28″ × 40″"],
+    listingFeatures: [
+      "Choose fine art (310 gsm textured) or semi-gloss (260 gsm bright satin) paper",
+      "Real pinewood frame in matte black with brown paper backing",
+      "Shatter-proof plexiglass front for clear, safe display",
+      "Pre-installed hanging hardware and rubber bumpers for straight, protected mounting",
+    ],
+    artworkGroup: "arch-of-wind-and-time",
     related: ["arch-of-wind-and-time", "erosion-gate-fuerteventura"],
   },
   {
@@ -719,8 +838,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The eroded volcanic gateway of the Fuerteventura coast, presented as a fine art print with a passepartout mount.",
-    printMaterial: "Paper",
-    productFormat: "Fine art print with passepartout",
     seoTitle: "Erosion Gate Fuerteventura Mounted Print | GAK Creations",
     seoDescription:
       "Explore Erosion Gate, a Fuerteventura volcanic rock art print with passepartout mount by Gerald Allen Knowles. Monochrome coastal drawing for quiet rooms.",
@@ -743,6 +860,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/29079379/erosion-gate-fuerteventura-canary-islands-fine-art-print-with-passepartout-frame",
     price: "29.99",
     priceCurrency: "USD",
+    printMaterial: "175gsm fine art paper",
+    productFormat: "Fine art print with passepartout mount (frame not included)",
+    listingSizes: ["11″ × 14″", "16″ × 20″"],
+    listingFeatures: [
+      "Archival giclée printing for bright, long-lasting color",
+      "Printed on 175gsm fine art paper for professional texture",
+      "Thick 2mm window mount in natural white for museum-style presentation",
+      "Protective outer frame not included; simple assembly required",
+    ],
+    artworkGroup: "erosion-gate",
     related: ["erosion-gate-fuerteventura", "arch-of-wind-framed"],
   },
   {
@@ -756,8 +883,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Turquoise Atlantic water around black volcanic rock, presented as a framed poster ready to hang.",
-    printMaterial: "Paper",
-    productFormat: "Framed paper poster",
     seoTitle: "Symphony of Waves Framed Ocean Print | GAK Creations",
     seoDescription:
       "Shop Symphony of Waves, a framed turquoise ocean print by Gerald Allen Knowles. Fuerteventura coastal watercolour wall art for a bedroom or living room.",
@@ -780,6 +905,16 @@ export const artworks: Artwork[] = [
     productPath: "/product/29106277/fuerteventura-symphony-of-waves-framed-poster",
     price: "92.96",
     priceCurrency: "USD",
+    printMaterial: "310gsm fine art or 260gsm semi-gloss paper",
+    productFormat: "Framed paper poster (matte black pinewood frame)",
+    listingSizes: ["8″ × 6″", "10″ × 8″", "14″ × 11″", "20″ × 16″", "24″ × 18″", "32″ × 24″", "40″ × 28″"],
+    listingFeatures: [
+      "Choice of fine art (310 gsm) or semi-gloss (260 gsm) paper",
+      "Matte black 100% pinewood frame with brown paper backing",
+      "Shatter-proof plexiglass front for safe, clear display",
+      "Pre-installed top hanging hardware and protective rubber bumpers",
+    ],
+    artworkGroup: "symphony-of-waves",
     related: ["waves-matte-canvas", "palm-trees-coastal-beach"],
   },
   {
@@ -793,8 +928,6 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "The turquoise wave drawing printed on matte canvas and framed — the most substantial presentation in the coastal work.",
-    printMaterial: "Matte canvas",
-    productFormat: "Framed matte canvas print",
     seoTitle: "Fuerteventura Waves Framed Canvas Print | GAK Creations",
     seoDescription:
       "Shop a framed matte canvas print of Fuerteventura waves by Gerald Allen Knowles. Turquoise coastal wall art, with a woven surface, for your living room.",
@@ -817,6 +950,17 @@ export const artworks: Artwork[] = [
     productPath: "/product/29106517/fuerteventura-waves-matte-canvas-print-symphony-of-waves-framed-wall-art",
     price: "52.23",
     priceCurrency: "USD",
+    printMaterial: "Matte canvas",
+    productFormat: "Framed matte canvas print",
+    listingSizes: ["10″ × 8″", "12″ × 9″", "14″ × 11″", "16″ × 12″", "18″ × 12″", "20″ × 10″", "20″ × 16″", "24″ × 16″", "24″ × 18″", "24″ × 20″", "30″ × 20″", "30″ × 24″", "32″ × 24″", "32″ × 16″", "36″ × 24″", "40″ × 30″", "48″ × 16″", "48″ × 24″", "48″ × 32″", "60″ × 20″", "60″ × 30″", "60″ × 40″"],
+    listingFeatures: [
+      "Unique JONDO coating with UL-certified Greenguard Gold inks for archival image quality",
+      "Sustainable radial pine frame from FSC renewable forests",
+      "Non-toxic latex inks for safe, durable color",
+      "Cotton-polyester canvas composite with vibrant, crisp color reproduction",
+      "Multiple sizes and frame colors; sawtooth hanging hardware included",
+    ],
+    artworkGroup: "symphony-of-waves",
     related: ["symphony-of-waves-framed", "symphony-of-waves"],
   },
 ];
@@ -833,6 +977,12 @@ export const artworkByImage = (image: string) => artworks.find((a) => a.image ==
 
 /** Artworks that have their own purchasable shop listing with a verified price. */
 export const buyableArtworks = () => artworks.filter((a) => a.productPath && a.price && a.priceCurrency);
+
+/** Other purchasable shop editions of the same artwork (e.g. framed vs mounted). */
+export const otherEditions = (a: Pick<Artwork, "slug" | "artworkGroup">) =>
+  a.artworkGroup
+    ? artworks.filter((b) => b.artworkGroup === a.artworkGroup && b.slug !== a.slug && b.productPath && b.price)
+    : [];
 
 /** "From $29.99" style label for a listing's verified starting price, or null. */
 export const formatFromPrice = (a: Pick<Artwork, "price" | "priceCurrency">) =>

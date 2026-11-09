@@ -1,7 +1,10 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState, type ReactNode } from "react";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
-import { artworks } from "@/data/artworks";
+import { artworks, formatFromPrice } from "@/data/artworks";
+import { collections } from "@/data/collections";
+import { FORMAT_FILTERS, filterArtworks, type ArtworkFilters, type FormatFilter } from "@/lib/artwork-search";
 import {
   seoMeta,
   canonical,
@@ -19,7 +22,7 @@ import {
 const PATH = "/artwork";
 const TITLE = "Shop All Art Prints by Gerald Allen Knowles | GAK Creations";
 const DESCRIPTION =
-  "Browse every GAK Creations fine art print by Gerald Allen Knowles, including architectural drawings, coastal artwork, travel collages and Canary Islands landscapes.";
+  "Browse every GAK Creations art print by Gerald Allen Knowles: architectural drawings, coastal artwork, travel collages and Canary Islands landscapes.";
 const KEYWORDS = [
   "fine art prints",
   "architectural drawings",
@@ -29,7 +32,20 @@ const KEYWORDS = [
   "original art prints online",
 ];
 
+const FORMAT_VALUES = FORMAT_FILTERS.map((f) => f.value) as string[];
+
 export const Route = createFileRoute("/artwork/")({
+  validateSearch: (search: Record<string, unknown>): ArtworkFilters => ({
+    q: typeof search.q === "string" && search.q.trim() ? search.q.slice(0, 80) : undefined,
+    theme:
+      typeof search.theme === "string" && collections.some((c) => c.slug === search.theme)
+        ? search.theme
+        : undefined,
+    format:
+      typeof search.format === "string" && FORMAT_VALUES.includes(search.format)
+        ? (search.format as FormatFilter)
+        : undefined,
+  }),
   component: ArtworkIndex,
   head: () => ({
     meta: seoMeta({
@@ -70,7 +86,39 @@ export const Route = createFileRoute("/artwork/")({
   }),
 });
 
+function FilterChip({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean;
+  onClick: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      className={`border px-4 py-2 text-[0.7rem] uppercase tracking-[0.18em] transition ${
+        active ? "border-ink bg-ink text-paper" : "border-ink/25 text-ink hover:border-ink"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
 function ArtworkIndex() {
+  const filters = Route.useSearch();
+  const navigate = useNavigate({ from: "/artwork/" });
+  const [query, setQuery] = useState(filters.q ?? "");
+  useEffect(() => setQuery(filters.q ?? ""), [filters.q]);
+  const results = filterArtworks(artworks, filters);
+  const setFilters = (next: Partial<ArtworkFilters>) =>
+    navigate({ search: (prev) => ({ ...prev, ...next }), replace: true, resetScroll: false });
+  const hasFilters = Boolean(filters.q || filters.theme || filters.format);
+
   return (
     <div className="min-h-screen bg-paper text-ink font-body">
       <SiteHeader />
@@ -97,15 +145,107 @@ function ArtworkIndex() {
             </h1>
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
               Every drawing and collage in the {ARTIST_NAME} archive, each with its own story, medium and
-              place. All are available as made-to-order fine art prints, shipped worldwide.
+              place. Most are available as made-to-order prints, shipped worldwide; the rest can be
+              requested by email from their artwork page.
             </p>
           </div>
         </header>
 
+        <section aria-label="Find a print" className="border-b border-ink/15 bg-paper-warm">
+          <div className="mx-auto max-w-[1400px] space-y-6 px-6 py-10 md:px-12">
+            <form
+              role="search"
+              onSubmit={(e) => {
+                e.preventDefault();
+                setFilters({ q: query.trim() || undefined });
+              }}
+              className="flex max-w-2xl gap-3"
+            >
+              <label htmlFor="artwork-search" className="sr-only">
+                Search the artwork
+              </label>
+              <input
+                id="artwork-search"
+                type="search"
+                value={query}
+                onChange={(e) => {
+                  setQuery(e.target.value);
+                  if (!e.target.value) setFilters({ q: undefined });
+                }}
+                placeholder="Try: beach, church, framed"
+                className="w-full border border-ink/25 bg-paper px-4 py-3 text-base text-ink placeholder:text-ink-soft focus:border-ink focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="bg-ink px-6 py-3 text-sm font-medium uppercase tracking-[0.2em] text-paper hover:bg-ink-soft"
+              >
+                Search
+              </button>
+            </form>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="mr-2 text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Theme</span>
+              <FilterChip active={!filters.theme} onClick={() => setFilters({ theme: undefined })}>
+                All
+              </FilterChip>
+              {collections.map((c) => (
+                <FilterChip
+                  key={c.slug}
+                  active={filters.theme === c.slug}
+                  onClick={() => setFilters({ theme: filters.theme === c.slug ? undefined : c.slug })}
+                >
+                  {c.name}
+                </FilterChip>
+              ))}
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="mr-2 text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">Format</span>
+              <FilterChip active={!filters.format} onClick={() => setFilters({ format: undefined })}>
+                Any
+              </FilterChip>
+              {FORMAT_FILTERS.map((f) => (
+                <FilterChip
+                  key={f.value}
+                  active={filters.format === f.value}
+                  onClick={() => setFilters({ format: filters.format === f.value ? undefined : f.value })}
+                >
+                  {f.label}
+                </FilterChip>
+              ))}
+            </div>
+            <p className="text-sm text-ink-soft" aria-live="polite">
+              Showing {results.length} of {artworks.length} artworks
+              {hasFilters && (
+                <>
+                  {" · "}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery("");
+                      navigate({ search: {}, replace: true, resetScroll: false });
+                    }}
+                    className="underline hover:text-ink"
+                  >
+                    Clear filters
+                  </button>
+                </>
+              )}
+            </p>
+          </div>
+        </section>
+
         <section>
           <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12 md:py-20">
+            {results.length === 0 && (
+              <p className="max-w-xl text-base leading-relaxed text-ink-soft">
+                Nothing matches that yet. Try a broader word such as “coastal” or “architecture”, or{" "}
+                <Link to="/contact" className="underline hover:text-ink">
+                  ask the studio
+                </Link>{" "}
+                about a subject you are looking for.
+              </p>
+            )}
             <ul className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-10">
-              {artworks.map((a, i) => (
+              {results.map((a, i) => (
                 <li key={a.slug}>
                   <Link to="/artwork/$slug" params={{ slug: a.slug }} className="group block">
                     <div className="overflow-hidden bg-paper-warm">
@@ -127,6 +267,10 @@ function ArtworkIndex() {
                         {a.medium} · {a.place}
                       </p>
                       <p className="mt-4 text-sm leading-relaxed text-ink-soft">{a.description}</p>
+                      <p className="mt-4 text-sm text-ink">
+                        {formatFromPrice(a) ?? "Not in the shop yet · ask about a print"}
+                        {a.productFormat && <span className="text-ink-soft"> · {a.productFormat}</span>}
+                      </p>
                     </div>
                   </Link>
                 </li>

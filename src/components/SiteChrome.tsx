@@ -23,7 +23,13 @@ export function SiteHeader() {
             GAK <span className="italic font-light">Creations</span>
           </span>
         </Link>
-        <nav aria-label="Primary" className="flex flex-wrap items-center gap-5 md:gap-7">
+        {/* One non-wrapping row (scrolls sideways on small screens) so the header
+            keeps the same height when the web font loads — wrapping caused the
+            whole page to jump. */}
+        <nav
+          aria-label="Primary"
+          className="-mx-6 flex w-[calc(100%+3rem)] flex-nowrap items-center gap-5 overflow-x-auto whitespace-nowrap px-6 pb-1 md:-mx-12 md:w-[calc(100%+6rem)] md:gap-7 md:px-12 lg:mx-0 lg:w-auto lg:overflow-visible lg:px-0 lg:pb-0"
+        >
           <Link to="/collections" className="eyebrow hover:text-ink">
             Collections
           </Link>
@@ -45,7 +51,7 @@ export function SiteHeader() {
             href={SHOP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="eyebrow hover:text-ink"
+            className="eyebrow order-first font-semibold text-ink hover:text-ink-soft lg:order-none"
           >
             Shop →
           </a>
@@ -224,6 +230,16 @@ export function SiteFooter() {
             <li>
               <Link to="/privacy-policy" className="hover:text-paper/70">
                 Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="hover:text-paper/70">
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link to="/accessibility" className="hover:text-paper/70">
+                Accessibility
               </Link>
             </li>
           </ul>

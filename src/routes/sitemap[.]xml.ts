@@ -10,7 +10,11 @@ interface SitemapEntry {
   path: string;
   changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: string;
+  images?: Array<{ path: string; title: string }>;
 }
+
+const xmlEscape = (v: string) =>
+  v.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 // Only include real, indexable routes. Publication dates are not modification dates.
 export const Route = createFileRoute("/sitemap.xml")({
@@ -50,6 +54,7 @@ export const Route = createFileRoute("/sitemap.xml")({
             path: `/artwork/${a.slug}`,
             changefreq: "monthly" as const,
             priority: "0.7",
+            images: [{ path: a.image, title: `${a.title} — ${a.place}` }],
           })),
         ];
 
@@ -67,6 +72,8 @@ export const Route = createFileRoute("/sitemap.xml")({
           // Static contact and legal pages that should remain indexable.
           { path: "/about", changefreq: "yearly", priority: "0.7" },
           { path: "/contact", changefreq: "yearly", priority: "0.5" },
+          { path: "/faq", changefreq: "monthly", priority: "0.5" },
+          { path: "/accessibility", changefreq: "yearly", priority: "0.3" },
 
           { path: "/shipping-policy", changefreq: "yearly", priority: "0.4" },
           { path: "/refund-policy", changefreq: "yearly", priority: "0.4" },
@@ -88,6 +95,10 @@ export const Route = createFileRoute("/sitemap.xml")({
             `    <loc>${`${SITE_URL}${e.path}`.replace(/&/g, "&amp;")}</loc>`,
             e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
             e.priority ? `    <priority>${e.priority}</priority>` : null,
+            ...(e.images ?? []).map(
+              (img) =>
+                `    <image:image>\n      <image:loc>${xmlEscape(encodeURI(`${SITE_URL}${img.path}`))}</image:loc>\n      <image:title>${xmlEscape(img.title)}</image:title>\n    </image:image>`,
+            ),
             `  </url>`,
           ]
             .filter(Boolean)
@@ -96,7 +107,7 @@ export const Route = createFileRoute("/sitemap.xml")({
 
         const xml = [
           `<?xml version="1.0" encoding="UTF-8"?>`,
-          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`,
+          `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`,
           ...urls,
           `</urlset>`,
         ].join("\n");

@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
 import { StudioListSection } from "@/components/StudioListForm";
 
-import { getArtwork, getArtwork as findArtwork, artworks, buyableArtworks, formatFromPrice } from "@/data/artworks";
+import { getArtwork, getArtwork as findArtwork, artworks, buyableArtworks, formatFromPrice, otherEditions } from "@/data/artworks";
 import type { Artwork } from "@/data/artworks";
 import { collections } from "@/data/collections";
 import {
@@ -121,6 +121,12 @@ function ArtworkPage() {
     .map((slug) => findArtwork(slug))
     .filter(Boolean) as Artwork[];
   const isListed = Boolean(a.productPath);
+  const editions = otherEditions(a);
+  const sizes = a.listingSizes ?? [];
+  const sizeSummary =
+    sizes.length > 1
+      ? `${sizes.length} sizes, ${sizes[0]} to ${sizes[sizes.length - 1]}`
+      : sizes[0];
   // For drawings without a shop listing, offer prints from the same
   // collections that can be bought today.
   const buyableAlternatives = isListed
@@ -205,11 +211,11 @@ function ArtworkPage() {
                     {a.productFormat ? <>
                       <li>· {a.productFormat}</li>
                       <li>· Printed on {a.printMaterial?.toLowerCase()}</li>
-                      <li>· Available sizes and finish details are shown in this print’s shop listing</li>
+                      <li>· {sizeSummary ? `Sizes: ${sizeSummary}` : "Available sizes are shown in this print’s shop listing"}</li>
                     </> : <>
                       <li>· Size, paper and frame options are shown in this print’s shop listing</li>
                     </>}
-                    <li>· Printed 2–7 days, delivered 4–20 days worldwide</li>
+                    <li>· Made in 2–7 business days, then delivered in 4–30 business days depending on country</li>
                     <li>· Defects reported within 30 days are replaced or refunded</li>
                   </ul>
                   {formatFromPrice(a) && (
@@ -241,6 +247,27 @@ function ArtworkPage() {
                     </Link>
                     .
                   </p>
+                  {editions.length > 0 && (
+                    <div className="mt-6 border-t border-ink/15 pt-5">
+                      <p className="text-[0.65rem] uppercase tracking-[0.25em] text-ink-soft">
+                        Also available as
+                      </p>
+                      <ul className="mt-3 space-y-2 text-sm">
+                        {editions.map((e) => (
+                          <li key={e.slug}>
+                            <Link
+                              to="/artwork/$slug"
+                              params={{ slug: e.slug }}
+                              className="flex items-baseline justify-between gap-4 underline-offset-4 hover:underline"
+                            >
+                              <span>{e.productFormat ?? e.title}</span>
+                              <span className="whitespace-nowrap text-ink-soft">{formatFromPrice(e)}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 ) : (
                 <div className="mt-10 border border-ink/20 bg-paper-warm p-6">
@@ -341,6 +368,47 @@ function ArtworkPage() {
             </div>
           </section>
 
+          {isListed && (a.listingFeatures?.length || sizes.length > 0) && (
+            <section className="border-b border-ink/15">
+              <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-16 md:grid-cols-12 md:px-12 md:py-20">
+                <div className="md:col-span-4">
+                  <h2 className="font-display text-3xl md:text-4xl">
+                    Print <em className="font-light">details</em>
+                  </h2>
+                  <div className="rule-line mt-6 w-16" />
+                  <p className="mt-6 text-sm leading-relaxed text-ink-soft">
+                    Taken from this print’s shop listing, so what you read here is what you order.
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 gap-10 text-base leading-relaxed text-ink-soft sm:grid-cols-2 md:col-span-8">
+                  {a.listingFeatures && a.listingFeatures.length > 0 && (
+                    <div>
+                      <h3 className="font-display text-2xl text-ink">What you get</h3>
+                      <ul className="mt-4 space-y-2 text-sm">
+                        {a.listingFeatures.map((f) => (
+                          <li key={f}>· {f}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {sizes.length > 0 && (
+                    <div>
+                      <h3 className="font-display text-2xl text-ink">Sizes</h3>
+                      <ul className="mt-4 flex flex-wrap gap-2 text-sm">
+                        {sizes.map((size) => (
+                          <li key={size} className="border border-ink/20 px-3 py-1">
+                            {size}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="mt-4 text-xs text-ink-soft">Width × height in inches. Prices vary by size.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </section>
+          )}
+
           {memberCollections.length > 0 && (
             <section className="border-b border-ink/15 bg-paper-warm">
               <div className="mx-auto max-w-[1400px] px-6 py-14 md:px-12">
@@ -383,6 +451,7 @@ function ArtworkPage() {
                         <p className="mt-2 text-xs uppercase tracking-[0.2em] text-ink-soft">
                           {w.medium} · {w.place}
                         </p>
+                        {formatFromPrice(w) && <p className="mt-2 text-sm text-ink">{formatFromPrice(w)}</p>}
                       </Link>
                     </li>
                   ))}

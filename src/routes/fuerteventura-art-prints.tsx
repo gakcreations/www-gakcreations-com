@@ -25,7 +25,7 @@ const PATH = "/fuerteventura-art-prints";
 const HERO = "/images/Fuerteventura Chapel.jpg";
 const PUBLISHED = "2026-09-03";
 
-const TITLE = "Fuerteventura Art Prints | Canary Islands Wall Art Guide | GAK Creations";
+const TITLE = "Fuerteventura & Canary Islands Art Prints | GAK Creations";
 const DESCRIPTION =
   "Shop Fuerteventura art prints by Gerald Allen Knowles, from volcanic landscapes and whitewashed chapels to Atlantic shorelines, with sizing and framing advice.";
 
@@ -58,11 +58,11 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Do you ship Canary Island prints internationally?",
-    a: "Yes. Each print is made to order and dispatched from the production facility nearest the delivery address — typically 2–7 business days to produce and 4–20 business days in transit.",
+    a: "Yes. Each print is made to order and dispatched from the production facility nearest the delivery address — typically 2–7 business days to produce and 4–30 business days in transit.",
   },
   {
     q: "Are these limited editions?",
-    a: "They are open-edition fine art prints on museum-grade matte paper with archival pigment inks, produced to order rather than held in stock, so nothing sits in a warehouse fading.",
+    a: "They are open-edition prints, produced to order rather than held in stock. Each listing states its paper and presentation — 175gsm fine art paper in a passepartout mount, or a framed print on 310gsm fine art or 260gsm semi-gloss paper.",
   },
 ];
 
@@ -262,8 +262,7 @@ function FuerteventuraLandingPage() {
             <h2 className="font-display text-2xl md:text-3xl">Paper, inks and how prints are made</h2>
             <div className="mt-5 space-y-5 text-base leading-relaxed text-ink-soft">
               <p>
-                Every print is produced on heavyweight museum-grade matte fine art stock using archival pigment
-                inks, which hold the granulating volcanic texture without gloss glare. Prints are made to order
+                Each shop listing names its own paper: the passepartout editions use 175gsm fine art paper with giclée inks, the framed editions offer 310gsm fine art or 260gsm semi-gloss paper, and the Saintes cathedral print uses textured 285gsm watercolour paper. Prints are made to order
                 at the production facility nearest your delivery address, then shipped worldwide with tracking.
                 Sizes, paper options and prices are shown at checkout in the {SITE_NAME} shop.
               </p>

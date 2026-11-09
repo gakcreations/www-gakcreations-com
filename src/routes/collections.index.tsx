@@ -17,7 +17,7 @@ import {
 
 const TITLE = "All Art Print Collections | GAK Creations";
 const DESCRIPTION =
-  "Browse art print collections by Gerald Allen Knowles, from architectural drawings and coastal wall art to travel collages, Fuerteventura scenes and nature prints.";
+  "Browse art print collections by Gerald Allen Knowles: architectural drawings, coastal wall art, travel collages, Fuerteventura scenes and nature prints.";
 
 export const Route = createFileRoute("/collections/")({
   component: CollectionsIndex,
@@ -78,8 +78,8 @@ function CollectionsIndex() {
             <p className="mt-8 max-w-2xl text-base leading-relaxed text-ink-soft md:text-lg">
               Six bodies of work drawn across Europe and the islands of the Atlantic — architecture,
               coastal scenes, travel collages, volcanic landscapes and the modern landmarks that
-              refuse the right angle. Every piece is available as a museum-quality fine art print,
-              made to order and shipped worldwide.
+              refuse the right angle. Most pieces are available as made-to-order prints, shipped
+              worldwide; drawings not yet in the shop can be requested by email.
             </p>
           </div>
         </section>
@@ -118,8 +118,8 @@ function CollectionsIndex() {
               Every collection is <em className="font-light">available as prints</em>
             </h2>
             <p className="mt-6 text-base leading-relaxed text-ink-soft">
-              Printed on museum-grade matte fine art paper with pigment inks, made to order and
-              posted worldwide through our Printify storefront.
+              Made to order and posted worldwide through our Printify storefront. Each artwork page
+              lists the paper, frame and sizes from its shop listing.
             </p>
             <a
               href={SHOP_URL}

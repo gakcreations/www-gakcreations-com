@@ -12,7 +12,7 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/shipping-policy";
-const TITLE = "Shipping Policy | Fine Art Print Delivery & Production Times | GAK Creations";
+const TITLE = "Shipping Policy & Delivery Times | GAK Creations";
 const DESCRIPTION =
   "Read production times, delivery estimates, shipping regions and carrier details for GAK Creations fine art prints.";
 

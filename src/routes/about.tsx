@@ -21,9 +21,9 @@ import {
 const PATH = "/about";
 const HERO = "/images/Abbaye Aux Dames Saintes France.jpg";
 
-const TITLE = "About Gerald Allen Knowles | Architect Artist Behind GAK Creations";
+const TITLE = "About Gerald Allen Knowles, Architect-Artist | GAK Creations";
 const DESCRIPTION =
-  "Meet Gerald Allen Knowles, the architect and artist behind GAK Creations, and explore the story behind his hand-drawn fine art prints and travel-led collections.";
+  "Meet Gerald Allen Knowles, the architect and artist behind GAK Creations, and the story behind his hand-drawn art prints and travel-led collections.";
 
 const KEYWORDS = [
   "Gerald Allen Knowles",
@@ -49,7 +49,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Where can the work be bought?",
-    a: "Every drawing in the archive is available as a made-to-order museum-quality fine art print through the GAK Creations shop, with worldwide delivery.",
+    a: "Most of the archive is available as made-to-order prints through the GAK Creations shop at artprints.gakcreations.com, with worldwide delivery. Drawings not yet listed can be requested by email at hello@gakartprints.com.",
   },
 ];
 
@@ -214,8 +214,7 @@ function AboutPage() {
             <h2 className="font-display text-2xl md:text-3xl">How the prints are made</h2>
             <div className="mt-5 space-y-5 text-base leading-relaxed text-ink-soft">
               <p>
-                Every drawing is offered as an open-edition fine art print on museum-grade matte paper with
-                archival pigment inks — matte because gloss throws glare across granulating wash. Prints are
+                Prints are open editions. Each shop listing names its own paper: the passepartout editions use 175gsm fine art paper with giclée inks, the framed editions offer 310gsm fine art or 260gsm semi-gloss paper, and the Saintes cathedral print uses textured 285gsm watercolour paper. Prints are
                 produced to order at the facility nearest the delivery address and shipped worldwide with
                 tracking, so nothing sits in a warehouse fading.
               </p>

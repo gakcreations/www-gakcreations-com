@@ -24,9 +24,9 @@ const PATH = "/architectural-art-prints";
 const HERO = "/images/Abbaye Aux Dames Saintes France.jpg";
 const PUBLISHED = "2026-08-05";
 
-const TITLE = "Architectural Art Prints | Buyer's Guide for Home Wall Art | GAK Creations";
+const TITLE = "Architectural Art Prints: Buyer's Guide | GAK Creations";
 const DESCRIPTION =
-  "Learn how to choose and shop architectural art prints for living rooms, hallways and offices, with sizing, framing and delivery guidance from Gerald Allen Knowles.";
+  "How to choose architectural art prints for living rooms, hallways and offices, with sizing, framing and delivery advice from Gerald Allen Knowles.";
 
 const KEYWORDS = [
   "architectural art prints",
@@ -53,7 +53,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Will the print fade in a sunny room?",
-    a: "The prints are made with pigment inks on museum-grade matte paper, which is far more stable than dye-based printing. Even so, no work on paper enjoys hours of direct midday sun. Hang across from a window rather than in the beam, and use glazing with UV protection in very bright rooms.",
+    a: "The passepartout editions are giclée prints the listings describe as fade-resistant, and the framed editions sit behind shatter-proof plexiglass. Even so, no work on paper enjoys hours of direct midday sun. Hang across from a window rather than in the beam, and use glazing with UV protection in very bright rooms.",
   },
   {
     q: "Do you ship worldwide, and how long does it take?",
@@ -259,13 +259,13 @@ function BuyersGuidePage() {
           </section>
 
           <section className="mt-14">
-            <h2 className="font-display text-2xl md:text-3xl">Paper, ink and what "museum-grade" means</h2>
+            <h2 className="font-display text-2xl md:text-3xl">Paper, frames and how the prints are made</h2>
             <div className="mt-5 space-y-5 text-base leading-relaxed text-ink-soft">
               <p>
-                Every print in this archive is produced on heavyweight matte fine art stock with pigment inks.
-                Matte matters for drawings: gloss throws glare across exactly the fine graphite and pen work you
-                bought the piece for. Pigment matters for longevity — it resists fading far better than dye ink,
-                which is why it is the standard for gallery editions.
+                Each shop listing names its own paper: the passepartout editions use 175gsm fine art paper with giclée inks, the framed editions offer 310gsm fine art or 260gsm semi-gloss paper, and the Saintes cathedral print uses textured 285gsm watercolour paper.
+                For drawings, choose the matte fine art paper where you have the option: gloss throws glare across
+                exactly the fine graphite and pen work you bought the piece for. The exact paper, frame and sizes
+                for each print are listed on its artwork page.
               </p>
               <p>
                 Prints are made to order rather than warehoused, produced at the facility closest to the delivery

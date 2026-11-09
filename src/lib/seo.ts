@@ -348,6 +348,7 @@ export function productNode(work: {
   priceCurrency?: "USD";
   printMaterial?: string;
   productFormat?: string;
+  listingSizes?: string[];
 }, options?: {
   collectionName?: string;
   keywords?: string[];
@@ -386,6 +387,9 @@ export function productNode(work: {
       { "@type": "PropertyValue", name: "Location", value: work.place },
       ...(work.productFormat
         ? [{ "@type": "PropertyValue", name: "Presentation", value: work.productFormat }]
+        : []),
+      ...(work.listingSizes?.length
+        ? [{ "@type": "PropertyValue", name: "Available sizes (inches)", value: work.listingSizes.join(", ") }]
         : []),
     ],
     offers: {

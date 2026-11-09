@@ -84,7 +84,7 @@ export const guides: BuyerGuide[] = [
         heading: "Framing and light",
         paragraphs: [
           "Pale oak or ash with a 5–7 cm off-white mount suits these drawings in most neutral rooms; a slim black frame sharpens them against a dark or deeply coloured wall. Keep the moulding narrow — the drawn line should stay the strongest edge in the picture.",
-          "Living rooms are usually the brightest rooms in a house, so use UV glazing if the wall catches direct afternoon sun. Every print is made with archival pigment inks on museum-grade matte stock, which resists fading far better than dye-based printing, and matte avoids the glare a glossy sheet throws across a sunny room.",
+          "Living rooms are usually the brightest rooms in a house, so use UV glazing if the wall catches direct afternoon sun. Where a listing offers it, choose the matte fine art paper: it avoids the glare a glossy sheet throws across a sunny room.",
         ],
       },
     ],
@@ -107,7 +107,7 @@ export const guides: BuyerGuide[] = [
       },
       {
         q: "How long does delivery take?",
-        a: "Each print is made to order at the production facility nearest you — typically 2–7 business days to produce and 4–20 business days to arrive, depending on destination.",
+        a: "Each print is made to order at the production facility nearest you — typically 2–7 business days to produce and 4–30 business days to arrive, depending on destination.",
       },
     ],
     picks: [
@@ -170,7 +170,7 @@ export const guides: BuyerGuide[] = [
         heading: "Framing for low light",
         paragraphs: [
           "Bedrooms are lit softly and often from one side, so glare matters less than depth. Pale oak or ash with a wide off-white mount lets the wash breathe; a 6–7 cm mount gives the print a moment of silence before the wall begins.",
-          "Museum-grade matte paper and pigment inks keep the tonal steps in a dusk sky readable under lamplight, where a glossy print would flatten them.",
+          "Matte fine art paper keeps the tonal steps in a dusk sky readable under lamplight, where a glossy print would flatten them.",
         ],
       },
     ],
@@ -189,7 +189,7 @@ export const guides: BuyerGuide[] = [
       },
       {
         q: "Will a print fade in a sunny bedroom?",
-        a: "Prints use archival pigment inks on museum-grade matte stock, which are far more stable than dye inks. Keep the work out of direct midday sun and use UV glazing on a south-facing wall.",
+        a: "The passepartout editions are giclée prints the listings describe as fade-resistant. Keep the work out of direct midday sun and use UV glazing on a south-facing wall.",
       },
       {
         q: "Can I order two matching prints as a pair?",
@@ -429,7 +429,7 @@ export const guides: BuyerGuide[] = [
         heading: "Practical notes for gifting",
         paragraphs: [
           "Prints are made to order and supplied unframed unless a framed option is chosen at checkout, which lets the recipient match their own room — usually the right call for someone with strong opinions about frames. If you want it ready to hang, choose a framed size in the shop.",
-          "Allow 2–7 business days for production and 4–20 business days for delivery, so order roughly three weeks ahead of the date. Returns are accepted within 30 days if something is not right.",
+          "Allow 2–7 business days for production and 4–30 business days for delivery, so order roughly three weeks ahead of the date. Returns are accepted within 30 days if something is not right.",
         ],
       },
     ],
@@ -448,7 +448,7 @@ export const guides: BuyerGuide[] = [
       },
       {
         q: "How far in advance should I order a gift?",
-        a: "About three weeks. Production takes 2–7 business days and delivery a further 4–20 business days depending on destination.",
+        a: "About three weeks. Production takes 2–7 business days and delivery a further 4–30 business days depending on destination.",
       },
       {
         q: "Can I return a gift print?",
@@ -473,7 +473,7 @@ export const guides: BuyerGuide[] = [
       "A new house has empty walls and no agreed taste yet. These are the prints that fit almost any room — restrained palette, real craft, nothing to argue with.",
     seoTitle: "Housewarming Art Gifts for a New Home | GAK Creations",
     seoDescription:
-      "Shop housewarming art gifts by Gerald Allen Knowles, with calm museum-quality prints, gifting advice and delivery details for a new home.",
+      "Shop housewarming art gifts by Gerald Allen Knowles, with calm made-to-order prints, gifting advice and delivery details for a new home.",
     keywords: [
       "housewarming art gifts",
       "housewarming gift art print",
@@ -508,13 +508,13 @@ export const guides: BuyerGuide[] = [
         heading: "Framed or unframed",
         paragraphs: [
           "Unframed prints let the recipients choose a moulding that fits their rooms, and they post more safely. Framed is the better choice when you want the gift to be usable the same evening — pale oak suits almost every interior.",
-          "Whichever you pick, the print itself is made on museum-grade matte paper with archival pigment inks, so it will not yellow or shift over the years they spend in the house.",
+          "Whichever you pick, check the paper and frame on its artwork page — each one lists exactly what the shop listing includes.",
         ],
       },
       {
         heading: "Timing and delivery",
         paragraphs: [
-          "Everything is made to order at the facility nearest the delivery address, which keeps shipping short but means production time is real: allow 2–7 business days to print and 4–20 business days to deliver.",
+          "Everything is made to order at the facility nearest the delivery address, which keeps shipping short but means production time is real: allow 2–7 business days to print and 4–30 business days to deliver.",
           "You can have the print sent directly to the new address. If a piece arrives damaged or misprinted, the returns policy covers a replacement within 30 days.",
         ],
       },
