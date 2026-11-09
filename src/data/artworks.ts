@@ -57,7 +57,7 @@ export const artworks: Artwork[] = [
       "A Romanesque abbey in south-west France, drawn from the square in a single morning. The tiered bell tower is set out with the construction lines still showing, while diluted ink carries the shadow down the west front.",
     seoTitle: "Abbaye aux Dames, Saintes Fine Art Print | GAK Creations",
     seoDescription:
-      "Shop a museum-quality architectural art print of the Romanesque Abbaye aux Dames in Saintes, hand-drawn in ink and watercolour by Gerald Allen Knowles.",
+      "The Romanesque Abbaye aux Dames in Saintes, hand-drawn in ink and watercolour by Gerald Allen Knowles. Ask the studio about a print of this drawing.",
     keywords: [
       "Abbaye aux Dames art print",
       "Saintes France wall art",

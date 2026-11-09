@@ -54,7 +54,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Will sea air or sunlight damage the print?",
-    a: "Prints are made on museum-grade matte paper with archival pigment inks, which are far more stable than dye inks. Frame behind glazing, keep the work out of direct midday sun and away from unventilated bathrooms, and it will hold its colour for decades.",
+    a: "The passepartout editions are giclée prints the listings describe as fade-resistant, and the framed editions come behind shatter-proof plexiglass. Frame behind glazing, keep the work out of direct midday sun and away from unventilated bathrooms, and it will hold its colour for decades.",
   },
   {
     q: "Do you ship coastal prints worldwide?",
@@ -253,9 +253,8 @@ function CoastalLandingPage() {
             <h2 className="font-display text-2xl md:text-3xl">Paper, ink and longevity</h2>
             <div className="mt-5 space-y-5 text-base leading-relaxed text-ink-soft">
               <p>
-                Every coastal print is produced on heavyweight matte fine art stock with archival pigment
-                inks. Matte is essential for wash drawings: gloss throws glare across the soft gradients that
-                give the water its depth. Prints are made to order at the facility nearest the delivery
+                Each shop listing names its own paper: the passepartout editions use 175gsm fine art paper with giclée inks, the framed editions offer 310gsm fine art or 260gsm semi-gloss paper, and the Saintes cathedral print uses textured 285gsm watercolour paper. Where you can choose, pick the matte fine art paper: gloss throws glare across
+                the soft gradients that give the water its depth. Prints are made to order at the facility nearest the delivery
                 address, so nothing sits in a warehouse fading.
               </p>
             </div>
