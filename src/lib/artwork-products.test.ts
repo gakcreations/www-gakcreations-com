@@ -1,6 +1,8 @@
 import { describe, test } from "node:test";
 import assert from "node:assert/strict";
-import { getArtwork, homepageFeaturedArtworks, HOMEPAGE_FEATURED_SLUGS } from "../data/artworks";
+import { getArtwork, homepageFeaturedArtworks, HOMEPAGE_FEATURED_SLUGS, otherEditions, artworks } from "../data/artworks";
+import { filterArtworks } from "./artwork-search";
+import { buildLlmsTxt } from "../routes/llms[.]txt";
 import { productNode } from "./seo";
 
 describe("listing-specific product material", () => {
@@ -25,9 +27,9 @@ describe("listing-specific product material", () => {
     const node = productNode(artwork, { includeOffer: true });
     assert.equal(node["@type"], "Product");
     if (!("offers" in node)) throw new Error("Missing framed offer");
-    assert.equal(node.material, "Paper");
+    assert.equal(node.material, "310gsm fine art or 260gsm semi-gloss paper");
     assert.deepEqual(node.additionalProperty.find((p) => p.name === "Presentation"), {
-      "@type": "PropertyValue", name: "Presentation", value: "Framed paper poster",
+      "@type": "PropertyValue", name: "Presentation", value: "Framed paper poster (matte black pinewood frame)",
     });
     assert.equal(node.offers.price, "270.60");
     assert.equal(node.offers.url, "https://artprints.gakcreations.com/product/28619889/cathedral-saint-pierre-saintes-france-framed-paper-poster");
@@ -41,12 +43,19 @@ describe("listing-specific product material", () => {
     assert.equal("offers" in node, false);
   });
 
-  test("a listing with no verified print material does not claim one", () => {
+  test("the Saintes cathedral listing states its verified watercolour paper", () => {
     const artwork = getArtwork("cathedrale-saint-pierre-saintes");
     if (!artwork) throw new Error("Missing Saintes listing");
     const node = productNode(artwork, { includeOffer: true });
     assert.equal(node["@type"], "Product");
-    assert.equal("material" in node, false);
+    if (!("material" in node)) throw new Error("Missing material");
+    assert.equal(node.material, "Textured 285gsm watercolour paper");
+  });
+
+  test("passepartout editions say the outer frame is not included", () => {
+    for (const slug of ["symphony-of-waves", "arch-of-wind-and-time", "erosion-gate-passepartout"]) {
+      assert.equal(getArtwork(slug)?.productFormat, "Fine art print with passepartout mount (frame not included)");
+    }
   });
 });
 
@@ -59,5 +68,47 @@ describe("homepage featured prints", () => {
       assert.ok(a.productPath?.startsWith("/product/"), `${a.slug} needs a product listing`);
       assert.ok(Number(a.price) > 0, `${a.slug} needs a price`);
     }
+  });
+});
+
+describe("other editions cross-sell", () => {
+  test("Symphony of Waves offers its framed and canvas editions", () => {
+    const a = getArtwork("symphony-of-waves");
+    if (!a) throw new Error("Missing listing");
+    assert.deepEqual(otherEditions(a).map((e) => e.slug).sort(), ["symphony-of-waves-framed", "waves-matte-canvas"]);
+  });
+
+  test("drawings without a listing have no editions", () => {
+    const a = getArtwork("abbaye-aux-dames-saintes");
+    if (!a) throw new Error("Missing drawing");
+    assert.deepEqual(otherEditions(a), []);
+  });
+});
+
+describe("artwork search and filters", () => {
+  test("'beach' finds coastal prints through synonyms", () => {
+    const found = filterArtworks(artworks, { q: "beach" }).map((a) => a.slug);
+    assert.ok(found.includes("symphony-of-waves"));
+  });
+
+  test("'church' finds the Saintes cathedral", () => {
+    const found = filterArtworks(artworks, { q: "church" }).map((a) => a.slug);
+    assert.ok(found.includes("cathedrale-saint-pierre-saintes"));
+  });
+
+  test("the canvas filter returns only the canvas edition", () => {
+    assert.deepEqual(filterArtworks(artworks, { format: "canvas" }).map((a) => a.slug), ["waves-matte-canvas"]);
+  });
+
+  test("the enquiry filter returns the five drawings not in the shop", () => {
+    assert.equal(filterArtworks(artworks, { format: "enquire" }).length, 5);
+  });
+});
+
+describe("AI summary (llms.txt)", () => {
+  test("lists every shop print with USD prices and makes no museum-grade claim", () => {
+    const txt = buildLlmsTxt();
+    assert.match(txt, /16 prints are listed in the shop, priced from \$29\.99 to \$321\.85/);
+    assert.doesNotMatch(txt, /museum-grade|€/i);
   });
 });
