@@ -226,6 +226,16 @@ export function SiteFooter() {
                 Privacy Policy
               </Link>
             </li>
+            <li>
+              <Link to="/faq" className="hover:text-paper/70">
+                FAQ
+              </Link>
+            </li>
+            <li>
+              <Link to="/accessibility" className="hover:text-paper/70">
+                Accessibility
+              </Link>
+            </li>
           </ul>
           <p className="mt-6 text-xs leading-relaxed text-paper/50">
             Made to order. Fulfilled worldwide through Printify.
