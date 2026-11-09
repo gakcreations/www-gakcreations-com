@@ -13,9 +13,9 @@ export const BUSINESS_ADDRESS = {
 };
 export const BUSINESS_ADDRESS_TEXT =
   "Avda Jahn Reisen 15, Costa Calma, 35627 Fuerteventura, Las Palmas, Spain";
-export const DEFAULT_SEO_TITLE = "Shop Fine Art Prints, Architectural Drawings & Coastal Wall Art | GAK Creations";
+export const DEFAULT_SEO_TITLE = "Architectural & Coastal Fine Art Prints | GAK Creations";
 export const DEFAULT_SEO_DESCRIPTION =
-  "Shop museum-quality fine art prints by Gerald Allen Knowles, from architectural drawings and coastal wall art to travel collages and Fuerteventura landscapes. Worldwide delivery.";
+  "Fine art prints by architect and artist Gerald Allen Knowles: hand-drawn buildings, coastal and Fuerteventura scenes. Made to order, shipped worldwide.";
 export const DEFAULT_SOCIAL_IMAGE = "/images/Abbaye Aux Dames Saintes France.jpg";
 export const DEFAULT_SOCIAL_IMAGE_ALT =
   "Architectural art print of Abbaye aux Dames in Saintes by Gerald Allen Knowles";
