@@ -8,7 +8,7 @@ import {
   Scripts,
   useLocation,
 } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -174,10 +174,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     scripts: [...gtmScripts, ...clarityScripts, ...gaScripts, ...klaviyoScripts],
   }),
+  shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
+
+// A real <html>/<head>/<body> shell lets the server and browser agree on where
+// head tags and scripts live; without it React re-renders the whole page on
+// load (hydration mismatch), which made pages jump and load slowly.
+function RootShell({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <head>
+        <HeadContent />
+      </head>
+      <body>
+        {children}
+        <Scripts />
+      </body>
+    </html>
+  );
+}
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
@@ -206,15 +224,9 @@ function RootComponent() {
 
 
   return (
-    <>
-      <HeadContent />
-      <QueryClientProvider client={queryClient}>
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
-        {/* Required: renders the client entry bundle. Without this boundary the
-            app never boots in the browser (no hydration, no analytics events). */}
-        <Scripts />
-      </QueryClientProvider>
-    </>
+    <QueryClientProvider client={queryClient}>
+      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+      <Outlet />
+    </QueryClientProvider>
   );
 }
