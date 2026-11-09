@@ -172,7 +172,7 @@ function ArtworkIndex() {
                   setQuery(e.target.value);
                   if (!e.target.value) setFilters({ q: undefined });
                 }}
-                placeholder="Search: beach, cathedral, palm trees, framed…"
+                placeholder="Try: beach, church, framed"
                 className="w-full border border-ink/25 bg-paper px-4 py-3 text-base text-ink placeholder:text-ink-soft focus:border-ink focus:outline-none"
               />
               <button

@@ -215,7 +215,7 @@ function ArtworkPage() {
                     </> : <>
                       <li>· Size, paper and frame options are shown in this print’s shop listing</li>
                     </>}
-                    <li>· Printed 2–7 days, delivered 4–20 days worldwide</li>
+                    <li>· Made in 2–7 business days, then delivered in 4–30 business days depending on country</li>
                     <li>· Defects reported within 30 days are replaced or refunded</li>
                   </ul>
                   {formatFromPrice(a) && (
