@@ -58,7 +58,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Do you ship Canary Island prints internationally?",
-    a: "Yes. Each print is made to order and dispatched from the production facility nearest the delivery address — typically 2–7 business days to produce and 4–20 business days in transit.",
+    a: "Yes. Each print is made to order and dispatched from the production facility nearest the delivery address — typically 2–7 business days to produce and 4–30 business days in transit.",
   },
   {
     q: "Are these limited editions?",

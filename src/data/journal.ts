@@ -570,7 +570,7 @@ export const journal: JournalPost[] = [
       {
         heading: "Made to order, not warehoused",
         paragraphs: [
-          "Each print is produced when it is ordered, at the production facility nearest the delivery address. Nothing sits in stock fading under warehouse lighting, and the shipping leg is short — typically 2–7 business days to produce and 4–20 business days to arrive.",
+          "Each print is produced when it is ordered, at the production facility nearest the delivery address. Nothing sits in stock fading under warehouse lighting, and the shipping leg is short — typically 2–7 business days to produce and 4–30 business days to arrive.",
           "It also means sizes are genuinely open: the same drawing can be a 30 cm sheet beside a desk or a 100 cm anchor above a sofa, printed at a resolution where the original pencil work stays visible.",
         ],
       },

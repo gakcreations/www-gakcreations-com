@@ -107,7 +107,7 @@ export const guides: BuyerGuide[] = [
       },
       {
         q: "How long does delivery take?",
-        a: "Each print is made to order at the production facility nearest you — typically 2–7 business days to produce and 4–20 business days to arrive, depending on destination.",
+        a: "Each print is made to order at the production facility nearest you — typically 2–7 business days to produce and 4–30 business days to arrive, depending on destination.",
       },
     ],
     picks: [
@@ -429,7 +429,7 @@ export const guides: BuyerGuide[] = [
         heading: "Practical notes for gifting",
         paragraphs: [
           "Prints are made to order and supplied unframed unless a framed option is chosen at checkout, which lets the recipient match their own room — usually the right call for someone with strong opinions about frames. If you want it ready to hang, choose a framed size in the shop.",
-          "Allow 2–7 business days for production and 4–20 business days for delivery, so order roughly three weeks ahead of the date. Returns are accepted within 30 days if something is not right.",
+          "Allow 2–7 business days for production and 4–30 business days for delivery, so order roughly three weeks ahead of the date. Returns are accepted within 30 days if something is not right.",
         ],
       },
     ],
@@ -448,7 +448,7 @@ export const guides: BuyerGuide[] = [
       },
       {
         q: "How far in advance should I order a gift?",
-        a: "About three weeks. Production takes 2–7 business days and delivery a further 4–20 business days depending on destination.",
+        a: "About three weeks. Production takes 2–7 business days and delivery a further 4–30 business days depending on destination.",
       },
       {
         q: "Can I return a gift print?",
@@ -514,7 +514,7 @@ export const guides: BuyerGuide[] = [
       {
         heading: "Timing and delivery",
         paragraphs: [
-          "Everything is made to order at the facility nearest the delivery address, which keeps shipping short but means production time is real: allow 2–7 business days to print and 4–20 business days to deliver.",
+          "Everything is made to order at the facility nearest the delivery address, which keeps shipping short but means production time is real: allow 2–7 business days to print and 4–30 business days to deliver.",
           "You can have the print sent directly to the new address. If a piece arrives damaged or misprinted, the returns policy covers a replacement within 30 days.",
         ],
       },

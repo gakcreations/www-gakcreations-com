@@ -58,7 +58,7 @@ const FAQS: Array<{ q: string; a: string }> = [
   },
   {
     q: "Do you ship coastal prints worldwide?",
-    a: "Yes. Each print is made to order and dispatched from the production facility nearest you — typically 2–7 business days to produce and 4–20 business days to deliver, depending on destination.",
+    a: "Yes. Each print is made to order and dispatched from the production facility nearest you — typically 2–7 business days to produce and 4–30 business days to deliver, depending on destination.",
   },
 ];
 
