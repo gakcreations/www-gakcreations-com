@@ -3,7 +3,7 @@ import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
 import { StudioListSection } from "@/components/StudioListForm";
 import type { BuyerGuide as BuyerGuideData } from "@/data/guides";
-import { getArtwork } from "@/data/artworks";
+import { formatFromPrice, getArtwork } from "@/data/artworks";
 import {
   seoMeta,
   canonical,
@@ -176,6 +176,7 @@ export function BuyerGuidePage({ guide }: { guide: BuyerGuideData }) {
                     {a!.medium} · {a!.place}
                   </p>
                   <p className="mt-3 text-sm leading-relaxed text-ink-soft">{a!.description}</p>
+                  {formatFromPrice(a!) && <p className="mt-3 font-display text-lg text-ink">{formatFromPrice(a!)}</p>}
                 </li>
               ))}
             </ul>

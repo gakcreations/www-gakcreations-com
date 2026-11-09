@@ -1,6 +1,6 @@
 import { describe, test } from "node:test";
 import assert from "node:assert/strict";
-import { getArtwork } from "../data/artworks";
+import { getArtwork, homepageFeaturedArtworks, HOMEPAGE_FEATURED_SLUGS } from "../data/artworks";
 import { productNode } from "./seo";
 
 describe("listing-specific product material", () => {
@@ -39,5 +39,25 @@ describe("listing-specific product material", () => {
     const node = productNode(artwork, { includeOffer: true });
     assert.equal(node["@type"], "VisualArtwork");
     assert.equal("offers" in node, false);
+  });
+
+  test("a listing with no verified print material does not claim one", () => {
+    const artwork = getArtwork("cathedrale-saint-pierre-saintes");
+    if (!artwork) throw new Error("Missing Saintes listing");
+    const node = productNode(artwork, { includeOffer: true });
+    assert.equal(node["@type"], "Product");
+    assert.equal("material" in node, false);
+  });
+});
+
+describe("homepage featured prints", () => {
+  test("all four featured homepage prints have their own shop listing and price", () => {
+    const featured = homepageFeaturedArtworks();
+    assert.equal(featured.length, 4);
+    assert.equal(featured.length, HOMEPAGE_FEATURED_SLUGS.length);
+    for (const a of featured) {
+      assert.ok(a.productPath?.startsWith("/product/"), `${a.slug} needs a product listing`);
+      assert.ok(Number(a.price) > 0, `${a.slug} needs a price`);
+    }
   });
 });
