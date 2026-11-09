@@ -4,7 +4,7 @@ import { SiteHeader, SiteFooter, handleImageError } from "@/components/SiteChrom
 import { StudioListSection } from "@/components/StudioListForm";
 
 import { collections } from "@/data/collections";
-import { artworks, artworkByImage } from "@/data/artworks";
+import { artworks, formatFromPrice } from "@/data/artworks";
 import { getShopUrl, trackPrintifyClick } from "@/lib/analytics";
 import { journal } from "@/data/journal";
 import {
@@ -39,31 +39,18 @@ const featuredCollections = collections.filter((collection) =>
 const heroImageSize = getImageDimensions(heroArtworkUrl) ?? { width: 1181, height: 1191 };
 const studioImageSize = getImageDimensions(studioUrl) ?? { width: 1200, height: 900 };
 
-type FeaturedWork = {
-  collection: (typeof collections)[number];
-  work: (typeof collections)[number]["works"][number];
-  fragmentId: string;
-};
+// Homepage featured prints must each have their own shop listing, so every
+// "Shop print" button lands on a page where the visitor can buy.
+const FEATURED_SLUGS = [
+  "cathedrale-saint-pierre-saintes",
+  "mystical-chapel-fuerteventura",
+  "arch-of-wind-and-time",
+  "symphony-of-waves",
+];
 
-const featuredWorks = [
-  { collectionSlug: "architecture", sku: "GAK-ARCH-001" },
-  { collectionSlug: "gaudi-and-modern-landmarks", sku: "GAK-MOD-001" },
-  { collectionSlug: "fuerteventura", sku: "GAK-FUER-001" },
-  { collectionSlug: "coastal", sku: "GAK-COAST-001" },
-]
-  .map(({ collectionSlug, sku }) => {
-    const collection = collections.find((entry) => entry.slug === collectionSlug);
-    const work = collection?.works.find((entry) => entry.sku === sku);
-
-    if (!collection || !work) return null;
-
-    return {
-      collection,
-      work,
-      fragmentId: work.sku.toLowerCase(),
-    };
-  })
-  .filter((entry): entry is FeaturedWork => Boolean(entry));
+export const featuredWorks = FEATURED_SLUGS.map((slug) => artworks.find((a) => a.slug === slug)).filter(
+  (a): a is (typeof artworks)[number] => Boolean(a?.productPath && a.price),
+);
 
 const featuredPosts = journal.slice(0, 3);
 
@@ -319,9 +306,9 @@ function Narrative() {
                 textures that behave more like real material than a flat pigment field ever could.
               </p>
               <p>
-                That process carries directly into the final print. Museum-grade matte paper and
-                pigment inks preserve the visible construction lines, granulating washes, and layered
-                textures that collectors respond to in the original studies.
+                That process carries directly into the final print. Each print is made to order on the
+                paper, poster or canvas named in its shop listing, reproducing the visible construction
+                lines, granulating washes, and layered textures of the original studies.
               </p>
             </div>
           </article>
@@ -349,7 +336,7 @@ function Narrative() {
               <p>
                 Collectors come here for contemporary wall art with substance behind it. The prints are
                 not generic decor; they are edited from a real sketchbook practice and offered as
-                museum-quality reproductions through the GAK Creations shop. That makes them suitable
+                made-to-order reproductions through the GAK Creations shop. That makes them suitable
                 for design-led homes, studios, hospitality spaces, and offices where artwork needs to
                 reward a closer look.
               </p>
@@ -432,71 +419,52 @@ function FeaturedWorks() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-8">
-          {featuredWorks.map(({ collection, work, fragmentId }) => (
-            <article key={work.sku} id={fragmentId}>
-              <div className="overflow-hidden bg-paper-warm">
-                <ResponsiveImage
-                  src={work.image}
-                  alt={artworkAltText(work, collection.name)}
-                  width={getImageDimensions(work.image)?.width ?? 900}
-                  height={getImageDimensions(work.image)?.height ?? 1100}
-                  loading="lazy"
-                  className="aspect-[4/5] w-full object-cover"
-                  onError={handleImageError}
-                />
-              </div>
-              <div className="mt-5 border-b border-ink/20 pb-5">
-                <p className="eyebrow">{collection.name}</p>
-                <h3 className="font-display text-2xl md:text-3xl">{work.title}</h3>
-                <p className="mt-2 text-xs uppercase tracking-[0.2em] text-ink-soft">
-                  {work.medium} · {work.place}
-                </p>
-                <p className="mt-4 text-sm leading-relaxed text-ink-soft">{work.description}</p>
-                <div className="mt-6 flex flex-wrap gap-4">
-                  <Link
-                    to="/collections/$slug"
-                    params={{ slug: collection.slug }}
-                    className="bg-ink px-6 py-3 text-sm uppercase tracking-[0.2em] text-paper hover:bg-ink-soft"
-                  >
-                    View collection
-                  </Link>
-                  {(() => {
-                    const art = artworkByImage(work.image);
-                    const cls =
-                      "border border-ink/25 px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-ink hover:text-paper";
-                    if (art?.productPath) {
-                      return (
-                        <a
-                          href={getShopUrl(art.slug, art.productPath)}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => trackPrintifyClick({ slug: art.slug, title: art.title, productPath: art.productPath })}
-                          className={cls}
-                        >
-                          Shop print
-                        </a>
-                      );
-                    }
-                    if (art) {
-                      return (
-                        <Link to="/artwork/$slug" params={{ slug: art.slug }} className={cls}>
-                          View print
-                        </Link>
-                      );
-                    }
-                    return (
-                      <a href={SHOP_URL} target="_blank" rel="noopener noreferrer" className={cls}>
-                        Shop print
-                      </a>
-                    );
-                  })()}
+          {featuredWorks.map((art) => {
+            const collection = collections.find((c) => c.slug === art.collections[0]);
+            const fromPrice = formatFromPrice(art);
+            return (
+              <article key={art.slug} id={art.sku.toLowerCase()}>
+                <Link to="/artwork/$slug" params={{ slug: art.slug }} className="block overflow-hidden bg-paper-warm">
+                  <ResponsiveImage
+                    src={art.image}
+                    alt={art.alt}
+                    width={getImageDimensions(art.image)?.width ?? 1200}
+                    height={getImageDimensions(art.image)?.height ?? 1200}
+                    loading="lazy"
+                    className="aspect-[4/5] w-full object-cover"
+                    onError={handleImageError}
+                  />
+                </Link>
+                <div className="mt-5 border-b border-ink/20 pb-5">
+                  {collection && <p className="eyebrow">{collection.name}</p>}
+                  <h3 className="font-display text-2xl md:text-3xl">{art.title}</h3>
+                  <p className="mt-2 text-xs uppercase tracking-[0.2em] text-ink-soft">
+                    {art.medium} · {art.place}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-ink-soft">{art.description}</p>
+                  {fromPrice && <p className="mt-4 font-display text-xl text-ink">{fromPrice}</p>}
+                  <div className="mt-6 flex flex-wrap gap-4">
+                    <a
+                      href={getShopUrl(art.slug, art.productPath)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => trackPrintifyClick({ slug: art.slug, title: art.title, productPath: art.productPath })}
+                      className="bg-ink px-6 py-3 text-sm uppercase tracking-[0.2em] text-paper hover:bg-ink-soft"
+                    >
+                      Shop print
+                    </a>
+                    <Link
+                      to="/artwork/$slug"
+                      params={{ slug: art.slug }}
+                      className="border border-ink/25 px-6 py-3 text-sm uppercase tracking-[0.2em] hover:bg-ink hover:text-paper"
+                    >
+                      Print details
+                    </Link>
+                  </div>
                 </div>
-                <p className="mt-4 text-xs uppercase tracking-[0.2em] text-ink-soft">
-                  Keywords: {artworkKeywords(work, collection.keywords).join(" · ")}
-                </p>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -539,6 +507,7 @@ function NewArtworks() {
                 <p className="mt-2 text-[0.65rem] uppercase tracking-[0.2em] text-ink-soft">
                   {a.medium} · {a.place}
                 </p>
+                {formatFromPrice(a) && <p className="mt-2 text-sm text-ink">{formatFromPrice(a)}</p>}
               </Link>
             </li>
           ))}
