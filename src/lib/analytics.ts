@@ -77,3 +77,11 @@ export function trackPrintifyClick(artwork: { slug: string; title: string; produ
 
   window.gtag?.("event", "outbound_click", payload);
 }
+
+/** Records an email enquiry about a drawing that has no shop listing yet. */
+export function trackPrintEnquiry(artwork: { slug: string; title: string }) {
+  initializeAnalytics();
+  const payload = { event_category: "lead", event_label: artwork.title, artwork_slug: artwork.slug };
+  window.dataLayer?.push({ event: "print_enquiry", ...payload });
+  window.gtag?.("event", "generate_lead", payload);
+}

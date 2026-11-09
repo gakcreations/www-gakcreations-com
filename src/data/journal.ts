@@ -25,7 +25,7 @@ export const journal: JournalPost[] = [
   {
     slug: "architectural-sketching-on-location",
     title: "Architectural Sketching on Location: How a Building Becomes a Drawing",
-    seoTitle: "Architectural Sketching on Location | How Buildings Become Art Prints | GAK Creations",
+    seoTitle: "Architectural Sketching on Location | GAK Creations",
     seoDescription:
       "Learn how Gerald Allen Knowles turns on-location building sketches into architectural art prints using construction lines, ink and wash.",
     excerpt:
@@ -87,7 +87,7 @@ export const journal: JournalPost[] = [
   {
     slug: "coastal-artwork-atlantic-light",
     title: "Coastal Artwork and the Problem of Atlantic Light",
-    seoTitle: "Coastal Artwork & Atlantic Light | How Harbour Paintings Are Built | GAK Creations",
+    seoTitle: "Coastal Artwork & Atlantic Light | GAK Creations",
     seoDescription:
       "Learn how Atlantic light, structure and palette shape the coastal artwork and harbour prints of Gerald Allen Knowles.",
     excerpt:
@@ -142,7 +142,7 @@ export const journal: JournalPost[] = [
   {
     slug: "travel-inspired-art-sketchbook-to-collage",
     title: "Travel-Inspired Art: From Sketchbook Page to Finished Collage",
-    seoTitle: "Travel-Inspired Art | From Sketchbook to Mixed-Media Collage | GAK Creations",
+    seoTitle: "Travel Art: From Sketchbook to Collage | GAK Creations",
     seoDescription:
       "See how Gerald Allen Knowles turns travel sketches, found paper and studio collage into museum-quality travel art prints.",
     excerpt:
@@ -197,9 +197,9 @@ export const journal: JournalPost[] = [
   {
     slug: "fuerteventura-landscapes-drawing-volcanic-ground",
     title: "Fuerteventura Landscapes: Drawing Volcanic Ground",
-    seoTitle: "Fuerteventura Landscapes | Drawing Volcanic Canary Island Light | GAK Creations",
+    seoTitle: "Drawing Fuerteventura's Volcanic Landscapes | GAK Creations",
     seoDescription:
-      "Learn how Gerald Allen Knowles draws Fuerteventura landscapes with granulating pigments, whitewashed chapels and Atlantic light from the Canary Islands sketchbooks.",
+      "How Gerald Allen Knowles draws Fuerteventura landscapes with granulating pigments, whitewashed chapels and Atlantic light from his Canary Islands sketchbooks.",
     excerpt:
       "The oldest Canary Island, drawn in lava black and lime white — and why the wind is part of the technique.",
     published: "2026-05-06",
@@ -252,7 +252,7 @@ export const journal: JournalPost[] = [
   {
     slug: "gaudi-architecture-drawing-the-curve",
     title: "Gaudí and the Curve: Drawing Architecture That Refuses the Right Angle",
-    seoTitle: "Gaudí Architecture Drawing | How to Draw Curves & Landmarks | GAK Creations",
+    seoTitle: "How to Draw Gaudí's Curves & Landmarks | GAK Creations",
     seoDescription:
       "Explore how Gerald Allen Knowles draws Gaudí and Guggenheim landmarks through catenary curves, ruled surfaces and metallic collage.",
     excerpt:
@@ -307,7 +307,7 @@ export const journal: JournalPost[] = [
   {
     slug: "when-architecture-becomes-art",
     title: "When Architecture Becomes Art",
-    seoTitle: "Architecture Art Explained | How Buildings Become Wall Art | GAK Creations",
+    seoTitle: "How Buildings Become Wall Art | GAK Creations",
     seoDescription:
       "Learn what turns a building into architecture art, and how to choose architectural wall art that feels thoughtful, structured and collectible.",
     excerpt:
@@ -377,7 +377,7 @@ export const journal: JournalPost[] = [
   {
     slug: "what-size-art-print-should-i-buy",
     title: "What Size Art Print Should You Buy? A Room-by-Room Guide",
-    seoTitle: "What Size Art Print Should You Buy? Room-by-Room Sizing Guide | GAK Creations",
+    seoTitle: "What Size Art Print Should I Buy? | GAK Creations",
     seoDescription:
       "Use this room-by-room art print sizing guide to choose wall art widths, hanging heights and framing allowances before you order.",
     excerpt:
@@ -455,7 +455,7 @@ export const journal: JournalPost[] = [
   {
     slug: "how-to-choose-art-for-every-room",
     title: "How to Choose Art for Every Room in the House",
-    seoTitle: "How to Choose Art for Every Room | Wall Art Buying Guide | GAK Creations",
+    seoTitle: "How to Choose Art for Every Room | GAK Creations",
     seoDescription:
       "Follow this wall art buying guide for living rooms, bedrooms, home offices and hallways, with sizing, palette and framing advice from Gerald Allen Knowles.",
     excerpt:
@@ -525,7 +525,7 @@ export const journal: JournalPost[] = [
   {
     slug: "why-buy-original-art-prints",
     title: "Why Buy an Original Artist's Print Rather Than a Poster",
-    seoTitle: "Artist's Print vs Poster | Why Museum-Quality Art Prints Cost More | GAK Creations",
+    seoTitle: "Artist's Print vs Poster: The Difference | GAK Creations",
     seoDescription:
       "Learn the difference between a museum-quality artist's print and a poster, from paper and pigment inks to provenance, longevity and value.",
     excerpt:

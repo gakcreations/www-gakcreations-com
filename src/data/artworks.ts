@@ -55,7 +55,7 @@ export const artworks: Artwork[] = [
     year: "Charente-Maritime, France",
     description:
       "A Romanesque abbey in south-west France, drawn from the square in a single morning. The tiered bell tower is set out with the construction lines still showing, while diluted ink carries the shadow down the west front.",
-    seoTitle: "Abbaye aux Dames, Saintes Fine Art Print | Architectural Wall Art | GAK Creations",
+    seoTitle: "Abbaye aux Dames, Saintes Fine Art Print | GAK Creations",
     seoDescription:
       "Shop a museum-quality architectural art print of the Romanesque Abbaye aux Dames in Saintes, hand-drawn in ink and watercolour by Gerald Allen Knowles.",
     keywords: [
@@ -90,7 +90,7 @@ export const artworks: Artwork[] = [
     year: "Basque Country, Spain",
     description:
       "Gehry's titanium curves rendered in torn metallic paper and ink, so the surface of the print behaves the way the building behaves in Basque light — reflective one moment, matte the next.",
-    seoTitle: "Guggenheim Bilbao Fine Art Print | Modern Architecture Wall Art | GAK Creations",
+    seoTitle: "Guggenheim Bilbao Architecture Art Print | GAK Creations",
     seoDescription:
       "Shop a Guggenheim Bilbao fine art print by Gerald Allen Knowles, rendered as a mixed-media collage with metallic paper, ink and modern architectural detail.",
     keywords: [
@@ -125,7 +125,7 @@ export const artworks: Artwork[] = [
     year: "Castile, Spain",
     description:
       "One of the oldest churches on the Iberian peninsula, rebuilt in paper. Torn ochre fragments stand in for the Castilian plain while the horseshoe arch is left as clean drawing.",
-    seoTitle: "San Juan Bautista de Baños Fine Art Print | Travel Collage Wall Art | GAK Creations",
+    seoTitle: "San Juan Bautista de Baños Art Print | GAK Creations",
     seoDescription:
       "Shop a San Juan Bautista de Baños fine art print by Gerald Allen Knowles, with warm mixed-media collage textures and hand-drawn architectural detail.",
     keywords: [
@@ -160,7 +160,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A whitewashed chapel dug into a volcanic slope above the Atlantic. Lava blacks and ochres against lime white — a landscape print with real weight rather than prettiness.",
-    seoTitle: "Volcanic Landscape of Fuerteventura Fine Art Print | Canary Islands Wall Art | GAK Creations",
+    seoTitle: "Volcanic Fuerteventura Landscape Art Print | GAK Creations",
     seoDescription:
       "Shop a Fuerteventura fine art print by Gerald Allen Knowles, featuring a whitewashed chapel, volcanic landscape and quiet Canary Islands light.",
     keywords: [
@@ -195,7 +195,7 @@ export const artworks: Artwork[] = [
     year: "Atlantic coast",
     description:
       "A working boat pulled up and left among the plants for a season, drawn where the harbour meets the town. Calm, blue-led coastal wall art with an architect's sense of line.",
-    seoTitle: "The Blue Boat That Dreams of Sea Fine Art Print | Coastal Wall Art | GAK Creations",
+    seoTitle: "The Blue Boat That Dreams of Sea Art Print | GAK Creations",
     seoDescription:
       "Shop a coastal fine art print of a blue boat at rest, hand-drawn by Gerald Allen Knowles for calm bedrooms, hallways and seaside-inspired interiors.",
     keywords: [
@@ -230,7 +230,7 @@ export const artworks: Artwork[] = [
     year: "Charente-Maritime, France",
     description:
       "The great flamboyant tower of Saint-Pierre seen from the street below, drawn in warm ochre wash with two figures left in to give the stonework its true scale.",
-    seoTitle: "Cathédrale Saint-Pierre, Saintes Fine Art Print | Architectural Wall Art | GAK Creations",
+    seoTitle: "Cathédrale Saint-Pierre, Saintes Art Print | GAK Creations",
     seoDescription:
       "Shop a Cathédrale Saint-Pierre fine art print by Gerald Allen Knowles, with warm watercolour, Gothic stonework and hand-drawn architectural detail.",
     keywords: [
@@ -268,7 +268,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A wind-cut arch on the Fuerteventura coast, drawn entirely in pen. Thousands of short strokes build the eroded basalt, with the sea left as bare paper through the opening.",
-    seoTitle: "Arch of Wind & Time Fine Art Print | Fuerteventura Ink Wall Art | GAK Creations",
+    seoTitle: "Arch of Wind & Time Fuerteventura Ink Print | GAK Creations",
     seoDescription:
       "Shop an Arch of Wind & Time fine art print by Gerald Allen Knowles, with monochrome pen work capturing a wind-eroded Fuerteventura coastal arch.",
     keywords: [
@@ -306,7 +306,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A hollowed volcanic gateway on the north coast, drawn looking through it rather than at it — the rock as doorway, with the shoreline running out beyond.",
-    seoTitle: "Erosion Gate Fine Art Print | Fuerteventura Coastal Ink Art | GAK Creations",
+    seoTitle: "Erosion Gate Fuerteventura Ink Art Print | GAK Creations",
     seoDescription:
       "Shop an Erosion Gate fine art print by Gerald Allen Knowles, with monochrome ink detail focused on a volcanic Fuerteventura coastal gateway.",
     keywords: [
@@ -344,7 +344,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Canary palms against a worked black sky. The night is drawn rather than printed — layer on layer of ink until the fronds come forward as pale silhouettes.",
-    seoTitle: "Mystical Fuerteventura — Dream Nights Fine Art Print | Palm Tree Wall Art | GAK Creations",
+    seoTitle: "Dream Nights Fuerteventura Palm Tree Print | GAK Creations",
     seoDescription:
       "Shop a Dream Nights fine art print by Gerald Allen Knowles, with monochrome Canary palms and a dramatic Fuerteventura night sky.",
     keywords: [
@@ -382,7 +382,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A stand of palms above the sand, drawn in soft rose and blue-grey. The same trees as the night drawing, seen in flat midday light.",
-    seoTitle: "Palm Trees Symphony Fine Art Print | Fuerteventura Coastal Wall Art | GAK Creations",
+    seoTitle: "Palm Trees Symphony Fuerteventura Art Print | GAK Creations",
     seoDescription:
       "Shop a Palm Trees Symphony fine art print by Gerald Allen Knowles, with soft coastal colour, Canary palms and relaxed Fuerteventura light.",
     keywords: [
@@ -420,7 +420,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Three palms against a terraced hillside wall, high above the sea. A drawing about dry stone, patience, and the few things that grow on a volcanic island.",
-    seoTitle: "Magical Landscape Fine Art Print | Fuerteventura Hillside Wall Art | GAK Creations",
+    seoTitle: "Magical Landscape Fuerteventura Art Print | GAK Creations",
     seoDescription:
       "Shop a Magical Landscape fine art print by Gerald Allen Knowles, featuring dry stone terraces, Canary palms and a volcanic Fuerteventura hillside.",
     keywords: [
@@ -458,7 +458,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "A small white ermita almost lost among folded hills, drawn in soft ochre, green and rose. The building is the smallest thing in the picture and the reason for it.",
-    seoTitle: "Mystical Chapel Fine Art Print | Fuerteventura Landscape Wall Art | GAK Creations",
+    seoTitle: "Mystical Chapel Fuerteventura Art Print | GAK Creations",
     seoDescription:
       "Shop a Mystical Chapel fine art print by Gerald Allen Knowles, with a white ermita, warm volcanic hills and calm Fuerteventura colour.",
     keywords: [
@@ -496,7 +496,7 @@ export const artworks: Artwork[] = [
     year: "Canary Islands, Spain",
     description:
       "Turquoise water running in around black volcanic rock, with the wet sand holding the reflection. The most colour-led piece in the coastal work.",
-    seoTitle: "Symphony of Waves Fine Art Print | Turquoise Coastal Wall Art | GAK Creations",
+    seoTitle: "Symphony of Waves Turquoise Coastal Print | GAK Creations",
     seoDescription:
       "Shop a Symphony of Waves fine art print by Gerald Allen Knowles, with turquoise Atlantic water, volcanic rock and cool coastal colour.",
     keywords: [
@@ -830,3 +830,28 @@ export const artworksInCollection = (collectionSlug: string) =>
 
 /** Maps a collection work image back to its canonical artwork page. */
 export const artworkByImage = (image: string) => artworks.find((a) => a.image === image);
+
+/** Artworks that have their own purchasable shop listing with a verified price. */
+export const buyableArtworks = () => artworks.filter((a) => a.productPath && a.price && a.priceCurrency);
+
+/** "From $29.99" style label for a listing's verified starting price, or null. */
+export const formatFromPrice = (a: Pick<Artwork, "price" | "priceCurrency">) =>
+  a.price && a.priceCurrency
+    ? `From ${new Intl.NumberFormat("en-US", { style: "currency", currency: a.priceCurrency }).format(Number(a.price))}`
+    : null;
+
+/**
+ * Homepage "Featured artwork prints". Each must have its own shop listing so
+ * every homepage "Shop print" button lands where the visitor can buy.
+ */
+export const HOMEPAGE_FEATURED_SLUGS = [
+  "cathedrale-saint-pierre-saintes",
+  "mystical-chapel-fuerteventura",
+  "arch-of-wind-and-time",
+  "symphony-of-waves",
+];
+
+export const homepageFeaturedArtworks = () =>
+  HOMEPAGE_FEATURED_SLUGS.map((slug) => getArtwork(slug)).filter(
+    (a): a is Artwork => Boolean(a?.productPath && a.price),
+  );

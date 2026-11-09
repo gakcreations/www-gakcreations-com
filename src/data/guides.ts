@@ -39,7 +39,7 @@ export const guides: BuyerGuide[] = [
     h1: "Living Room Wall Art That Anchors the Room",
     lede:
       "How to choose, size and hang a single strong print above a sofa — with architectural drawings and Atlantic landscapes made to hold a wall from across the room.",
-    seoTitle: "Living Room Wall Art | Shop Large Prints Above the Sofa | GAK Creations",
+    seoTitle: "Living Room Wall Art: Prints Above a Sofa | GAK Creations",
     seoDescription:
       "Shop living room wall art by Gerald Allen Knowles, with large architectural and coastal prints plus sizing, framing and hanging advice for above the sofa.",
     keywords: [
@@ -126,7 +126,7 @@ export const guides: BuyerGuide[] = [
     h1: "Bedroom Wall Art for a Quieter Room",
     lede:
       "Soft Atlantic light, night skies and resting boats — prints chosen for the one room where artwork should lower the volume rather than raise it.",
-    seoTitle: "Bedroom Wall Art | Shop Calm Prints Above the Bed | GAK Creations",
+    seoTitle: "Bedroom Wall Art: Calm Prints Above the Bed | GAK Creations",
     seoDescription:
       "Shop bedroom wall art by Gerald Allen Knowles, with calm coastal and landscape prints plus sizing, framing and hanging advice for above the bed.",
     keywords: [
@@ -212,7 +212,7 @@ export const guides: BuyerGuide[] = [
     h1: "Home Office Wall Art with Structure",
     lede:
       "Architectural drawings for the wall behind the desk and the wall behind you on camera — precise, quiet and legible at close range.",
-    seoTitle: "Home Office Wall Art | Architectural Prints for Desk & Studio | GAK Creations",
+    seoTitle: "Home Office Wall Art: Architectural Prints | GAK Creations",
     seoDescription:
       "Shop home office wall art by Gerald Allen Knowles, with architectural prints that read well behind a desk and on video calls, plus sizing and framing advice.",
     keywords: [
@@ -298,7 +298,7 @@ export const guides: BuyerGuide[] = [
     h1: "Hallway and Stairway Wall Art",
     lede:
       "Corridors are for sequences. Three or four prints at a shared centre line turn a passage into an approach — here is how to plan the run.",
-    seoTitle: "Hallway Wall Art | Shop Matching Prints for Corridors & Stairs | GAK Creations",
+    seoTitle: "Hallway Wall Art for Corridors & Stairs | GAK Creations",
     seoDescription:
       "Shop hallway wall art by Gerald Allen Knowles, with matching print sets, spacing advice and stair-hanging tips for corridors and landings.",
     keywords: [
@@ -384,7 +384,7 @@ export const guides: BuyerGuide[] = [
     h1: "Art Gifts for Architects and Designers",
     lede:
       "Drawings made by a practising architect — measured by eye, built from construction lines, and finished on location. A gift that another architect will read properly.",
-    seoTitle: "Art Gifts for Architects | Shop Drawings by an Architect | GAK Creations",
+    seoTitle: "Gifts for Architects: Art by an Architect | GAK Creations",
     seoDescription:
       "Shop art gifts for architects and designers, with hand-drawn architectural prints by Gerald Allen Knowles and delivery guidance for thoughtful gifting.",
     keywords: [
@@ -471,7 +471,7 @@ export const guides: BuyerGuide[] = [
     h1: "Housewarming Art Gifts for a New Home",
     lede:
       "A new house has empty walls and no agreed taste yet. These are the prints that fit almost any room — restrained palette, real craft, nothing to argue with.",
-    seoTitle: "Housewarming Art Gifts | Shop Prints for a New Home | GAK Creations",
+    seoTitle: "Housewarming Art Gifts for a New Home | GAK Creations",
     seoDescription:
       "Shop housewarming art gifts by Gerald Allen Knowles, with calm museum-quality prints, gifting advice and delivery details for a new home.",
     keywords: [

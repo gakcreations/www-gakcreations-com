@@ -10,3 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep listing-specific print material and presentation in the canonical artwork records and reuse them in page facts and Product schema; original artwork medium must not mislabel a canvas reproduction as paper.
+- Every purchase button must lead to a specific shop listing: homepage featured prints come from listed, priced artworks, and drawings without a listing show an email enquiry plus listed alternatives instead of a generic shop link; why: generic shop links lost buyers.
+- Never state print materials or quality (e.g. museum-grade paper) that the shop listing does not confirm; omit the field instead; why: Google Merchant misrepresentation risk.

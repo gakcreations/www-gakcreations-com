@@ -14,7 +14,7 @@ import {
   abs,
 } from "@/lib/seo";
 
-const TITLE = "Art Buying Guides, Architectural Sketching & Studio Journal | GAK Creations";
+const TITLE = "Studio Journal & Art Buying Guides | GAK Creations";
 const DESCRIPTION =
   "Read art buying guides, architectural sketching notes and stories behind the coastal, travel and Fuerteventura prints of Gerald Allen Knowles.";
 
