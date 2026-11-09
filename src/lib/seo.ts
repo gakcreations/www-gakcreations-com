@@ -380,7 +380,7 @@ export function productNode(work: {
     sku: work.sku,
     brand: { "@type": "Brand", name: SITE_NAME },
     category: "Home & Garden > Decor > Artwork > Posters, Prints & Visual Artwork",
-    material: work.printMaterial ?? "Museum-grade matte fine art paper",
+    ...(work.printMaterial ? { material: work.printMaterial } : {}),
     additionalProperty: [
       { "@type": "PropertyValue", name: "Medium", value: work.medium },
       { "@type": "PropertyValue", name: "Location", value: work.place },

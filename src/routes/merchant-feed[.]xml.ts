@@ -36,7 +36,7 @@ export const Route = createFileRoute("/merchant-feed.xml")({
         const items = artworks
           .filter((a) => a.productPath && a.price && a.priceCurrency)
           .map((a) => {
-            const description = `${a.description} ${a.medium} artwork of ${a.place} by ${ARTIST_NAME}, reproduced as a museum-quality fine art print.`;
+            const description = `${a.description} ${a.medium} artwork of ${a.place} by ${ARTIST_NAME}, reproduced as a made-to-order fine art print.`;
             return [
               `    <item>`,
               `      <g:id>${xmlEscape(a.sku)}</g:id>`,
@@ -62,7 +62,7 @@ export const Route = createFileRoute("/merchant-feed.xml")({
           `  <channel>`,
           `    <title>${xmlEscape(`${SITE_NAME} — Fine Art Prints`)}</title>`,
           `    <link>${SITE_URL}</link>`,
-          `    <description>Museum-quality fine art prints of architecture, coastline and travel collage by ${xmlEscape(ARTIST_NAME)}.</description>`,
+          `    <description>Made-to-order fine art prints of architecture, coastline and travel collage by ${xmlEscape(ARTIST_NAME)}.</description>`,
           ...items,
           `  </channel>`,
           `</rss>`,
