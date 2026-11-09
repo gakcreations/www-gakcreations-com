@@ -51,7 +51,7 @@ export function SiteHeader() {
             href={SHOP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="eyebrow hover:text-ink"
+            className="eyebrow order-first font-semibold text-ink hover:text-ink-soft lg:order-none"
           >
             Shop →
           </a>
