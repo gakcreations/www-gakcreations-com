@@ -100,7 +100,8 @@ export function matchesQuery(a: Artwork, q: string) {
   const text = haystack(a);
   return words.every((w) => {
     const options = [w, ...(SYNONYMS[w] ?? [])].map(normalise);
-    return options.some((o) => text.includes(o));
+    // Match at the start of a word so "sea" finds "seascape" but not "research".
+    return options.some((o) => new RegExp(`(^|[^a-z0-9])${o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(text));
   });
 }
 
