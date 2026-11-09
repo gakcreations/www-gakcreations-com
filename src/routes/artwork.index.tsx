@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { SiteHeader, SiteFooter } from "@/components/SiteChrome";
 import { ResponsiveImage, handleImageError } from "@/components/ResponsiveImage";
 import { artworks, formatFromPrice } from "@/data/artworks";
@@ -93,7 +93,7 @@ function FilterChip({
 }: {
   active: boolean;
   onClick: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <button
