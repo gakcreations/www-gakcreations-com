@@ -26,7 +26,7 @@ const PUBLISHED = "2026-08-05";
 
 const TITLE = "Architectural Art Prints: Buyer's Guide | GAK Creations";
 const DESCRIPTION =
-  "How to choose architectural art prints for living rooms, hallways and offices, with sizing, framing and delivery advice from architect-artist Gerald Allen Knowles.";
+  "How to choose architectural art prints for living rooms, hallways and offices, with sizing, framing and delivery advice from Gerald Allen Knowles.";
 
 const KEYWORDS = [
   "architectural art prints",
