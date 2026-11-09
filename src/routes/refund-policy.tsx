@@ -12,7 +12,7 @@ import {
 } from "@/lib/seo";
 
 const PATH = "/refund-policy";
-const TITLE = "Returns Policy | Fine Art Print Refunds & Replacements | GAK Creations";
+const TITLE = "Returns & Refund Policy | GAK Creations";
 const DESCRIPTION =
   "Read the refund, replacement and return policy for made-to-order GAK Creations fine art prints.";
 

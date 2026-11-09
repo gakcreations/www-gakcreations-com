@@ -21,9 +21,9 @@ import {
 const PATH = "/about";
 const HERO = "/images/Abbaye Aux Dames Saintes France.jpg";
 
-const TITLE = "About Gerald Allen Knowles | Architect Artist Behind GAK Creations";
+const TITLE = "About Gerald Allen Knowles, Architect & Artist | GAK Creations";
 const DESCRIPTION =
-  "Meet Gerald Allen Knowles, the architect and artist behind GAK Creations, and explore the story behind his hand-drawn fine art prints and travel-led collections.";
+  "Meet Gerald Allen Knowles, the architect and artist behind GAK Creations, and the story behind his hand-drawn art prints and travel-led collections.";
 
 const KEYWORDS = [
   "Gerald Allen Knowles",

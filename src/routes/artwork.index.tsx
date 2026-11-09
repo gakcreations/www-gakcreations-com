@@ -19,7 +19,7 @@ import {
 const PATH = "/artwork";
 const TITLE = "Shop All Art Prints by Gerald Allen Knowles | GAK Creations";
 const DESCRIPTION =
-  "Browse every GAK Creations fine art print by Gerald Allen Knowles, including architectural drawings, coastal artwork, travel collages and Canary Islands landscapes.";
+  "Browse every GAK Creations art print by Gerald Allen Knowles: architectural drawings, coastal artwork, travel collages and Canary Islands landscapes.";
 const KEYWORDS = [
   "fine art prints",
   "architectural drawings",

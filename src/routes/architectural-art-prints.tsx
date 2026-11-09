@@ -24,9 +24,9 @@ const PATH = "/architectural-art-prints";
 const HERO = "/images/Abbaye Aux Dames Saintes France.jpg";
 const PUBLISHED = "2026-08-05";
 
-const TITLE = "Architectural Art Prints | Buyer's Guide for Home Wall Art | GAK Creations";
+const TITLE = "Architectural Art Prints: Buyer's Guide | GAK Creations";
 const DESCRIPTION =
-  "Learn how to choose and shop architectural art prints for living rooms, hallways and offices, with sizing, framing and delivery guidance from Gerald Allen Knowles.";
+  "How to choose architectural art prints for living rooms, hallways and offices, with sizing, framing and delivery advice from architect-artist Gerald Allen Knowles.";
 
 const KEYWORDS = [
   "architectural art prints",

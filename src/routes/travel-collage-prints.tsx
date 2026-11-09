@@ -25,7 +25,7 @@ const PATH = "/travel-collage-prints";
 const HERO = "/images/Guggenheim Museum Bilba, Spain.jpg";
 const PUBLISHED = "2026-09-03";
 
-const TITLE = "Travel Collage Prints | Mixed-Media Travel Wall Art Guide | GAK Creations";
+const TITLE = "Travel Collage Prints & Travel Wall Art | GAK Creations";
 const DESCRIPTION =
   "Discover and shop travel collage prints by Gerald Allen Knowles, with mixed-media wall art inspired by Europe and the Atlantic islands plus display advice.";
 
