@@ -830,3 +830,12 @@ export const artworksInCollection = (collectionSlug: string) =>
 
 /** Maps a collection work image back to its canonical artwork page. */
 export const artworkByImage = (image: string) => artworks.find((a) => a.image === image);
+
+/** Artworks that have their own purchasable shop listing with a verified price. */
+export const buyableArtworks = () => artworks.filter((a) => a.productPath && a.price && a.priceCurrency);
+
+/** "From $29.99" style label for a listing's verified starting price, or null. */
+export const formatFromPrice = (a: Pick<Artwork, "price" | "priceCurrency">) =>
+  a.price && a.priceCurrency
+    ? `From ${new Intl.NumberFormat("en-US", { style: "currency", currency: a.priceCurrency }).format(Number(a.price))}`
+    : null;
