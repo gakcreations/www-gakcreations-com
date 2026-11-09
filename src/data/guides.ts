@@ -39,7 +39,7 @@ export const guides: BuyerGuide[] = [
     h1: "Living Room Wall Art That Anchors the Room",
     lede:
       "How to choose, size and hang a single strong print above a sofa — with architectural drawings and Atlantic landscapes made to hold a wall from across the room.",
-    seoTitle: "Living Room Wall Art: Large Prints Above a Sofa | GAK Creations",
+    seoTitle: "Living Room Wall Art: Prints Above a Sofa | GAK Creations",
     seoDescription:
       "Shop living room wall art by Gerald Allen Knowles, with large architectural and coastal prints plus sizing, framing and hanging advice for above the sofa.",
     keywords: [
@@ -471,7 +471,7 @@ export const guides: BuyerGuide[] = [
     h1: "Housewarming Art Gifts for a New Home",
     lede:
       "A new house has empty walls and no agreed taste yet. These are the prints that fit almost any room — restrained palette, real craft, nothing to argue with.",
-    seoTitle: "Housewarming Art Gifts: Prints for a New Home | GAK Creations",
+    seoTitle: "Housewarming Art Gifts for a New Home | GAK Creations",
     seoDescription:
       "Shop housewarming art gifts by Gerald Allen Knowles, with calm museum-quality prints, gifting advice and delivery details for a new home.",
     keywords: [

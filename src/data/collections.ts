@@ -256,7 +256,7 @@ export const collections: Collection[] = [
   {
     slug: "fuerteventura",
     name: "Fuerteventura",
-    seoTitle: "Fuerteventura Art Prints & Canary Islands Art | GAK Creations",
+    seoTitle: "Fuerteventura Art Prints & Canary Art | GAK Creations",
     seoDescription:
       "Fuerteventura art prints by island-based artist Gerald Allen Knowles: volcanic hills, whitewashed chapels, palms and Atlantic shorelines.",
     eyebrow: "Collection N° 04",
