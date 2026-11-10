@@ -9,8 +9,9 @@
 - [x] Shorten over-long titles/descriptions (guides, about, contact, policies, collections).
 - [x] Fix production hydration mismatch (page re-render, CLS 0.22) and header wrap shift.
 - [x] Tests, browser check, and the prioritised audit report in Files.
+- [x] Remove Klaviyo website scripts and unused types; preserve the studio signup form.
 
 Blocked on owner (outside the site):
 - Bahamas / Caribbean artwork: none on the site yet — needs the artworks before pages can be built.
 - Printify: "Syphonmy" typo, size-count contradictions, check "from" prices on framed listings, list the five unlisted drawings, shop tags.
-- Google Merchant Center submission, Google reviews, Klaviyo keep/remove decision, second GA tag in GTM.
+- Google Merchant Center submission, Google reviews, second GA tag in GTM.
