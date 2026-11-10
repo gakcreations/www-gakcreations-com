@@ -59,20 +59,6 @@ const gtmScripts = [
   },
 ];
 
-
-const klaviyoScripts = [
-  {
-    src: "https://static.klaviyo.com/onsite/js/TTmVue/klaviyo.js?company_id=TTmVue",
-    async: true,
-    type: "text/javascript",
-  },
-  {
-    async: true,
-    children: `!function(){if(!window.klaviyo){window._klOnsite=window._klOnsite||[];try{window.klaviyo=new Proxy({},{get:function(n,i){return"push"===i?function(){var n;(n=window._klOnsite).push.apply(n,arguments)}:function(){for(var n=arguments.length,o=new Array(n),w=0;w<n;w++)o[w]=arguments[w];var t="function"==typeof o[o.length-1]?o.pop():void 0,e=new Promise((function(n){window._klOnsite.push([i].concat(o,[function(i){t&&t(i),n(i)}]))}));return e}}})}catch(n){window.klaviyo=window.klaviyo||[],window.klaviyo.push=function(){var n;(n=window._klOnsite).push.apply(n,arguments)}}}}();`,
-    type: "text/javascript",
-  },
-];
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -172,7 +158,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Karla:wght@300;400;500;600&display=swap",
       },
     ],
-    scripts: [...gtmScripts, ...clarityScripts, ...gaScripts, ...klaviyoScripts],
+    scripts: [...gtmScripts, ...clarityScripts, ...gaScripts],
   }),
   shellComponent: RootShell,
   component: RootComponent,
