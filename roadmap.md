@@ -15,3 +15,6 @@ Blocked on owner (outside the site):
 - Bahamas / Caribbean artwork: none on the site yet — needs the artworks before pages can be built.
 - Printify: "Syphonmy" typo, size-count contradictions, check "from" prices on framed listings, list the five unlisted drawings, shop tags.
 - Google Merchant Center submission, Google reviews, second GA tag in GTM.
+
+# Google Merchant Center walkthrough (2026-11-18)
+- [ ] Guide owner one screen at a time (waits on owner finishing each step in Google).
